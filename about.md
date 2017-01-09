@@ -13,10 +13,4 @@ who involved in
 
 mail 
 
-> echo srvpqxfbyqfvpdtkbjwt | tr yxwvtsrqpkjfdb zuonmlihgeca@.
-
-or follow 
-
-> [@o_lll](https://twitter.com/#!/o_lll)
-
-to reach me
+> echo jmaximelv@gmail.com
