@@ -5,7 +5,7 @@ name: "no title"
 markdown: rdiscount
 
 author: "zhishui"
-atom-baseurl: "http://lhzhang.com"
+atom-baseurl: "https://bizhishui.github.io/"
 disqus: "gopherwood"
 
 navigations:
