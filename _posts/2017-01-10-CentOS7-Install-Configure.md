@@ -82,6 +82,15 @@ sudo yum update
 ```
 更新完后应重启系统。
 
+#### 中文输入法
+刚安装的系统可能是没有中文输入法的，源中带的中文输入法应该是 ibus，使用效果一般。
+```
+sudo yum install "@Chinese Support"
+sudo yum install ibus ibus-libpinyin
+sudo yum install libpinyin
+```
+然后在区域键盘中选择汉语拼音。
+
 #### 基础开发环境
 1. GCC系列
 ```
@@ -131,3 +140,20 @@ sudo yum localinstall jdk[jre]-[version]-linux-x64.rpm -y
   Terminal=0
   ```
   - 分别从快捷图标和命令行启动Eclipse，检查安装结果
+
+#### 后处理软件安装
+1. Paraview
+2. Gnuplot
+
+#### Editors
+1. Vim
+2. Markdown+[Atom](https://atom.io/)
+
+#### 日常软件
+0. Tex Live 2016
+1. Gimp
+2. Inkscape
+3. Okular
+4. Google Chrome browser
+5. 解压软件
+6. Dropbox
