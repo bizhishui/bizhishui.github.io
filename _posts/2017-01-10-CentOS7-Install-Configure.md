@@ -70,8 +70,8 @@ sudo rpm -Uvh http://li.nux.ro/download/nux/dextop/el7/x86_64/nux-dextop-release
 ##### ELRepo
 [ELRepo](http://elrepo.org/tiki/tiki-index.php)包含了一些硬件相关的驱动程序，比如显卡、声卡驱动:    
 ```
-sudo rpm --import https://www.elrepo.org/RPM-GPG-KEY-elrepo.org    
-sudo rpm -Uvh http://www.elrepo.org/elrepo-release-7.0-2.el7.elrepo.noarch.rpm
+    sudo rpm --import https://www.elrepo.org/RPM-GPG-KEY-elrepo.org       
+    sudo rpm -Uvh http://www.elrepo.org/elrepo-release-7.0-2.el7.elrepo.noarch.rpm
 ```
 
 完成该命令后，在 `/etc/yum.repos.d` 目录下会多一个 `elrepo.repo` 文件。
