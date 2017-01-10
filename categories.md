@@ -3,7 +3,7 @@ title: categories
 layout: page
 ---
 
-<div id='tag_cloud'>
+<div id='category_cloud'>
 {% for cat in site.categories %}
 <a href="#{{ cat[0] }}" title="{{ cat[0] }}" rel="{{ cat[1].size }}">{{ cat[0] }} ({{ cat[1].size }})</a>
 {% endfor %}
@@ -22,14 +22,14 @@ layout: page
 </ul>
 
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js" type="text/javascript" charset="utf-8"></script>
-<script src="/media/js/jquery.tagcloud.js" type="text/javascript" charset="utf-8"></script> 
+<script src="/media/js/jquery.categorycloud.js" type="text/javascript" charset="utf-8"></script> 
 <script language="javascript">
-$.fn.tagcloud.defaults = {
+$.fn.categorycloud.defaults = {
     size: {start: 1, end: 1, unit: 'em'},
       color: {start: '#f8e0e6', end: '#ff3333'}
 };
 
 $(function () {
-    $('#tag_cloud a').tagcloud();
+    $('#category_cloud a').categorycloud();
 });
 </script>

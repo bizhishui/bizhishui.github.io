@@ -12,7 +12,7 @@ layout: default
   </span>
   {% if page.categories %}
   <span class="categories">
-    {% for tag in page.tags %}
+    {% for category in page.categories %}
     <a href="/categories.html#{{ category }}" title="{{ category }}">#{{ category }}</a>
     {% endfor %}
   </span>
