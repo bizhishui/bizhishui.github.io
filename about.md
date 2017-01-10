@@ -7,10 +7,10 @@ a
 
 > coming...
 
-who involved in 
+who involved in (fa fa-github)
 
-> class: fa fa-github [GitHub](https://github.com/bizhishui)
+> [GitHub](https://github.com/bizhishui)
 
-mail 
+mail fa fa-gmail 
 
-> echo jmaximelv@gmail.com
+> jmaximelv@gmail.com
