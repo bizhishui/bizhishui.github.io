@@ -35,3 +35,4 @@ dd if=full/path/to/CentOS.iso of=/dev/diskabc
 3. 将刻录好的启动盘插入电脑，重启电脑并从U盘启动。
 
 #### CentOS 7 安装   
+1. 安装提示一步一步安装，唯一需要特别注意的是安装盘的分区。
