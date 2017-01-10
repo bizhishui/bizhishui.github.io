@@ -7,10 +7,10 @@ a
 
 > coming...
 
-who involved in (fa fa-github)
+who involved in
 
 > [GitHub](https://github.com/bizhishui)
 
-mail fa fa-gmail 
+mail
 
 > jmaximelv@gmail.com
