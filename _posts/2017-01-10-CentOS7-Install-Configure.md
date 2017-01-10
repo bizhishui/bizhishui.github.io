@@ -33,8 +33,7 @@ Mac下命令为：
 ```
 dd if=full/path/to/CentOS.iso of=/dev/diskabc
 ```
-
-`abc`可由`df -h`命令查看并确定。
+`abc`可由`df -h`命令查看并确定。  
 3. 将刻录好的启动盘插入电脑，重启电脑并从U盘启动。
 
-#### CentOS 7安装
+#### CentOS 7 安装
