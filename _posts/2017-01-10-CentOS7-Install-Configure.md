@@ -35,4 +35,7 @@ dd if=full/path/to/CentOS.iso of=/dev/diskabc
 3. 将刻录好的启动盘插入电脑，重启电脑并从U盘启动。
 
 #### CentOS 7 安装   
-1. 安装提示一步一步安装，唯一需要特别注意的是安装盘的分区。
+1. 安装提示一步一步安装，唯一需要特别注意的是安装盘的分区。选择好安装硬盘后，
+在“Other Storage Options”处选择“I will configure partioning”，即手动分区。     
+- 点击 “Click here to create them automatically”，即让安装程序帮忙分区
+- 自动分区完成后，再根据自己的需求，手动修改分区细节
