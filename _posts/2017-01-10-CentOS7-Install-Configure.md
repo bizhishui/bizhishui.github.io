@@ -22,14 +22,11 @@ tags:
 #### 准备安装盘
 
 1. 下载[CentOS 7 Everything ISO](https://github.com/bizhishui/bizhishui.github.io)，容量约为8G，故应至少准备一个16G U盘。
-2. 使用dd命令刻录U盘启动盘，Linux下命令为:
-
+2. 使用dd命令刻录U盘启动盘，Linux下命令为:   
 ```
 dd if=full/path/to/CentOS.iso of=/dev/sdb
 ```
-
-Mac下命令为：
-
+Mac下命令为：  
 ```
 dd if=full/path/to/CentOS.iso of=/dev/diskabc
 ```
