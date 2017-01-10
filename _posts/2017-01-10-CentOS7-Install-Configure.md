@@ -36,6 +36,12 @@ dd if=full/path/to/CentOS.iso of=/dev/diskabc
 
 #### CentOS 7 安装   
 1. 安装提示一步一步安装，唯一需要特别注意的是安装盘的分区。选择好安装硬盘后，
-在“Other Storage Options”处选择“I will configure partioning”，即手动分区。     
+在“Other Storage Options”处选择“I will configure partioning”，即手动分区。       
 - 点击 “Click here to create them automatically”，即让安装程序帮忙分区
 - 自动分区完成后，再根据自己的需求，手动修改分区细节
+  - `/boot`：CentOS 自动分配，一定不要乱改；
+  - `/`：根目录，合理使用并及时清理的话15G就够了，不过建议30G以上；
+  - `swap`：与物理内存大小一致即可;
+  - `/opt`：个人习惯是将第三方软件都安装在/opt下，硬盘够大可以多分点（70G）；
+  - `/home`：余下的全部空间。
+- 点击 “Begin to Install” 开始安装
