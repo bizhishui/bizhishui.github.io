@@ -13,7 +13,7 @@ navigations:
     class: fa fa-list-ul
     href: /archive.html
   - title: Categories
-    class: fa fa-terminal on fa-square
+    class: fa fa-sitemap
     href: /categories.html
   - title: Tags
     class: fa fa-tags
