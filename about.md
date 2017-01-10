@@ -5,11 +5,11 @@ layout: page
 
 a
 
-> Minimalist | Appleist | Unixer | Coder
+> coming...
 
 who involved in 
 
-> [github](https://github.com/bizhishui)
+> class: fa fa-github [GitHub](https://github.com/bizhishui)
 
 mail 
 
