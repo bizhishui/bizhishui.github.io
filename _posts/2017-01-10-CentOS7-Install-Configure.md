@@ -45,5 +45,33 @@ dd if=full/path/to/CentOS.iso of=/dev/diskabc
   + `/opt`：个人习惯是将第三方软件都安装在/opt下，硬盘够大可以多分点（70G）；   
   + `/home`：余下的全部空间。   
 - 点击 “Begin to Install” 开始安装
-2. 创建root密码以及普通用户
+2. 创建root密码以及普通用户(并将其加入到Administrator group中，当然也可最后在`\etc\sudoers`文件中修改)
 3. 等待安装完成重启即可
+
+#### CentOS 7 软件源配置   
+CentOS 由于很追求稳定性，所以官方源中自带的软件不多，因而需要一些第三方源，比如 EPEL、ATrpms、ELRepo、Nux Dextop、RepoForge 等。根据上面提到的软件安装原则，为了尽 可能保证系统的稳定性，此处大型第三方源只添加 EPEL 源、Nux Dextop 和 ELRepo 源。
+
+##### EPEL
+[EPEL](https://fedoraproject.org/wiki/EPEL)即 Extra Packages for Enterprise Linux， 为 CentOS 提供了额外的 10000 多个软件包，而且在不替换系统组件方面下了很多功夫，因而可以放心使用。
+```
+sudo yum install epel-release
+```
+
+执行完该命令后，在 `/etc/yum.repos.d` 目录下会多一个 `epel.repo` 文件。
+
+##### Nux Dextop    
+[Nux Dextop](http://li.nux.ro/repos.html)中包含了一些与多媒体相关的软件包，作者尽量 保证不覆盖 base 源。官方说明中说该源与 EPEL 兼容，实际上个别软件包存在冲突，但基本不会造成影响:
+```
+sudo rpm -Uvh http://li.nux.ro/download/nux/dextop/el7/x86_64/nux-dextop-release-0-5.el7.nux.noarch.rpm
+```
+
+完成该命令后，在 `/etc/yum.repos.d` 目录下会多一个 `nux-dextop.repo` 文件。
+
+##### ELRepo
+[ELRepo](http://elrepo.org/tiki/tiki-index.php)包含了一些硬件相关的驱动程序，比如显卡、声卡驱动:
+```
+sudo rpm --import https://www.elrepo.org/RPM-GPG-KEY-elrepo.org    
+sudo rpm -Uvh http://www.elrepo.org/elrepo-release-7.0-2.el7.elrepo.noarch.rpm
+```
+
+完成该命令后，在 `/etc/yum.repos.d` 目录下会多一个 `elrepo.repo` 文件。
