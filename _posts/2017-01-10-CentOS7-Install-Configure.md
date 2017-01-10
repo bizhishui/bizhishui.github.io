@@ -14,4 +14,7 @@ Reproduced **PzNotes** [CentOS 7安装及配置](https://whu-pzhang.github.io/li
 
 ---
 
+本文主要记录CentOS以及一些基本软件的安装。
 
+# 安装CentOS7
+本人
