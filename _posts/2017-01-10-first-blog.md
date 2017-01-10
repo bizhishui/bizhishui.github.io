@@ -13,4 +13,4 @@ tags:
 
 ---
 
-该博客模板盗自于[Linghua Zhang](http://lhzhang.com/)，非常感谢Zhang的这个非常简洁漂亮的模板。
+该博客模板'盗'自于[Linghua Zhang](http://lhzhang.com/)，非常感谢Zhang的这个非常简洁漂亮的模板。
