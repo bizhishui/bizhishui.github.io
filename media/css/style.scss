@@ -101,6 +101,14 @@ article {
     overflow: auto;
     margin-top: -.5em;
     font-size: .9em;
+    .categories a { @extend a; color: #999999; padding: .25em; }
+  }
+
+  .meta {
+    display: block;
+    overflow: auto;
+    margin-top: -.5em;
+    font-size: .9em;
     .tags a { @extend a; color: #999999; padding: .25em; }
   }
 
@@ -149,6 +157,8 @@ footer {
   a { color: #cccccc; &:hover { color: #999999; }; }
 
 }
+
+#category_cloud { margin-bottom: 1em; }
 
 #tag_cloud { margin-bottom: 1em; }
 
