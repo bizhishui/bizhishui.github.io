@@ -1,6 +1,8 @@
 ---
 title: First blog
 layout: post
+categories:
+  - default
 tags:
   - blog
 ---

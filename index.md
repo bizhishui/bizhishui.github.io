@@ -13,6 +13,13 @@ layout: default
     <span class="time">
       <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
     </span>
+    {% if post.categories %}
+    <span class="categories">
+      {% for category in post.categories %}
+      <a href="/categories.html#{{ category }}" title="{{ category }}">#{{ category }}</a>
+      {% endfor %}
+    </span>
+    {% endif %}
     {% if post.tags %}
     <span class="tags">
       {% for tag in post.tags %}

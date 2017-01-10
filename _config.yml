@@ -12,6 +12,9 @@ navigations:
   - title: Archive
     class: fa fa-list-ul
     href: /archive.html
+  - title: Categories
+    class: fa fa-categories
+    href: /categories.html
   - title: Tags
     class: fa fa-tags
     href: /tags.html
