@@ -10,18 +10,18 @@ tags:
 ---
 
 
-> Reproduced from **PzNotes** [CentOS 7安装及配置](https://whu-pzhang.github.io/linux-environment-for-seismology-research.html).
+> Reproduced from **PzNotes** [CentOS 7 安装及配置](https://whu-pzhang.github.io/linux-environment-for-seismology-research.html).
 
 ---
 
-本文主要记录CentOS 7以及一些基本软件的安装。
+本文主要记录CentOS 7 以及一些基本软件的安装。
 
 ### 安装CentOS 7
-由于个人水平有限，本文安装的是CentOS7的桌面版。
+由于个人水平有限，本文安装的是CentOS 7 的桌面版。
 
 #### 准备安装盘   
 1. 下载[CentOS 7 Everything ISO](https://github.com/bizhishui/bizhishui.github.io)，容量约为8G，故应至少准备一个16G U盘。
-2. 使用dd命令刻录U盘启动盘，Linux下命令为:   
+2. 使用[dd刻录U盘启动盘](https://wiki.centos.org/HowTos/InstallFromUSBkey)，Linux下命令为:   
 ```
 dd if=full/path/to/CentOS.iso of=/dev/sdb    
 ```
@@ -39,11 +39,11 @@ dd if=full/path/to/CentOS.iso of=/dev/diskabc
 在“Other Storage Options”处选择“I will configure partioning”，即手动分区       
 - 点击 “Click here to create them automatically”，即让安装程序帮忙分区   
 - 自动分区完成后，再根据自己的需求，手动修改分区细节    
-  - `/boot`：CentOS 自动分配，一定不要乱改；   
-  - `/`：根目录，合理使用并及时清理的话15G就够了，不过建议30G以上；   
-  - `swap`：与物理内存大小一致即可;    
-  - `/opt`：个人习惯是将第三方软件都安装在/opt下，硬盘够大可以多分点（70G）；   
-  - `/home`：余下的全部空间。   
+  + `/boot`：CentOS 自动分配，一定不要乱改；   
+  + `/`：根目录，合理使用并及时清理的话15G就够了，不过建议30G以上；   
+  + `swap`：与物理内存大小一致即可;    
+  + `/opt`：个人习惯是将第三方软件都安装在/opt下，硬盘够大可以多分点（70G）；   
+  + `/home`：余下的全部空间。   
 - 点击 “Begin to Install” 开始安装
 2. 创建root密码以及普通用户
 3. 等待安装完成重启即可
