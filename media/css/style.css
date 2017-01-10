@@ -83,6 +83,9 @@ header {
   @media screen and (min-width: 414px) {
     header {
       width: 400px; } }
+  @media screen and (min-width: 460px) {
+    header {
+      width: 450px; } }
   @media screen and (min-width: 800px) {
     header {
       width: 750px; } }
