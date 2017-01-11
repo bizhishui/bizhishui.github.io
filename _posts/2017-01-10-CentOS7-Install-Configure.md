@@ -127,14 +127,14 @@ CentOS 由于很追求稳定性，所以官方源中自带的软件不多，因�
 ```
 - NTFS 驱动
 
-    ```
-        sudo yum install ntfs-3g
-    ```
+```
+    sudo yum install ntfs-3g
+```
 - Java 环境及Eclipse     
 
-    ```
-        sudo yum install java                 # java 运行环境
-    ```    
+```
+    sudo yum install java                 # java 运行环境
+```    
 但若是要编写java项目，可以[安装最新的jre和jdk](https://argcv.com/articles/3155.c)。从[Oracle](http://www.oracle.com/technetwork/java/javase/downloads/index.html)可以下载最新jdk和jre。
 
 ```
@@ -143,22 +143,22 @@ CentOS 由于很追求稳定性，所以官方源中自带的软件不多，因�
 
 安装完后可继续安装[Eclipse IDE for Java Developers](http://www.eclipse.org/downloads/eclipse-packages/)。[主要步骤为](https://linux.cn/article-4631-1.html):    
 - 下载最新的Eclipse    
-- 将其解压到`\opt`目录下    
+- 将其解压到`\opt`目录下
 
 ```
-sudo tar -zxvf eclipse-java-[version]]-x86_64.tar.gz -C /opt     
+    sudo tar -zxvf eclipse-java-[version]]-x86_64.tar.gz -C /opt     
 ```    
-- 创建命令行启动链接    
+- 创建命令行启动链接
 
 ```
     ln -s /opt/eclipse/eclipse /usr/bin/eclipse    
 ```    
-- 创建Gnome快捷菜单启动    
+- 创建Gnome快捷菜单启动
 
 ```
     sudo vi /usr/share/applications/eclipse.desktop    
 ```    
-添加如下代码：    
+添加如下代码：
 
 ```
     [Desktop Entry]     
