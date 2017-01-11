@@ -76,7 +76,6 @@ CentOS 由于很追求稳定性，所以官方源中自带的软件不多，因�
 
 ```
     sudo rpm --import https://www.elrepo.org/RPM-GPG-KEY-elrepo.org       
-
     sudo rpm -Uvh http://www.elrepo.org/elrepo-release-7.0-2.el7.elrepo.noarch.rpm
 ```
 
@@ -106,9 +105,7 @@ CentOS 由于很追求稳定性，所以官方源中自带的软件不多，因�
 
 ```
     sudo yum install "@Chinese Support"
-
     sudo yum install ibus ibus-libpinyin
-
     sudo yum install libpinyin
 ```
 
@@ -162,23 +159,14 @@ CentOS 由于很追求稳定性，所以官方源中自带的软件不多，因�
 
 ```
     [Desktop Entry]     
-
     Encoding=UTF-8    
-
     Name=Eclipse [version number]     
-
     Comment=Eclipse [name]    
-
     Exec=/usr/bin/eclipse    
-
     Icon=/opt/eclipse/icon.xpm    
-
     Categories=Application;Development;Java;IDE    
-
     Version=1.0    
-
     Type=Application    
-
     Terminal=0    
 ```
 
