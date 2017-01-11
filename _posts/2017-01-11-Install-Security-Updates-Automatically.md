@@ -58,7 +58,7 @@ And add this line to make reports verbose:
 
 Last, inspect `/etc/apt/listchanges.conf` to make sure notifications will be sent to root.
 
-![Inspect Image](https://github.com/bizhishui/bizhishui.github.io/tree/master/media/files/2017/01/11/ubuntuAutoUpdate.png)
+![Inspect Image](https://github.com/bizhishui/bizhishui.github.io/blob/master/media/files/2017/01/11/ubuntuAutoUpdate.png)
 
 In this section, how to make sure one's system is updated regularly with the latest security patches is introduced. Additionally, 
 one learned how to set up notifications in order to keep informed when patches are applied.
