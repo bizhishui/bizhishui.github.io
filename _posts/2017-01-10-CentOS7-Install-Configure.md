@@ -37,13 +37,11 @@ Mac下命令为：
 在“Other Storage Options”处选择“I will configure partioning”，即手动分区       
     - 点击 “Click here to create them automatically”，即让安装程序帮忙分区   
     - 自动分区完成后，再根据自己的需求，手动修改分区细节    
-
         + `/boot`：CentOS 自动分配，一定不要乱改；   
         + `/`：根目录，合理使用并及时清理的话15G就够了，不过建议30G以上；   
         + `swap`：与物理内存大小一致即可;    
         + `/opt`：个人习惯是将第三方软件都安装在/opt下，硬盘够大可以多分点（70G）；   
         + `/home`：余下的全部空间。   
-
     - 点击 “Begin to Install” 开始安装
 2. 创建root密码以及普通用户(并将其加入到Administrator group中，当然也可最后在`\etc\sudoers`文件中修改)
 3. 等待安装完成重启即可
@@ -92,6 +90,7 @@ CentOS 由于很追求稳定性，所以官方源中自带的软件不多，因�
 ##### 第一次全面更新系统
 
 在进一步操作之前，先把已经安装的软件包都升级到最新版:
+
 ```
     sudo yum update
 ```
