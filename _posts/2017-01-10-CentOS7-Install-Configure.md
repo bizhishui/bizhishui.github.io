@@ -146,7 +146,7 @@ CentOS 由于很追求稳定性，所以官方源中自带的软件不多，因�
 + 将其解压到`/opt`目录下    
 
 ```
-    sudo tar -zxvf eclipse-java-[version]]-x86_64.tar.gz -C /opt
+    sudo tar -zxvf eclipse-java-[version]-x86_64.tar.gz -C /opt
 ```
 + 创建命令行启动链接
 
