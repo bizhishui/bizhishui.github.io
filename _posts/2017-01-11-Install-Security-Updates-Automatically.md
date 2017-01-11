@@ -65,3 +65,51 @@ one learned how to set up notifications in order to keep informed when patches a
 
 
 ### RHEL/CentOS
+On CentOS/RHEL 7/6, you will need to install the following package:
+
+```
+    yum update -y && yum install yum-cron -y
+```
+
+#### Enable Automatic Security Updates on CentOS/RHEL 7
+
+Once the installation is complete, open `/etc/yum/yum-cron.conf` and locate these lines – you will have to make sure that the values matches those listed here:
+
+```
+    update_cmd = security
+
+    update_messages = yes
+
+    download_updates = yes
+
+    apply_updates = yes
+```
+
+The first line indicates that the unattended update command will be:
+
+```
+    yum --security upgrade
+```
+
+whereas the other lines enable notifications and automatic download and installation of security upgrades.
+
+The following lines are also required to indicate that notifications will be sent via email from *root@localhost* to the same account (again, you may choose another one if you want).
+
+```
+    emit_via = email
+
+    email_from = root@localhost
+
+    email_to = root
+```
+
+#### Enable Automatic Security Updates on CentOS/RHEL 6
+By default, the cron is configured to download and install all updates immediately, but we can change this behavior in `/etc/sysconfig/yum-cron` configuration file by modifying these two parameters to `yes`.
+
+```
+    # Don't install, just check (valid: yes|no)
+    CHECK_ONLY=yes
+    # Don't install, just check and download (valid: yes|no)
+    # Implies CHECK_ONLY=yes (gotta check first to see what to download)
+    DOWNLOAD_ONLY=yes
+```
