@@ -6,7 +6,7 @@ categories:
   - notes
 tags:
   - Linux
-  - CentOS 7
+  - CentOS
 ---
 
 
