@@ -23,7 +23,7 @@ In this note, settings for Ubuntu- and CentOS-like systems are presented.
 
 
 ### Debian/Ubuntu
-To begin, install the following packages:
+To begin, install the following packages (use `sudo passwd root` to use `su`):
 
 ```
     aptitude update -y && aptitude install unattended-upgrades apt-listchanges -y
@@ -58,7 +58,7 @@ And add this line to make reports verbose:
 
 Last, inspect `/etc/apt/listchanges.conf` to make sure notifications will be sent to root.
 
-![Inspect Image](https://github.com/bizhishui/bizhishui.github.io/blob/master/media/files/2017/01/11/ubuntuAutoUpdate.png)
+![Inspect Image](https://github.com/bizhishui/bizhishui.github.io/blob/master/media/files/2017/01/11/ubuntuAutoUpdate.png "inspect notifications")
 
 In this section, how to make sure one's system is updated regularly with the latest security patches is introduced. Additionally, 
 one learned how to set up notifications in order to keep informed when patches are applied.
