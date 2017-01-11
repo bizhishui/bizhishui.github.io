@@ -145,49 +145,48 @@ CentOS 由于很追求稳定性，所以官方源中自带的软件不多，因�
     sudo yum localinstall jdk[jre]-[version]-linux-x64.rpm -y
 ```
 
-安装完后可继续安装[Eclipse IDE for Java Developers](http://www.eclipse.org/downloads/eclipse-packages/)。[主要步骤为](https://linux.cn/article-4631-1.html)   
-
+安装完后可继续安装[Eclipse IDE for Java Developers](http://www.eclipse.org/downloads/eclipse-packages/)。[主要步骤为](https://linux.cn/article-4631-1.html)    
   - 下载最新的Eclipse
   - 将其解压到`\opt`目录下
 
       ```
-          sudo tar -zxvf eclipse-java-[version]]-x86_64.tar.gz -C /opt
+      sudo tar -zxvf eclipse-java-[version]]-x86_64.tar.gz -C /opt
       ```
 
   - 创建命令行启动链接
 
       ```
-          ln -s /opt/eclipse/eclipse /usr/bin/eclipse
+      ln -s /opt/eclipse/eclipse /usr/bin/eclipse
       ```
 
   - 创建Gnome快捷菜单启动
 
       ```
-          sudo vi /usr/share/applications/eclipse.desktop
+      sudo vi /usr/share/applications/eclipse.desktop
       ```
 
   添加如下代码：
 
       ```
-          [Desktop Entry]     
+      [Desktop Entry]     
 
-          Encoding=UTF-8    
+      Encoding=UTF-8    
 
-          Name=Eclipse [version number]     
+      Name=Eclipse [version number]     
 
-          Comment=Eclipse [name]    
+      Comment=Eclipse [name]    
 
-          Exec=/usr/bin/eclipse    
+      Exec=/usr/bin/eclipse    
 
-          Icon=/opt/eclipse/icon.xpm    
+      Icon=/opt/eclipse/icon.xpm    
 
-          Categories=Application;Development;Java;IDE    
+      Categories=Application;Development;Java;IDE    
 
-          Version=1.0    
+      Version=1.0    
 
-          Type=Application    
+      Type=Application    
 
-          Terminal=0    
+      Terminal=0    
       ```
 
   - 分别从快捷图标和命令行启动Eclipse，检查安装结果
