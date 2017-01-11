@@ -120,12 +120,12 @@ CentOS 由于很追求稳定性，所以官方源中自带的软件不多，因�
 ```
     sudo yum install gcc gcc-c++ gcc-gfortran
 ```
-- 软件开发辅助工具    
+- 软件开发辅助工具
 
-    ```
-        sudo yum install make gdb cmake git tig git-svn
-    ```
-- NTFS 驱动    
+```
+    sudo yum install make gdb cmake git tig git-svn
+```
+- NTFS 驱动
 
     ```
         sudo yum install ntfs-3g
