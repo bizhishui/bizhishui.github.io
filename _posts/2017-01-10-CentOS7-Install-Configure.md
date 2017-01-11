@@ -149,25 +149,25 @@ CentOS 由于很追求稳定性，所以官方源中自带的软件不多，因�
   - 下载最新的Eclipse
   - 将其解压到`\opt`目录下
 
-      ```
+  ```
       sudo tar -zxvf eclipse-java-[version]]-x86_64.tar.gz -C /opt
-      ```
+  ```
 
   - 创建命令行启动链接
 
-      ```
+  ```
       ln -s /opt/eclipse/eclipse /usr/bin/eclipse
-      ```
+  ```
 
   - 创建Gnome快捷菜单启动
 
-      ```
+  ```
       sudo vi /usr/share/applications/eclipse.desktop
-      ```
+  ```
 
   添加如下代码：
 
-      ```
+  ```
       [Desktop Entry]     
 
       Encoding=UTF-8    
@@ -187,7 +187,7 @@ CentOS 由于很追求稳定性，所以官方源中自带的软件不多，因�
       Type=Application    
 
       Terminal=0    
-      ```
+  ```
 
   - 分别从快捷图标和命令行启动Eclipse，检查安装结果
 
