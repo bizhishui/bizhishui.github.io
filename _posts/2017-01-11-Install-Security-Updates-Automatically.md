@@ -6,7 +6,7 @@ categories:
   - notes
 tags:
   - Linux
-  - updates
+  - soft updates
 ---
 
 
@@ -19,4 +19,10 @@ It has been said before -and I couldn’t agree more- that some of the best syst
 
 One of the critical needs of a Linux system is to be kept up to date with the latest security patches available for the corresponding distribution.
 
-In this note, setting for Ubuntu-like and CentOS-like systems are presented.
+In this note, settings for Ubuntu- and CentOS-like systems are presented.
+
+
+### Debian/Ubuntu
+
+
+### RHEL/CentOS
