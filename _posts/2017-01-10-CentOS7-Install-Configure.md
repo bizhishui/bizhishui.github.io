@@ -142,9 +142,9 @@ CentOS 由于很追求稳定性，所以官方源中自带的软件不多，因�
     sudo yum localinstall jdk[jre]-[version]-linux-x64.rpm -y
 ```
 
-安装完后可继续安装[Eclipse IDE for Java Developers](http://www.eclipse.org/downloads/eclipse-packages/)。[主要步骤为](https://linux.cn/article-4631-1.html):
-- 下载最新的Eclipse
-- 将其解压到`\opt`目录下
+安装完后可继续安装[Eclipse IDE for Java Developers](http://www.eclipse.org/downloads/eclipse-packages/)。[主要步骤为](https://linux.cn/article-4631-1.html):    
+- 下载最新的Eclipse    
+- 将其解压到`\opt`目录下    
 
 ```
     sudo tar -zxvf eclipse-java-[version]]-x86_64.tar.gz -C /opt
@@ -159,7 +159,6 @@ CentOS 由于很追求稳定性，所以官方源中自带的软件不多，因�
 ```
     sudo vi /usr/share/applications/eclipse.desktop
 ```
-
 添加如下代码：
 
 ```
@@ -183,7 +182,6 @@ CentOS 由于很追求稳定性，所以官方源中自带的软件不多，因�
 
     Terminal=0    
 ```
-
 - 分别从快捷图标和命令行启动Eclipse，检查安装结果
 
 #### 后处理软件安装
