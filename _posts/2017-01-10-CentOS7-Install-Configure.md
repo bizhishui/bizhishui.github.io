@@ -116,10 +116,9 @@ CentOS 由于很追求稳定性，所以官方源中自带的软件不多，因�
 
 #### 基础开发环境
 1. GCC系列    
-
-```
+    ```
     sudo yum install gcc gcc-c++ gcc-gfortran
-```
+    ```
 2. 软件开发辅助工具    
 
 ```
