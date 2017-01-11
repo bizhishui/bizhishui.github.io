@@ -51,95 +51,130 @@ CentOS 由于很追求稳定性，所以官方源中自带的软件不多，因�
 
 ##### EPEL
 [EPEL](https://fedoraproject.org/wiki/EPEL)即 Extra Packages for Enterprise Linux， 为 CentOS 提供了额外的 10000 多个软件包，而且在不替换系统组件方面下了很多功夫，因而可以放心使用。    
+
 ```
 sudo yum install epel-release
 ```
+
 执行完该命令后，在 `/etc/yum.repos.d` 目录下会多一个 `epel.repo` 文件。      
 
 ##### Nux Dextop    
 [Nux Dextop](http://li.nux.ro/repos.html)中包含了一些与多媒体相关的软件包，作者尽量 保证不覆盖 base 源。官方说明中说该源与 EPEL 兼容，实际上个别软件包存在冲突，但基本不会造成影响:    
+
 ```
 sudo rpm -Uvh http://li.nux.ro/download/nux/dextop/el7/x86_64/nux-dextop-release-0-5.el7.nux.noarch.rpm
 ```
+
 完成该命令后，在 `/etc/yum.repos.d` 目录下会多一个 `nux-dextop.repo` 文件。    
+
 ##### ELRepo
 [ELRepo](http://elrepo.org/tiki/tiki-index.php)包含了一些硬件相关的驱动程序，比如显卡、声卡驱动:    
+
 ```
     sudo rpm --import https://www.elrepo.org/RPM-GPG-KEY-elrepo.org       
+
     sudo rpm -Uvh http://www.elrepo.org/elrepo-release-7.0-2.el7.elrepo.noarch.rpm
 ```
+
 完成该命令后，在 `/etc/yum.repos.d` 目录下会多一个 `elrepo.repo` 文件。      
+
 ##### 安装 yum-axelget
 [yum-axelget](https://github.com/crook/yum-axelget)是 EPEL 提供的一个 yum 插件。使用该插件后用 yum 安装软件时可以并行下载，大大提高了软件的下载速度，减少了下载的等待时间:
+
 ```
 sudo yum install yum-axelget
 ```
+
 安装该插件的同时会安装另一个软件 `axel`。`axel` 是一个并行下载工具，在下载 `http`、`ftp` 等简单协议的文件时非常好用.安装完后再使用`sudo yum install **` 会报错，根据提示需要将`axelget`一文件中的两处[`conduct`改为`conduit`](https://github.com/crook/yum-axelget/pull/8).
 
 ##### 第一次全面更新系统
+
 在进一步操作之前，先把已经安装的软件包都升级到最新版:
 ```
 sudo yum update
 ```
+
 更新完后应重启系统。
 
 #### 中文输入法
 刚安装的系统可能是没有中文输入法的，源中带的中文输入法应该是 ibus，使用效果一般。
+
 ```
 sudo yum install "@Chinese Support"
+
 sudo yum install ibus ibus-libpinyin
+
 sudo yum install libpinyin
 ```
+
 然后在区域键盘中选择汉语拼音。
 
 #### 基础开发环境
 1. GCC系列
+
 ```
 sudo yum install gcc gcc-c++ gcc-gfortran
 ```
+
 2. 软件开发辅助工具
+
 ```
 sudo yum install make gdb cmake git tig git-svn
 ```
+
 3. NTFS 驱动
+
 ```
 sudo yum install ntfs-3g
 ```
+
 4. Java 环境及Eclipse     
+
 ```
 sudo yum install java                 # java 运行环境
 ```
+
 但若是要编写java项目，可以[安装最新的jre和jdk](https://argcv.com/articles/3155.c)。从[Oracle](http://www.oracle.com/technetwork/java/javase/downloads/index.html)可以下载最新jdk和jre。
+
 ```
 sudo yum localinstall jdk[jre]-[version]-linux-x64.rpm -y
 ```
+
 安装完后可继续安装[Eclipse IDE for Java Developers](http://www.eclipse.org/downloads/eclipse-packages/)。[主要步骤为](https://linux.cn/article-4631-1.html)
   - 下载最新的Eclipse
   - 将其解压到`\opt`目录下
+
   ```
   sudo tar -zxvf eclipse-java-[version]]-x86_64.tar.gz -C /opt
   ```
+
   - 创建命令行启动链接
+
   ```
   ln -s /opt/eclipse/eclipse /usr/bin/eclipse
   ```
+
   - 创建Gnome快捷菜单启动
+
   ```
   sudo vi /usr/share/applications/eclipse.desktop
   ```
+
   添加如下代码：
+
   ```
-  [Desktop Entry]
-  Encoding=UTF-8
-  Name=Eclipse [version number]
-  Comment=Eclipse [name]
-  Exec=/usr/bin/eclipse
-  Icon=/opt/eclipse/icon.xpm
-  Categories=Application;Development;Java;IDE
-  Version=1.0
-  Type=Application
-  Terminal=0
+  [Desktop Entry]     
+  Encoding=UTF-8    
+  Name=Eclipse [version number]     
+  Comment=Eclipse [name]    
+  Exec=/usr/bin/eclipse    
+  Icon=/opt/eclipse/icon.xpm    
+  Categories=Application;Development;Java;IDE    
+  Version=1.0    
+  Type=Application    
+  Terminal=0    
   ```
+
   - 分别从快捷图标和命令行启动Eclipse，检查安装结果
 
 #### 后处理软件安装
