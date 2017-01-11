@@ -46,7 +46,6 @@ Choose `Yes` when prompted to install unattended upgrades. Then check that the f
 
 ```
     APT::Periodic::Update-Package-Lists "1";
-
     APT::Periodic::Unattended-Upgrade "1";
 ```
 
@@ -77,11 +76,8 @@ Once the installation is complete, open `/etc/yum/yum-cron.conf` and locate thes
 
 ```
     update_cmd = security
-
     update_messages = yes
-
     download_updates = yes
-
     apply_updates = yes
 ```
 
@@ -97,9 +93,7 @@ The following lines are also required to indicate that notifications will be sen
 
 ```
     emit_via = email
-
     email_from = root@localhost
-
     email_to = root
 ```
 
@@ -113,3 +107,23 @@ By default, the cron is configured to download and install all updates immediate
     # Implies CHECK_ONLY=yes (gotta check first to see what to download)
     DOWNLOAD_ONLY=yes
 ```
+
+To enable email notification that about the security package updates, set the **MAILTO** parameter to a valid mail address.
+
+```
+    # by default MAILTO is unset, so crond mails the output by itself
+    # example:  MAILTO=root
+    MAILTO=admin@tecmint.com
+```
+
+Finally, start and enable the *yum-cron* service:
+
+```
+    ------------- On CentOS/RHEL 7 ------------- 
+    systemctl start yum-cron
+    systemctl enable yum-cron
+    ------------- On CentOS/RHEL 6 -------------  
+    # service yum-cron start
+    # chkconfig --level 35 yum-cron on
+```
+
