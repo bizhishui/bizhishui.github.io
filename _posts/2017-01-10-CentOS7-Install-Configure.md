@@ -189,7 +189,7 @@ CentOS 由于很追求稳定性，所以官方源中自带的软件不多，因�
 2. Gnuplot
 
 #### Editors
-1. Vim [configure](2017-01-11-Vim.md)
+1. Vim [configure](_posts/2017-01-11-Vim.md)
 2. Markdown+[Atom](https://atom.io/)
 
 #### 日常软件
