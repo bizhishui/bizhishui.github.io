@@ -120,21 +120,17 @@ CentOS 由于很追求稳定性，所以官方源中自带的软件不多，因�
         sudo yum install gcc gcc-c++ gcc-gfortran
     ```
 2. 软件开发辅助工具    
-
-```
-    sudo yum install make gdb cmake git tig git-svn
-```
+    ```
+        sudo yum install make gdb cmake git tig git-svn
+    ```
 3. NTFS 驱动    
-
-```
-    sudo yum install ntfs-3g
-```
+    ```
+        sudo yum install ntfs-3g
+    ```
 4. Java 环境及Eclipse     
-
-```
-    sudo yum install java                 # java 运行环境
-```
-
+    ```
+        sudo yum install java                 # java 运行环境
+    ```    
 但若是要编写java项目，可以[安装最新的jre和jdk](https://argcv.com/articles/3155.c)。从[Oracle](http://www.oracle.com/technetwork/java/javase/downloads/index.html)可以下载最新jdk和jre。
 
 ```
