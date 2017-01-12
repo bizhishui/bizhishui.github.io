@@ -8,7 +8,9 @@ tags:
   - Mac
 ---
 
+
 > This post notes points since Mac 10.12.2
+
 
 ---
 

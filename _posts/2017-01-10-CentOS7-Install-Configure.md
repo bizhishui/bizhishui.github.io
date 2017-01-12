@@ -12,6 +12,7 @@ tags:
 
 > Reproduced from **PzNotes** [CentOS 7 安装及配置](https://whu-pzhang.github.io/linux-environment-for-seismology-research.html).
 
+
 ---
 
 本文主要记录CentOS 7 以及一些基本软件的安装。

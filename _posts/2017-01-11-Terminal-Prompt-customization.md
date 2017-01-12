@@ -12,6 +12,7 @@ tags:
 
 > Reproduced from [**Gabriel Cánepa**](http://www.tecmint.com/author/gacanepa/) [How to Customize Bash Colors and Content in Linux Terminal Prompt](http://www.tecmint.com/customize-bash-colors-terminal-prompt-linux/)
 
+
 ---
 
 Today, Bash is the default shell in most (if not all) modern Linux distributions. This blog will note how to customize it.
