@@ -25,7 +25,7 @@ Gnuplot is powerful tool for generating figure with curve from scientific simula
 for using Gnuplot:
 
 ```
-    #filename: *xyline.gp*
+    #filename: xyline.gp
     #set terminal postscript eps color enhanced font "Times-Roman" 20
     #set output "filename.eps"
     set terminal png size 2400,1800 enhanced font 'Times-Roman,14'
@@ -39,3 +39,24 @@ for using Gnuplot:
     plot filename using 1:2 notitle with points pt 5 axes x1y1
 ```
 
+On linux, using the following shell can generate a list of figure:
+
+```
+    #!/bin/bash
+    
+    #filename: plotFig.sh
+    for s in $@; do
+        echo $s
+        gnuplot -e "filename='$s'" xyline.gp
+        filename2="${s/dat/png}"
+        mv filename.png $filename2
+    done
+```
+
+For example, in the same directory of you data, use
+
+```
+    bash plotFig ./POS_*.dat
+```
+
+will creat a list of figure with the corresponding name of your data.
