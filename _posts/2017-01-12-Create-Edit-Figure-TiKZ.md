@@ -44,12 +44,12 @@ example of this rerference (chapter 2).
     \draw[help lines,step=0.5cm] (-1.4,-1.4) grid (1.4,1.4);
     \draw (0,0) circle [radius=1cm];
     \begin{scope}[axes]
-    \draw[->] (-1.5,0) -- (1.5,0) node[right] {$x$} coordinate(x axis);
-    \draw[->] (0,-1.5) -- (0,1.5) node[above] {$y$} coordinate(y axis);
-    \foreach \x/\xtext in {-1, -.5/-\frac{1}{2}, 1}
-    \draw[xshift=\x cm] (0pt,1pt) -- (0pt,-1pt) node[below,fill=white] {$\xtext$};
-    \foreach \y/\ytext in {-1, -.5/-\frac{1}{2}, .5/\frac{1}{2}, 1}
-    \draw[yshift=\y cm] (1pt,0pt) -- (-1pt,0pt) node[left,fill=white] {$\ytext$};
+      \draw[->] (-1.5,0) -- (1.5,0) node[right] {$x$} coordinate(x axis);
+      \draw[->] (0,-1.5) -- (0,1.5) node[above] {$y$} coordinate(y axis);
+      \foreach \x/\xtext in {-1, -.5/-\frac{1}{2}, 1}
+      \draw[xshift=\x cm] (0pt,1pt) -- (0pt,-1pt) node[below,fill=white] {$\xtext$};
+      \foreach \y/\ytext in {-1, -.5/-\frac{1}{2}, .5/\frac{1}{2}, 1}
+      \draw[yshift=\y cm] (1pt,0pt) -- (-1pt,0pt) node[left,fill=white] {$\ytext$};
     \end{scope}
     \filldraw[fill=green!20,draw=anglecolor] (0,0) -- (3mm,0pt) arc [start angle=0, end angle=30, radius=3mm];
     \draw (15:2mm) node[anglecolor] {$\alpha$};
@@ -60,11 +60,11 @@ example of this rerference (chapter 2).
     \draw (0,0) -- (t);
     \draw[xshift=1.85cm] node[right,text width=6cm,information text] 
     {
-    The {\color{anglecolor} angle $\alpha$} is $30^\circ$ in the
-    example ($\pi/6$ in radians). The {\color{sincolor}sine of
-    $\alpha$}, which is the height of the red line, is
-    \[
-     {\color{sincolor} \sin \alpha} = 1/2. \]  By the Theorem of Pythagoras ...
+      The {\color{anglecolor} angle $\alpha$} is $30^\circ$ in the
+      example ($\pi/6$ in radians). The {\color{sincolor}sine of
+      $\alpha$}, which is the height of the red line, is
+      \[
+       {\color{sincolor} \sin \alpha} = 1/2. \]  By the Theorem of Pythagoras ...
     };
     \end{tikzpicture}
 ```
