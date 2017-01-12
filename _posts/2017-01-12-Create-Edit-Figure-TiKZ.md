@@ -130,3 +130,6 @@ And it can be directly loaded by your tex file, for example
     \end{figure}
     \end{document}
 ```
+
+### Combine with Multimedia
+
