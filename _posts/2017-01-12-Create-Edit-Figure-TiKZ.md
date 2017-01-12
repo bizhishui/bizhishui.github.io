@@ -20,3 +20,8 @@ tags:
 
 
 ### Edit a Figure with TIKZ
+Suppose we have a figure as show below:
+
+[![Initial figure](/media/files/2017/01/11/ExpComp.png)](https://github.com/bizhishui/bizhishui.github.io/blob/master/ "Initial figure")
+
+we want 
