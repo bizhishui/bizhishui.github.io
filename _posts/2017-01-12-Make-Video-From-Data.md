@@ -5,7 +5,7 @@ guid: urn:uuid:9a37106e-762d-4647-b2d9-9f57271b253b
 categories:
   - notes
 tags:
-  - movie
+  - video
   - gnuplot
   - ffmpeg
 ---
