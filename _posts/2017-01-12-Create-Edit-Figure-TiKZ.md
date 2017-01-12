@@ -23,5 +23,6 @@ tags:
 Suppose we have a figure as show below:
 
 [![Initial figure](/media/files/2017/01/12/ExpComp.png)](https://github.com/bizhishui/bizhishui.github.io/blob/master/ "Initial figure")
+<img src="https://github.com/bizhishui/bizhishui.github.io/blob/master/media/files/2017/01/12/ExpComp.png" width="60" />
 
 we want 
