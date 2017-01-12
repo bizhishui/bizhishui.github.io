@@ -59,4 +59,24 @@ For example, in the same directory of you data, use
     bash plotFig ./POS_*.dat
 ```
 
-will creat a list of figure with the corresponding name of your data.
+will create a list of figure with the corresponding name of your data.
+
+### Make video from figures
+Now we can create our video with [ffmpeg](https://ffmpeg.org/). 
+
+> FFmpeg is a complete, cross-platform solution to record, convert and stream audio and video.
+
+Here we can use the following script to record our video:
+
+```
+    #!/bin/bash
+    
+    #filename: makeVideo.sh
+    if [ $# -eq 1 ]; then
+        ffmpeg -framerate $1 -pattern_type glob -i '*.png' -c:v libx264 -pix_fmt yuv420p microorganism.mp4
+    else
+        echo "This script need ONE parameter:"
+        echo "    -: the frame rate,"
+        exit 1
+    fi
+```
