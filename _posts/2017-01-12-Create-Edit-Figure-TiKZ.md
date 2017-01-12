@@ -17,6 +17,12 @@ tags:
 ---
 
 ### Create a Figure with TikZ
+> *TikZ* just defines a number of TEX commands that draw graphics. In a sense, when you use Tik Z
+> you “program” your graphics, just as you “program” your document when you use TEX. This also explains
+> the name: Tik Z is a recursive accronym in the tradition of “gnu is not unix” and means “Tik Z ist kein
+> Zeichenprogramm,” which translates to “Tik Z is not a drawing program,” cautioning the reader as to what
+> to expect. With Tik Z you get all the advantages of the “TEX-approach to typesetting” for your graphics:
+> quick creation of simple graphics, precise positioning, the use of macros, often superior typography.
 
 
 ### Edit a Figure with TIKZ
@@ -30,7 +36,7 @@ we want add some text, for example, on it. One common option is use photoshop li
 
 [![Figure with inkscape](/media/files/2017/01/12/ExpComp4.jpg)](https://github.com/bizhishui/bizhishui.github.io/blob/master/ "figure with inkscape")
 
-But if one use *latex*, a more direct way is use *Tikz*. For example, with the following latex class, 
+But if one use *latex*, a more direct way is use *TikZ*. For example, with the following latex class, 
 
 ```
     \documentclass{standalone}
