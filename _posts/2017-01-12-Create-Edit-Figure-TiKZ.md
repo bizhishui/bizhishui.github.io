@@ -56,7 +56,7 @@ example of this rerference (chapter 2).
     \draw[important line,sincolor] (30:1cm) -- node[left=1pt,fill=white] {$\sin \alpha$} (30:1cm |- x axis); \draw[important line,coscolor]  (30:1cm |- x axis) -- node[below=2pt,fill=white] {$\cos \alpha$} (0,0);
     \path [name path=upward line] (1,0) -- (1,1);
     \path [name path=sloped line] (0,0) -- (30:1.5cm);
-    \draw [name intersections={of=upward line and sloped line, by=t}] [very thick,orange] (1,0) -- node [right=1pt,fill=white] {$\displaystyle \tan \alpha \color{black}=\frac{{\color{red}\sin \alpha}}{\color{blue}\cos \alpha}$} (t);
+    \draw [name intersections={of=upward line and sloped line, by=t}] [very thick,orange] (1,0) -- node [right=1pt,fill=white] {$\displaystyle \tan \alpha \color{black}=\frac{\color{red}\sin \alpha}{\color{blue}\cos \alpha}$} (t);
     \draw (0,0) -- (t);
     \draw[xshift=1.85cm] node[right,text width=6cm,information text] 
     {
