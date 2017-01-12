@@ -23,6 +23,10 @@ tags:
 Suppose we have a figure as show below:
 
 [![Initial figure](/media/files/2017/01/12/ExpComp.png)](https://github.com/bizhishui/bizhishui.github.io/blob/master/ "Initial figure")
+
 <img src="https://github.com/bizhishui/bizhishui.github.io/blob/master/media/files/2017/01/12/ExpComp.png" alt="Initial figure" width="200" height="200" />
 
-we want 
+we want add some text, for example, on it. One common option is use photoshop like software, here is the post-result with *inkscape*
+
+[![Figure with inkscape](/media/files/2017/01/12/ExpComp4.jpg)](https://github.com/bizhishui/bizhishui.github.io/blob/master/ "figure with inkscape")
+
