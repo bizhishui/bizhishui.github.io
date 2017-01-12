@@ -24,7 +24,7 @@ Suppose we have a figure as show below:
 
 [![Initial figure](/media/files/2017/01/12/ExpComp.png)](https://github.com/bizhishui/bizhishui.github.io/blob/master/ "Initial figure")
 
-<img src="https://github.com/bizhishui/bizhishui.github.io/blob/master/media/files/2017/01/12/ExpComp.png" alt="Initial figure" width="200" height="200" />
+[//]: # (<img src="https://github.com/bizhishui/bizhishui.github.io/blob/master/media/files/2017/01/12/ExpComp.png" alt="Initial figure" width="200" height="200" />)
 
 we want add some text, for example, on it. One common option is use photoshop like software, here is the post-result with *inkscape*
 
@@ -58,3 +58,20 @@ the initial figure becomes
 
 [![Figure with TikZ](/media/files/2017/01/12/TiKZforExternalFig.png)](https://github.com/bizhishui/bizhishui.github.io/blob/master/ "figure with TikZ")
 
+And it can be directly loaded by your tex file, for example
+
+```
+    \documentclass{article}
+    \usepackage[utf8]{inputenc}
+    \usepackage{tikz}
+    \usepackage{standalone}
+    
+    \begin{document}
+    \begin{figure}[h]
+      \centering
+      \includestandalone[width=0.8\textwidth]{\path\to\tex\class\TiKZforExternalFig}    %without .tex extension
+      \caption{Use TikZ for external figure}
+      \label{TiKZforExternalFig}
+    \end{figure}
+    \end{document}
+```
