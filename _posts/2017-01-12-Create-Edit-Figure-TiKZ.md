@@ -17,12 +17,15 @@ tags:
 ---
 
 ### Create a Figure with TikZ
-> *TikZ* just defines a number of TEX commands that draw graphics. In a sense, when you use Tik Z
+> *TikZ* just defines a number of TEX commands that draw graphics. In a sense, when you use TikZ
 > you “program” your graphics, just as you “program” your document when you use TEX. This also explains
-> the name: Tik Z is a recursive accronym in the tradition of “gnu is not unix” and means “Tik Z ist kein
-> Zeichenprogramm,” which translates to “Tik Z is not a drawing program,” cautioning the reader as to what
-> to expect. With Tik Z you get all the advantages of the “TEX-approach to typesetting” for your graphics:
+> the name: TikZ is a recursive accronym in the tradition of “gnu is not unix” and means “TikZ ist kein
+> Zeichenprogramm,” which translates to “TikZ is not a drawing program,” cautioning the reader as to what
+> to expect. With TikZ you get all the advantages of the “TEX-approach to typesetting” for your graphics:
 > quick creation of simple graphics, precise positioning, the use of macros, often superior typography.
+
+TikZ's rerference [The Tik Z and PGF Packages](https://www.ctan.org/pkg/pgf?lang=en) provides us a full 
+explanation for TikZ and its "basic layer" - *PGF* (protable graphics format).
 
 
 ### Edit a Figure with TIKZ
