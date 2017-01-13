@@ -132,4 +132,17 @@ And it can be directly loaded by your tex file, for example
 ```
 
 ### Combine with Multimedia
+In combine with *multimedia*, one can also organise a video like with a figure. For example, with following script
+```
+    \documentclass{standalone}
+    \usepackage{tikz}
+    \usepackage{multimedia}
+    % filename: movie.tex
+    % To generate movie.pdf : pdflatex movie.tex
+    \begin{document}
+    \begin{tikzpicture}
+      \node[anchor=south west,inner sep=0] at (0,0) { \movie[autostart,label=drop,width=8cm,height=6cm,showcontrols,loop,poster]{}{./fig/3dconst.avi}};
+    \end{tikzpicture}
+    \end{document}
+```
 
