@@ -133,6 +133,7 @@ And it can be directly loaded by your tex file, for example
 
 ### Combine with Multimedia
 In combine with *multimedia*, one can also organise a video like with a figure. For example, with following script
+
 ```
     \documentclass{standalone}
     \usepackage{tikz}
