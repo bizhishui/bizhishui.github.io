@@ -142,7 +142,7 @@ In combine with *multimedia*, one can also organise a video like with a figure. 
     % To generate video.pdf : pdflatex video.tex
     \begin{document}
     \begin{tikzpicture}
-      \node[anchor=south west,inner sep=0] at (0,0) { \movie[autostart,label=drop,width=8cm,height=6cm,showcontrols,loop,poster]{}{./fig/flagellum2.mp4}};
+      \node[anchor=south west,inner sep=0] at (0,0) { \movie[autostart,label=video,width=8cm,height=6cm,showcontrols,loop,poster]{}{./fig/flagellum2.mp4}};
     \end{tikzpicture}
     \end{document}
 ```
