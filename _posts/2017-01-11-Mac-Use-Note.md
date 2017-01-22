@@ -31,7 +31,7 @@ to change the write permission, and then build the link
 
 - Add Color to the Terminal
 
-In '~/.bashrc', add the following scripts
+In '~/.bashrc' (*in my mac, I've soft linked `~/.bashrc` to  `~/.bash_profile`*), add the following scripts
 
 ```
     export CLICOLOR=1
