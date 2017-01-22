@@ -28,3 +28,19 @@ to change the write permission, and then build the link
 ```
     brew link --overwrite git
 ```
+
+- Add Color to the Terminal
+
+In '~/.bashrc', add the following scripts
+
+```
+    export CLICOLOR=1
+    export LSCOLORS=GxFxCxDxBxegedabagaced
+```
+
+for *Dark* terminal themes, and the following alalternative for *Light* terminal theme,
+
+```
+    export CLICOLOR=1
+    export LSCOLORS=ExFxBxDxCxegedabagacad
+```
