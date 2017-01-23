@@ -10,7 +10,7 @@ tags:
 ---
 
 
-> Reproduced from [Pro Git](https://git-scm.com/book/en/v2).
+> Reproduced from [Pro Git](https://git-scm.com/book/en/v2/Git-on-the-Server-The-Protocols)
 
 
 ---
@@ -63,3 +63,5 @@ Git will automatically add groupe write permissions to a repository **properly**
     git init --bare --shared
 ```
 
+It’s important to note that this is literally all you need to do to run a useful Git server to which several people have access — just add SSH-able 
+accounts on a server, and stick a bare repository somewhere that all those users have **read and write** access to. You’re ready to go — nothing else needed.
