@@ -1,5 +1,5 @@
 ---
-title: Git-on-the-Server
+title: Git on the Server
 layout: post
 guid: urn:uuid:af389501-d80e-47d9-8180-9f0fd4aa549a
 categories:
@@ -36,3 +36,30 @@ contain a working directory. By convention, bare repository directories end in `
 
 One should now have a copy of the Git directory data in `my_project.git` directory. It takes the Git repository by itself, without
 a working directory, and creates a directory specifically for it alone.
+
+#### Putting the Bare Repository on a Server
+Now that you have a bare copy of your repository, all you need to do is put it on a server and set up your protocols. 
+Let’s say you’ve set up a server called `git.example.com` that you have SSH access to, and you want to store all your Git repositories 
+under the `/srv/git` directory. You can set up your new repository by copying your bare repository over:
+
+```
+    scp -r my_project.git user@git.example.com:/srv/git
+```
+
+At this point, other users who have SSH access to the same server which has read-access to the `/srv/git` directory can clone your repository
+by running
+
+```
+    git clone user@git.example.com:/srv/git/my_project.git
+```
+
+If a user SSHs into a server and has write access to the `/srv/git/my_project.git` directory, they will also automatically have push access.
+
+Git will automatically add groupe write permissions to a repository **properly** if you run the `git init` command with `--shared` option.
+
+```
+    ssh user@git.example.com
+    cd /srv/git/my_project.git
+    git init --bare --shared
+```
+
