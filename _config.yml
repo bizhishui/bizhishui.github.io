@@ -18,6 +18,9 @@ navigations:
   - title: Tags
     class: fa fa-tags
     href: /tags.html
+  - title: Links
+    class: fa fa-external-link-square
+    href: /links.html
   - title: About
     class: fa fa-user
     href: /about.html
