@@ -27,6 +27,6 @@ Ubuntu默认的输入引擎是iBus，但是其对中文特别不友好。这里�
 
 
 ### Latex中文支持
-该节主要针对Linux下安装完整的texlive后如何编写中文文档（通常情况下不能编写中文文档）。不同于[通常](https://th0.me/1681.html)的从Windows下拷贝中文字体或者下载Adobe字体,
+该节主要针对Linux下安装完整的texlive后如何编写中文文档（原生Latex不支持中文）。不同于[通常](https://th0.me/1681.html)的从Windows下拷贝中文字体或者下载Adobe中文字体,
 这里将介绍一种直接使用[ctex文档类](https://www.kancloud.cn/thinkphp/latex/41810)的方法。事实上只需将`\documentclass[options]{article}`文档类改为`\documentclass[UTF8]{ctexart}`，
 然后使用`xelatex`编译即可。
