@@ -19,7 +19,7 @@ navigations:
     class: fa fa-tags
     href: /tags.html
   - title: Links
-    class: fa fa-external-link-square
+    class: fa fa-external-link
     href: /links.html
   - title: About
     class: fa fa-user
