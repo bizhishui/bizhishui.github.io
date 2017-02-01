@@ -26,6 +26,10 @@ one will has to have the Java Virtual Machine. To use it, the basic steps are:
 One defect of DataThief is the extraction of a line with `marker`. In this case, if the `output distance` is too small, the matched curved will go along the edge of the marker (big error if the marker is not too small).
 
 ### WebPlotDigitizer
+[WebPlotDigitizer](http://arohatgi.info/WebPlotDigitizer/)  was developed to be an easy to use, free of charge and opensource program that can work with a variety of plot types and images. 
+This program is developed using HTML5 which allows it to run within a web browser and requires no installation on to the user's hard drive.
 
 
 ### Engauge Digitizer
+[Engauge Digitizer](http://markummitchell.github.io/engauge-digitizer/), like DataThief, works on Linux, Mac and Windows.  The process is import an image file, digitized within Engauge, 
+and exported as a table of numeric data to a text file. Work can be saved into an Engauge DIG file.
