@@ -20,3 +20,4 @@ layout: page
 - [比特之理](http://www.kylen314.com/)
 - [matrix67](http://www.matrix67.com/)
 - [考据癖](http://localhost-8080.com/)
+- [UbuntuHandbook](http://ubuntuhandbook.org/): Ubuntu各种使用心得
