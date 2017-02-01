@@ -6,6 +6,8 @@ categories:
   - notes
 tags:
   - Chinese
+  - Linux
+  - Latex
 ---
 
 
