@@ -25,3 +25,8 @@ Ubuntu默认的输入引擎是iBus，但是其对中文特别不友好。这里�
 可以使用`sudo apt-key adv –keyserver keyserver.ubuntu.com –recv-keys 8D5A09DC9B929006`解决或者从`Software & Updates -> Other Software`中删除
 对应的Kylin软件源包（但这样Sougou输入法将不能自动更新）。
 
+
+### Latex中文支持
+该节主要针对Linux下安装完整的texlive后如何编写中文文档（通常情况下不能编写中文文档）。不同于[通常](https://th0.me/1681.html)的从Windows下拷贝中文字体或者下载Adobe字体,
+这里将介绍一种直接使用[ctex文档类](https://www.kancloud.cn/thinkphp/latex/41810)的方法。事实上只需将`\documentclass[options]{article}`文档类改为`\documentclass[UTF8]{ctexart}`，
+然后使用`xelatex`编译即可。
