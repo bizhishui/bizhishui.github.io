@@ -1,16 +1,20 @@
 ---
-title: about
+title: links
 layout: page
 ---
 
-a
+#### Univ. & Institutes
+- [北航](http://www.buaa.edu.cn/)
+- [Centrale Marseille](https://www.centrale-marseille.fr/)
 
-> coming ...
 
-who involved in
+#### Labs
+- [M2P2](http://www.m2p2.fr/)
 
-> [GitHub](https://github.com/bizhishui)
 
-mail
+#### Peoples
+- [C. Pozrikidis](http://dehesa.freeshell.org/): 边界积分方法
 
-> jmaximelv@gmail.com
+
+#### Interesting Sites
+- [比特之理](http://www.kylen314.com/)
