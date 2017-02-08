@@ -17,5 +17,7 @@ tags:
 
 #### (定常)Stokes流动
 定常Stokes流动由Stokes方程
-$$\nabla\cdotp\sigma=0$$,
-其中
+
+$$\nabla\cdotp\sigma=0,$$
+
+其中$\sigma=2\mu\mathbf{d}-p^{mod}\mathbf{I}$，$p^{mod}=p-\rho\mathbf{g}\cdotp\mathbf{x}$
