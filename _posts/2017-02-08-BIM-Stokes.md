@@ -1,5 +1,5 @@
 ---
-title: BIM for Stokes Flow
+title: 边界积分方法求解Stokes流动
 layout: post
 guid: urn:uuid:672ad6da-1db6-4e26-bede-d47d956b0657
 categories:
@@ -15,6 +15,7 @@ tags:
 > 第一篇相对专业的博客，内容是Stokes流动的边界积分方法，主要参考[C Pozrikidis](http://dehesa.freeshell.org/)92和02年的两本书。
 > 此外这也是第一次在Markdown中写数学公式，主要参考[Math on GitHub Pages](http://g14n.info/2014/09/math-on-github-pages/)。
 
-#### Stokes流动
-
-$$a^2 + b^2 = c^2$$
+#### (定常)Stokes流动
+定常Stokes流动由Stokes方程
+$$\nabla\cdotp\sigma=0$$,
+其中
