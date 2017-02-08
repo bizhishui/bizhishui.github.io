@@ -20,4 +20,7 @@ tags:
 
 $$\nabla\cdotp\sigma=0,$$
 
-其中$\sigma=2\mu\mathbf{d}-p^{mod}\mathbf{I}$，$p^{mod}=p-\rho\mathbf{g}\cdotp\mathbf{x}$
+其中Cauchy应力张量(stress tensor)$$\sigma=2\mu\mathbf{d}-p^{mod}\mathbf{I}$$，修正压力(modified pressure)$$p^{mod}=p-\rho\mathbf{g}\cdotp\mathbf{x}$$；以及
+不可压方程
+
+$$\nabla\cdotp\mathbf{u}=0$$控制。
