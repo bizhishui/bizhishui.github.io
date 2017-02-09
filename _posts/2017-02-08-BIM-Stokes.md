@@ -37,3 +37,10 @@ $$u^{'}_i\frac{\partial\sigma_{ij}}{\partial x_j}-u_i\frac{\partial\sigma^{'}_{i
 若$$\mathbf{u}$$和$$\mathbf{u}^{'}$$都是正则的(即不含奇异点)，上式左边为零，即得reciprocal等式
 
 $$\nabla\cdotp\left(\mathbf{u}^{'}\cdotp\mathbf{\sigma}-\mathbf{u}\cdotp\mathbf{\sigma}^{'}\right)=0.$$
+
+将上式对流体域V积分，应用高斯散度定理可得
+
+$$\int_{\partial V}\mathbf{u}^{'}\cdotp\mathbf{f}dS=\int_{\partial V}\mathbf{u}\cdotp\mathbf{f}^{'},$$
+
+其中$\mathbf{f}=\mathbf{\sigma}\cdotp\mathbf{n}$是流体作用于边界$\partial V$的力，$\mathbf{n}$是指向外部的法向量。
+Reciprocal等式可用于由已知流动(如Dirac点源作用下的Stokes基本解)求解复杂的未知流动。
