@@ -30,10 +30,10 @@ $$\nabla\cdotp\mathbf{u}=0$$
 
 
 ### Lorentz Reciprocal Relation
-假设$$\mathbf{u}$$和$$\mathbf{u}^{'}$$是满足Stokes方程的两个解，$$\mathbf{\sigma}$$和$$\mathbf{\sigma}^{'}$$是对应的应力张量，由分部积分可得
+假设$$\mathbf{u}$$和$$\mathbf{u}^{'}$$是满足Stokes方程的两个解，$$\mathbf{\sigma}$$和$$\mathbf{\sigma}^{'}$$是对应的应力张量，对$$\mathbf{u}^{'}\cdotp\nabla\cdotp\mathbf{\sigma}$$分部积分可得
 
-$$u^{'}_i\frac{\partial\sigma_{ij}}{\partial x_j}-u_i\frac{\partial\sigma^{'}_{ij}}{\partial x_j}=\frac{\partial}{\partial x_j}\left(u^{'}_i\sigma_{ij}-u_i\sigma^{'}_{ij}\right)$$.
+$$u^{'}_i\frac{\partial\sigma_{ij}}{\partial x_j}-u_i\frac{\partial\sigma^{'}_{ij}}{\partial x_j}=\frac{\partial}{\partial x_j}\left(u^{'}_i\sigma_{ij}-u_i\sigma^{'}_{ij}\right).$$
 
 若$$\mathbf{u}$$和$$\mathbf{u}^{'}$$都是正则的(即不含奇异点)，上式左边为零，即得reciprocal等式
 
-$$\nabla\cdotp\left(\mathbf{u}^{'}\cdotp\mathbf{\sigma}-\mathbf{u}\cdotp\mathbf{\sigma}^{'}\right)=0$$.
+$$\nabla\cdotp\left(\mathbf{u}^{'}\cdotp\mathbf{\sigma}-\mathbf{u}\cdotp\mathbf{\sigma}^{'}\right)=0.$$
