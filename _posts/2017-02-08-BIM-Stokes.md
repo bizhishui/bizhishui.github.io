@@ -42,7 +42,7 @@ $$\nabla\cdotp\left(\mathbf{u}^{'}\cdotp\mathbf{\sigma}-\mathbf{u}\cdotp\mathbf{
 
 $$\int_{\partial V}\mathbf{u}^{'}\cdotp\mathbf{f}dS=\int_{\partial V}\mathbf{u}\cdotp\mathbf{f}^{'}dS,$$
 
-其中$$\mathbf{f}=\mathbf{\sigma}\cdotp\mathbf{n}$$是流体作用于边界$$\partial V$$的力，$$\mathbf{n}$$是指向外部的法向量。
+其中$$\mathbf{f}=\mathbf{\sigma}\cdotp\mathbf{n}$$是边界作用于流体$$V$$的力，$$\mathbf{n}$$是指向外部的法向量。
 Reciprocal等式可用于由已知流动(如Dirac点源作用下的Stokes基本解)求解复杂的未知流动。
 
 ### 自由空间Stokes流动的边界积分方程
