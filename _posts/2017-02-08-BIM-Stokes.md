@@ -24,7 +24,12 @@ $$\nabla\cdotp\sigma=0,$$
 $$\mathbf{d}=\frac{1}{2}\left(\nabla\mathbf{u}+(\nabla\mathbf{u})^T\right)$$是变形率张量 (*rate of deformation tensor*)，$$\mathbf{g}$$为重力加速度；以及
 不可压方程
 
-$$\nabla\cdotp\mathbf{u}=0$$
+$$
+\begin{equation}
+\nabla\cdotp\mathbf{u}=0
+\label{Stokes_eq}
+\end{equation}
+$$
 
 控制。它描述雷诺数极小和随时间变化极缓慢(流动特征时间极大)的流动(creeping flow)，可直接由NS方程简化而来。
 
