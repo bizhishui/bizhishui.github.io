@@ -24,7 +24,7 @@ $$
 \label{Stokes_eq}
 \end{equation}$$
 
-其$$\ref{Stokes_eq}$$中Cauchy应力张量 (*stress tensor*) $$\sigma=2\mu\mathbf{d}-p^{mod}\mathbf{I}$$，修正压力 (*modified pressure*) $$p^{mod}=p-\rho\mathbf{g}\cdotp\mathbf{x}$$，
+其中Cauchy应力张量 (*stress tensor*) $$\sigma=2\mu\mathbf{d}-p^{mod}\mathbf{I}$$，修正压力 (*modified pressure*) $$p^{mod}=p-\rho\mathbf{g}\cdotp\mathbf{x}$$，
 $$\mathbf{d}=\frac{1}{2}\left(\nabla\mathbf{u}+(\nabla\mathbf{u})^T\right)$$是变形率张量 (*rate of deformation tensor*)，$$\mathbf{g}$$为重力加速度；以及
 不可压方程
 
