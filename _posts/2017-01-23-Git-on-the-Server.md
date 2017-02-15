@@ -10,7 +10,7 @@ tags:
 ---
 
 
-> Reproduced from [Pro Git](https://git-scm.com/book/en/v2/Git-on-the-Server-The-Protocols)
+> Adapted from [Pro Git](https://git-scm.com/book/en/v2/Git-on-the-Server-The-Protocols) and [git wiki](https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/).
 
 
 ---
@@ -28,7 +28,7 @@ To clone a Git repository over SSH, one can use the shorter scp-like syntax for 
 
 ### Getting Git on a Server
 In order to initially set up any Git server, one has to export an existing repository into *a new bare repository* -  a repository that dosen't 
-contain a working directory. By convention, bare repository directories end in `.git`, like so:
+contain a working directory. (Make sure its already a git repository, if not, use *git init*, *git add filenames* etc.) By convention, bare repository directories end in `.git`, like so:
 
 ```
     git clone --bare my_project my_project.git
@@ -51,6 +51,14 @@ by running
 
 ```
     git clone user@git.example.com:/srv/git/my_project.git
+```
+
+But, it may still be an empty repository, *commit* and *push* from your local directory *my_project* may needed. Specifically, for the first time, they are
+
+```
+    git remote add origin user@git.example.com:/srv/git/my_project.git  #set new remote repository URL
+    git remote -v    #verifies the new remote URL
+    git push origin master    #pushes the changes in your local repository up to the remote repository you specified as origin 
 ```
 
 If a user SSHs into a server and has write access to the `/srv/git/my_project.git` directory, they will also automatically have push access.
