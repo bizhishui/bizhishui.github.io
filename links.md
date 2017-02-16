@@ -15,6 +15,7 @@ layout: page
 #### Peoples
 - [C. Pozrikidis](http://dehesa.freeshell.org/): 边界积分方法
 - [刘轶军](http://urbana.mie.uc.edu/yliu/): FMM-BEM
+- [Lorena A. Barba group](http://lorenabarba.com/): FMM-BEM with PETSc
 
 
 #### Interesting Sites
