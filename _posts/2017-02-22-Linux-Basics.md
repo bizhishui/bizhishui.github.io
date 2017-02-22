@@ -33,10 +33,10 @@ tags:
 ##### 其他用法
 
 ```
-    man -f man          #查看系统中有那些跟`man`有关的`说明文件`, 相当于`whatis man`命令
-    man 1 man           #`man(1)`的文件数据
-    man 7 man           #`man(7)`的文件数据
-    man -k man          #找出系统的说明文件中，只要有`man`这个关键词就将该说明列出来, 相当于`apropos man`命令
+    man -f man          #查看系统中有那些跟*man*有关的*说明文件*, 相当于*whatis man*命令
+    man 1 man           #*man(1)*的文件数据
+    man 7 man           #*man(7)*的文件数据
+    man -k man          #找出系统的说明文件中，只要有*man*这个关键词就将该说明列出来, 相当于*apropos man*命令
 ```
 
 
@@ -50,3 +50,21 @@ tags:
 
 
 **此外在`/usr/share/doc`下也有非常多的帮助文档。**
+
+
+
+### [正确的关机方法](http://cn.linux.vbird.org/linux_basic/0160startlinux.php)
+- 观察系统的使用状态
+
+```
+    who         #查看当前在线用户
+    netstat -a  #查看网络联机状态
+    ps -aux     #查看背景运行程序
+```
+
+- 通知在线使用者关机的时刻
+- 将数据同步写入硬盘中的命令： `sync`
+- 正确的关机命令使用：如 `shutdown` 与 `reboot`
+
+
+
