@@ -54,7 +54,7 @@ tags:
 
 
 ### [正确的关机方法](http://cn.linux.vbird.org/linux_basic/0160startlinux.php)
-1. 观察系统的使用状态
+- 观察系统的使用状态
 
 ```
     who         #查看当前在线用户
@@ -62,9 +62,9 @@ tags:
     ps -aux     #查看背景运行程序
 ```
 
-2. 通知在线使用者关机的时刻
-3. 将数据同步写入硬盘中的命令： `sync`
-4. 正确的关机命令使用：如 `shutdown` 与 `reboot`
+- 通知在线使用者关机的时刻
+- 将数据同步写入硬盘中的命令： `sync`
+- 正确的关机命令使用：如 `shutdown` 与 `reboot`
 
 
 
