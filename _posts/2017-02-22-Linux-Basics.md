@@ -16,7 +16,7 @@ tags:
 ---
 
 
-### [Linux系统的在线求助man page与info page](http://cn.linux.vbird.org/linux_basic/0160startlinux.php)
+### [Linux系统的在线求助man page与info page](http://cn.linux.vbird.org/linux_basic/0160startlinux.php#manual)
 #### man page
 使用`man command`便可能(新安装程序可能需要手动设置`MANPATH`)获得该命令`command`的详尽信息，如输入`man date`。
 首先需要注意的是在帮助页面中的首行命令后会接数字，如`DATE(1)`。该数字意义如下图所示
@@ -53,7 +53,7 @@ tags:
 
 
 
-### [正确的关机方法](http://cn.linux.vbird.org/linux_basic/0160startlinux.php)
+### [正确的关机方法](http://cn.linux.vbird.org/linux_basic/0160startlinux.php#shutdown_pc)
 - 观察系统的使用状态
 
 ```
@@ -67,7 +67,7 @@ tags:
 - 正确的关机命令使用：如 `shutdown` 与 `reboot`
 
 
-### [文件系统错误问题](http://cn.linux.vbird.org/linux_basic/0160startlinux.php)
+### [文件系统错误问题](http://cn.linux.vbird.org/linux_basic/0160startlinux.php#shoot)
 在启动的过程中最容易遇到的问题就是硬盘可能有坏轨或文件系统发生错误(数据损毁)的情况， 这种情况虽然不容易发生在稳定的Linux系统下，
 不过由于不当的开关机行为， 还是可能会造成的，常见的发生原因可能有：
 
@@ -91,3 +91,15 @@ tags:
 接到另一台Linux系统的计算机上， 并且不要挂载(mount)该硬盘，然后以root的身份运行`fsck /dev/sdb1`(`/dev/sdb1` 指的是你的硬盘装置文件名，你要依你的实际状况来配置)
 
 另外，也可以使用近年来很热门的Live CD，也就是利用光盘启动就能够进入Linux操作系统的特性，然后使用`fsck`去修复原本的根目录， 例如：`fsck /dev/sda1` ，就能够救回来了！
+
+#### 如果硬盘整个坏掉
+如果硬盘实在坏的离谱时，那就先将旧硬盘内的数据，能救出来的救出来，然后换一颗硬盘来重新安装Linux。预防保护建议为：
+
+- 妥善保养硬盘(例如：主机通电之后不要搬动，避免移动或震动硬盘；尽量降低硬盘的温度，可以加装风扇来冷却硬盘； 或者可以换装 SCSI 硬盘)。
+- 划分不同的partition(因为Linux每个目录被读写的频率不同，妥善的块分配将会让我们的Linux更安全！，如`/, /boot, /usr, /home, /var`等)。
+
+
+### [忘记root密码](http://cn.linux.vbird.org/linux_basic/0160startlinux.php#shoot)
+先将系统重新启动，在读秒的时候按下任意键就会出现相关提示。一般按`e`就进入*grub*编辑模式。将光标移至kernel那一行，再按一次`e`进入kernel该行的编辑画面中，
+然后在出现的画面当中，*最后方输入 single*。 再按下*Enter*确定之后，按下`b`键就可以启动进入单人维护模式了！ 在这个模式底下，你会在*tty1*
+的地方不需要输入密码即可取得终端机的控制权(而且是使用root的身份！)。 之后就能够用命令*passwd*修改root的密码了！
