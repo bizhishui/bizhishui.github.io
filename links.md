@@ -19,6 +19,8 @@ layout: page
 
 
 #### Interesting Sites
+- [鳥哥的 Linux 私房菜](http://linux.vbird.org/home.php)
+- [开源中国社区](https://www.oschina.net/)
 - [青塔](http://www.cingta.com/main.html)
 - [古诗文网](http://www.gushiwen.org/)
 - [比特之理](http://www.kylen314.com/)
