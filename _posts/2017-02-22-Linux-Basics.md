@@ -18,8 +18,8 @@ tags:
 
 ### [Linux系统的在线求助man page与info page](http://cn.linux.vbird.org/linux_basic/0160startlinux.php#manual)
 #### man page
-使用`man command`便可能(新安装程序可能需要手动设置`MANPATH`)获得该命令`command`的详尽信息，如输入`man date`。
-首先需要注意的是在帮助页面中的首行命令后会接数字，如`DATE(1)`。该数字意义如下图所示
+使用*man command*便可能(新安装程序可能需要手动设置*MANPATH*)获得该命令*command*的详尽信息，如输入*man date*。
+首先需要注意的是在帮助页面中的首行命令后会接数字，如*DATE(1)*。该数字意义如下图所示
 
 [![man page number](/media/files/2017/02/22/manNumber.png)](https://github.com/bizhishui/bizhishui.github.io/blob/master/ "man page number")
 
@@ -28,7 +28,7 @@ tags:
 
 [![man page content](/media/files/2017/02/22/manContent.png)](https://github.com/bizhishui/bizhishui.github.io/blob/master/ "man page content")
 
-既然有`man page`，自然就是因为有一些文件数据，所以才能够以`man page`读出来，通常这些数据放在`/usr/share/man`这个目录里。
+既然有*man page*，自然就是因为有一些文件数据，所以才能够以*man page*读出来，通常这些数据放在*/usr/share/man*这个目录里。
 
 ##### 其他用法
 
@@ -41,12 +41,12 @@ tags:
 
 
 #### info page
-基本上，`info`与`man`的用途其实差不多，都是用来查询命令的用法或者是文件的格式。但是与`man page`一口气输出一堆信息不同的是，
-`info page`则是将文件数据拆成一个一个的段落，每个段落用自己的页面来撰写， 并且在各个页面中还有类似网页的"超链接"来跳到各不同的页面中，
-每个独立的页面也被称为一个节点(node)。 所以，你可以将`info page`想成是文本模式的网页显示数据。
+基本上，*info*与*man*的用途其实差不多，都是用来查询命令的用法或者是文件的格式。但是与*man page*一口气输出一堆信息不同的是，
+*info page*则是将文件数据拆成一个一个的段落，每个段落用自己的页面来撰写， 并且在各个页面中还有类似网页的"超链接"来跳到各不同的页面中，
+每个独立的页面也被称为一个节点(node)。 所以，你可以将*info page*想成是文本模式的网页显示数据。
 
-不过你要查询的目标数据的说明文件必须要以info的格式来写成才能够使用info的特殊功能(例如超链接)，否则显示的是`man page`的结果。 
-而这个支持info命令的文件默认是放置在`/usr/share/info/`这个目录当中的。光标移至带有超链接的文本(node)出，按Enter即可打开相关内容，使用Tab可在node间移动。
+不过你要查询的目标数据的说明文件必须要以info的格式来写成才能够使用info的特殊功能(例如超链接)，否则显示的是*man page*的结果。 
+而这个支持info命令的文件默认是放置在*/usr/share/info/*这个目录当中的。光标移至带有超链接的文本(node)出，按Enter即可打开相关内容，使用Tab可在node间移动。
 
 
 **此外在`/usr/share/doc`下也有非常多的帮助文档。**
@@ -63,8 +63,8 @@ tags:
 ```
 
 - 通知在线使用者关机的时刻
-- 将数据同步写入硬盘中的命令： `sync`
-- 正确的关机命令使用：如 `shutdown` 与 `reboot`
+- 将数据同步写入硬盘中的命令： *sync*
+- 正确的关机命令使用：如 *shutdown* 与 *reboot*
 
 
 ### [文件系统错误问题](http://cn.linux.vbird.org/linux_basic/0160startlinux.php#shoot)
@@ -78,25 +78,25 @@ tags:
 如果你的根目录`/`并没有损毁，那就很容易解决，如果根目录已经损毁了，那就比较麻烦！
 
 #### 如果根目录没有损毁
-假设你发生错误的partition是在`/dev/sda7`这一块，那么在启动的时候，屏幕应该会告诉你：press root password or ctrl+D : 这时候请输入root的密码登陆系统，然后进行如下动作：
+假设你发生错误的partition是在*/dev/sda7*这一块，那么在启动的时候，屏幕应该会告诉你：press root password or ctrl+D : 这时候请输入root的密码登陆系统，然后进行如下动作：
 
 - 在光标处输入root密码登陆系统，进行单人单机的维护工作；
-- 输入` fsck /dev/sda7 `(`fsck` 为文件系统检查的命令，`/dev/sda7`为错误的partition，请依你的情况下达参数)， 这时屏幕会显示开始修理硬盘的信息，
+- 输入* fsck /dev/sda7 *(*fsck* 为文件系统检查的命令，*/dev/sda7*为错误的partition，请依你的情况下达参数)， 这时屏幕会显示开始修理硬盘的信息，
 如果有发现任何的错误时，屏幕会显示： clear [Y/N]？ 的询问信息，就直接输入 Y 吧！
 - 修理完成之后，以 reboot 重新启动。
 
 
 #### 如果根目录损毁了
 一般初学者喜欢将自己的硬盘只划分为一个大partition，亦即只有根目录， 那文件系统错误一定是根目录的问题。这时你可以将硬盘拔掉，
-接到另一台Linux系统的计算机上， 并且不要挂载(mount)该硬盘，然后以root的身份运行`fsck /dev/sdb1`(`/dev/sdb1` 指的是你的硬盘装置文件名，你要依你的实际状况来配置)
+接到另一台Linux系统的计算机上， 并且不要挂载(mount)该硬盘，然后以root的身份运行*fsck /dev/sdb1*(*/dev/sdb1* 指的是你的硬盘装置文件名，你要依你的实际状况来配置)
 
-另外，也可以使用近年来很热门的Live CD，也就是利用光盘启动就能够进入Linux操作系统的特性，然后使用`fsck`去修复原本的根目录， 例如：`fsck /dev/sda1` ，就能够救回来了！
+另外，也可以使用近年来很热门的Live CD，也就是利用光盘启动就能够进入Linux操作系统的特性，然后使用*fsck*去修复原本的根目录， 例如：*fsck /dev/sda1* ，就能够救回来了！
 
 #### 如果硬盘整个坏掉
 如果硬盘实在坏的离谱时，那就先将旧硬盘内的数据，能救出来的救出来，然后换一颗硬盘来重新安装Linux。预防保护建议为：
 
 - 妥善保养硬盘(例如：主机通电之后不要搬动，避免移动或震动硬盘；尽量降低硬盘的温度，可以加装风扇来冷却硬盘； 或者可以换装 SCSI 硬盘)。
-- 划分不同的partition(因为Linux每个目录被读写的频率不同，妥善的块分配将会让我们的Linux更安全！，如`/, /boot, /usr, /home, /var`等)。
+- 划分不同的partition(因为Linux每个目录被读写的频率不同，妥善的块分配将会让我们的Linux更安全！，如*/, /boot, /usr, /home, /var*等)。
 
 
 ### [忘记root密码](http://cn.linux.vbird.org/linux_basic/0160startlinux.php#shoot)
@@ -127,3 +127,29 @@ tags:
 
 
 ### [Linux目录配置](http://cn.linux.vbird.org/linux_basic/0210filepermission.php#dir)
+#### Linux目录配置的依据--FHS
+FHS(Filesystem Hierarchy Standard)将目录定义成为四种交互作用的形态，如图所示
+
+[![Linux directories](/media/files/2017/02/22/linuxDirs.png)](https://github.com/bizhishui/bizhishui.github.io/blob/master/ "linux directories")
+
+- *可分享的*：可以分享给其他系统挂载使用的目录，所以包括执行文件与用户的邮件等数据， 是能够分享给网络上其他主机挂载用的目录
+- *不可分享的*：自己机器上面运作的装置文件或者是与程序有关的socket文件等， 仅与自身机器有关
+- *不变的*：有些数据是不会经常变动的，跟随着distribution而不变动。 例如函式库、文件说明文件、系统管理员所管理的主机服务配置文件等
+- *可变动的*：经常改变的数据，例如登录文件、一般用户可自行收受的新闻组等
+
+事实上，FHS针对目录树架构仅定义出三层目录底下应该放置什么数据而已，分别是底下这三个目录的定义：
+
+- / (root, 根目录)：与开机系统有关
+- /usr (unix software resource)：与软件安装/执行有关
+- /var (variable)：与系统运行过程有关
+
+#### 根目录 (/) 的意义与内容
+根目录是整个系统最重要的一个目录，因为不但所有的目录都是由根目录衍生出来的， 同时根目录也与开机/还原/系统修复等动作有关。 
+由于系统开机时需要特定的开机软件、核心文件、开机所需程序、 函式库等等文件数据，若系统出现错误时，根目录也必须要包含有能够修复文件系统的程序才行。 
+因为根目录是这么的重要，所以在FHS的要求方面，他希望根目录不要放在非常大的分割槽内， 因为越大的分割槽妳会放入越多的数据，如此一来根目录所在分割槽就可能会有较多发生错误的机会。
+
+**因此FHS标准建议：根目录(/)所在分割槽应该越小越好， 且应用程序所安装的软件最好不要与根目录放在同一个分割槽内，保持根目录越小越好。 如此不但效能较佳，根目录所在的文件系统也较不容易发生问题。**
+有鉴于上述的说明，因此FHS定义出根目录(/)底下应该要有底下这些次目录的存在才好：
+
+[![root directory](/media/files/2017/02/22/rootDir.png)](https://github.com/bizhishui/bizhishui.github.io/blob/master/ "root directory")
+
