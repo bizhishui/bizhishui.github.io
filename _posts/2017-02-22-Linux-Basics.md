@@ -103,3 +103,27 @@ tags:
 先将系统重新启动，在读秒的时候按下任意键就会出现相关提示。一般按`e`就进入*grub*编辑模式。将光标移至kernel那一行，再按一次`e`进入kernel该行的编辑画面中，
 然后在出现的画面当中，*最后方输入 single*。 再按下*Enter*确定之后，按下`b`键就可以启动进入单人维护模式了！ 在这个模式底下，你会在*tty1*
 的地方不需要输入密码即可取得终端机的控制权(而且是使用root的身份！)。 之后就能够用命令*passwd*修改root的密码了！
+
+
+### [User-Group](http://cn.linux.vbird.org/linux_basic/0210filepermission.php#UserandGroup)
+在Linux系统当中，默认的情况下，所有的系统上的账号与一般身份使用者，还有那个root的相关信息， 都是记录在*/etc/passwd*这个文件内的。至于个人的密码则是记录在*/etc/shadow*这个文件下。 此外，Linux所有的组名都纪录在*/etc/group*内！
+
+
+### [目录与文件之权限意义](http://cn.linux.vbird.org/linux_basic/0210filepermission.php#filepermission_dir)
+##### 权限对文件的重要性
+文件是实际含有数据的地方，包括一般文本文件、数据库内容文件、二进制可执行文件(binary program)等等。 因此，权限对于文件来说，它的意义是：
+
+- *r(read)*：可读取此一文件的实际内容，如读取文本文件的文字内容等；
+- *w(write)*：可以编辑、新增或者是修改该文件的内容(但不含删除该文件)；
+- *x(execute)*：该文件具有可以被系统执行的权限。
+
+##### 权限对目录的重要性
+目录主要的内容在记录文件名列表，文件名与目录有强烈的关连！
+
+- *r(read contents in directory)*: 表示具有读取目录结构列表的权限，所以当你具有读取(r)一个目录的权限时，表示你可以查询该目录下的文件名数据。 所以你就可以利用 ls 这个指令将该目录的内容列表显示出来！
+- *w(modify contents of directory)*: 表示具有异动该目录结构列表的权限，如建立新的文件与目录、删除已经存在的文件与目录(不论该文件的权限为何！)、将已存在的文件或目录进行更名、搬移该目录内的文件和目录位置。
+- *x(access directory)* : 目录的x代表的是用户能否进入该目录。
+
+
+
+### [Linux目录配置](http://cn.linux.vbird.org/linux_basic/0210filepermission.php#dir)
