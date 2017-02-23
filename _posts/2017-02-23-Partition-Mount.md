@@ -80,6 +80,51 @@ MBR这个仅有446 bytes的硬盘容量里面会放置最基本的启动管理�
 
 #### 主机硬盘的主要规划
 分区前首先需要考虑该主机的主要用途，然后根据用途去分析需要较大容量的目录，以及读写较为频繁的目录，将这些重要的目录分别独立出来而不与根目录放在一起，那当这些读写较频繁的磁盘分区槽有问题时，
-至少不会影响到根目录的系统数据，那挽救方面就比较容易！ 在默认的CentOS环境中，比较符合容量大且(或)读写频繁的目录有*/*,*/usr*,*/home*,*/var*,*swap*。
+至少不会影响到根目录的系统数据，那挽救方面就比较容易！ 在默认的CentOS环境中，比较符合容量大且(或)读写频繁的目录有*/*,*/boot*,*/usr*,*/home*,*/var*,*swap*。
 
 关于实际硬盘的分区，举例来说，如果你有一个20GB的硬盘，那么建议你分15 GB给*/*来安装Linux，512 MB给*swap*，另外的4 GB左右不要分割，先保留下来，预留的分区可以拿来做为备份之用（如一些scripts和重要配置文件）。
+
+
+
+### [硬盘自动挂载配置](http://bruce007.blog.51cto.com/7748327/1322236)
+##### 显示硬盘及所属分区情况
+在终端窗口中输入如下命令：
+
+```
+    sudo fdisk -lu
+```
+
+##### 对硬盘进行分区
+在终端窗口中输入如下命令：
+
+```
+    sudo fdisk /dev/sdb        #假设要挂在的硬盘文档号位 sdb
+    Command (m for help): m    #查看帮助
+    Command (m for help): n    #创建新分区
+    Command (m for help): e    #指定分区为扩展分区（extended）
+    Command (m for help): w    #保存
+    sudo fdisk -lu             #查看系统已经识别了硬盘 /dev/sdb 的分区
+```
+
+##### 硬盘格式化
+
+```
+    sudo mkfs -t ext4 /dev/sdb   -t ext4     #表示将分区格式化成ext4文件系统类型
+```
+
+##### 挂载硬盘分区
+
+```
+    sudo df -lh                #查看分区情况
+    sudo mkdir data            #建立挂载文件目录, /data
+    sudo mount -t ext4 /dev/sdb /data   #挂载分区
+    sudo df -lh                #检查
+```
+
+##### 设置开机自动挂载
+
+```
+    ls -l /dev/disk/by-uuid/    #查看硬盘对应的uuid
+    sudo vim /etc/fstab         #添加以下内容, UUID, mount point=/data, type=ext4, option dump=0 (not backup), pass=3 (used for fsck, 0 not check, bigger, check later)
+    UUID=0f648388-edae-4d54-b5ac-7afe9ce16b72 /data      ext4  defaults    0     3
+```
