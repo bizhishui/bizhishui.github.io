@@ -16,6 +16,12 @@ tags:
 ---
 
 
+### Linux 系统查看
+```
+    uname -r           #可以察看实际的核心版本
+    lsb_release -a     #LSB and distribution 的版本
+```
+
 ### [Linux系统的在线求助man page与info page](http://cn.linux.vbird.org/linux_basic/0160startlinux.php#manual)
 #### man page
 使用*man command*便可能(新安装程序可能需要手动设置*MANPATH*)获得该命令*command*的详尽信息，如输入*man date*。
