@@ -18,10 +18,15 @@ tags:
 
 ### Linux 系统基本命令
 ```
-    uname -r           #可以察看实际的核心版本
-    lsb_release -a     #LSB and distribution 的版本
-    nl                 #显示的时候(与cat相比)，顺道输出行号
-    od                 #以二进位的方式读取文件内容
+    uname -r               #可以察看实际的核心版本
+    lsb_release -a         #LSB and distribution 的版本
+    nl                     #显示的时候(与cat相比)，顺道输出行号
+    od                     #以二进位的方式读取文件内容
+    file                   #查看文件类型
+    which                  #在PATH中的路径下查找命令的具体位置，-a参数显示所有
+    whereis                #在Linux数据库文件中查找文件具体位置，-b参数搜寻可执行文件，-m参数可以找到文件对应man page
+    locate 文件的部分名称  #在数据库(非硬盘)中查找含有部分文件名的所以文件
+    find                   #在整个硬盘上查找，功能强大但速度慢
 ```
 
 ### [Linux系统的在线求助man page与info page](http://cn.linux.vbird.org/linux_basic/0160startlinux.php#manual)
@@ -208,3 +213,8 @@ Linux下每一个文件都有以下三种主要时间：
 
 在默认权限的属性上，目录与文件是不一样的。对于文件，默认没有执行(x)权限，默认最大值为666(-rw-rw-rw-)；对于目录，x与目录的访问有关，默认是给定的，即最大值为777(drwxrwxrwx)。
 而单纯*umask*给出的是四位数字，后三位代表创建文件或者目录需要分别给user,group和others需要减去的权限，如0022表示新建文件或者目录时，group member和others都没有写(w=2)的权限。
+
+在*umask*后解三位数字可以更改*umask*的默认值，如*umask 002*，这样创建新的文件时，user和group member权限一样，只是others没有写权限。
+
+#### 文件隐藏属性
+使用*chattr*命令可以配置文件属性，*lsattr*显示文件的隐藏属性。如*chattr +i fileA*可以使fileA不能被删除、改名、配置连结也无法写入或新增数据！对于系统的安全性很有好处。
