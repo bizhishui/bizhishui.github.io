@@ -16,10 +16,12 @@ tags:
 ---
 
 
-### Linux 系统查看
+### Linux 系统基本命令
 ```
     uname -r           #可以察看实际的核心版本
     lsb_release -a     #LSB and distribution 的版本
+    nl                 #显示的时候(与cat相比)，顺道输出行号
+    od                 #以二进位的方式读取文件内容
 ```
 
 ### [Linux系统的在线求助man page与info page](http://cn.linux.vbird.org/linux_basic/0160startlinux.php#manual)
@@ -189,3 +191,20 @@ FHS建议所有软件开发者，应该将他们的数据合理的分别放置�
 
 [![var directory](/media/files/2017/02/22/varDir.png)](https://github.com/bizhishui/bizhishui.github.io/blob/master/ "var directory")
 
+
+### 文件的三种时间及其修改
+Linux下每一个文件都有以下三种主要时间：
+
+- *modification time(mtime)*: 当该文件的"内容数据"变更时，就会升级这个时间！内容数据指的是文件的内容，而不是文件的属性或权限！
+- *status time(ctime)*: 当该文件的"状态 (status)"改变时，就会升级这个时间，举例来说，像是权限与属性被更改了，都会升级这个时间。 
+- *access time(atime)*: 当"该文件的内容被取用"时，就会升级这个读取时间(access)。举例来说，我们使用 cat 去读取 */etc/man.config* ， 就会升级该文件的 atime 了。
+
+通常使用*ls*命令给出的是文件的修改时间*mtime*，使用*ls --time=atime*可以获得文件的访问时间*atime*，余者类推。对于已有的文件，使用*touch*命令可以修改上述时间。
+
+### [文件与目录的默认权限与隐藏权限](http://cn.linux.vbird.org/linux_basic/0220filemanager.php#fileperm)
+#### 文件默认权限：umask
+*umask*用来指定“目前使用者在创建文件或目录时候的权限默认值”。查阅的方式有两种，一种可以直接输入*umask* ，就可以看到数字型态的权限配置分数， 
+一种则是加入 *-S* (Symbolic) 这个选项，就会以符号类型的方式来显示出权限了。
+
+在默认权限的属性上，目录与文件是不一样的。对于文件，默认没有执行(x)权限，默认最大值为666(-rw-rw-rw-)；对于目录，x与目录的访问有关，默认是给定的，即最大值为777(drwxrwxrwx)。
+而单纯*umask*给出的是四位数字，后三位代表创建文件或者目录需要分别给user,group和others需要减去的权限，如0022表示新建文件或者目录时，group member和others都没有写(w=2)的权限。
