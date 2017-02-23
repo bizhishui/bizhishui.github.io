@@ -153,3 +153,33 @@ FHS(Filesystem Hierarchy Standard)将目录定义成为四种交互作用的形�
 
 [![root directory](/media/files/2017/02/22/rootDir.png)](https://github.com/bizhishui/bizhishui.github.io/blob/master/ "root directory")
 
+事实上FHS针对根目录所定义的标准就仅有上面的，不过我们的Linux底下还有许多目录你也需要了解一下的。 底下是几个在Linux当中也是非常重要的目录：
+
+[![root directory extended](/media/files/2017/02/22/rootDirExtended.png)](https://github.com/bizhishui/bizhishui.github.io/blob/master/ "root directory extended")
+
+*根目录与开机有关，开机过程中仅有根目录会被挂载， 其他分区则是在开机完成之后才会持续的进行挂载的行为。就是因为如此，因此根目录下与开机过程有关的目录，就不能够与根目录放到不同的分区去！*
+具体有如下目录：
+
+- /etc：配置文件
+- /bin：重要执行档
+- /dev：所需要的装置文件
+- /lib：执行档所需的函式库与核心所需的模块
+- /sbin：重要的系统执行文件
+
+这五个目录千万不可与根目录分开在不同的分区！
+
+#### /usr 的意义与内容
+依据FHS的基本定义，/usr里面放置的数据属于可分享的与不可变动的(shareable, static)。usr是Unix Software Resource的缩写， 也就是"Unix操作系统软件资源"所放置的目录，而不是用户的数据！ 
+FHS建议所有软件开发者，应该将他们的数据合理的分别放置到这个目录下的次目录，而不要自行建立该软件自己独立的目录。
+因为所有系统默认的软件(distribution发布者提供的软件)都会放置到/usr底下，因此这个目录有点类似Windows 系统的"C:\Windows\ + C:\Program files\"这两个目录的综合体，
+系统刚安装完毕时，这个目录会占用最多的硬盘容量。 一般来说，/usr的次目录建议有底下这些：
+
+[![usr directory](/media/files/2017/02/22/usrDir.png)](https://github.com/bizhishui/bizhishui.github.io/blob/master/ "usr directory")
+
+
+#### /var 的意义与内容
+如果/usr是安装时会占用较大硬盘容量的目录，那么/var就是在系统运作后才会渐渐占用硬盘容量的目录。 因为/var目录主要针对常态性变动的文件，包括缓存(cache)、登录文件(log file)以及某些软件运作所产生的文件， 
+包括程序文件(lock file, run file)，或者例如MySQL数据库的文件等。常见的次目录有：
+
+[![var directory](/media/files/2017/02/22/varDir.png)](https://github.com/bizhishui/bizhishui.github.io/blob/master/ "var directory")
+
