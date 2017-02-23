@@ -25,5 +25,5 @@ tags:
 
 下图给出了几个常见的装置与其在Linux当中的档名：
 
-[![linux file system](/media/files/2017/02/22/LinuxDevs.png)](https://github.com/bizhishui/bizhishui.github.io/blob/master/ "linux file system")
+[![linux file system](/media/files/2017/02/23/LinuxDevs.png)](https://github.com/bizhishui/bizhishui.github.io/blob/master/ "linux file system")
 
