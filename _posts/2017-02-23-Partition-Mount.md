@@ -13,7 +13,7 @@ tags:
 
 ---
 
-> 主要记录Linux下，系统安装是磁盘分区及存储硬盘的挂载。
+> 主要记录Linux下，系统安装时磁盘分区及存储硬盘的挂载。
 
 ---
 
@@ -24,3 +24,6 @@ tags:
 举例来说，IDE介面的硬盘的文件名称即为`/dev/hd[a-d]`，其中，括号内的字母为`a-d`当中的任意一个，亦即有`/dev/hda`, `/dev/hdb`, `/dev/hdc`, 及`/dev/hdd`这四个文件的意思。
 
 下图给出了几个常见的装置与其在Linux当中的档名：
+
+[![linux file system](/media/files/2017/02/22/LinuxDevs.png)](https://github.com/bizhishui/bizhishui.github.io/blob/master/ "linux file system")
+
