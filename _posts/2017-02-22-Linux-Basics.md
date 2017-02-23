@@ -11,7 +11,7 @@ tags:
 
 ---
 
-> This post notes some basic but very useful points for Linux.
+> This post notes some basic but very useful points for Linux. Adapted mainly from [鸟哥的Linux私房菜](http://cn.linux.vbird.org/).
 
 ---
 
