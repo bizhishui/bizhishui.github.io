@@ -17,6 +17,7 @@ tags:
 
 
 ### Linux 系统基本命令
+{:toc}
 ```
     uname -r               #可以察看实际的核心版本
     lsb_release -a         #LSB and distribution 的版本
