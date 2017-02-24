@@ -278,3 +278,47 @@ swap 的功能就是在应付物理内存不足的情况下所造成的内存延
     swapon /tmp/swap                               #使用swapon启动/tmp/swap
     swapoff /tmp/swap                              #使用swapoff关掉/tmp/swap
 ```
+
+
+### [文件与文件系统的压缩与打包](http://cn.linux.vbird.org/linux_basic/0240tarcompress.php)
+#### Linux 系统常见的压缩命令
+Linux 支持的压缩命令非常多，且不同的命令所用的压缩技术并不相同，当然彼此之间可能就无法互通压缩/解压缩文件。
+
+- *.Z         compress 程序压缩的文件,已经退流行了
+- *.gz        gzip 程序压缩的文件
+- *.bz2       bzip2 程序压缩的文件
+- *.tar       tar 程序打包的数据，并没有压缩过
+- *.tar.gz    tar 程序打包的文件，其中并且经过 gzip 的压缩
+- *.tar.bz2   tar 程序打包的文件，其中并且经过 bzip2 的压缩，压缩比相对最好
+
+#### 压缩解压命令:tar
+tar可以将多个目录或文件打包成一个大文件，同时还可以透过gzip/bzip2的支持，将该文件同时进行压缩！
+通过man page可以查看tar的用法，下面给出了常见参数列表：
+
+```
+    -f    # 后面要立刻接要被处理的档名！建议 -f 单独写一个选项
+
+    -v    #verbose, 在压缩/解压缩的过程中，将正在处理的档名显示出来
+    -c    #创建打包文件，可搭配 -v 来察看过程中被打包的档名(filename)
+    -t    #查看打包文件的内容含有哪些文件
+    -x    #解打包或解压缩的功能，可以搭配 -C 在特定目录解开(tar -xv -f /root/etc.tar -C /tmp)
+    -C    #后接目录，即解压缩文件的存储位置
+
+    -j    #透过 bzip2 的支持进行压缩/解压缩：此时档名最好为 *.tar.bz2
+    -z    #透过 gzip  的支持进行压缩/解压缩：此时档名最好为 *.tar.gz
+
+    -p    #保留备份数据的原本权限与属性，常用于备份(-c)重要的配置参数
+    -P    #保留绝对路径，亦即允许备份数据中含有根目录存在之意 (Path),保留根目录，解压时可能不安全
+    --exclude=FILE   #在压缩的过程中，不要将 FILE 打包
+```
+
+完整命令模式如下(以*tar.bz2为例，若为*tar.gz，用z替换j；若为*.tar文件则直接舍去j)：
+
+```
+    tar -jcv -f filename.tar.bz2 要被压缩的文件或目录名称                        #压　缩
+    tar -jtv -f filename.tar.bz2                                                 #查　询
+    tar -jxv -f filename.tar.bz2 -C 欲解压缩的目录                               #解压缩
+    tar -jxv -f filename.tar.bz2 欲解压文件完整名称                              #解压缩,-t先查看
+    #如若需仅打包/etc下比/etc/passwd更新的文件，可以使用 ll /et/passwd，查看其最后修改时间，然后使用如下命令
+    tar -jcv -f /root/etc.newer.then.passwd.tar.bz2 --newer-mtime="2016/12/07" /etc/*   #仅将/etc下在指定时间后有改动的文件打包
+```
