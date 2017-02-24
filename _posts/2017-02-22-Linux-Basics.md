@@ -25,8 +25,9 @@ tags:
     file                   #查看文件类型
     which                  #在PATH中的路径下查找命令的具体位置，-a参数显示所有
     whereis                #在Linux数据库文件中查找文件具体位置，-b参数搜寻可执行文件，-m参数可以找到文件对应man page
-    locate 文件的部分名称  #在数据库(非硬盘)中查找含有部分文件名的所以文件
+    locate 文件的部分名称    #在数据库(非硬盘)中查找含有部分文件名的所以文件
     find                   #在整个硬盘上查找，功能强大但速度慢
+    dumpe2fs -h /devsdb1   #列出/dev/sdb1的superblock(记录该分区文件系统的各种权限属性、inode和block的总体及使用情况)信息
 ```
 
 ### [Linux系统的在线求助man page与info page](http://cn.linux.vbird.org/linux_basic/0160startlinux.php#manual)
@@ -218,3 +219,16 @@ Linux下每一个文件都有以下三种主要时间：
 
 #### 文件隐藏属性
 使用*chattr*命令可以配置文件属性，*lsattr*显示文件的隐藏属性。如*chattr +i fileA*可以使fileA不能被删除、改名、配置连结也无法写入或新增数据！对于系统的安全性很有好处。
+
+
+### [Linux的EXT文件系统](http://cn.linux.vbird.org/linux_basic/0230filesystem.php#harddisk-inode)
+Linux的EXT文件系统包含superblock,inode和block三个重要要素。每个文件都有一个inode，它记录该文件的存取模式(read/write/excute)，该文件的拥有者与群组(owner/group)，
+该文件的容量，该文件创建或状态改变的时间(ctime)，最近一次的读取时间(atime)，最近修改的时间(mtime)，定义文件特性的旗标(flag)，如 SetUID...，
+该文件真正内容的指向 (pointer)等内容。而一个文件根据实际大小可以占据多个block，一个block大小可以是1k,2k和4k。而超级区块（superblock）则记录该分区相关信息的地方，
+没有superblock，也就没有该分区了。它记录的信息包括block 与 inode 的总量，未使用与已使用的 inode / block 数量，
+block 与 inode 的大小 (block 为 1, 2, 4K，inode 为 128 bytes)，filesystem 的挂载时间、最近一次写入数据的时间、最近一次检验磁盘 (fsck) 的时间等文件系统的相关信息，
+一个 valid bit 数值，若此文件系统已被挂载，则 valid bit 为 0 ，若未被挂载，则 valid bit 为 1 等信息。
+
+对文件或者目录使用ls命令时，加上*-i*属性可以获得对应文件或者目录的inode号。而读写属性（rwx）后的数字则代表使用该inode的文件数目，
+如对一个文件创建hard link (ln)，hard link文件共用原文件的inode号。所以删除原始文件不会影响硬链接文件，而如果是用*ln -s*创建的soft link，
+则新文件和原始文件的inode号是不一致的，新文件只是原始文件的快捷方式，删除原始文件后，软链接文件将无法访问。
