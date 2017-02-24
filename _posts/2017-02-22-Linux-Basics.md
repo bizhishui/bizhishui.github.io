@@ -237,6 +237,44 @@ block 与 inode 的大小 (block 为 1, 2, 4K，inode 为 128 bytes)，filesyste
 
 ### [内存交换空间swap](http://cn.linux.vbird.org/linux_basic/0230filesystem.php#swap)
 swap 的功能就是在应付物理内存不足的情况下所造成的内存延伸记录的功能。
-一般来说，如果硬件的配备足够的话，那么 swap 应该不会被我们的系统所使用到， swap 会被利用到的时刻通常就是物理内存不足的情况了。
-我们知道CPU所读取的数据都来自于内存，那当内存不足的时候，为了让后续的程序可以顺利的运行，因此在内存中暂不使用的程序与数据就会被挪到 swap 中了。
-此时内存就会空出来给需要运行的程序加载。由于 swap 是用硬盘来暂时放置内存中的信息， 所以用到 swap 时，你的主机硬盘灯就会开始闪个不停！
+一般来说，如果硬件的配备足够的话，那么 swap 应该不会被我们的系统所使用到，swap会被利用到的时刻通常就是物理内存不足的情况了。
+我们知道CPU所读取的数据都来自于内存，那当内存不足的时候，为了让后续的程序可以顺利的运行，因此在内存中暂不使用的程序与数据就会被挪到swap中了。
+此时内存就会空出来给需要运行的程序加载。由于swap是用硬盘来暂时放置内存中的信息，所以用到swap时，你的主机硬盘灯就会开始闪个不停！
+另外，有某些程序在运行时，本来就会利用swap的特性来存放一些数据段，所以，swap来是需要创建的！只是不需要太大！
+
+#### 使用实体分区创建swap
+- 使用fdisk对含有未分配完的磁盘分割新分区，如对/dev/sdb
+
+```
+    fdisk /dev/hdb
+    Command (m for help): n       #新建分区
+    Command (m for help): p       #打印分区列表
+    Command (m for help): t       #修改系统 ID, 改成swap的ID: 82
+    Command (m for help): p       #打印查看分区列表
+    Command (m for help): w       #保存修改
+    partprobe                     #让核心升级 partition table
+```
+
+- 创建swap格式
+
+```
+    mkswap /dev/hdb7              #假设先前新建分区设备号为hdb7
+```
+
+- 观察与加载swap
+
+```
+    free                          #查看物理内存和swap使用情况
+    swapon /dev/hdb7              #enable swap 
+    swapon -s                     #列出使用的swap分区
+```
+
+#### 使用文件创建swap
+如果是在实体分割槽无法支持的环境下，可以用 dd 去建置一个大文件，然后再设为swap格式。
+
+```
+    dd if=/dev/zero of=/tmp/swap bs=1M count=128   #使用dd新增一个128MB的文件在 /tmp 底下
+    mkswap /tmp/swap                               #使用mkswap将/tmp/swap这个文件格式化为swap的文件格式
+    swapon /tmp/swap                               #使用swapon启动/tmp/swap
+    swapoff /tmp/swap                              #使用swapoff关掉/tmp/swap
+```

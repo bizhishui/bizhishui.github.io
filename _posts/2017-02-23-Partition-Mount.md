@@ -149,3 +149,13 @@ MBR这个仅有446 bytes的硬盘容量里面会放置最基本的启动管理�
     sudo vim /etc/fstab         #添加以下内容, UUID, mount point=/data, type=ext4, option dump=0 (not backup), pass=3 (used for fsck, 0 not check, bigger, check later)
     UUID=0f648388-edae-4d54-b5ac-7afe9ce16b72 /data      ext4  defaults    0     3
 ```
+
+### [用GNU的parted进行分割](http://cn.linux.vbird.org/linux_basic/0230filesystem.php#parted)
+虽然你可以使用fdisk很快速的将你的硬盘切割妥当，不过fdisk却无法支持到高于2TB 以上的硬盘！ 此时就得需要*parted*来处理了。
+**不同于fdisk，parted的命令都是下达即执行，因此要特别小心。**
+
+```
+    parted /dev/hdc print        #列出当前hdc硬盘的分区表
+    parted /dev/hdc mkpart logical ext3 19.2GB 19.7GB       #创建一个约为512MB容量的逻辑分割槽,19.2G是由上一指令得到的该硬盘最后分区的截止磁柱位置
+    parted /dev/hdc rm 8         #删除8号分区，假设刚才新建分区编号(Number)为8
+```
