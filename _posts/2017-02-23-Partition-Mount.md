@@ -98,7 +98,7 @@ MBR这个仅有446 bytes的硬盘容量里面会放置最基本的启动管理�
 在终端窗口中输入如下命令：
 
 ```
-    sudo fdisk /dev/sdb        #假设要挂在的硬盘文档号位 sdb
+    sudo fdisk /dev/sdb        #假设要挂在的硬盘文档号位 sdb, 硬盘不能大于2T
     Command (m for help): m    #查看帮助
     Command (m for help): n    #创建新分区
     Command (m for help): e    #指定分区为扩展分区（extended）
@@ -110,6 +110,18 @@ MBR这个仅有446 bytes的硬盘容量里面会放置最基本的启动管理�
 
 ```
     sudo mkfs -t ext4 /dev/sdb   -t ext4     #表示将分区格式化成ext4文件系统类型
+    sudo mkfs -t ext4 /dev/sdb2  -t ext4     #如硬盘有多块分区
+```
+
+#### 磁盘检验
+**通常只有身为root且你的文件系统有问题的时候才使用fsck这个命令，否则在正常状况下使用此一命令，可能会造成对系统的危害！**
+通常使用这个命令的场合都是在系统出现极大的问题，导致你在 Linux 启动的时候得进入单人单机模式下进行维护的行为时，才必须使用此一命令！
+在 ext2/ext3 文件系统的最顶层(就是挂载点那个目录底下)会存在一个"lost+found"的目录！ 该目录就是在当你使用fsck检查文件系统后，若出现问题时，有问题的数据会被放置到这个目录中！ 
+所以理论上这个目录不应该会有任何数据，若系统自动产生数据在里面，那你就得特别注意你的文件系统了！
+
+```
+    sudo fsck -C -f -t ext4 /dev/sdb2        #filesystem check
+    sudo badblocks -sv /dev/sdb2             #检查硬盘或软盘扇区有没有坏轨
 ```
 
 ##### 挂载硬盘分区
@@ -119,9 +131,18 @@ MBR这个仅有446 bytes的硬盘容量里面会放置最基本的启动管理�
     sudo mkdir data            #建立挂载文件目录, /data
     sudo mount -t ext4 /dev/sdb /data   #挂载分区
     sudo df -lh                #检查
+    umount /dev/sdb            #卸除挂载
 ```
 
-##### 设置开机自动挂载
+##### [设置开机自动挂载](http://cn.linux.vbird.org/linux_basic/0230filesystem.php#bootup)
+在*/etc/fstable* (filesystem table)有如下字段：
+
+- 磁盘装置文件名或该装置的Label，可使用dumpe2fs 获得Label或者使用UUID
+- 挂载点 (mount point)：空目录
+- 磁盘分区的文件系统，如ext4
+- 文件系统参数，可使用defaults默认设置
+- 能否被 dump 备份命令作用。dump 是一个用来做为备份的命令，可以透过 fstab 指定哪个文件系统必须要进行 dump 备份！ 0 代表不要做 dump 备份， 1 代表要每天进行 dump 的动作。 2 也代表其他不定日期的 dump 备份动作， 通常这个数值不是 0 就是 1。
+- 是否以 fsck 检验扇区。启动的过程中，系统默认会以 fsck 检验我们的 filesystem 是否完整 (clean)。 不过，某些 filesystem 是不需要检验的，例如内存置换空间 (swap) ，或者是特殊文件系统例如 /proc 与 /sys 等等。所以，在这个字段中，我们可以配置是否要以 fsck 检验该 filesystem 。 0 是不要检验， 1 表示最早检验(一般只有根目录会配置为 1)， 2 也是要检验，不过 1 会比较早被检验！ 一般来说，根目录配置为 1 ，其他的要检验的 filesystem 都配置为 2 就好了。
 
 ```
     ls -l /dev/disk/by-uuid/    #查看硬盘对应的uuid
