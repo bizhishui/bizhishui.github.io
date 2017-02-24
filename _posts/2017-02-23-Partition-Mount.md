@@ -27,6 +27,9 @@ tags:
 
 [![linux file system](/media/files/2017/02/23/LinuxDevs.png)](https://github.com/bizhishui/bizhishui.github.io/blob/master/ "linux file system")
 
+|     设备    |       设备在Linux中的文件名     |
+|-------------|---------------------------------|
+|SCSI/SATA硬盘、U盘 |   /dev/hd[a-d]            |
 
 ### [磁盘分区](http://cn.linux.vbird.org/linux_basic/0130designlinux.php#partition)
 当前大多数硬盘的接口都是SATA，因此这些接口的磁碟装置档名都是/dev/sd[a-p]的格式，具体名称由Linux核心侦测到磁碟的顺序决定。
