@@ -224,7 +224,7 @@ Linux下每一个文件都有以下三种主要时间：
 ### [Linux的EXT文件系统](http://cn.linux.vbird.org/linux_basic/0230filesystem.php#harddisk-inode)
 Linux的EXT文件系统包含superblock,inode和block三个重要要素。每个文件都有一个inode，它记录该文件的存取模式(read/write/excute)，该文件的拥有者与群组(owner/group)，
 该文件的容量，该文件创建或状态改变的时间(ctime)，最近一次的读取时间(atime)，最近修改的时间(mtime)，定义文件特性的旗标(flag)，如 SetUID...，
-该文件真正内容的指向 (pointer)等内容。而一个文件根据实际大小可以占据多个block，一个block大小可以是1k,2k和4k。而超级区块（superblock）则记录该分区相关信息的地方，
+该文件真正内容的指向 (pointer)等内容，同时记录此文件的数据所在的block号码。而一个文件根据实际大小可以占据多个block，一个block大小可以是1k,2k和4k。而超级区块（superblock）则记录该分区相关信息的地方，
 没有superblock，也就没有该分区了。它记录的信息包括block 与 inode 的总量，未使用与已使用的 inode / block 数量，
 block 与 inode 的大小 (block 为 1, 2, 4K，inode 为 128 bytes)，filesystem 的挂载时间、最近一次写入数据的时间、最近一次检验磁盘 (fsck) 的时间等文件系统的相关信息，
 一个 valid bit 数值，若此文件系统已被挂载，则 valid bit 为 0 ，若未被挂载，则 valid bit 为 1 等信息。
