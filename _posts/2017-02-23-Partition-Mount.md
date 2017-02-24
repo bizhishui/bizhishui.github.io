@@ -28,9 +28,9 @@ tags:
 [![linux file system](/media/files/2017/02/23/LinuxDevs.png)](https://github.com/bizhishui/bizhishui.github.io/blob/master/ "linux file system")
 
 
-   |     设备               |       设备在Linux中的文件名     |
-   | ---------------------- | ------------------------------- |
-   | SCSI/SATA硬盘、U盘     |     /dev/hd[a-d]                |
+   |  设备                  |  设备在Linux中的文件名     |
+   |:----------------------:|:--------------------------:|
+   |  SCSI/SATA硬盘、U盘    |  /dev/hd[a-d]              |
 
 
 ### [磁盘分区](http://cn.linux.vbird.org/linux_basic/0130designlinux.php#partition)
