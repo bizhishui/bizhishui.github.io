@@ -1,0 +1,15 @@
+\documentclass{standalone}
+\newcommand{\specialcell}[2][c]{\begin{tabular}[#1]{@{}c@{}}#2\end{tabular}}
+% pdflatex linuxFS.tex
+\begin{document}
+\begin{tabular}{|c|c|}
+    \hline
+    \textbf{Devices}   &  \textbf{File Name in Linux} \\ \hline
+    IDE HDD    &   /dev/hd[a-d]  \\ \hline
+    SCSI/SATA/USB    & /dev/sd[a-p]  \\ \hline
+    Floppy disk   &  /dev/fd[0-1]  \\\hline
+    Printer   &  \specialcell{SCSI 25 pin:/dev/lp[0-2] \\ USB: /dev/usb/lp[0-15]} \\\hline
+    Mouse   &    \specialcell{USB: /dev/usb/mouse[0-15] \\ PS2:/dev/psaux} \\\hline
+    CDROM/DVDROM  &  /dev/cdrom \\\hline
+\end{tabular}
+\end{document}
