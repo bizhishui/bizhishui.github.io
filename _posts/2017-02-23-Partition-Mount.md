@@ -21,15 +21,14 @@ tags:
 
 ### [各硬件装置在Linux中的档名](http://cn.linux.vbird.org/linux_basic/0130designlinux.php#hardware_no)
 在Linux系统中，每个装置都被当成一个文件来对待，并且几乎所有的硬件装置文件都在*/dev*这个目录内。
-举例来说，IDE介面的硬盘的文件名称即为*/dev/hd[a-d]*，其中，括号内的字母为*a-d*当中的任意一个，亦即有*/dev/hda*, */dev/hdb*, */dev/hdc*, 及*/dev/hdd*这四个文件的意思。
-
+举例来说，IDE介面的硬盘的文件名称即为*/dev/hd[a-d]*，其中，括号内的字母为*a-d*当中的任意一个，亦即有*/dev/hda*, */dev/hdb*, */dev/hdc*, 及*/dev/hdd*这四个文件的意思。   
 下图给出了几个常见的装置与其在Linux当中的档名：
 
 [![linux file system](/media/files/2017/02/23/LinuxDevs.png)](https://github.com/bizhishui/bizhishui.github.io/blob/master/ "linux file system")
 
 
 ### [磁盘分区](http://cn.linux.vbird.org/linux_basic/0130designlinux.php#partition)
-当前大多数硬盘的接口都是SATA，因此这些接口的磁碟装置档名都是/dev/sd[a-p]的格式，具体名称由Linux核心侦测到磁碟的顺序决定。
+当前大多数硬盘的接口都是SATA，因此这些接口的硬盘装置文件名都是/dev/sd[a-p]的格式，具体名称由Linux核心侦测到磁碟的顺序决定。
 
 #### 硬盘结构
 硬盘的物理结构一般由磁头与碟片、电动机、主控芯片与排线等部件组成；当主电动机带动碟片旋转时，副电动机带动一组（磁头）到相对应的碟片上并确定读取正面还是反面的碟面，
