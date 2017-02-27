@@ -194,3 +194,20 @@ The first type of sed script demonstrates making a series of edits in a file. He
     s/  */ /g           #replace any string of consecutive spaces with a single space
     s/\.  */.  /g       #replace a period followed by any number of spaces with a period followed by two spaces
 ```
+
+##### Making Changes Across a Set of Files
+{:.no_toc}
+The most common use of sed is in making a set of search-and-replacement edits across a set of files.
+This make sed be able to apply one script to hundreds of files.  
+In some ways, writing a script is like devising a hypothesis, given a certain set of facts. You try to prove the validity of the hypothesis by 
+increasing the amount of data that you test it against. If you are going to be running a script on multiple files, use testsed to run 
+the script on several dozen files after you've tested it on a smaller sample. Then compare the temporary files to the originals to see if your assumptions were correct. 
+The script might be off slightly and you can revise it. The more time you spend testing, which is actually rather interesting work, 
+the less chance you will spend your time unraveling problems caused by a botched script.
+
+##### Extracting Contents of a File
+{:.no_toc}
+One type of sed application is used for extracting relevant material from a file. In this way, sed functions like grep , with the additional advantage that the input can be modified prior to output. 
+
+##### Edits To Go
+{:.no_toc}
