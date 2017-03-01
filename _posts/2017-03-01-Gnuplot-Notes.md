@@ -45,7 +45,7 @@ We can substract these rows and print it in a file by column with the following 
 ```
     #filename: subrow.awk
     #invoke command: gawk -v pL=6 -f subrow.awk filename >> out.data
-    BEGIN {}
+    BEGIN {}    #not used in this script, just want show a full awk script example
 
     {
         if (NR==int(pL)) {              #pL is a parameter from command line
@@ -58,4 +58,4 @@ We can substract these rows and print it in a file by column with the following 
     END {}
 ```
 
-We can then edit the output results file with *Vim* in *visual mode* to sixth row result at the right of second row.
+We can then edit the output result file with *Vim* in *visual mode* to move the sixth row's result at the right of second row.
