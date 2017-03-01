@@ -40,7 +40,7 @@ For example, we want to plot the second and sixth row (start from the second col
     0.8    1.4222   1.4548  1.5311  1.6013  1.7022      #from the second column
 ```
 
-We can substract these rows and print it in a file by column with the following awk script
+We can substract these rows and print it in a file by column with the following [awk script](http://www.thegeekstuff.com/sed-awk-101-hacks-ebook/)
 
 ```
     #filename: subrow.awk
@@ -49,7 +49,7 @@ We can substract these rows and print it in a file by column with the following 
 
     {
         if (NR==int(pL)) {              #pL is a parameter from command line
-            for (i=2;i<=NF;i++) {
+            for (i=2;i<=NF;i++) {       #nb of field in current stream (line), see: Sed and awk 101 hacks
                 print $i
             }
         }
