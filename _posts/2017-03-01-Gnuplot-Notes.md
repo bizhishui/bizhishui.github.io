@@ -12,7 +12,7 @@ tags:
 > This blog notes some points encountered in using Gnuplot.
 
 
-### Plow a row with awk
+### Plow row with awk
 By default, gnuplot plots one or more columns from a file with the corresponding column number. But how can plot some rows of a given data file?
 Maybe  the using of *awk* to produce a temporary file for Gnuplot is a choice. For example we have a file with records as below,
 
@@ -30,3 +30,32 @@ Maybe  the using of *awk* to produce a temporary file for Gnuplot is a choice. F
     1.3    1.2852   1.4002   
     1.4    1.2857   1.4006  1.5316  1.6104  1.7035
 ```
+
+With `plot 'filename' u 1:2` in the interactive mode of Gnuplot, a curve (show the second column based on first column) is generated. 
+But it seems there are not a way for Gnuplot to plot two rows (2 and 6 for example) directly.
+
+For example, we want to plot the second and sixth row (start from the second column), namely
+```
+    #        0.05    0.1     0.2     0.3     0.5       
+    0.8    1.4222   1.4548  1.5311  1.6013  1.7022      #from the second column
+```
+
+We can substract these rows and print it in a file by column with the following awk script
+
+```
+    #filename: subrow.awk
+    #invoke command: gawk -v pL=6 -f subrow.awk filename >> out.data
+    BEGIN {}
+
+    {
+        if (NR==int(pL)) {              #pL is a parameter from command line
+            for (i=2;i<=NF;i++) {
+                print $i
+            }
+        }
+    }
+
+    END {}
+```
+
+We can then edit the output results file with *Vim* in *visual mode* to sixth row result at the right of second row.
