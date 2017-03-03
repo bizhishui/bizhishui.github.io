@@ -53,4 +53,5 @@ And add color for **grep** command:
 
 ```
     export GREP_OPTIONS='--color=auto'
+    alias grep='grep -n'        #print line number of matched lines
 ```
