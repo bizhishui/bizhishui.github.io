@@ -34,13 +34,17 @@ to change the write permission, and then build the link
 In '~/.bashrc' (*in my mac, I've soft linked `~/.bashrc` to  `~/.bash_profile`*), add the following scripts
 
 ```
+    export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\w\[\033[m\]\$ "
     export CLICOLOR=1
     export LSCOLORS=GxFxCxDxBxegedabagaced
+    alias ls='ls -GFh'
 ```
 
 for *Dark* terminal themes, and the following alalternative for *Light* terminal theme,
 
 ```
+    export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\w\[\033[m\]\$ "
     export CLICOLOR=1
     export LSCOLORS=ExFxBxDxCxegedabagacad
+    alias ls='ls -GFh'
 ```
