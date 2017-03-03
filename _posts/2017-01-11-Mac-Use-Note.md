@@ -48,3 +48,9 @@ for *Dark* terminal themes, and the following alalternative for *Light* terminal
     export LSCOLORS=ExFxBxDxCxegedabagacad
     alias ls='ls -GFh'
 ```
+
+And add color for **grep** command:
+
+```
+    export GREP_OPTIONS='--color=auto'
+```
