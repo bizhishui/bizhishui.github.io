@@ -1,5 +1,5 @@
 ---
-title: Build Netlib
+title: Compile Netlib Libraries
 layout: post
 guid: urn:uuid:6dd97e64-8e79-4d04-b3dd-d0e74d27ef5f
 categories:
@@ -12,6 +12,10 @@ tags:
 ---
 
 > This post aimes to note the procedures in building some math libraries.
+
+
+* TOC
+{:toc}
 
 ### Compile BLAS Library
 Downloading the Blas library from [netlib-blas](http://www.netlib.org/blas/), and unpack it to *BLAS_DIR*.
@@ -33,6 +37,7 @@ As indicated in the file *$LAPACK_DIR/lapack.pc.in*, Lapack need BLAS routines. 
 or original BLAS as done in the previous section. Lapack suggest the latter way for efficiency consideration.
 
 #### Compile into Staic Library
+{:.no_toc}
 
 ```
     cd $LAPACK_DIR
@@ -44,7 +49,8 @@ or original BLAS as done in the previous section. Lapack suggest the latter way 
 ```
 
 #### Compile into Shared Library
-To compile it to shared library, we need make more changements.
+{:.no_toc}
+To compile it to shared library, we need make more changements[^](http://stackoverflow.com/questions/23463240/how-to-compile-lapack-so-that-it-can-be-used-correctly-during-installation-of-oc).
 For user who use original BLAS, they are
 
 ```
@@ -101,4 +107,18 @@ Using grep command
 
 we can found there are two duplicated lines in *SRC/Makefile* and *SRC/CMakeLists.txt* as already reported on Github, [issue 105](https://github.com/Reference-LAPACK/lapack/issues/105).
 Delete the duplicated lines, re-run *make lapacklib* will generate our shared library *liblapack.so*.  
-If we use BLAS comes with Lapack, some other changements  need to make for compiling BLAS.
+If we use BLAS comes with Lapack, some other changements  need to make for compiling BLAS. They are
+
+```
+    Set BLASLIB = ../../libblas.so in make.inc
+
+    #in the file ./BLAS/SRC/Makefile
+    $(BLASLIB): $(ALLOBJ)
+        $(ARCH) $(ARCHFLAGS) $@ $(ALLOBJ)
+        $(RANLIB) $@
+    #the above three lines should be changed to
+    $(LAPACKLIB): $(ALLOBJ)
+        $(LOADER) $(LOADOPTS) -z muldefs -shared -Wl,-soname,libblas.so -o $@ $(ALLOBJ)
+
+    make blaslib    #before make lapacklib
+```
