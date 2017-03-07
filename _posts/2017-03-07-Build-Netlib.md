@@ -44,3 +44,61 @@ or original BLAS as done in the previous section. Lapack suggest the latter way 
 ```
 
 #### Compile into Shared Library
+To compile it to shared library, we need make more changements.
+For user who use original BLAS, they are
+
+```
+    cd $LAPACK_DIR
+    cp make.inc.example make.inc
+    Adding -fPIC to OPTS and NOOPT in make.inc
+    Set BLASLIB = $BLAS_DIR/libblas.so in make.inc 
+    Set LAPACK_DIR = liblapack.soin make.inc
+
+    #in the file ./SRC/Makefile
+    ../$(LAPACKLIB): $(ALLOBJ) $(ALLXOBJ) $(DEPRECATED)
+        $(ARCH) $(ARCHFLAGS) $@ $(ALLOBJ) $(ALLXOBJ) $(DEPRECATED)
+        $(RANLIB) $@
+    #the above three lines should be changed to
+    ../$(LAPACKLIB): $(ALLOBJ) $(ALLXOBJ) $(DEPRECATED)
+        $(LOADER) $(LOADOPTS) -shared -Wl,-soname,liblapack.so -o $@ $(ALLOBJ) $(BLASLIB) $(ALLXOBJ) $(DEPRECATED)
+
+    make lapacklib
+```
+
+For the version I downloaded, after running the above commands, errors occured as below
+
+```
+    ztplqt.o: In function `ztplqt_':
+    ztplqt.f:(.text+0x0): multiple definition of `ztplqt_'
+    ztplqt.o:ztplqt.f:(.text+0x0): first defined here
+    ztplqt2.o: In function `ztplqt2_':
+    ztplqt2.f:(.text+0x0): multiple definition of `ztplqt2_'
+    ztplqt2.o:ztplqt2.f:(.text+0x0): first defined here
+    ztpmlqt.o: In function `ztpmlqt_':
+    ztpmlqt.f:(.text+0x0): multiple definition of `ztpmlqt_'
+    ztpmlqt.o:ztpmlqt.f:(.text+0x0): first defined here
+    collect2: error: ld returned 1 exit status
+    Makefile:511: recipe for target '../liblapack.so' failed
+    make[1]: *** [../liblapack.so] Error 1
+    make[1]: Leaving directory '/home/jinming/soft/lapack-3.7.0/SRC'
+    Makefile:27: recipe for target 'lapacklib' failed
+    make: *** [lapacklib] Error 2
+```
+
+Using grep command 
+
+```
+    grep -n 'ztpmlqt' . -R *
+
+    SRC/ztpmlqt.f:10:*> <a href="http://www.netlib.org/cgi-bin/netlibfiles.tgz?format=tgz&filename=/lapack/lapack_routine/ztpmlqt.f">
+    SRC/ztpmlqt.f:12:*> <a href="http://www.netlib.org/cgi-bin/netlibfiles.zip?format=zip&filename=/lapack/lapack_routine/ztpmlqt.f">
+    SRC/ztpmlqt.f:14:*> <a href="http://www.netlib.org/cgi-bin/netlibfiles.txt?format=txt&filename=/lapack/lapack_routine/ztpmlqt.f">
+    SRC/Makefile:463:   ztplqt.o ztplqt2.o ztpmlqt.o \
+    SRC/Makefile:467:   ztplqt.o ztplqt2.o ztpmlqt.o \
+    SRC/CMakeLists.txt:453:   ztplqt.f ztplqt2.f ztpmlqt.f
+    SRC/CMakeLists.txt:457:   ztplqt.f ztplqt2.f ztpmlqt.f
+```
+
+we can found there are two duplicated lines in *SRC/Makefile* and *SRC/CMakeLists.txt* as already reported on Github, [issue 105](https://github.com/Reference-LAPACK/lapack/issues/105).
+Delete the duplicated lines, re-run *make lapacklib* will generate our shared library *liblapack.so*.  
+If we use BLAS comes with Lapack, some other changements  need to make for compiling BLAS.
