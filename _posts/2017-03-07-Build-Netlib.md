@@ -17,6 +17,8 @@ tags:
 * TOC
 {:toc}
 
+---
+
 ### Compile BLAS Library
 Downloading the Blas library from [netlib-blas](http://www.netlib.org/blas/), and unpack it to *BLAS_DIR*.
 
