@@ -27,6 +27,8 @@ Downloading the Blas library from [netlib-blas](http://www.netlib.org/blas/), an
     #compile to static library
     gfortran -O2 -c *.f -fPIC 
     ar cr libblas.a *.o              #combine the .o files into a static library
+
+    sudo cp libblas.* /usr/local
 ```
 
 ### Compile LAPACK Library
@@ -46,6 +48,8 @@ or original BLAS as done in the previous section. Lapack suggest the latter way 
     BLASLIB = $BLAS_DIR/libblas.a   #if use original BLAS
     make blaslib                    #if use BLAS comes with Lapack
     make lapacklib
+
+    sudo cp liblapack.a /usr/local
 ```
 
 #### Compile into Shared Library
@@ -69,6 +73,8 @@ For user who use original BLAS, they are
         $(LOADER) $(LOADOPTS) -shared -Wl,-soname,liblapack.so -o $@ $(ALLOBJ) $(BLASLIB) $(ALLXOBJ) $(DEPRECATED)
 
     make lapacklib
+
+    sudo cp liblapack.so /usr/local
 ```
 
 For the version I downloaded, after running the above commands, errors occured as below
