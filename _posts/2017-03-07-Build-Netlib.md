@@ -30,7 +30,7 @@ Downloading the Blas library from [netlib-blas](http://www.netlib.org/blas/), an
     gfortran -O2 -c *.f -fPIC 
     ar cr libblas.a *.o              #combine the .o files into a static library
 
-    sudo cp libblas.* /usr/local
+    sudo cp libblas.* /usr/local/lib
 ```
 
 ### Compile LAPACK Library
@@ -51,7 +51,7 @@ or original BLAS as done in the previous section. Lapack suggest the latter way 
     make blaslib                    #if use BLAS comes with Lapack
     make lapacklib
 
-    sudo cp liblapack.a /usr/local
+    sudo cp liblapack.a /usr/local/lib
 ```
 
 #### Compile into Shared Library
@@ -76,7 +76,7 @@ For user who use original BLAS, they are
 
     make lapacklib
 
-    sudo cp liblapack.so /usr/local
+    sudo cp liblapack.so /usr/local/lib
 ```
 
 For the version I downloaded, after running the above commands, errors occured as below
@@ -164,5 +164,6 @@ LAPACKE is a C interface to LAPACK. By default, LAPACKE is already inside the LA
         $(CC) $(CFLAGS) -shared -Wl,-soname,liblapacke.so -o ../../$(LAPACKELIB) $(OBJ)
 
 
-    sudo cp ../liblapacke.* /usr/local
+    sudo cp ../liblapacke.* /usr/local/lib
+    cp lapacke.h lapacke_config.h lapacke_mangling.h lapacke_utils.h to /usr/local/include
 ```
