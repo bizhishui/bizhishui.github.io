@@ -56,7 +56,7 @@ or original BLAS as done in the previous section. Lapack suggest the latter way 
 
 #### Compile into Shared Library
 {:.no_toc}
-To compile it to shared library, we need make more changements[^](http://stackoverflow.com/questions/23463240/how-to-compile-lapack-so-that-it-can-be-used-correctly-during-installation-of-oc).
+To compile it to shared library, we need make more changements[>](http://stackoverflow.com/questions/23463240/how-to-compile-lapack-so-that-it-can-be-used-correctly-during-installation-of-oc).
 For user who use original BLAS, they are
 
 ```
