@@ -120,8 +120,8 @@ If we use BLAS comes with Lapack, some other changements  need to make for compi
 ```
     Set BLASLIB = ../../libblas.so in make.inc
 
-    #in the file ./BLAS/SRC/Makefile
-    $(BLASLIB): $(ALLOBJ), the following three lines
+    #in the file ./BLAS/SRC/Makefile, the following three lines
+    $(BLASLIB): $(ALLOBJ)
         $(ARCH) $(ARCHFLAGS) $@ $(ALLOBJ)
         $(RANLIB) $@
     #should be changed to
