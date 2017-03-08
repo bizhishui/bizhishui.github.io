@@ -66,11 +66,11 @@ For user who use original BLAS, they are
     Set BLASLIB = $BLAS_DIR/libblas.so in make.inc 
     Set LAPACK_DIR = liblapack.soin make.inc
 
-    #in the file ./SRC/Makefile
+    #in the file ./SRC/Makefile, the following three lines
     ../$(LAPACKLIB): $(ALLOBJ) $(ALLXOBJ) $(DEPRECATED)
         $(ARCH) $(ARCHFLAGS) $@ $(ALLOBJ) $(ALLXOBJ) $(DEPRECATED)
         $(RANLIB) $@
-    #the above three lines should be changed to
+    #should be changed to
     ../$(LAPACKLIB): $(ALLOBJ) $(ALLXOBJ) $(DEPRECATED)
         $(LOADER) $(LOADOPTS) -shared -Wl,-soname,liblapack.so -o $@ $(ALLOBJ) $(BLASLIB) $(ALLXOBJ) $(DEPRECATED)
 
@@ -121,10 +121,10 @@ If we use BLAS comes with Lapack, some other changements  need to make for compi
     Set BLASLIB = ../../libblas.so in make.inc
 
     #in the file ./BLAS/SRC/Makefile
-    $(BLASLIB): $(ALLOBJ)
+    $(BLASLIB): $(ALLOBJ), the following three lines
         $(ARCH) $(ARCHFLAGS) $@ $(ALLOBJ)
         $(RANLIB) $@
-    #the above three lines should be changed to
+    #should be changed to
     $(LAPACKLIB): $(ALLOBJ)
         $(LOADER) $(LOADOPTS) -z muldefs -shared -Wl,-soname,libblas.so -o $@ $(ALLOBJ)
 
@@ -147,19 +147,19 @@ LAPACKE is a C interface to LAPACK. By default, LAPACKE is already inside the LA
     Adding -fPIC to CFLAGS in ../make.inc
     Set LAPACKELIB = liblapacke.so
 
-    #in the ./src/Makefile
+    #in the ./src/Makefile, the following three lines
     ../../$(LAPACKELIB): $(ALLOBJ) $(ALLXOBJ) $(DEPRECATED)
        $(ARCH) $(ARCHFLAGS) $@ $(ALLOBJ) $(ALLXOBJ) $(DEPRECATED)
        $(RANLIB) $@
-    #the above three lines should be changed to
+    #should be changed to
     ../../$(LAPACKELIB): $(ALLOBJ) $(ALLXOBJ) $(DEPRECATED)
         $(CC) $(CFLAGS) -shared -Wl,-soname,liblapacke.so -o $@ $(ALLOBJ) $(ALLXOBJ) $(DEPRECATED)
 
-    #in the ./utils/Makefile
+    #in the ./utils/Makefile, the following three lines
     lib: $(OBJ)
        $(ARCH) $(ARCHFLAGS) ../../$(LAPACKELIB) $(OBJ)
        $(RANLIB) ../../$(LAPACKELIB)
-    #the above three lines should be changed to
+    #should be changed to
     lib: $(OBJ)
         $(CC) $(CFLAGS) -shared -Wl,-soname,liblapacke.so -o ../../$(LAPACKELIB) $(OBJ)
 
