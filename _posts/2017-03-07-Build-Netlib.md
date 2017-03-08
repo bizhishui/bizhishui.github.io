@@ -147,7 +147,7 @@ LAPACKE is a C interface to LAPACK. By default, LAPACKE is already inside the LA
     Adding -fPIC to CFLAGS in ../make.inc
     Set LAPACKELIB = liblapacke.so
 
-    #in the ./src/Makefile, the following three lines
+    #in the file ./src/Makefile, the following three lines
     ../../$(LAPACKELIB): $(ALLOBJ) $(ALLXOBJ) $(DEPRECATED)
        $(ARCH) $(ARCHFLAGS) $@ $(ALLOBJ) $(ALLXOBJ) $(DEPRECATED)
        $(RANLIB) $@
@@ -155,7 +155,7 @@ LAPACKE is a C interface to LAPACK. By default, LAPACKE is already inside the LA
     ../../$(LAPACKELIB): $(ALLOBJ) $(ALLXOBJ) $(DEPRECATED)
         $(CC) $(CFLAGS) -shared -Wl,-soname,liblapacke.so -o $@ $(ALLOBJ) $(ALLXOBJ) $(DEPRECATED)
 
-    #in the ./utils/Makefile, the following three lines
+    #in the file ./utils/Makefile, the following three lines
     lib: $(OBJ)
        $(ARCH) $(ARCHFLAGS) ../../$(LAPACKELIB) $(OBJ)
        $(RANLIB) ../../$(LAPACKELIB)
