@@ -130,3 +130,39 @@ If we use BLAS comes with Lapack, some other changements  need to make for compi
 
     make blaslib    #before make lapacklib
 ```
+
+
+### Compile LAPACKE Library
+LAPACKE is a C interface to LAPACK. By default, LAPACKE is already inside the LAPACK package, i.e., *$LAPACKE_DIR=$LAPACK_DIR/LAPACKE*.
+
+```
+    cd $LAPACKE_DIR
+
+    #compile static library
+    set BLASLIB and LAPACKLIB with appropriate static libraries in ../make.inc
+    make lapacke       #build static library: liblapacke.a
+
+
+    #compile shared library
+    Adding -fPIC to CFLAGS in ../make.inc
+    Set LAPACKELIB = liblapacke.so
+
+    #in the ./src/Makefile
+    ../../$(LAPACKELIB): $(ALLOBJ) $(ALLXOBJ) $(DEPRECATED)
+       $(ARCH) $(ARCHFLAGS) $@ $(ALLOBJ) $(ALLXOBJ) $(DEPRECATED)
+       $(RANLIB) $@
+    #the above three lines should be changed to
+    ../../$(LAPACKELIB): $(ALLOBJ) $(ALLXOBJ) $(DEPRECATED)
+        $(CC) $(CFLAGS) -shared -Wl,-soname,liblapacke.so -o $@ $(ALLOBJ) $(ALLXOBJ) $(DEPRECATED)
+
+    #in the ./utils/Makefile
+    lib: $(OBJ)
+       $(ARCH) $(ARCHFLAGS) ../../$(LAPACKELIB) $(OBJ)
+       $(RANLIB) ../../$(LAPACKELIB)
+    #the above three lines should be changed to
+    lib: $(OBJ)
+        $(CC) $(CFLAGS) -shared -Wl,-soname,liblapacke.so -o ../../$(LAPACKELIB) $(OBJ)
+
+
+    sudo cp ../liblapacke.* /usr/local
+```
