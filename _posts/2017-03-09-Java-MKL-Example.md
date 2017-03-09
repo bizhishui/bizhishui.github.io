@@ -7,6 +7,7 @@ categories:
 tags:
   - java
   - MKL
+  - eclipse
 ---
 
 > This post note how to call Intel MKL method from java.
@@ -18,7 +19,7 @@ tags:
 ---
 
 ### Preparations
-First we need make sure the Java Developpement Kit (JDK) and Intel MKL are well installed.
+First we need make sure the Java Developement Kit (JDK) and Intel MKL are well installed.
 Suppose jdk is installed under the path */opt/jdk/jdk1.8.0_121*. As java use JNI (Java Native Interface)
 to call c/c++ function, we can create soft links for the corresponding header files with:
 
@@ -232,4 +233,19 @@ The output should be:
     	0	0	0	0
     	0	0	0	0
     TEST PASSED
+```
+
+### JNI in Eclipse
+To call C/C++ method in java through jni, one need to install Eclipse and Eclipse CDT (C/C++ Developement Tool) plugin.
+This section mainly refer articles on [programming notes](https://www3.ntu.edu.sg/home/ehchua/programming/).
+
+#### Install Eclipse C/C++ Development Tool (CDT) for Eclipse 4.6.2 (Neon)
+This method is only for people who have already installed "Eclipse for Java Developers" or other Eclipse packages, one can install the 
+CDT plug-in as follow.
+
+```
+    Launch Eclipse => Help => Install New Software =>
+    In "Work with" field, pull down the drop-down mene and select "Neon - http://download.eclipse.org/releases/neon" =>
+    In "Name" box, expand "Programming Language" node =>
+    Check "C/C++ Developement Tools" => "Next" => ... => "Finish"
 ```
