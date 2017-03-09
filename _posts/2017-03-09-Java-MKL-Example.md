@@ -26,6 +26,10 @@ to call c/c++ function, we can create soft links for the corresponding header fi
 ```
     ln -s /opt/jdk/jdk1.8.0_121/include/jni.h ~/usr/include     
     ln -s /opt/jdk/jdk1.8.0_121/include/linux/jni_md.h ~/usr/include
+    #or just set JAVA_HOME in ~/.bashrc
+    export JAVA_HOME=/opt/jdk/jdk1.8.0_121
+    #and use the following options with C compiler (icc, gcc)
+    -I$(JAVA_HOME)/include -I$(JAVA_HOME)/include/linux
 ```
 
 The Intel MKL libaray is included in Intel Parallel Studio (for linux)  which provides a very friendly GUI for installation.
