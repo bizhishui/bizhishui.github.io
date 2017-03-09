@@ -32,8 +32,7 @@ The Intel MKL libaray is included in Intel Parallel Studio (for linux)  which pr
 But make sure to use the following commands to set the PATH related varibales.
 
 ```
-    source /usr/intel/bin/compilervars.sh intel64   #or 
-    source /usr/intel/compilers_and_libraries/linux/mkl/bin/mklvars.sh intel64   #/usr/intel is the installation directory
+    source /usr/intel/bin/compilervars.sh intel64   #/usr/intel is the installation directory
 ```
 
 ### Simple Example Run on Command-line
@@ -114,7 +113,7 @@ Definition of function Java_CBLAS_dgemm should be used in wrapper for MKL. Creat
 This file should be compiled to create native library *libmkl_java_stubs.so* (Loading of this library in java is described in step 1)
 
 ```
-    MKLPATH=/usr/intel/compilers_and_libraries/linux/mkl
+    MKLPATH=/usr/intel/mkl
     icc -shared -fPIC -o libmkl_java_stubs.so CBLAS.c -I. -I$MKLPATH/include -I/home/jinming/usr/include -Wl,--start-group $MKLPATH/lib/intel64/libmkl_intel_lp64.a $MKLPATH/lib/intel64/libmkl_intel_thread.a $MKLPATH/lib/intel64/libmkl_core.a -Wl,--end-group -qopenmp -lpthread -lm -ldl
 ```
 
