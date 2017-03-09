@@ -11,6 +11,12 @@ tags:
 
 > This post note how to call Intel MKL method from java.
 
+
+* TOC
+{:toc}
+
+---
+
 ### Preparations
 First we need make sure the Java Developpement Kit (JDK) and Intel MKL are well installed.
 Suppose jdk is installed under the path */opt/jdk/jdk1.8.0_121*. As java use JNI (Java Native Interface)
@@ -31,3 +37,4 @@ But make sure to use the following commands to set the PATH related varibales.
 
 ### Simple Example Run on Command-line
 This section is mainly adapted from [Intel Developer Zone](https://software.intel.com/en-us/articles/performance-tools-for-software-developers-how-do-i-use-intel-mkl-with-java).
+Intel® MKL C functions can be accessed from Java through Java Native Interface (JNI). The following example shows how to call cblas_dgemm from java on Linux.
