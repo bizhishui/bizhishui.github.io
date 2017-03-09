@@ -39,7 +39,7 @@ But make sure to use the following commands to set the PATH related varibales.
 This section is mainly adapted from [Intel Developer Zone](https://software.intel.com/en-us/articles/performance-tools-for-software-developers-how-do-i-use-intel-mkl-with-java).
 Intel® MKL C functions can be accessed from Java through Java Native Interface (JNI). The following example shows how to call cblas_dgemm from java on Linux.
 
-##### 1. Create a java file with cblas dgemm description (CBLAS.java)
+#### 1. Create a java file with cblas dgemm description (CBLAS.java)
 {:.no_toc}
 
 ```
@@ -75,7 +75,7 @@ Compile the CBLAS.java using the java compiler as below:
     javac CBLAS.java
 ```
 
-##### 2. Generate headers files from the java class file which was created in the previous step
+#### 2. Generate headers files from the java class file which was created in the previous step
 {:.no_toc}
 These headers should be used in C file in the next step. You donot need edit the generated header file *CBLAS.h*.
 
@@ -83,7 +83,7 @@ These headers should be used in C file in the next step. You donot need edit the
     javah -classpath . CBLAS      #javah -classpath path_to_jars_or_classes com.my.package.MyClass
 ```
 
-##### 3. Use definition of Java_CBLAS_dgemm in header CBLAS.h that was generated in step 2 to write C file CBLAS.c
+#### 3. Use definition of Java_CBLAS_dgemm in header CBLAS.h that was generated in step 2 to write C file CBLAS.c
 {:.no_toc}
 Definition of function Java_CBLAS_dgemm should be used in wrapper for MKL. Create C file CBLAS.c
 
@@ -117,7 +117,7 @@ This file should be compiled to create native library *libmkl_java_stubs.so* (Lo
     icc -shared -fPIC -o libmkl_java_stubs.so CBLAS.c -I. -I$MKLPATH/include -I/home/jinming/usr/include -Wl,--start-group $MKLPATH/lib/intel64/libmkl_intel_lp64.a $MKLPATH/lib/intel64/libmkl_intel_thread.a $MKLPATH/lib/intel64/libmkl_core.a -Wl,--end-group -qopenmp -lpthread -lm -ldl
 ```
 
-##### 4. Create main dgemm.java
+#### 4. Create main dgemm.java
 {:.no_toc}
 
 ```
@@ -196,4 +196,40 @@ This file should be compiled to create native library *libmkl_java_stubs.so* (Lo
             return s;
         }
     }
+```
+
+Compile the application with 
+
+```
+    javac dgemm.java CBLAS.java    #javac *.java
+```
+
+#### Execute the application
+{:.no_toc}
+java.library.path should point to directory where library libmkl_java_stubs.so is placed. This example assumes that stubs shared library is located next to the created Java executable.
+And ensure that you add the location of your *.class* file to your classpath. So, if its in the current folder then add . to your classpath. 
+
+```
+    java -Djava.library.path=. -classpath . dgemm
+```
+
+The output should be: 
+
+```
+    alpha=1
+    beta=-1
+    Matrix A
+    	1	2	3
+    	4	5	6
+    Matrix B
+    	0	1	0	1
+    	1	0	0	1
+    	1	0	1	0
+    Initial C
+    	5	1	3	3
+    	11	4	6	9
+    Resulting C
+    	0	0	0	0
+    	0	0	0	0
+    TEST PASSED
 ```
