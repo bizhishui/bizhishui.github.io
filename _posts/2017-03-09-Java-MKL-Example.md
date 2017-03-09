@@ -33,6 +33,7 @@ But make sure to use the following commands to set the PATH related varibales.
 
 ```
     source /usr/intel/bin/compilervars.sh intel64   #/usr/intel is the installation directory
+    #Add This file to *~/.bashrc* can start automatic setting environement varibales
 ```
 
 ### Simple Example Run on Command-line
