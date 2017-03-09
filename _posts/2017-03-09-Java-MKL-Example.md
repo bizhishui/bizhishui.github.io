@@ -204,7 +204,7 @@ Compile the application with
     javac dgemm.java CBLAS.java    #javac *.java
 ```
 
-#### Execute the application
+#### 5. Execute the application
 {:.no_toc}
 java.library.path should point to directory where library libmkl_java_stubs.so is placed. This example assumes that stubs shared library is located next to the created Java executable.
 And ensure that you add the location of your *.class* file to your classpath. So, if its in the current folder then add . to your classpath. 
