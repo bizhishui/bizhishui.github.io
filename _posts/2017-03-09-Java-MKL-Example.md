@@ -240,6 +240,7 @@ To call C/C++ method in java through jni, one need to install Eclipse and Eclips
 This section mainly refer articles on [programming notes](https://www3.ntu.edu.sg/home/ehchua/programming/).
 
 #### Install Eclipse C/C++ Development Tool (CDT) for Eclipse 4.6.2 (Neon)
+{:.no_toc}
 This method is only for people who have already installed "Eclipse for Java Developers" or other Eclipse packages, one can install the 
 CDT plug-in as follow.
 
