@@ -64,7 +64,7 @@ We can then edit the output result file with *Vim* in *visual mode* to move the 
 
 ```
     #set logarithmic axis label, use with set logscale x 10
-    set format x "10^{\%L}"
+    set format x "10^{%L}"
     #Datted (Gnuplot 5) black (-1) lines
     with lines lt -1 dashtype '...'
     #Greek
