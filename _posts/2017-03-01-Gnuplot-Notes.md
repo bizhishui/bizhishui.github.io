@@ -12,7 +12,7 @@ tags:
 > This blog notes some points encountered in using Gnuplot.
 
 
-### Plow row with awk
+### Plot row with awk
 By default, gnuplot plots one or more columns from a file with the corresponding column number. But how can plot some rows of a given data file?
 Maybe  the using of *awk* to produce a temporary file for Gnuplot is a choice. For example we have a file with records as below,
 
@@ -59,3 +59,16 @@ We can substract these rows and print it in a file by column with the following 
 ```
 
 We can then edit the output result file with *Vim* in *visual mode* to move the sixth row's result at the right of second row.
+
+### Basic Usages
+
+```
+    #set logarithmic axis label, use with set logscale x 10
+    set format x "10^{%L}"
+    #Datted (Gnuplot 5) black (-1) lines
+    with lines lt -1 dashtype '...'
+    #Greek
+    set xlabel '{/Symbol b}'
+    #set special x range for a curve
+    plot [0.1:2] 1/x**2
+```
