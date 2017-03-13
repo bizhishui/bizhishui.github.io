@@ -30,6 +30,15 @@ tags:
     locate 文件的部分名称    #在数据库(非硬盘)中查找含有部分文件名的所以文件
     find                   #在整个硬盘上查找，功能强大但速度慢
     dumpe2fs -h /devsdb1   #列出/dev/sdb1的superblock(记录该分区文件系统的各种权限属性、inode和block的总体及使用情况)信息
+
+    #Replace a string in multiple files in linux command line
+    sed -i 's/foo/bar/g' *.dat  #subsititue all the occurence of foo with bar in all the lines of all the file postfix .dat
+
+    #chmod recursively only all the directories or files
+    find /path/to/base/dir -type d -exec chmod 755 {} \;    #To recursively give directories read&execute privileges
+    find /path/to/base/dir -type f -exec chmod 644 {} \;    #To recursively give files read privileges
+    #To set directories to 755 but files to 644 WITHOUT find 
+    chmod -R u+rwX,go+rX,go-w /path  #The important thing to note here is that uppercase X acts differently to lowercase x.
 ```
 
 ### Linux系统的在线求助man page与info page[>](http://cn.linux.vbird.org/linux_basic/0160startlinux.php#manual)
