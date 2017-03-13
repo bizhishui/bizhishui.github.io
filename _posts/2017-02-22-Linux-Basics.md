@@ -32,7 +32,7 @@ tags:
     dumpe2fs -h /devsdb1   #列出/dev/sdb1的superblock(记录该分区文件系统的各种权限属性、inode和block的总体及使用情况)信息
 
     #Replace a string in multiple files in linux command line
-    sed -i 's/foo/bar/g' *.dat  #subsititue all the occurence of foo with bar in all the lines of all the file postfix .dat
+    sed -i 's/foo/bar/g' *.dat  #subsititue all the occurence of foo with bar in all the lines of all files with postfix .dat
 
     #chmod recursively only all the directories or files
     find /path/to/base/dir -type d -exec chmod 755 {} \;    #To recursively give directories read&execute privileges
