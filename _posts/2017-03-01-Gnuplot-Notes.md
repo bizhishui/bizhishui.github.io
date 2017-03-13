@@ -74,6 +74,6 @@ We can then edit the output result file with *Vim* in *visual mode* to move the 
     #plot line graphs with different x-range in one-figure
     #suppose we have two columns (x,f(x), where 0<x<20, with the following scripts can manipulate with corrected range
     f(value, left, right) = (value < left || value > right ? 1/0 : value)
-    plot 'input.txt' using (f($1, 3, 7)):2, 'input.dat' using (f($1, 5, 9)):2
+    plot 'input.dat' using (f($1, 3, 7)):2, 'input.dat' using (f($1, 5, 9)):2
 ```
 
