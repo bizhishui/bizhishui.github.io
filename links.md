@@ -19,6 +19,7 @@ layout: page
 
 
 #### Interesting Sites
+- [哈嘿](http://hahack.com/)
 - [鳥哥的 Linux 私房菜](http://linux.vbird.org/home.php)
 - [开源中国社区](https://www.oschina.net/)
 - [青塔](http://www.cingta.com/main.html)
