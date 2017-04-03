@@ -39,6 +39,9 @@ tags:
     find /path/to/base/dir -type f -exec chmod 644 {} \;    #To recursively give files read privileges
     #To set directories to 755 but files to 644 WITHOUT find 
     chmod -R u+rwX,go+rX,go-w /path  #The important thing to note here is that uppercase X acts differently to lowercase x.
+
+    #exfat support most OS and no 4G restriction per file
+    sudo mkfs.exfat -n LABEL /dev/sdXn  # formating an external driver /dev/sdXn to exFAT with label name LABEL
 ```
 
 ### Linux系统的在线求助man page与info page[>](http://cn.linux.vbird.org/linux_basic/0160startlinux.php#manual)
