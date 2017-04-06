@@ -42,6 +42,10 @@ tags:
 
     #exfat supports most OS and has no 4G restriction per file
     sudo mkfs.exfat -n LABEL /dev/sdXn  # formating an external driver /dev/sdXn to exFAT with label name LABEL
+
+    #copy files except certain extentions
+    rsync -rav --include='*.vtk' --exclude='*.ser' sourceDir targetDir       #local copy, -r recursive, -a archive (mostly all files), -v verbose
+    rsync -rav -e ssh --include='*.vtk' --include='*.txt' --exclude='*.ser' server:/Full/Sourcedir targetdir   #remote copy with ssh, -e specify ssh
 ```
 
 ### Linux系统的在线求助man page与info page[>](http://cn.linux.vbird.org/linux_basic/0160startlinux.php#manual)
