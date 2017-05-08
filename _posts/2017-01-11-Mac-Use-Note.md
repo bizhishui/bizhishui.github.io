@@ -55,3 +55,10 @@ And add color for **grep** command:
     export GREP_OPTIONS='--color=auto'
     alias grep='grep -n'        #print line number of matched lines
 ```
+
+- Install Gnuplot on Mac 
+
+```
+    brew uninstall gnuplot
+    brew reinstall gnuplot --with-qt5
+```
