@@ -59,6 +59,6 @@ And add color for **grep** command:
 - Install Gnuplot on Mac 
 
 ```
-    brew uninstall gnuplot
+    brew uninstall gnuplot; brew install gnuplot --with-qt5   ##OR
     brew reinstall gnuplot --with-qt5
 ```
