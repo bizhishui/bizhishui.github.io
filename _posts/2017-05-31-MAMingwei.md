@@ -13,7 +13,7 @@ tags:
 > 复制于[腾讯网](http://news.qq.com/a/20111227/000529.htm)
 
 ---
-
+[![MAWeiming](/media/files/2017/05/31/maweiming.jpg)](https://github.com/bizhishui/bizhishui.github.io/blob/master/ "资料图：马伟明在介绍自己的成果")
 马伟明性格怪。  
 马伟明脾气犟。<br />
 而且，据权威观察人士透漏，随着年龄、职务、地位、荣誉和知名度的增变，这种“马氏性格”与“马氏脾气”，似乎也正在向着“更怪”与“更犟”的方向发展。  
