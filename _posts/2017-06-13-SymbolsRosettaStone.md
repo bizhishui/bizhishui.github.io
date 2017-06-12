@@ -28,7 +28,10 @@ also produce images in eps mode (otherwise I get problems with image rotation la
 
 
 ```
-    symbol    html4    latex    gnuplot       ASCII 
-    -----------------------------------------------
-    $\alpha$  &alpha   \alpha   {/Symbol a}   224
+    symbol     |   html4     |   latex      |  gnuplot       |   ASCII 
+    ------------------------------------------------------------------
+    $\alpha$   |   &alpha    |  \alpha      | {/Symbol a}    |   224
+    ------------------------------------------------------------------
+    \(beta\)   |   &beta     |  \beta       | {/Symbol b}    |   225
+    ------------------------------------------------------------------
 ```
