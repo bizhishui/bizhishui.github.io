@@ -25,3 +25,10 @@ also produce images in eps mode (otherwise I get problems with image rotation la
 | --- | --- | --- | --- | --- |
 | $alpha$ | &alpha | \alpha | {/Symbol a} | 224 |
 | \(alpha\) | &alpha | \alpha | {/Symbol a} | 224 |
+
+
+```
+    symbol    html4    latex    gnuplot       ASCII 
+    -----------------------------------------------
+    $\alpha$  &alpha   \alpha   {/Symbol a}   224
+```
