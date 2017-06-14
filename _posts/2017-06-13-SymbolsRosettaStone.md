@@ -82,4 +82,5 @@ also produce images in eps mode (otherwise I get problems with image rotation la
        &Zeta;      \Zeta        {/Symbol Z}       
 ```
 
-
+### Italic font for use as variable names
+To write M in italics (gnuplot) we need {/Times-Italic M}
