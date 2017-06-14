@@ -30,13 +30,44 @@ also produce images in eps mode (otherwise I get problems with image rotation la
        &chi;       \chi         {/Symbol c}       
        &Chi;       \Chi         {/Symbol C}       
        &delta;     \delta       {/Symbol d}       235
+    ------------------------------------------------------
        &Delta;     \Delta       {/Symbol D}       
        &epsilon;   \epsilon     {/Symbol e}       238
        &Epsilon;   \Epsilon     {/Symbol E}       
        &phi;       \phi         {/Symbol f}       237
-       &Phi;       \Phi         {/Symbol F}       
+       &Phi;       \Phi         {/Symbol F}       232
+    ------------------------------------------------------
        &gamma;     \gamma       {/Symbol g}       
        &Gamma;     \Gamma       {/Symbol G}       226
+       &eta;       \eta         {/Symbol h}       
+       &Eta;       \Eta         {/Symbol H}       
+       &iota;      \iota        {/Symbol i}       
+    ------------------------------------------------------
+       &Iota;      \Iota        {/Symbol I}       
+       &kappa;     \kappa       {/Symbol k}       
+       &Kappa;     \Kappa       {/Symbol K}       
+       &lambda;    \lambda      {/Symbol l}       
+       &Lambda;    \Lambda      {/Symbol L}       
+    ------------------------------------------------------
+       &mu;        \mu          {/Symbol m}       230
+       &Mu;        \Mu          {/Symbol M}       
+       &nu;        \nu          {/Symbol n}       
+       &Nu;        \Nu          {/Symbol N}       
+       &omicron;   \omicron     {/Symbol o}       
+    ------------------------------------------------------
+       &Omicron;   \Omicron     {/Symbol O}       
+       &pi;        \pi          {/Symbol p}       227 
+       &Pi;        \Pi          {/Symbol P}      
+       &theta;     \theta       {/Symbol q}       
+       &Theta;     \Theta       {/Symbol Q}       233
+    ------------------------------------------------------
+       &rho;       \rho         {/Symbol r}       
+       &Rho;       \Rho         {/Symbol R}       
+       &sigma;     \sigma       {/Symbol s}       229
+       &Sigma;     \Sigma       {/Symbol S}       228
+       &tau;       \tau         {/Symbol t}       231
+    ------------------------------------------------------
+       &Tau;       \Tau         {/Symbol T}       
     ------------------------------------------------------
 ```
 
