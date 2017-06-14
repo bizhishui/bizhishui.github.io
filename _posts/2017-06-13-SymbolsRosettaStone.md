@@ -21,10 +21,10 @@ This page has some codes to make some symbols in html, latex and gnuplot, along 
 Gnuplot codes are for using enhnanced mode of postscript terminal. I usually use the setting "set terminal postscript enhanced eps" to 
 also produce images in eps mode (otherwise I get problems with image rotation later when these images are inluded in latex.)
 
-| symbol | html4 | latex | gnuplot | ASCII |
-| --- | --- | --- | --- | --- |
-| $\alpha$ | &alpha | \alpha | {/Symbol a} | 224 |
-| \(alpha\) | &alpha | \alpha | {/Symbol a} | 224 |
+symbol | html4 | latex | gnuplot | ASCII
+--- | --- | --- | --- | ---
+$\alpha$ | &alpha | \alpha | {/Symbol a} | 224
+\(alpha\) | &alpha | \alpha | {/Symbol a} | 224
 
 
 ```
