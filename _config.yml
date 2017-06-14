@@ -4,7 +4,6 @@ extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "tables", "w
 highlighter: rouge
 permalink: /:year/:month/:day/:title.html
 name: "止水"
-markdown: kramdown
 
 author: "zhishui"
 atom-baseurl: "https://bizhishui.github.io/"
