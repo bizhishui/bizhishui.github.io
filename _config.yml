@@ -2,6 +2,7 @@ markdown: kramdown
 highlighter: rouge
 permalink: /:year/:month/:day/:title.html
 name: "止水"
+markdown: kramdown
 
 author: "zhishui"
 atom-baseurl: "https://bizhishui.github.io/"
