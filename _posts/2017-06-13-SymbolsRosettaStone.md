@@ -68,7 +68,18 @@ also produce images in eps mode (otherwise I get problems with image rotation la
        &tau;       \tau         {/Symbol t}       231
     ------------------------------------------------------
        &Tau;       \Tau         {/Symbol T}       
+       &upsilon;   \upsilon     {/Symbol u}       
+       &Upsilon;   \Upsilon     {/Symbol U}       
+       &omega;     \omega       {/Symbol w}       
+       &Omega;     \Omega       {/Symbol W}       
     ------------------------------------------------------
+       &xi;        \xi          {/Symbol x}      
+       &Xi;        \Xi          {/Symbol X}      
+       &psi;       \psi         {/Symbol y}       
+       &Psi;       \Psi         {/Symbol Y}       
+       &zeta;      \zeta        {/Symbol z}       
+    ------------------------------------------------------
+       &Zeta;      \Zeta        {/Symbol Z}       
 ```
 
 
