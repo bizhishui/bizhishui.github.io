@@ -23,11 +23,21 @@ also produce images in eps mode (otherwise I get problems with image rotation la
 
 
 ```
-    |   html4     |   latex      |  gnuplot       |   ASCII   |
-    -----------------------------------------------------------
-    |   &alpha;   |  \alpha      | {/Symbol a}    |   224     |
-    |   &beta;    |  \beta       | {/Symbol b}    |   225     |
-    -----------------------------------------------------------
+       html4        latex        gnuplot          ASCII   
+    ------------------------------------------------------
+       &alpha;     \alpha       {/Symbol a}       224     
+       &beta;      \beta        {/Symbol b}       225     
+       &chi;       \chi         {/Symbol c}       
+       &Chi;       \Chi         {/Symbol C}       
+       &delta;     \delta       {/Symbol d}       235
+       &Delta;     \Delta       {/Symbol D}       
+       &epsilon;   \epsilon     {/Symbol e}       238
+       &Epsilon;   \Epsilon     {/Symbol E}       
+       &phi;       \phi         {/Symbol f}       237
+       &Phi;       \Phi         {/Symbol F}       
+       &gamma;     \gamma       {/Symbol g}       
+       &Gamma;     \Gamma       {/Symbol G}       226
+    ------------------------------------------------------
 ```
 
 
