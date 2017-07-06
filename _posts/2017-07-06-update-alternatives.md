@@ -87,4 +87,26 @@ config选项功能为在现有的命令链接选择一个作为系统默认的�
  remove参数用于删除一个命令的link值，其附带的slave也将一起删除。
  ```
     update-alternatives –remove python3 /usr/bin/python3.6
+    # update-alternatives --remove name path
  ```
+
+
+### update-alternatives 部分命名详解
+#### Install选项
+install选项的功能就是增加一组新的系统命令链接符了，使用语法为：
+```
+    update-alternatives --install link name path priority [--slave link name path]...
+```
+
+其中*link*为系统中功能相同软件的公共链接目录，比如`/usr/bin/java`(需绝对目录); *name*为命令链接符名称,如*java*； *path*为你所要使用新命令、新软件的所在目录； 
+*priority*为优先级，当命令链接已存在时，需高于当前值，因为当*alternative*为自动模式时,系统默认启用*priority*高的链接; `--slave`为从*alternative*。
+
+*alternative*有两种模式：*auto*和*manual*，默认都为*auto*模式，因为大多数情况下`update-alternatives`命令都被*postinst* (*configure*) or *prerm* (*install*)调用的，
+如果将其更改成手动的话安装脚本将不会更新它了。例如：
+```
+    sudo update-alternatives --install /usr/bin/java java /usr/local/lib/java/jdk1.7.0_67 17067   
+    # /usr/bin/java   java link所在的路径
+    # java  创建link的名称
+    # /usr/local/lib/java/jdk1.7.0_67  java链接指向的路径
+    # 17067  根据版本号设置的优先级（更改的优先级需要大于当前的）版本越高优先级越高
+```
