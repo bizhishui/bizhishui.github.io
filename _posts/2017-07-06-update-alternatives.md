@@ -42,27 +42,35 @@ etc. that will link to the browser or editor of your preference.
 需要注意旧版本仍在，并且仍然通过python3调用，而新版本需用python3.6调用。如果想默认使用新版本而不是3.5，可以使用update-alternatives命令.
 
 
-##### update-alternatives –install
+#### update-alternatives –install
 install参数用于添加一个命令的link值，相当于添加一个可用值，其中slave非常有用。
 ```
     sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.5 1
     sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.6 2
 ```
 
-##### update-alternatives --list
+#### update-alternatives --list
 list参数列出所用可用程序。
 ```
     update-alternatives --list python3
 ```
 
-##### update-alternatives --display
+#### update-alternatives --display
 display参数列出一个命令的所有可选命令并且显示当前选择。
 ```
     update-alternatives --display python3
 ```
 
-##### update-alternatives --config
+#### update-alternatives --config
 config选项功能为在现有的命令链接选择一个作为系统默认的，相当于在可用值之中进行切.
 ```
     sudo update-alternatives --config python3
+    python3 -V
+    # Python 3.6.1+
 ```
+
+#### update-alternatives –remove
+ remove参数用于删除一个命令的link值，其附带的slave也将一起删除。
+ ```
+    update-alternatives –remove python3 /usr/bin/python3.6
+ ```
