@@ -14,3 +14,19 @@ update-alternatives是linux系统中专门维护系统命令链接符的工具�
 
 It updates the links in `/etc/alternatives` to point to the program for this purpose. There's lots of examples, like `x-www-browser`, `editor`, 
 etc. that will link to the browser or editor of your preference.
+
+### Python 示例
+下面已python为例说明。查看已有Python版本，
+```
+    python -V
+    # Python 2.7.12
+    python3 -V
+    # Python 3.5.2
+```
+
+因为Python 2.7被很多系统命令调用，保险起见，我们测试python3。为此我们先安装python 3.6:
+```
+    sudo add-apt-repository ppa:jonathonf/python-3.6
+    sudo apt-get update
+    sudo apt-get install python3.6
+```
