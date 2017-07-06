@@ -15,7 +15,21 @@ update-alternatives是linux系统中专门维护系统命令链接符的工具�
 It updates the links in `/etc/alternatives` to point to the program for this purpose. There's lots of examples, like `x-www-browser`, `editor`, 
 etc. that will link to the browser or editor of your preference.
 
-### Python 示例
+The links in `/etc/alternatives` are just symbolic links. You can see them using for example
+```
+    ls -l /etc/alternatives
+```
+
+Moreover, the regular `/usr/bin` binaries are also symlinks. E.g.:
+```
+    ls -l /usr/bin/python3
+    # /usr/bin/python3 -> /etc/alternatives/python3
+    ls -l /etc/alternatives/python3
+    # /etc/alternatives/python3 -> /usr/bin/python3.6
+```
+So, no `PATH` has to be modified. It just uses symbolic links.
+
+### Python3 示例
 下面已python为例说明。查看已有Python版本，
 ```
     python -V
