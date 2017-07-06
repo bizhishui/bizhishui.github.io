@@ -7,7 +7,7 @@ categories:
 tags:
   - BIM
   - Stokes
-  - mathjax
+  - Mathjax
 ---
 
 {% include lib/mathjax.html %}

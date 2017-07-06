@@ -3,7 +3,7 @@ title: 做自己尊重的人 (饶毅)
 layout: post
 guid: urn:uuid:27dec01a-d95f-4b71-8b86-288c248ac43f
 categories:
-  - Shared
+  - shared
 tags:
   - Person
   - Spirit soup

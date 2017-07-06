@@ -6,7 +6,7 @@ categories:
   - notes
 tags:
   - Latex
-  - gnuplot
+  - Gnuplot
 ---
 
 

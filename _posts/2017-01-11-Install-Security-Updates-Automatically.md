@@ -6,7 +6,7 @@ categories:
   - linux
 tags:
   - Linux
-  - soft updates
+  - Soft updates
 ---
 
 

@@ -5,7 +5,7 @@ guid: urn:uuid:3cf2f467-51a4-47f4-b086-46c31cad7060
 categories:
   - default
 tags:
-  - blog
+  - Blog
 ---
 
 

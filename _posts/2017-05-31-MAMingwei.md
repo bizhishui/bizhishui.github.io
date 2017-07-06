@@ -3,7 +3,7 @@ title: “国宝级”技术少将马伟明
 layout: post
 guid: urn:uuid:d135f00e-850c-457f-b435-2a4d1a000b94
 categories:
-  - Shared
+  - shared
 tags:
   - Person
 ---

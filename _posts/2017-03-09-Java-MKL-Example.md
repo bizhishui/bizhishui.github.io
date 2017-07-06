@@ -5,9 +5,9 @@ guid: urn:uuid:8fa2648e-e659-4efc-9951-b489aa5d4047
 categories:
   - notes
 tags:
-  - java
+  - Java
   - MKL
-  - eclipse
+  - Eclipse
 ---
 
 > This post note how to call Intel MKL method from java.

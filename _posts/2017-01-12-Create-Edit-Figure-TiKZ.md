@@ -7,7 +7,7 @@ categories:
 tags:
   - Latex
   - TikZ
-  - figure
+  - Figure
 ---
 
 

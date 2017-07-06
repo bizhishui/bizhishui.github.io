@@ -6,7 +6,7 @@ categories:
   - notes
 tags:
   - Gnuplot
-  - awk
+  - Awk
 ---
 
 > This blog notes some points encountered in using Gnuplot.
