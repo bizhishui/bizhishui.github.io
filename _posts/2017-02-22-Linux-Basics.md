@@ -44,7 +44,7 @@ tags:
     sudo mkfs.exfat -n LABEL /dev/sdXn  # formating an external driver /dev/sdXn to exFAT with label name LABEL
 
     #copy files except certain extentions
-    rsync -rav --include='*.vtk' --exclude='*.ser' sourceDir targetDir       #local copy, -r recursive, -a archive (mostly all files), -v verbose
+    rsync -urav --include='*.vtk' --exclude='*.ser' sourceDir targetDir       #local copy, -r recursive, -a archive (mostly all files), -v verbose, -u update (only new file)
     rsync -rav -e ssh --include='*.vtk' --include='*.txt' --exclude='*.ser' server:/Full/Sourcedir targetdir   #remote copy with ssh, -e specify ssh
 ```
 
