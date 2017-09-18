@@ -45,6 +45,7 @@ tags:
 
     #copy files except certain extentions
     rsync -urav --include='*.vtk' --exclude='*.ser' sourceDir targetDir       #local copy, -r recursive, -a archive (mostly all files), -v verbose, -u update (only new file)
+    rsync -urav --delete --include='*.vtk' --exclude='*.ser' sourceDir targetDir       #--delete, clear extra files in targetDir
     rsync -rav -e ssh --include='*.vtk' --include='*.txt' --exclude='*.ser' server:/Full/Sourcedir targetdir   #remote copy with ssh, -e specify ssh
 ```
 
