@@ -20,7 +20,7 @@ To build an open source on your own computer, the general procedure is simply li
 ```
 
 
-### What dose all this do
+### BUILDING A GNU PACKAGE
 There are three distinct steps in this process:
 
 #### 1. Configure the software
@@ -45,7 +45,7 @@ Since the install step is also defined in the *Makefile*, where the software is 
 Most errors you will bump into while compiling have to do with missing libraries that the software depends on. Every case is unique, but watch for “not found” or “unable to locate” phrases. Typically you just need to install the “development” versions of the libraries it needs. These are usually available from your operating system vendor packages. Search for packages with names ending in *-devel*.
 
 
-### Where do these scripts come from
+#### Where do these scripts come from
 All of this works because a *configure* script examines your system, and uses the information it finds to convert a *Makefile.in* template into a *Makefile*, but where do the *configure* script and the *Makefile.in* template come from?
 
 Programs that are built in this way have usually been packaged using a suite of programs collectively referred to as [autotools](https://www.gnu.org/software/automake/manual/html_node/Autotools-Introduction.html#Autotools-Introduction). This suite includes *autoconf*, *automake*, and many other programs, all of which work together to make the life of a software maintainer significantly easier. The end user doesn’t see these tools, but they take the pain out of setting up an install process that will run consistently on many different flavours of Unix.
@@ -55,7 +55,7 @@ In the above paragraphs, two problems are quite clear. First, a given GNU packag
 [![GNUBuildSystem](/media/files/2017/11/02/GNUBuildSystem.png)](https://github.com/bizhishui/bizhishui.github.io/blob/master/ "The GNU Build System")
 
 
-### Overview
+### OVERVIEW
 Now we know where this incantation comes from and how it works!
 
 On the maintainer’s system:
