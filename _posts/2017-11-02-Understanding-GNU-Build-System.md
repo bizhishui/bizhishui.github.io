@@ -1,5 +1,5 @@
 ---
-title: Understanding the GUN Build System
+title: Understanding the GNU Build System
 layout: post
 guid: urn:uuid:55ba0361-accd-4b8c-8a46-a33d0211261b
 categories:
@@ -9,7 +9,7 @@ tags:
   - Make
 ---
 
-> This post daptes mainly from [George Brocklehurst](https://robots.thoughtbot.com/the-magic-behind-configure-make-make-install).
+> This post daptes mainly from [The magic behind configure, make, make install](https://robots.thoughtbot.com/the-magic-behind-configure-make-make-install) by George Brocklehurst.
 
 
 To build an open source on your own computer, the general procedure is simply like:
