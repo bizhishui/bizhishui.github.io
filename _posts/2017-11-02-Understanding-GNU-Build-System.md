@@ -39,6 +39,7 @@ Now that the software is built and ready to run, the files can be copied to thei
 This usually means that the program’s binary will be copied to a directory on your *PATH*, the program’s manual page will be copied to a directory on your *MANPATH*, and any other files it depends on will be safely stored in the appropriate place.
 
 Since the install step is also defined in the *Makefile*, where the software is installed can change based on options passed to the *configure* script, or things the *configure* script discovered about your system.
+[![buildGNUPackage](/media/files/2017/11/02/buildGNUPackage.png)](https://github.com/bizhishui/bizhishui.github.io/blob/master/ "Building a GNU software package")
 
 #### Errors
 Most errors you will bump into while compiling have to do with missing libraries that the software depends on. Every case is unique, but watch for “not found” or “unable to locate” phrases. Typically you just need to install the “development” versions of the libraries it needs. These are usually available from your operating system vendor packages. Search for packages with names ending in *-devel*.
@@ -48,5 +49,27 @@ Most errors you will bump into while compiling have to do with missing libraries
 All of this works because a *configure* script examines your system, and uses the information it finds to convert a *Makefile.in* template into a *Makefile*, but where do the *configure* script and the *Makefile.in* template come from?
 
 Programs that are built in this way have usually been packaged using a suite of programs collectively referred to as [autotools](https://www.gnu.org/software/automake/manual/html_node/Autotools-Introduction.html#Autotools-Introduction). This suite includes *autoconf*, *automake*, and many other programs, all of which work together to make the life of a software maintainer significantly easier. The end user doesn’t see these tools, but they take the pain out of setting up an install process that will run consistently on many different flavours of Unix.
-[![buildGNUPackage](/media/files/2017/11/02/buildGNUPackage.png)](https://github.com/bizhishui/bizhishui.github.io/blob/master/ "Building a GNU software package")
 
+### THE GNU BUILD SYSTEM
+In the above paragraphs, two problems are quite clear. First, a given GNU package has to be built in different hardware and software environments. Second, there are a number of targets that the makefiles should be capable of building. Then, there is a third problem that the software sources may be organized in different directories. These problems appear to be formidable. But, there is nothing to worry as the GNU Build System comprising of programs, Autoconf, Automake and Libtool have abstracted the complexity out of this work. Using Autotools, it becomes quite simple for the package developer to provide the required infrastructure for the end-user to build and install the software. 
+[![GNUBuildSystem](/media/files/2017/11/02/GNUBuildSystem.png)](https://github.com/bizhishui/bizhishui.github.io/blob/master/ "The GNU Build System")
+
+
+### Overview
+Now we know where this incantation comes from and how it works!
+
+On the maintainer’s system:
+```
+    aclocal                 # Set up an m4 environment
+    autoconf                # Generate configure from configure.ac
+    automake --add-missing  # Generate Makefile.in from Makefile.am
+    ./configure             # Generate Makefile from Makefile.in
+    make distcheck          # Use Makefile to build and test a tarball to distribute
+```
+
+On the end-user’s system:
+```
+    ./configure   # Generate Makefile from Makefile.in
+    make          # Use Makefile to build the program
+    make install  # Use Makefile to install the program
+```
