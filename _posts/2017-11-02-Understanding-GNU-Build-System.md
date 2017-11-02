@@ -70,6 +70,6 @@ On the maintainer’s system:
 On the end-user’s system:
 ```
     ./configure   # Generate Makefile from Makefile.in
-    make          # Use Makefile to build the program
+    make -j n     # Use Makefile to build the program with n threads
     make install  # Use Makefile to install the program
 ```
