@@ -39,3 +39,12 @@ Now that the software is built and ready to run, the files can be copied to thei
 This usually means that the program’s binary will be copied to a directory on your *PATH*, the program’s manual page will be copied to a directory on your *MANPATH*, and any other files it depends on will be safely stored in the appropriate place.
 
 Since the install step is also defined in the *Makefile*, where the software is installed can change based on options passed to the *configure* script, or things the *configure* script discovered about your system.
+
+#### Errors
+Most errors you will bump into while compiling have to do with missing libraries that the software depends on. Every case is unique, but watch for “not found” or “unable to locate” phrases. Typically you just need to install the “development” versions of the libraries it needs. These are usually available from your operating system vendor packages. Search for packages with names ending in *-devel*.
+
+
+### Where do these scripts come from
+All of this works because a *configure* script examines your system, and uses the information it finds to convert a *Makefile.in* template into a *Makefile*, but where do the *configure* script and the *Makefile.in* template come from?
+
+Programs that are built in this way have usually been packaged using a suite of programs collectively referred to as [autotools](https://www.gnu.org/software/automake/manual/html_node/Autotools-Introduction.html#Autotools-Introduction). This suite includes *autoconf*, *automake*, and many other programs, all of which work together to make the life of a software maintainer significantly easier. The end user doesn’t see these tools, but they take the pain out of setting up an install process that will run consistently on many different flavours of Unix.
