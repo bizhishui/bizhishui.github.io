@@ -9,7 +9,7 @@ tags:
   - Make
 ---
 
-> This post daptes mainly from [The magic behind configure, make, make install](https://robots.thoughtbot.com/the-magic-behind-configure-make-make-install) by George Brocklehurst.
+> This post daptes mainly from [The magic behind configure, make, make install](https://robots.thoughtbot.com/the-magic-behind-configure-make-make-install) by George Brocklehurst and [Understanding the GNU Build System](https://www.softprayog.in/tutorials/understanding-gnu-build-system).
 
 
 To build an open source on your own computer, the general procedure is simply like:
@@ -48,3 +48,5 @@ Most errors you will bump into while compiling have to do with missing libraries
 All of this works because a *configure* script examines your system, and uses the information it finds to convert a *Makefile.in* template into a *Makefile*, but where do the *configure* script and the *Makefile.in* template come from?
 
 Programs that are built in this way have usually been packaged using a suite of programs collectively referred to as [autotools](https://www.gnu.org/software/automake/manual/html_node/Autotools-Introduction.html#Autotools-Introduction). This suite includes *autoconf*, *automake*, and many other programs, all of which work together to make the life of a software maintainer significantly easier. The end user doesn’t see these tools, but they take the pain out of setting up an install process that will run consistently on many different flavours of Unix.
+[![buildGNUPackage](/media/files/2017/11/02/buildGNUPackage.png)](https://github.com/bizhishui/bizhishui.github.io/blob/master/ "Building a GNU software package")
+
