@@ -13,7 +13,7 @@ tags:
 
 
 To build an open source on your own computer, the general procedure is simply like:
-```bash
+```shell
     ./configure
     make
     make install
@@ -59,7 +59,7 @@ In the above paragraphs, two problems are quite clear. First, a given GNU packag
 Now we know where this incantation comes from and how it works!
 
 On the maintainer’s system:
-```bash
+```shell
     aclocal                 # Set up an m4 environment
     autoconf                # Generate configure from configure.ac
     automake --add-missing  # Generate Makefile.in from Makefile.am
@@ -68,7 +68,7 @@ On the maintainer’s system:
 ```
 
 On the end-user’s system:
-```bash
+```shell
     ./configure   # Generate Makefile from Makefile.in
     make -j n     # Use Makefile to build the program with n threads
     make install  # Use Makefile to install the program
