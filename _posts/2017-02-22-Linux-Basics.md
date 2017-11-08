@@ -47,6 +47,11 @@ tags:
     rsync -urav --include='*.vtk' --exclude='*.ser' sourceDir targetDir       #local copy, -r recursive, -a archive (mostly all files), -v verbose, -u update (only new file)
     rsync -urav --delete --include='*.vtk' --exclude='*.ser' sourceDir targetDir       #--delete, clear extra files in targetDir
     rsync -rav -e ssh --include='*.vtk' --include='*.txt' --exclude='*.ser' server:/Full/Sourcedir targetdir   #remote copy with ssh, -e specify ssh
+
+    #delete recursively
+    fine . -name "*.ser" -type f              # find file end with .ser
+    fine . -name "*.ser" -type f -delete      # delete recursively files end with .ser
+    find . -name "wall" -type d -exec rm -r "{}" \;    # delete recursively folders with name wall
 ```
 
 ### Linux系统的在线求助man page与info page[>](http://cn.linux.vbird.org/linux_basic/0160startlinux.php#manual)
