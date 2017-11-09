@@ -49,8 +49,8 @@ tags:
     rsync -rav -e ssh --include='*.vtk' --include='*.txt' --exclude='*.ser' server:/Full/Sourcedir targetdir   #remote copy with ssh, -e specify ssh
 
     #delete recursively
-    fine . -name "*.ser" -type f              # find file end with .ser
-    fine . -name "*.ser" -type f -delete      # delete recursively files end with .ser
+    find . -name "*.ser" -type f              # find file end with .ser
+    find . -name "*.ser" -type f -delete      # delete recursively files end with .ser
     find . -name "wall" -type d -exec rm -r "{}" \;    # delete recursively folders with name wall
 ```
 
