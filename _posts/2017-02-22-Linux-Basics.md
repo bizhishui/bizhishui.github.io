@@ -52,6 +52,17 @@ tags:
     find . -name "*.ser" -type f              # find file end with .ser
     find . -name "*.ser" -type f -delete      # delete recursively files end with .ser
     find . -name "wall" -type d -exec rm -r "{}" \;    # delete recursively folders with name wall
+
+    # parallel: takes a list as input on stdin and then creates a number of processes with a supplied command
+    list | parallel command
+    # list can be created by any of the usual bash commands e.g. cat, grep, find. The results of these commands are piped from their stdout to the stdin of parallel
+    find . -type f -name "*.log" | parallel
+    # Just like using -exec with find, parallel substitutes each member in the input list as {}. Here, parallel will gzip every file that find outputs
+    find . -type f -name "*.log" -exec gzip {} ';'
+    find . -type f -name "*.log" | parallel gzip {}
+    # jpg image compression (cjpeg) without and with parallel
+    find . -type f -name "*.jpg" -exec cjpeg -outfile LoRes/{} {} ';'    #find all .jpg files in current dir and compress them with cjpeg 
+    find . -type f -name "*.jpg" | parallel cjpeg -outfile LoRes/{} {}   # use parallel
 ```
 
 ### Linux系统的在线求助man page与info page[>](http://cn.linux.vbird.org/linux_basic/0160startlinux.php#manual)
