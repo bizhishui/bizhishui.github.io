@@ -7,7 +7,8 @@ markdown: kramdown
 
 author: "zhishui"
 atom-baseurl: "https://bizhishui.github.io/"
-disqus: "gopherwood"
+#disqus: "gopherwood"
+disqus_shortname: 'bizhishui'
 
 navigations:
   - title: Archive
