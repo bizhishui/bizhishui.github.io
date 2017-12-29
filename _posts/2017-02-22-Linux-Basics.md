@@ -58,7 +58,7 @@ tags:
     # list can be created by any of the usual bash commands e.g. cat, grep, find. The results of these commands are piped from their stdout to the stdin of parallel
     find . -type f -name "*.log" | parallel
     # Just like using -exec with find, parallel substitutes each member in the input list as {}. Here, parallel will gzip every file that find outputs
-    find . -type f -name "*.log" -exec gzip {} ';'
+    find . -type f -name "*.log" -exec gzip {} ';'      # gzip: compress a single file
     find . -type f -name "*.log" | parallel gzip {}
     # jpg image compression (cjpeg) without and with parallel
     find . -type f -name "*.jpg" -exec cjpeg -outfile LoRes/{} {} ';'    #find all .jpg files in current dir and compress them with cjpeg 
