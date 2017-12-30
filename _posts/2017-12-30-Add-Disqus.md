@@ -20,4 +20,4 @@ tags:
 摩洛哥小镇[Aït Benhaddou](https://en.wikipedia.org/wiki/A%C3%AFt_Benhaddou)，虽有小河流过，但因含盐量过高只有橄榄树一种经济作物。
 
 [![Merzouga](/media/files/2017/12/30/Merzouga.jpg)](https://github.com/bizhishui/bizhishui.github.io/blob/master/ "Merzouga, Sahara Desert")
-撒哈拉沙漠沙漠位于Merzouga的一小块。
+撒哈拉沙漠位于Merzouga的一小块。
