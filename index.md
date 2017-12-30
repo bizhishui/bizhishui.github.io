@@ -44,7 +44,14 @@ layout: default
     <!-- END this would not work on any other domain -->
     </section>
     <section class="post">
+    <!--
     {{ post.content }}
+    -->
+    {% if post.summary %}
+       <span class="excerpt">{{ post.summary }}</span>
+    {% else %}
+       <span class="excerpt">{{ post.excerpt | strip_html | truncatewords: 30}}</span>
+    {% endif %}
     </section>
     </article>
   {% endfor %}
