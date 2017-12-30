@@ -9,7 +9,7 @@ tags:
   - Make
 ---
 
-> This post daptes mainly from [The magic behind configure, make, make install](https://robots.thoughtbot.com/the-magic-behind-configure-make-make-install) by George Brocklehurst and [Understanding the GNU Build System](https://www.softprayog.in/tutorials/understanding-gnu-build-system).
+> This post udaptes mainly from [The magic behind configure, make, make install](https://robots.thoughtbot.com/the-magic-behind-configure-make-make-install) by George Brocklehurst and [Understanding the GNU Build System](https://www.softprayog.in/tutorials/understanding-gnu-build-system).
 
 
 To build an open source on your own computer, the general procedure is simply like:
