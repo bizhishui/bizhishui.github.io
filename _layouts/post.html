@@ -89,12 +89,31 @@ layout: default
 
   <section  class="sharing">
 <!-- Make an animated slide out drawer later -->
+    <i class="fa fa-share-square-o"></i>
+    <div class="jiathis_style">
+       <a class="jiathis_button_tsina"></a>
+       <a class="jiathis_button_tqq"></a>
+       <a class="jiathis_button_weixin"></a>
+       <a class="jiathis_button_renren"></a>
+       <a class="jiathis_button_douban"></a>
+       <a class="jiathis_button_fb"></a>
+       <a class="jiathis_button_twitter"></a>
+       <a class="jiathis_button_evernote"></a>
+       <a class="jiathis_button_qzone"></a>
+       <a class="jiathis_button_ydnote"></a>
+       <a class="jiathis_button_linkedin"></a>
+       <a href="http://www.jiathis.com/share?uid=1900073" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+       <a class="jiathis_counter_style"></a>
+    </div>
+    <script type="text/javascript">
+    var jiathis_config = {data_track_clickback:'true'};
+    </script>
+    <script type="text/javascript" src="http://v3.jiathis.com/code_mini/jia.js?uid=1900073" charset="utf-8"></script>
+    <!--
     <ul>
-        <i class="fa fa-share-square-o"></i>
         {% if site.sharing.twitter %}
         <a href="https://twitter.com/intent/tweet?text={{ page.title }}&url={{ site.url }}{{ page.url }}" rel="nofollow" target="_blank" title="Share on Twitter">
-                <i class="fa fa-twitter-square"></i>
-        </a>
+                <i class="fa fa-twitter-square"></i></a>
         {% endif %}
 
         {% if site.sharing.linkedin %}
@@ -115,12 +134,13 @@ layout: default
         </a>
         {% endif %}
 
-        {% if site.sharing.reddit %}
-        <a href="http://reddit.com/submit?url={{ site.url }}{{ page.url }}&title={{ page.title }}" rel="nofollow" target="_blank" title="Share on Reddit">
-                <i class="fa fa-reddit-square"></i>
+        {% if site.sharing.wechat %}
+        <a href="http://reddit.com/submit?url={{ site.url }}{{ page.url }}&title={{ page.title }}" rel="nofollow" target="_blank" title="Share on WeChat">
+                <i class="fa fa-weixin"></i>
         </a>
         {% endif %}
     </ul>
+    -->
   </section>
 
   <!-- BEGIN comment
