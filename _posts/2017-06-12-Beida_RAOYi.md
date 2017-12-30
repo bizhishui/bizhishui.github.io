@@ -2,6 +2,8 @@
 title: 做自己尊重的人 (饶毅)
 layout: post
 guid: urn:uuid:27dec01a-d95f-4b71-8b86-288c248ac43f
+summary: 北大教授饶毅发表最短毕业致辞，4分钟赢得9次掌声
+update_date: 2017-12-30
 categories:
   - shared
 tags:
