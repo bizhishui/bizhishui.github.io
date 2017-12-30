@@ -13,3 +13,11 @@ tags:
 - index页面不再显示最新post全文，仅显示summary（如有）或前30字（post无summary）
 - 通过jiathis实现多种分享功能（主要参考[pchou博客](http://www.pchou.info/index.html)）
 - 通过Disqus实现blog评论互动功能（主要参考[perfectlyrandom博客](http://www.perfectlyrandom.org/2014/06/29/adding-disqus-to-your-jekyll-powered-github-pages/)）
+
+
+
+[![Aït Benhaddou Village](/media/files/2017/12/30/AitBenhaddou.jpg)](https://github.com/bizhishui/bizhishui.github.io/blob/master/ "Aït Benhaddou Village")
+摩洛哥小镇Aït Benhaddou，虽然有小河流过，但因含盐量过高只有橄榄树。
+
+[![Merzouga](/media/files/2017/12/30/Merzouga.jpg)](https://github.com/bizhishui/bizhishui.github.io/blob/master/ "Merzouga, Sahara Desert")
+撒哈拉沙漠沙漠位于Merzouga的一小块。
