@@ -54,6 +54,10 @@ layout: default
   </script>
   <!-- END this would not work on any other domain -->
   {% endif %}
+  {% if page.update_date %}
+    "  ";
+    Updated {{ page.update_date | date: site.date_format }}
+  {% endif %}
   </section>
   <section class="post">
   {{ content }}

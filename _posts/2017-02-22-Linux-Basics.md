@@ -1,6 +1,7 @@
 ---
 title: Linux Basics
 layout: post
+update_date: 2017-12-29
 guid: urn:uuid:293c4c6d-38bd-4aca-b0a7-8a6091f04c63
 categories:
   - linux
