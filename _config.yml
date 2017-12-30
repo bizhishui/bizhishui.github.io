@@ -11,6 +11,14 @@ atom-baseurl: "https://bizhishui.github.io/"
 #disqus: "gopherwood"
 disqus_shortname: 'bizhishui'
 
+# Post sharing icons
+sharing:
+    twitter: true
+    linkedin: true
+    facebook: true
+    google_plus: true
+    reddit: true
+
 navigations:
   - title: Archive
     class: fa fa-list-ul
