@@ -14,9 +14,11 @@ tags:
 
 To build an open source on your own computer, the general procedure is simply like:
 ```shell
+    {% highlight bash %}
     ./configure
     make
     make install
+    {% endhighlight %}
 ```
 
 
