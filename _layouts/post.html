@@ -64,6 +64,19 @@ layout: default
 
   <section class="post">
   {{ content }}
+ <div id="gooogle_CSE"></div>
+ <script>
+  (function() {
+      var cx = '015337290903480304109:kd_pzxoa92i';
+      var gcse = document.createElement('script');
+      gcse.type = 'text/javascript';
+      gcse.async = true;
+      gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(gcse, s);
+    })();
+ </script>
+ <gcse:search></gcse:search>
   </section>
   {% if page.guid %}
   <div class="divider">
