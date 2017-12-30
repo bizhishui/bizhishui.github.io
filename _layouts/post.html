@@ -88,14 +88,13 @@ layout: default
   </div>
 
   <section  class="sharing">
-    <br/>
 <!-- Make an animated slide out drawer later -->
     <ul>
-        <li><i class="fa fa-share-square-o"></i></li>
+        <i class="fa fa-share-square-o"></i>
         {% if site.sharing.twitter %}
-        <li><a href="https://twitter.com/intent/tweet?text={{ page.title }}&url={{ site.url }}{{ page.url }}" rel="nofollow" target="_blank" title="Share on Twitter">
+        <a href="https://twitter.com/intent/tweet?text={{ page.title }}&url={{ site.url }}{{ page.url }}" rel="nofollow" target="_blank" title="Share on Twitter">
                 <i class="fa fa-twitter-square"></i>
-        </a></li>
+        </a>
         {% endif %}
 
         {% if site.sharing.linkedin %}
