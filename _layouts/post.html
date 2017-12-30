@@ -56,7 +56,7 @@ layout: default
   {% endif %}
   {% if page.update_date %}
   <span class="update_date">
-    Updated <time updatedatetime="{{ page.update_date | date:"%Y-%m-%d" }}">{{ page.update_date | date:"%Y-%m-%d" }}</time>
+    Updated <time datetime="{{ page.update_date | date:"%Y-%m-%d" }}">{{ page.update_date | date:"%Y-%m-%d" }}</time>
   </span>
   {% endif %}
   </section>
