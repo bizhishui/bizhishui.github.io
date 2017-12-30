@@ -12,6 +12,7 @@ tags:
 岁末假期，对博客作了些许完善。主要包括：
 - index页面不再显示最新post全文，仅显示summary（如有）或前30字（post无summary）
 - 通过jiathis实现多种分享功能（主要参考[pchou](http://www.pchou.info/index.html)博客）
+- 在post文末增加站内搜索功能（主要参考[pchou](http://www.pchou.info/ssgithubPage/2013-01-09-build-github-blog-page-06.html)博客）
 - 通过Disqus实现blog评论互动功能（主要参考[perfectlyrandom](http://www.perfectlyrandom.org/2014/06/29/adding-disqus-to-your-jekyll-powered-github-pages/)博客）
 
 
