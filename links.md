@@ -28,3 +28,9 @@ layout: page
 - [考据癖](http://localhost-8080.com/) & [matrix67](http://www.matrix67.com/): 极客伉俪
 - [UbuntuHandbook](http://ubuntuhandbook.org/): Ubuntu各种使用心得
 - [宇宙的心弦](https://www.physixfan.com/)
+
+
+#### Blogs
+- [PChou](http://www.pchou.info/index.html): Github page, Html5
+- [Beiyuu](http://beiyuu.com/why-blog): 我为什么写博客
+- [Steve losh](http://stevelosh.com/): math and game programming
