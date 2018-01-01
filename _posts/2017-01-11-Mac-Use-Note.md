@@ -62,3 +62,8 @@ And add color for **grep** command:
     brew uninstall gnuplot; brew install gnuplot --with-qt5   ##OR
     brew reinstall gnuplot --with-qt5
 ```
+
+- Mac自带截屏快捷键
+  1. Command + Shift + 3：截取整个屏幕，保存图片在桌面
+  2. Command + Shift + 4：选取部分屏幕区域，保存图片在桌面
+  3. 先 Command + Shift + 4  再空格，可以对指定的窗口或者菜单截屏
