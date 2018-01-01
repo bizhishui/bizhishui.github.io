@@ -34,3 +34,4 @@ layout: page
 - [PChou](http://www.pchou.info/index.html): Github page, Html5
 - [Beiyuu](http://beiyuu.com/why-blog): 我为什么写博客
 - [Steve losh](http://stevelosh.com/): math and game programming
+- [Dominic Walliman](http://dominicwalliman.com/): 科学文化传播(science writer and physicist)
