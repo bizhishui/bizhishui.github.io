@@ -3,6 +3,7 @@ title: Add Disqus
 layout: post
 guid: urn:uuid:0e2d9e80-7a9b-4c6f-8546-4dad54142a95
 summary: 岁末假期，窝在家里修理自己的blog风格，主要增加评论功能（Disqus）。
+update_date: 2018-01-02
 categories:
   - default
 tags:
@@ -14,6 +15,7 @@ tags:
 - 通过jiathis实现多种分享功能（主要参考[pchou](http://www.pchou.info/index.html)博客）
 - 在post文末增加站内搜索功能（主要参考[pchou](http://www.pchou.info/ssgithubPage/2013-01-09-build-github-blog-page-06.html)博客）
 - 通过Disqus实现blog评论互动功能（主要参考[perfectlyrandom](http://www.perfectlyrandom.org/2014/06/29/adding-disqus-to-your-jekyll-powered-github-pages/)博客）
+- 设置网站图标（favicon，主要参考[Lazaro Ibanez](https://medium.com/@LazaroIbanez/how-to-add-a-favicon-to-github-pages-403935604460)博文）
 
 
 
