@@ -64,6 +64,8 @@ tags:
     # jpg image compression (cjpeg) without and with parallel
     find . -type f -name "*.jpg" -exec cjpeg -outfile LoRes/{} {} ';'    #find all .jpg files in current dir and compress them with cjpeg 
     find . -type f -name "*.jpg" | parallel cjpeg -outfile LoRes/{} {}   # use parallel
+    
+    scrot -s   #screen shot
 ```
 
 ### Linux系统的在线求助man page与info page[>](http://cn.linux.vbird.org/linux_basic/0160startlinux.php#manual)
