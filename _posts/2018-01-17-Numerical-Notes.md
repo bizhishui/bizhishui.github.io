@@ -12,7 +12,7 @@ tags:
 * TOC
 {:toc}
 
-### Numerical Methods
+### Euler Based Numerical Simulation Methods
 This section has major refered articles [Yen Liu et al](http://www.sciencedirect.com.lama.univ-amu.fr/science/article/pii/S0021999106000106).
 
 #### FD (Finite-difference) methods
@@ -44,3 +44,14 @@ As a result of these deficiencies, the UFV method is limited to second-order acc
 FE methods have long been used for unstructured grids because of their geometric flexibility. *A major difference between the FE and FV or FD methods is that in the former we employ reconstruction data 
 from within the element, while in the latter the reconstruction data comes from outside the cell*. In the FE formulation, the unknowns are *nodal values* at *nodes* which are placed at geometrically 
 similar points in each element. As a result, the local reconstructions become universal for all elements in terms of the same set of cardinal basis functions or *shape functions*. 
+
+
+### Galerkin *vs* Collocation Approach
+
+- Galerkin method: the test functions are the same as the basis functions. It can use either modal or nodal formulation. However, since the test functions and the trial functions are in general orthogonal to each other only in the modal space, the modal formulation will result in an uncoupled system, but not in the nodal formulation.
+- Collocation method: the test functions are the translated Dirac delta functions centered at so-called collocation points. For the collocation method, the nodal formulation is the more natural choice, and it always results in an uncoupled system since the delta functions are used as the test functions. 
+
+### Modal *vs* Nodal Formulation
+
+- Modal formulation: the unknowns are the expansion coefficients.
+- Nodal formulation: the unknowns are the nodal values of the unknown variables at the collocation points.
