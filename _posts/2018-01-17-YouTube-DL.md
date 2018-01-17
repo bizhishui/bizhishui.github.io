@@ -14,3 +14,49 @@ tags:
 Youtube-dl is a command-line opensource tool for downloading videos from youtube.com or other video sites. The presentation
 and installation guides can be founded on github [rg3/youtube-dl](https://github.com/rg3/youtube-dl/blob/master/README.md#readme).
 Here, some useful commands are summarised.
+
+```
+    #list all avaiable options
+    youtube-dl -h
+
+    #list all avaiable formats of a video
+    youtube-dl -F https://www.youtube.com/watch?v=-IMNuTB61m8
+    #Here is the list of all avaiable formats
+    [youtube] -IMNuTB61m8: Downloading webpage
+    [youtube] -IMNuTB61m8: Downloading video info webpage
+    [youtube] -IMNuTB61m8: Extracting video information
+    [info] Available formats for -IMNuTB61m8:
+    format code  extension  resolution note
+    249          webm       audio only DASH audio   52k , opus @ 50k, 19.88MiB
+    250          webm       audio only DASH audio   63k , opus @ 70k, 23.71MiB
+    171          webm       audio only DASH audio   91k , vorbis@128k, 35.51MiB
+    251          webm       audio only DASH audio  111k , opus @160k, 42.48MiB
+    140          m4a        audio only DASH audio  130k , m4a_dash container, mp4a.40.2@128k, 52.59MiB
+    278          webm       256x142    144p  102k , webm container, vp9, 15fps, video only, 32.63MiB
+    160          mp4        256x142    144p  109k , avc1.4d400b, 15fps, video only, 15.61MiB
+    133          mp4        426x234    240p  205k , avc1.4d4015, 15fps, video only, 27.93MiB
+    242          webm       426x234    240p  206k , vp9, 15fps, video only, 49.74MiB
+    243          webm       640x352    360p  394k , vp9, 15fps, video only, 88.68MiB
+    134          mp4        640x352    360p  533k , avc1.4d4016, 15fps, video only, 64.15MiB
+    244          webm       854x470    480p  705k , vp9, 15fps, video only, 150.31MiB
+    135          mp4        854x470    480p 1071k , avc1.4d401e, 15fps, video only, 122.35MiB
+    17           3gp        176x144    small , mp4v.20.3, mp4a.40.2@ 24k
+    36           3gp        320x176    small , mp4v.20.3, mp4a.40.2
+    18           mp4        640x352    medium , avc1.42001E, mp4a.40.2@ 96k
+    43           webm       640x360    medium , vp8.0, vorbis@128k (best)
+
+    #download the video with a specified format
+    youtube-dl -f 18 https://www.youtube.com/watch?v=-IMNuTB61m8
+    #an output example
+    [youtube] -IMNuTB61m8: Downloading webpage
+    [youtube] -IMNuTB61m8: Downloading video info webpage
+    [youtube] -IMNuTB61m8: Extracting video information
+    [download] Destination: 股轩金钱爆20180116--IMNuTB61m8.mp4
+    [download] 100% of 159.22MiB in 00:14
+
+    #download a video in mp3 audio format
+    youtube-dl https://www.youtube.com/watch?v=-IMNuTB61m8 -x --audio-format mp3
+
+    #download all videos of specific channel (appending the channel's URL)
+    youtube-dl -citw https://www.youtube.com/channel/UC_d42su5rbQyrqvd0VPoQqw
+```
