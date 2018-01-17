@@ -78,6 +78,13 @@ large number of parameters, whose optimization to achieve spectral convergence b
 points for each facet, raises the computational cost greatly. The computational cost of the SV method, and the difficulties in determining the parameters for spectral convergence, can both be significantly 
 reduced if one were to apply the universal local reconstruction concept to the simpler unstructured FD method using nodal unknowns.
 
+#### h. SD (Spectral Difference) methods
+{:.no_toc}
+SV is introduced for conservation laws on unstructured grids. The method combines the best features of structured and unstructured grid methods to obtain computational efficiency and geometric flexibility. 
+It utilizes the concept of discontinuous and high-order local representations to achieve conservation and high accuracy in a manner similar to the DG and SV methods, but the new method is based on the 
+finite-difference formulation to attain a simpler form and higher efficiency. Specifically, the differential form of the conservation laws is satisfied at nodal unknown points, 
+with flux derivatives expressed in terms of values at flux points.
+
 ### 2. Galerkin *vs* Collocation Approach
 
 - Galerkin method: the test functions are the same as the basis functions. It can use either modal or nodal formulation. However, since the test functions and the trial functions are in general orthogonal to each other only in the modal space, the modal formulation will result in an uncoupled system, but not in the nodal formulation.
