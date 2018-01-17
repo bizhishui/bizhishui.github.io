@@ -68,6 +68,8 @@ In order to obtain stable and spectral convergence, unknowns for the DG method a
 of the reconstruction matrix is maximized. Other choices include points where the maximum Lebesgue constant of the reconstruction matrix is minimized or multivariate point sets through the electrostatic analogy. 
 In general, these points may not provide the necessary precisions of quadrature approximations for the surface and volume integrals, and one must therefore obtain solutions at other quadrature points through interpolations.
 
+Efficient DG schemes storing data at nodal points known as *nodal DG* methods. 
+
 #### g. SV (Spectral Volume) methods
 {:.no_toc}
 The universal local reconstruction concept inherent in the FE method can be utilized to overcome the computational inefficiencies of the more direct unstructured FV method. In the SV method, each triangular or 
@@ -85,6 +87,9 @@ It utilizes the concept of discontinuous and high-order local representations to
 finite-difference formulation to attain a simpler form and higher efficiency. Specifically, the differential form of the conservation laws is satisfied at nodal unknown points, 
 with flux derivatives expressed in terms of values at flux points. The SD method is a type of finite-difference method or nodal spectral method for unstructured grids, in which inside each cell or element 
 we have structured nodal unknown and flux distributions, in such a way that the local integral conservation is satisfied.
+
+#### i. [CPR](https://www.jstage.jst.go.jp/article/mer/3/1/3_15-00475/_article/-char/ja/) (Correction Procedure via Reconstruction) methods
+{:.no_toc}
 
 ### 2. Galerkin *vs* Collocation Approach
 
