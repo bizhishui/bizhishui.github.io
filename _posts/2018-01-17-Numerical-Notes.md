@@ -105,4 +105,4 @@ we have structured nodal unknown and flux distributions, in such a way that the 
 
 - Grid points: as is name say, just the verteices of the mesh
 - Nodal points: 
-- Collocation points:
+- Collocation points: at the collocation points, the reconstruced function's value equals to the real value, i.e., the residual is forced to zero at those collocation points. In other words, *at each collocation point the trial (basis) functions are required to satisfy the differential equation exactly*.
