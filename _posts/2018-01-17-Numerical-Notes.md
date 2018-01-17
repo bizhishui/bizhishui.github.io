@@ -83,7 +83,8 @@ reduced if one were to apply the universal local reconstruction concept to the s
 SV is introduced for conservation laws on unstructured grids. The method combines the best features of structured and unstructured grid methods to obtain computational efficiency and geometric flexibility. 
 It utilizes the concept of discontinuous and high-order local representations to achieve conservation and high accuracy in a manner similar to the DG and SV methods, but the new method is based on the 
 finite-difference formulation to attain a simpler form and higher efficiency. Specifically, the differential form of the conservation laws is satisfied at nodal unknown points, 
-with flux derivatives expressed in terms of values at flux points.
+with flux derivatives expressed in terms of values at flux points. The SD method is a type of finite-difference method or nodal spectral method for unstructured grids, in which inside each cell or element 
+we have structured nodal unknown and flux distributions, in such a way that the local integral conservation is satisfied.
 
 ### 2. Galerkin *vs* Collocation Approach
 
