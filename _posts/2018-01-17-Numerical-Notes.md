@@ -12,17 +12,17 @@ tags:
 * TOC
 {:toc}
 
-### Euler Based Numerical Simulation Methods
+### 1. Euler Based Numerical Simulation Methods
 This section has major refered articles [Yen Liu et al](http://www.sciencedirect.com.lama.univ-amu.fr/science/article/pii/S0021999106000106).
 
-#### FD (Finite-difference) methods
+#### a. FD (Finite-difference) methods
 {:.no_toc}
 FD employing a body-fitted curvilinear coordinate system, with the equations written in strong conservation law form. The spatial differencing is essentially one-dimensional, 
 and carried out along coordinate directions. Thus a large number of data points are ignored in high-order stencils. Near boundaries, the stencil has to be modified with one-sided formulas. 
 Since numerical grid generators are mostly only second-order accurate, the numerical differencing of grid point coordinates in evaluating metric terms can severely degrade the accuracy of the 
 solution if the grid is not sufficiently smooth. The unknowns are solution values at grid points. Therefore the true integral conservation laws can only be satisfied to second-order accuracy. 
 
-#### FV (Finite-volume) methods
+#### b. FV (Finite-volume) methods
 {:.no_toc}
 The unknowns are now cell averages over quadrilaterals (2D) or hexahedra (3D). A high order reconstruction in terms of neighboring unknowns is used to calculate flux integrals 
 over cell boundaries, using Riemann solvers and appropriate limiters. In practice, the conventional FV method for structured grids does not overcome the limitations of the FD method. 
@@ -39,19 +39,19 @@ In a high-order, three-dimensional computation, the former would involve impract
 In addition, the data from neighboring cells required for the computation can be far apart in memory. This further degrades the efficiency of the method due to data gathering and scattering. 
 As a result of these deficiencies, the UFV method is limited to second-order accuracy in most applications.
 
-#### FE (Finite-element) methods
+#### c. FE (Finite-element) methods
 {:.no_toc}
 FE methods have long been used for unstructured grids because of their geometric flexibility. *A major difference between the FE and FV or FD methods is that in the former we employ reconstruction data 
 from within the element, while in the latter the reconstruction data comes from outside the cell*. In the FE formulation, the unknowns are *nodal values* at *nodes* which are placed at geometrically 
 similar points in each element. As a result, the local reconstructions become universal for all elements in terms of the same set of cardinal basis functions or *shape functions*. 
 
 
-### Galerkin *vs* Collocation Approach
+### 2. Galerkin *vs* Collocation Approach
 
 - Galerkin method: the test functions are the same as the basis functions. It can use either modal or nodal formulation. However, since the test functions and the trial functions are in general orthogonal to each other only in the modal space, the modal formulation will result in an uncoupled system, but not in the nodal formulation.
 - Collocation method: the test functions are the translated Dirac delta functions centered at so-called collocation points. For the collocation method, the nodal formulation is the more natural choice, and it always results in an uncoupled system since the delta functions are used as the test functions. 
 
-### Modal *vs* Nodal Formulation
+### 3. Modal *vs* Nodal Formulation
 
 - Modal formulation: the unknowns are the expansion coefficients.
 - Nodal formulation: the unknowns are the nodal values of the unknown variables at the collocation points.
