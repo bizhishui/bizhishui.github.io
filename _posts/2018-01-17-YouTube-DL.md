@@ -54,7 +54,7 @@ Here, some useful commands are summarised.
     [download] Destination: 股轩金钱爆20180116--IMNuTB61m8.mp4
     [download] 100% of 159.22MiB in 00:14
 
-    #download a video in mp3 audio format
+    #download a video in mp3 audio format (need ffmpeg)
     youtube-dl https://www.youtube.com/watch?v=-IMNuTB61m8 -x --audio-format mp3
 
     #download all videos of specific channel (appending the channel's URL)
