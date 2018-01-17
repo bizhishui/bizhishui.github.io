@@ -88,7 +88,7 @@ finite-difference formulation to attain a simpler form and higher efficiency. Sp
 with flux derivatives expressed in terms of values at flux points. The SD method is a type of finite-difference method or nodal spectral method for unstructured grids, in which inside each cell or element 
 we have structured nodal unknown and flux distributions, in such a way that the local integral conservation is satisfied.
 
-#### i. [CPR](https://www.jstage.jst.go.jp/article/mer/3/1/3_15-00475/_article/-char/ja/) (Correction Procedure via Reconstruction) methods
+#### i. [CPR](http://www.sciencedirect.com.lama.univ-amu.fr/science/article/pii/S0021999113007857) (Correction Procedure via Reconstruction) methods
 {:.no_toc}
 
 ### 2. Galerkin *vs* Collocation Approach
@@ -100,3 +100,9 @@ we have structured nodal unknown and flux distributions, in such a way that the 
 
 - Modal formulation: the unknowns are the expansion coefficients.
 - Nodal formulation: the unknowns are the nodal values of the unknown variables at the *collocation points*.
+
+### 4. Grid, Nodal and Collocation Points
+
+- Grid points: as is name say, just the verteices of the mesh
+- Nodal points: 
+- Collocation points:
