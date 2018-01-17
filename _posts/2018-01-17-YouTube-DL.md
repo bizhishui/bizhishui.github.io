@@ -59,4 +59,10 @@ Here, some useful commands are summarised.
 
     #download all videos of specific channel (appending the channel's URL)
     youtube-dl -citw https://www.youtube.com/channel/UC_d42su5rbQyrqvd0VPoQqw
+
+    #if your network is behind the proxy
+    youtube-dl --proxy http://proxy-ip:port -f 18 https://www.youtube.com/watch?v=-IMNuTB61m8
+
+    #download a collection of videos (write all videos' URL in a file called youtube_list.txt)
+    youtube-dl -a youtube_list.txt
 ```
