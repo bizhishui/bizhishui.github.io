@@ -44,7 +44,39 @@ As a result of these deficiencies, the UFV method is limited to second-order acc
 FE methods have long been used for unstructured grids because of their geometric flexibility. *A major difference between the FE and FV or FD methods is that in the former we employ reconstruction data 
 from within the element, while in the latter the reconstruction data comes from outside the cell*. In the FE formulation, the unknowns are *nodal values* at *nodes* which are placed at geometrically 
 similar points in each element. As a result, the local reconstructions become universal for all elements in terms of the same set of cardinal basis functions or *shape functions*. 
+Usually the Galerkin approach is used, in which the test functions are the same as the basis functions. This results in a set of *coupled equations* of all unknowns. Their solution involves a 
+very large, sparse matrix, whose entries depend on the element geometries. For non-linear equations, quadrature approximations are necessary to evaluate the matrix entries. 
+While the integral conservation law is satisfied for the global domain, it is not satisfied for each element.
 
+#### d. Spectral methods
+{:.no_toc}
+Spectral methods have the properties of very high accuracy and spectral (or exponential) convergence. In traditional spectral methods, the unknown variable is expressed as a truncated series expansion 
+in terms of some *basis functions* (*trial functions*) and solved using the MWR (method weighted of residuals). The trial functions are infinitely differentiable global functions, 
+and the most frequently used ones are trigonometric functions or Chebyshev and Legendre polynomials.
+
+#### e. SE (Spectral-element) methods
+{:.no_toc}
+SE method (based on Galerkin approach) *can be viewed as a high-order FE method with the nodal points placed at proper locations so that the spectral convergence can be obtained*.
+
+#### f. DG (Discontinuous Galerkin) methods
+{:.no_toc}
+DG method achieves local conservation for the FE or SE methods. Nodes on element boundaries are allowed to have multiple values, so that the local reconstruction in each element is in general discontinuous 
+with that of its neighbors. The Galerkin MWR method is now applied locally to each element, using the local shape functions. As in the unstructured FV method, a Riemann solver is employed at element boundaries 
+to compute the numerical fluxes. The integral conservation law is now satisfied for each element. While we must still solve a large set of coupled equations, each set involves only the unknowns in a few neighboring elements. 
+Some of the integrals in the matrix entries involve quadratic terms. For non-linear flux functions, the required quadrature formulas must have twice the degree of precision as the precision of the reconstruction. 
+In order to obtain stable and spectral convergence, unknowns for the DG method are normally placed at points where the reconstruction matrix is optimized. One choice involves the Fekete points where the determinant 
+of the reconstruction matrix is maximized. Other choices include points where the maximum Lebesgue constant of the reconstruction matrix is minimized or multivariate point sets through the electrostatic analogy. 
+In general, these points may not provide the necessary precisions of quadrature approximations for the surface and volume integrals, and one must therefore obtain solutions at other quadrature points through interpolations.
+
+#### g. SV (Spectral Volume) methods
+{:.no_toc}
+The universal local reconstruction concept inherent in the FE method can be utilized to overcome the computational inefficiencies of the more direct unstructured FV method. In the SV method, each triangular or 
+tetrahedral cell, here called a spectral volume (SV), is partitioned into structured subcells called control volumes (CV). These are polygons in 2D, and polyhedra in 3D. The latter can have non-planar faces, 
+which must be subdivided into planar facets in order to perform flux integrations. The unknowns are now cell averages over the CV’s. If the SV’s are partitioned in a geometrically similar manner, a single, 
+universal reconstruction results. Thus only a few coefficients need to be stored in advance to evaluate all flux integrals. For high orders of accuracy in 3D, the partitioning requires the introduction of a 
+large number of parameters, whose optimization to achieve spectral convergence becomes increasingly more difficult. The growth in the number of interior facets and the increase in the number of quadrature 
+points for each facet, raises the computational cost greatly. The computational cost of the SV method, and the difficulties in determining the parameters for spectral convergence, can both be significantly 
+reduced if one were to apply the universal local reconstruction concept to the simpler unstructured FD method using nodal unknowns.
 
 ### 2. Galerkin *vs* Collocation Approach
 
@@ -54,4 +86,4 @@ similar points in each element. As a result, the local reconstructions become un
 ### 3. Modal *vs* Nodal Formulation
 
 - Modal formulation: the unknowns are the expansion coefficients.
-- Nodal formulation: the unknowns are the nodal values of the unknown variables at the collocation points.
+- Nodal formulation: the unknowns are the nodal values of the unknown variables at the *collocation points*.
