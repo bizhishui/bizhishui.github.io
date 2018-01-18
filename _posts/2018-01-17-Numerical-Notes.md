@@ -148,3 +148,19 @@ $$\rho\frac{\partial u}{\partial x}+u\frac{\partial\rho}{\partial x}$$.
 Using the same numerical approximation, we get:
 
 $$\rho\frac{\partial u}{\partial x}+u\frac{\partial\rho}{\partial x}\approx\rho_i\frac{u_i-u_{i-1}}{\Delta x}+u_i\frac{\rho_i-\rho_{i-1}}{\Delta x}$$.
+
+We can see that while the original derivative is mathematically the same, the discrete form is not the same. Of particular difficultly is the choice of the terms multiplying the derivative.
+
+The difference can be seen from the derivation of governing equations in fluid mechanics by considering a finite control volume (ref [Mazhar Lqbal](https://www.researchgate.net/post/What_is_basic_difference_between_conservation_and_non-conservation_equations)). 
+This control volume may be fixed in space with the fluid moving through it or the control volume may be moving with the fluid in a sense that same fluid particles are always remain inside the control volume. 
+If the first case is taken then the governing equations will be in conservation form else these will be in nonconservation form.
+
+#### How to choose which to use?
+{:.no_toc}
+If your solution is expected to be smooth, then non-conservative may work. For fluids, this is shock-free flows.
+If you have shocks, or chemical reactions, or any other sharp interfaces, then you want to use the conservative form.
+
+There are other considerations. Many real world, engineering situations actually like non-conservative schemes when solving problems with shocks. The classic example is 
+the [Murman-Cole](http://aero-comlab.stanford.edu/Papers/transonic_flo.pdf) scheme for the transonic potential equations. It contains a switch between a central and upwind scheme, but it turns out to be non-conservative.
+Some results turn out the non-conservation introduced an artificial viscosity, making the equations behave more like the Navier-Stokes equations at a tiny fraction of the cost.
+Needless to say, engineers loved this. "Better" results for significantly less cost!
