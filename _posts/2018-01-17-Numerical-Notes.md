@@ -147,4 +147,4 @@ $$\rho\frac{\partial u}{\partial x}+u\frac{\partial\rho}{\partial x}$$.
 
 Using the same numerical approximation, we get:
 
-$$\rho\frac{\partial u}{\partial x}+u\frac{\partial\rho}{\partial x}\approx\pho_i\frac{u_i-u_{i-1}}{\Delta x}+u_i\frac{\rho_i-\rho_{i-1}}{\Delta x}$$.
+$$\rho\frac{\partial u}{\partial x}+u\frac{\partial\rho}{\partial x}\approx\rho_i\frac{u_i-u_{i-1}}{\Delta x}+u_i\frac{\rho_i-\rho_{i-1}}{\Delta x}$$.
