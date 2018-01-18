@@ -25,6 +25,9 @@ and carried out along coordinate directions. Thus a large number of data points 
 Since numerical grid generators are mostly only second-order accurate, the numerical differencing of grid point coordinates in evaluating metric terms can severely degrade the accuracy of the 
 solution if the grid is not sufficiently smooth. The unknowns are solution values at grid points. Therefore the true integral conservation laws can only be satisfied to second-order accuracy. 
 
+To ensure geometric flexibility one needs to abandon the simple one-dimensional approximation in favor of some-
+thing more general. The most natural approach is to introduce an element-based discretization.
+
 #### b. FV (Finite-volume) methods
 {:.no_toc}
 The unknowns are now cell averages over quadrilaterals (2D) or hexahedra (3D). A high order reconstruction in terms of neighboring unknowns is used to calculate flux integrals 
@@ -37,8 +40,8 @@ A polynomial reconstruction of any desired order of accuracy for each cell is ob
 the reconstructed solutions from the two cells sharing the face and an approximate Riemann solver. A quadrature approximation is employed for non-linear flux functions. Thus, conservation 
 is satisfied locally for each cell. However, due to the unstructured nature of the grid, it is difficult to obtain a non-singular stencil. This necessitates a least-squares inversion in general. 
 For very high order of accuracy, the number of cells, and thus the number of operations to carry out the numerical procedure, can become very large in three dimensions. This would hamper the 
-efficiency of the method (high-order reconstruction must span multiple elements as the
-numerical approximation). Furthermore, since each unknown employs a different stencil, one must repeat the least-squares inversion for every cell at each time step, or must store the inversion coefficients. 
+efficiency of the method (high-order reconstruction must span multiple elements as the numerical approximation is represented by cell averages only). 
+Furthermore, since each unknown employs a different stencil, one must repeat the least-squares inversion for every cell at each time step, or must store the inversion coefficients. 
 In a high-order, three-dimensional computation, the former would involve impractically large CPU times, while for the latter the memory requirement becomes prohibitive. 
 In addition, the data from neighboring cells required for the computation can be far apart in memory. This further degrades the efficiency of the method due to data gathering and scattering. 
 As a result of these deficiencies, the UFV method is limited to second-order accuracy in most applications.
