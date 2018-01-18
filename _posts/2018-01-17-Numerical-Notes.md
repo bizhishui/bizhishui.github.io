@@ -9,6 +9,8 @@ tags:
   - Numerical
 ---
 
+{% include lib/mathjax.html %}
+
 * TOC
 {:toc}
 
@@ -49,6 +51,13 @@ similar points in each element. As a result, the local reconstructions become un
 Usually the Galerkin approach is used, in which the test functions are the same as the basis functions. This results in a set of *coupled equations* of all unknowns. Their solution involves a 
 very large, sparse matrix, whose entries depend on the element geometries. For non-linear equations, quadrature approximations are necessary to evaluate the matrix entries. 
 While the integral conservation law is satisfied for the global domain, it is not satisfied for each element.
+
+The first disadvantage of FS is the globally defined basis functions and the requirement that the residual be orthogonal to the
+same set of globally defined test functions implies that the semidiscrete scheme becomes implicit and the mass matrix $$\mathcal{M}$$ must be inverted.
+An additional subtle issue that relates to the structure of the basis, the basis functions are symmetric in space. For many types of problems (e.g., a heat equation),
+this is a natural choice. However, for problems such as wave problems and conservation laws, in which information flows in specific directions, this is
+less natural and can causes stability problems if left unchanged.In FD and FV methods, this problem is addressed by the use of upwinding, either through the stencil choice or through
+the design of the reconstruction approach.
 
 #### d. Spectral methods
 {:.no_toc}
