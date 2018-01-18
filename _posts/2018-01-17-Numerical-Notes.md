@@ -74,7 +74,8 @@ SE method (based on Galerkin approach) *can be viewed as a high-order FE method 
 
 #### f. DG (Discontinuous Galerkin) methods
 {:.no_toc}
-DG method achieves local conservation for the FE or SE methods. Nodes on element boundaries are allowed to have multiple values, so that the local reconstruction in each element is in general discontinuous 
+DG method achieves local (the strictly local statement is a direct consequence of $$\mathcal{V}_h$$, the space of test functions, being a broken space and the fact that we have duplicated
+solutions at all interface nodes) conservation for the FE or SE methods. Nodes on element boundaries are allowed to have multiple values, so that the local reconstruction in each element is in general discontinuous 
 with that of its neighbors. The Galerkin MWR method is now applied locally to each element, using the local shape functions. As in the unstructured FV method, a Riemann solver is employed at element boundaries 
 to compute the numerical fluxes. The integral conservation law is now satisfied for each element. While we must still solve a large set of coupled equations, each set involves only the unknowns in a few neighboring elements. 
 Some of the integrals in the matrix entries involve quadratic terms. For non-linear flux functions, the required quadrature formulas must have twice the degree of precision as the precision of the reconstruction. 
