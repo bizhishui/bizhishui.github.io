@@ -13,7 +13,8 @@ tags:
 {:toc}
 
 ### 1. Euler Based Numerical Simulation Methods
-This section has major refered articles [Yen Liu et al](http://www.sciencedirect.com.lama.univ-amu.fr/science/article/pii/S0021999106000106).
+This section has major refered article [Yen Liu et al](http://www.sciencedirect.com.lama.univ-amu.fr/science/article/pii/S0021999106000106)
+and book [Hesthaven and Warburton](http://www.springer.com/fr/book/9780387720654).
 
 #### a. FD (Finite-difference) methods
 {:.no_toc}
@@ -34,7 +35,8 @@ A polynomial reconstruction of any desired order of accuracy for each cell is ob
 the reconstructed solutions from the two cells sharing the face and an approximate Riemann solver. A quadrature approximation is employed for non-linear flux functions. Thus, conservation 
 is satisfied locally for each cell. However, due to the unstructured nature of the grid, it is difficult to obtain a non-singular stencil. This necessitates a least-squares inversion in general. 
 For very high order of accuracy, the number of cells, and thus the number of operations to carry out the numerical procedure, can become very large in three dimensions. This would hamper the 
-efficiency of the method. Furthermore, since each unknown employs a different stencil, one must repeat the least-squares inversion for every cell at each time step, or must store the inversion coefficients. 
+efficiency of the method (high-order reconstruction must span multiple elements as the
+numerical approximation). Furthermore, since each unknown employs a different stencil, one must repeat the least-squares inversion for every cell at each time step, or must store the inversion coefficients. 
 In a high-order, three-dimensional computation, the former would involve impractically large CPU times, while for the latter the memory requirement becomes prohibitive. 
 In addition, the data from neighboring cells required for the computation can be far apart in memory. This further degrades the efficiency of the method due to data gathering and scattering. 
 As a result of these deficiencies, the UFV method is limited to second-order accuracy in most applications.
