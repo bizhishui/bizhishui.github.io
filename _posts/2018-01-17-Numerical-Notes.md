@@ -121,3 +121,11 @@ we have structured nodal unknown and flux distributions, in such a way that the 
 - Grid points: as it is name suggests, just the verteices of the mesh
 - Nodal points: 
 - Collocation points: at the collocation points, the reconstruced function's value equals to the real value, i.e., the residual is forced to zero at those collocation points. In other words, *at each collocation point the trial (basis) functions are required to satisfy the differential equation exactly*.
+
+### 5. Autonomous and Non-autonomous System[>]{https://en.wikipedia.org/wiki/Autonomous_system_(mathematics)}
+
+An autonomous system is a system of ordinary differential equations of the form $$\frac{d}{dt}\mathbf{X}(t)=\mathbf{F}(\mathbf{X}(t))$$ where $$\mathbf{X}$$ takes values
+in n-dimensional Euclidean space and $$t$$ is usually time. It is autonomous since $$t$$ not appear explicitly at the right side.
+
+It is distinguished from systems of differential equations of the form $$\frac{}{dt}\mathbf{X}(t)=\\mathbf{G}(\mathbf{X}(t),t)$$ in which the law governing the rate of the motion 
+of a particle depends not only on the particle's motion, but also on time; such systems are non autonomous.
