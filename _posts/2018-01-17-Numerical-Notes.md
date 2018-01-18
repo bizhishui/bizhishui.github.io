@@ -164,3 +164,14 @@ There are other considerations. Many real world, engineering situations actually
 the [Murman-Cole](http://aero-comlab.stanford.edu/Papers/transonic_flo.pdf) scheme for the transonic potential equations. It contains a switch between a central and upwind scheme, but it turns out to be non-conservative.
 Some results turn out the non-conservation introduced an artificial viscosity, making the equations behave more like the Navier-Stokes equations at a tiny fraction of the cost.
 Needless to say, engineers loved this. "Better" results for significantly less cost!
+
+#### Conservation laws as fundamental laws of nature[>](https://en.wikipedia.org/wiki/Conservation_law)
+{:.no_toc}
+Conservation laws are fundamental to our understanding of the physical world, in that they describe which processes can or cannot occur in nature. For example, the conservation law of energy states that 
+the total quantity of energy in an isolated system does not change, though it may change form. In general, the total quantity of the property governed by that law remains unchanged during physical processes. 
+With respect to classical physics, conservation laws include conservation of energy, mass (or matter), linear momentum, angular momentum, and electric charge. With respect to particle physics, particles cannot be created or destroyed 
+except in pairs, where one is ordinary and the other is an antiparticle. With respect to symmetries and invariance principles, three special conservation laws have been described, associated with inversion or reversal of space, time, and charge.
+
+One particularly important result concerning conservation laws is [Noether's theorem](https://en.wikipedia.org/wiki/Noether%27s_theorem) (each conservation law is associated with a symmetry in the underlying physics), 
+which states that there is a one-to-one correspondence between a conservation law and a differentiable symmetry of nature. For example, the conservation of energy follows from the time-invariance of physical systems, 
+and the conservation of angular momentum arises from the fact that physical systems behave the same regardless of how they are oriented in space.
