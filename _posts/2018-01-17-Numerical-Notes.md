@@ -175,3 +175,30 @@ except in pairs, where one is ordinary and the other is an antiparticle. With re
 One particularly important result concerning conservation laws is [Noether's theorem](https://en.wikipedia.org/wiki/Noether%27s_theorem) (each conservation law is associated with a symmetry in the underlying physics), 
 which states that there is a one-to-one correspondence between a conservation law and a differentiable symmetry of nature. For example, the conservation of energy follows from the time-invariance of physical systems, 
 and the conservation of angular momentum arises from the fact that physical systems behave the same regardless of how they are oriented in space.
+
+### 07. Hyperbolic, Parabolic and Elliptic PDEs[>](https://matheducators.stackexchange.com/questions/1691/what-is-the-motivation-for-characterizing-second-order-linear-pdes-as-hyperbolic)
+
+1. The *hyperbolic* case is a very good model for wave propagation, and also to some extent dispersive phenomenon; this was noted by d'Alembert who gave a physical derivation of the wave equation.
+2. The *parabolic* case is a very good model for diffusive phenomenon; this was already noted by Fourier who gave a physical derivation of his heat equation.
+3. The *elliptic* case is important physically as elliptic equations arise naturally when one considers solutions to parabolic/hyperbolic equations which are stationary in time.
+
+- For both hyperbolic and elliptic types, but notably not for parabolic type equations (let us assume constant coefficients), we can write down solutions to the Cauchy problem in the case of real analytic initial data 
+  using the theorem of [Cauchy-Kowalevski](https://en.wikipedia.org/wiki/Cauchy%E2%80%93Kowalevski_theorem). For *hyperbolic* types, this solution to the initial data problem turns out to be "stable", in the sense that for 
+  initial data that has finite regularity we can also find solutions of finite regularity. For the elliptic case this stability is lost. For *elliptic* equations, the more natural question to ask is not an initial value problem, 
+  but a boundary value problem on a bounded domain $$\Omega$$. Note that whereas for the initial value problem we usually prescribe both the value of the function and its transversal derivative at the initial time, 
+  for the boundary value only one out of the two is prescribed. 
+- For both the elliptic and parabolic types, but notably not for the hyperbolic type equations, we have the notion of [maximum principle](https://en.wikipedia.org/wiki/Maximum_principle) for solutions.
+  Roughly speaking, it says that the maximum of a function in a domain is to be found on the boundary of that domain. Specifically, the strong maximum principle says that if a function achieves its maximum in 
+  the interior of the domain, the function is uniformly a constant.
+- Solutions to the elliptic and parabolic type equations enjoy smoothing properties, while solutions to the hyperbolic type equations have propagation of singularities. 
+  In other words, solutions to elliptic and parabolic problems are often smoother than their boundary/initial values. For hyperbolic equations, singularities in the initial value are propagated into the future, 
+  along characteristic curves of the equation.
+- Concerning the initial value problem, the parabolic type equations only have existence forward in time, while the hyperbolic type equations have existence both forward and backward in time.
+- Somewhat more technically: with elliptic problems it is often very convenient to work in spaces of functions which are Holder continuous, with occasional call to use Lebesgue/Sobolev spaces of various Lebesgue exponents. 
+  Similarly for parabolic problems. For hyperbolic equations in spatial dimension $$>1$$, pretty much the only good tool is via $$L^2$$-based Sobolev spaces.
+- Hyperbolic, and not elliptic or parabolic (at least in the linear case, for nonlinear equations there are some exceptions) enjoy the property of "finite speed of propagation". 
+  (In the case of the linear wave equation $$\partial^2_t u=c^2\Delta u$$ this says, in particular, that if the initial data is zero outside of a ball of radius $$R$$, the solution at time $$T$$ is zero outside the 
+  ball of radius $$R+c|T|$$.) This is noticeably false for the initial value problem for the heat equation.
+- Lastly, note that if your equation has constant coefficients, then through a linear change of coordinates you can bring your equation into the form of a wave/heat/Laplace equation if it 
+  is classified as hyperbolic/parabolic/elliptic. So you can also motivate the general definition thus as saying that a hyperbolic equation looks, in a small neighbourhood, like the wave equation plus some small perturbations etc. 
+  This has the advantage of leading to a discussion of the method of freezing coefficients for elliptic estimates, say.
