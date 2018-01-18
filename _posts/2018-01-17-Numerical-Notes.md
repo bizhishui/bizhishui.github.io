@@ -14,7 +14,7 @@ tags:
 * TOC
 {:toc}
 
-### 1. Euler Based Numerical Simulation Methods
+### 01. Euler Based Numerical Simulation Methods
 This section has major refered article [Yen Liu et al](http://www.sciencedirect.com.lama.univ-amu.fr/science/article/pii/S0021999106000106)
 and book [Hesthaven and Warburton](http://www.springer.com/fr/book/9780387720654).
 
@@ -106,26 +106,45 @@ we have structured nodal unknown and flux distributions, in such a way that the 
 #### i. [CPR](http://www.sciencedirect.com.lama.univ-amu.fr/science/article/pii/S0021999113007857) (Correction Procedure via Reconstruction) methods
 {:.no_toc}
 
-### 2. Galerkin *vs* Collocation Approach
+### 02. Galerkin *vs* Collocation Approach
 
 - Galerkin method: the test functions are the same as the basis functions. It can use either modal or nodal formulation. However, since the test functions and the trial functions are in general orthogonal to each other only in the modal space, the modal formulation will result in an uncoupled system, but not in the nodal formulation.
 - Collocation method: the test functions are the translated Dirac delta functions centered at so-called collocation points. For the collocation method, the nodal formulation is the more natural choice, and it always results in an uncoupled system since the delta functions are used as the test functions. 
 
-### 3. Modal *vs* Nodal Formulation
+### 03. Modal *vs* Nodal Formulation
 
 - Modal formulation: the unknowns are the expansion coefficients.
 - Nodal formulation: the unknowns are the nodal values of the unknown variables at the *collocation points*.
 
-### 4. Grid, Nodal and Collocation Points
+### 04. Grid, Nodal and Collocation Points
 
 - Grid points: as it is name suggests, just the verteices of the mesh
 - Nodal points: 
 - Collocation points: at the collocation points, the reconstruced function's value equals to the real value, i.e., the residual is forced to zero at those collocation points. In other words, *at each collocation point the trial (basis) functions are required to satisfy the differential equation exactly*.
 
-### 5. Autonomous and Non-autonomous System[>](https://en.wikipedia.org/wiki/Autonomous_system_(mathematics))
+### 05. Autonomous and Non-autonomous System[>](https://en.wikipedia.org/wiki/Autonomous_system_(mathematics))
 
 An autonomous system is a system of ordinary differential equations of the form $$\frac{d}{dt}\mathbf{X}(t)=\mathbf{F}(\mathbf{X}(t))$$ where $$\mathbf{X}$$ takes values
 in n-dimensional Euclidean space and $$t$$ is usually time. It is autonomous since $$t$$ not appear explicitly at the right side.
 
 It is distinguished from systems of differential equations of the form $$\frac{d}{dt}\mathbf{X}(t)=\mathbf{G}(\mathbf{X}(t),t)$$ in which the law governing the rate of the motion 
 of a particle depends not only on the particle's motion, but also on time; such systems are non autonomous.
+
+### 06. Consevation *vs* Non-consevation Forms of Conservation Equations
+
+The [reason](https://physics.stackexchange.com/questions/70496/conservation-vs-non-conservation-forms-of-conservation-equations/70540#70540) they are consevative or non-conservative has to do with 
+the splitting of the derivatives. Consider the consevative derivative:
+
+$$\frac{\partial\rho u}{\partial x}$$.
+
+When we discretize this using finite difference, we get:
+
+$$\frac{\partial\rho u}{\partial x}\approx\frac{(\rho u)_i-(\rho u)_{i-1}}{\Delta x}$$.
+
+Now, in non-conservative form, the derivative is split apart as:
+
+$$\rho\frac{\partial u}{\partial x}+u\frac{\partial\rho}{\partial x}$$.
+
+Using the same numerical approximation, we get:
+
+$$\rho\frac{\partial u}{\partial x}+u\frac{\partial\rho}{\partial x}\approx\pho_i\frac{u_i-u_{i-1}}{\Delta x}+u_i\frac{\rho_i-\rho_{i-1}}{\Delta x}$$.
