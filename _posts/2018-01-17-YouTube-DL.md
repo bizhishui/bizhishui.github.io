@@ -64,5 +64,10 @@ Here, some useful commands are summarised.
     youtube-dl --proxy http://proxy-ip:port -f 18 https://www.youtube.com/watch?v=-IMNuTB61m8
 
     #download a collection of videos (write all videos' URL in a file called youtube_list.txt)
-    youtube-dl -a youtube_list.txt
+    #--no-playlist: Download only the video, if the URL refers to a video and a playlist.
+    #-a: File containing URLs to download ('-' for stdin)
+    #-f best: choose best resolution
+    youtube-dl --no-playlist -f best -a youtube_list.txt
+    #download only mp3 audio
+    youtube-dl --no-playlist -x --audio-format mp3 -a youtube_list.txt
 ```
