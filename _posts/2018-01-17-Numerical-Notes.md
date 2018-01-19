@@ -129,10 +129,10 @@ in n-dimensional Euclidean space and $$t$$ is usually time. It is autonomous sin
 It is distinguished from systems of differential equations of the form $$\frac{d}{dt}\mathbf{X}(t)=\mathbf{G}(\mathbf{X}(t),t)$$ in which the law governing the rate of the motion 
 of a particle depends not only on the particle's motion, but also on time; such systems are non autonomous.
 
-### 06. Consevation *vs* Non-consevation Forms of Conservation Equations
+### 06. Conservation *vs* Non-conservation Forms of Conservation Equations
 
-The [reason](https://physics.stackexchange.com/questions/70496/conservation-vs-non-conservation-forms-of-conservation-equations/70540#70540) they are consevative or non-conservative has to do with 
-the splitting of the derivatives. Consider the consevative derivative:
+The [reason](https://physics.stackexchange.com/questions/70496/conservation-vs-non-conservation-forms-of-conservation-equations/70540#70540) they are conservative or non-conservative has to do with 
+the splitting of the derivatives. Consider the conservative derivative:
 
 $$\frac{\partial\rho u}{\partial x}$$.
 
