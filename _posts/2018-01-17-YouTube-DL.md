@@ -71,6 +71,6 @@ Here, some useful commands are summarised.
     youtube-dl --no-playlist -f best -a youtube_list.txt
     #download and embed subtitles
     youtube-dl --no-playlist -f best --write-sub --embed-subs -a youtube_list.txt 
-    # download only mp3 audio
+    #download only mp3 audio
     youtube-dl --no-playlist -x --audio-format mp3 -a youtube_list.txt
 ```
