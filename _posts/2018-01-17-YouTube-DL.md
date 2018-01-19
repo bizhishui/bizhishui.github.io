@@ -3,6 +3,7 @@ title: YouTube-DL
 layout: post
 guid: urn:uuid:fc2af222-3816-42ec-b7a2-43062d79b747
 summary: Youtube-dl is a command-line opensource tool for downloading videos from youtube.com or other video sites.
+update_date: 2018-01-19
 categories:
   - notes
 tags:
@@ -68,6 +69,8 @@ Here, some useful commands are summarised.
     #-a: File containing URLs to download ('-' for stdin)
     #-f best: choose best resolution
     youtube-dl --no-playlist -f best -a youtube_list.txt
+    #download and embed subtitles
+    youtube-dl --no-playlist -f best --write-sub --embed-subs -a youtube_list.txt
     #download only mp3 audio
     youtube-dl --no-playlist -x --audio-format mp3 -a youtube_list.txt
 ```
