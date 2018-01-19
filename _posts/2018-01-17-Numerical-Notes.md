@@ -25,8 +25,7 @@ and carried out along coordinate directions. Thus a large number of data points 
 Since numerical grid generators are mostly only second-order accurate, the numerical differencing of grid point coordinates in evaluating metric terms can severely degrade the accuracy of the 
 solution if the grid is not sufficiently smooth. The unknowns are solution values at grid points. Therefore the true integral conservation laws can only be satisfied to second-order accuracy. 
 
-To ensure geometric flexibility one needs to abandon the simple one-dimensional approximation in favor of some-
-thing more general. The most natural approach is to introduce an element-based discretization.
+To ensure geometric flexibility one needs to abandon the simple one-dimensional approximation in favor of something more general. The most natural approach is to introduce an element-based discretization.
 
 #### b. FV (Finite-volume) methods
 {:.no_toc}
@@ -97,7 +96,7 @@ reduced if one were to apply the universal local reconstruction concept to the s
 
 #### h. SD (Spectral Difference) methods
 {:.no_toc}
-SV is introduced for conservation laws on unstructured grids. The method combines the best features of structured and unstructured grid methods to obtain computational efficiency and geometric flexibility. 
+SD is introduced for conservation laws on unstructured grids. The method combines the best features of structured and unstructured grid methods to obtain computational efficiency and geometric flexibility. 
 It utilizes the concept of discontinuous and high-order local representations to achieve conservation and high accuracy in a manner similar to the DG and SV methods, but the new method is based on the 
 finite-difference formulation to attain a simpler form and higher efficiency. Specifically, the differential form of the conservation laws is satisfied at nodal unknown points, 
 with flux derivatives expressed in terms of values at flux points. The SD method is a type of finite-difference method or nodal spectral method for unstructured grids, in which inside each cell or element 
