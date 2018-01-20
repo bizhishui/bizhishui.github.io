@@ -1,7 +1,7 @@
 ---
 title: Linux Basics
 layout: post
-update_date: 2017-12-29
+update_date: 2018-01-20
 guid: urn:uuid:293c4c6d-38bd-4aca-b0a7-8a6091f04c63
 categories:
   - linux
@@ -66,6 +66,9 @@ tags:
     find . -type f -name "*.jpg" | parallel cjpeg -outfile LoRes/{} {}   # use parallel
     
     scrot -s   #screen shot
+
+    #pdfgrep, grep like command for searching in pdf file
+    pdfgrep -i -R 'PARTERN' .      #search PARTERN (case insensitive) in all the pdf file recursively
 ```
 
 ### Linux系统的在线求助man page与info page[>](http://cn.linux.vbird.org/linux_basic/0160startlinux.php#manual)
