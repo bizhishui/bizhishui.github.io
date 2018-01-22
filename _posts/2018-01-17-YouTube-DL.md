@@ -57,6 +57,8 @@ Here, some useful commands are summarised.
 
     #download a video in mp3 audio format (need ffmpeg)
     youtube-dl https://www.youtube.com/watch?v=-IMNuTB61m8 -x --audio-format mp3
+    #one can also convert mp4 to mp3 directly with ffmpeg (with Constant Bitrate Encoding)
+    ffmpeg -i video.mp4 -vn -acodec libmp3lame -ac 2 -ab 160k -ar 48000 audio.mp3
 
     #download all videos of specific channel (appending the channel's URL)
     youtube-dl -citw https://www.youtube.com/channel/UC_d42su5rbQyrqvd0VPoQqw
