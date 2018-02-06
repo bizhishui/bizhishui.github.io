@@ -74,6 +74,14 @@ tags:
     wget --content-disposition --restrict-file-names=nocontrol -e robots=off -A.java,.c,.h -r URL  #-A specify files to be downloaded
 ```
 
+### 常用软件
+
+1. 图片编辑: Gimp, TikZ (Latex)
+2. 简图制作: Inkscape
+3. 视频播放: totem, mplayer
+4. 截图: scrot [-s]
+5. 屏幕视频录制: SimpleScreenRecorder
+
 ### Linux系统的在线求助man page与info page[>](http://cn.linux.vbird.org/linux_basic/0160startlinux.php#manual)
 #### man page
 {:.no_toc}
