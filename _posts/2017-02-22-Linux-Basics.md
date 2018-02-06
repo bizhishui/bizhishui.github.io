@@ -72,6 +72,9 @@ tags:
 
     #Download all files (no html) from a website using wget
     wget --content-disposition --restrict-file-names=nocontrol -e robots=off -A.java,.c,.h -r URL  #-A specify files to be downloaded
+
+    #To see what functions are inside the dynamic library
+    nm libfoo.so | grep ' T '
 ```
 
 ### 常用软件
