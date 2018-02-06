@@ -1,7 +1,7 @@
 ---
 title: Linux Basics
 layout: post
-update_date: 2018-02-05
+update_date: 2018-02-06
 guid: urn:uuid:293c4c6d-38bd-4aca-b0a7-8a6091f04c63
 categories:
   - linux
@@ -34,6 +34,8 @@ tags:
 
     #Replace a string in multiple files in linux command line
     sed -i 's/foo/bar/g' *.dat  #subsititue all the occurence of foo with bar in all the lines of all files with postfix .dat
+    #Recursive, regular files in this and all subdirectories
+    find . -type f -name "*baz*" -exec sed -i 's/foo/bar/g' {} +
 
     #chmod recursively only all the directories or files
     find /path/to/base/dir -type d -exec chmod 755 {} \;    #To recursively give directories read&execute privileges
