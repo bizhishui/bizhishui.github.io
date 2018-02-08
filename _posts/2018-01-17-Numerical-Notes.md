@@ -3,6 +3,7 @@ title: Numerical Notes
 layout: post
 guid: urn:uuid:caf8c5cf-2336-4181-b218-27a1e5776d58
 summary: This post will be appended by basic numerical simulation knowledges from artiles or internet.
+update_date: 2018-02-09
 categories:
   - notes
 tags:
@@ -201,3 +202,7 @@ and the conservation of angular momentum arises from the fact that physical syst
 - Lastly, note that if your equation has constant coefficients, then through a linear change of coordinates you can bring your equation into the form of a wave/heat/Laplace equation if it 
   is classified as hyperbolic/parabolic/elliptic. So you can also motivate the general definition thus as saying that a hyperbolic equation looks, in a small neighbourhood, like the wave equation plus some small perturbations etc. 
   This has the advantage of leading to a discussion of the method of freezing coefficients for elliptic estimates, say.
+
+### 08. Isoparametric Element ([FEM](http://onlinelibrary.wiley.com/book/10.1002/9781118569764))
+An element is said to be *isoparametric* if the geometrically transformation functions (transfer the real element to its reference element) are identical to the 
+interpolation functions (shape functions). This implies that the geometrical nodes are the same as the interpolation nodes.
