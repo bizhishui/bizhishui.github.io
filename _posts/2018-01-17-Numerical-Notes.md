@@ -118,7 +118,7 @@ we have structured nodal unknown and flux distributions, in such a way that the 
 ### 04. Grid, Nodal and Collocation Points
 
 - Grid points: as it is name suggests, just the verteices of the mesh
-- Nodal points: 
+- Nodal points: the points at which the approximate function coincides with the approximated function (so same as collocation points, see [Gouri Dhatt et al](http://onlinelibrary.wiley.com/book/10.1002/9781118569764))
 - Collocation points: at the collocation points, the reconstruced function's value equals to the real value, i.e., the residual is forced to zero at those collocation points. In other words, *at each collocation point the trial (basis) functions are required to satisfy the differential equation exactly*.
 
 ### 05. Autonomous and Non-autonomous System[>](https://en.wikipedia.org/wiki/Autonomous_system_(mathematics))
