@@ -206,3 +206,7 @@ and the conservation of angular momentum arises from the fact that physical syst
 ### 08. Isoparametric Element ([FEM](http://onlinelibrary.wiley.com/book/10.1002/9781118569764))
 An element is said to be *isoparametric* if the geometrically transformation functions (transfer the real element to its reference element) $$\overline{N}(\xi)$$ are identical to the 
 interpolation functions (shape functions) $$N(\xi)$$. This implies that the geometrical nodes are the same as the interpolation nodes.
+We say that an element is *pseudo-isoparametric* if functions $$\overline{N}(\xi)$$ and $$N(\xi)$$ are different polynomials using the same monomials.
+
+If the order of the polynomials used in $$\overline{N}(\xi)$$ is lower than that of the polynomials in $$N(\xi)$$, the element is *subparametric*. It is said to be *superparametric* 
+in the opposite case. Superparametric elements are usually not recommended.
