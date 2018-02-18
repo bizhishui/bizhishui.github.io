@@ -77,6 +77,20 @@ tags:
 
     #To see what functions are inside the dynamic library
     nm libfoo.so | grep ' T '
+
+    #combine the pdf files
+    pdftk f1.pdf f2.pdf [...] cat output merged.pdf
+    #take pages from different files and combine them
+    pdftk A=one.pdf B=two.pdf cat A1-7 B1-5 A8 output combined.pdf
+    #extract some pages
+    pdftk full-pdf.pdf cat 12-15 18 output outfile_p12-15_18.pdf
+
+    #Encrypt a PDF using 128-bit strength (the default), withhold all permissions (the default)
+    pdftk 1.pdf output 1.128.pdf owner_pw foopass
+    #Same as above, except password baz must also be used to open output PDF
+    pdftk 1.pdf output 1.128.pdf owner_pw foo user_pw baz
+    #Same as above, except printing is allowed (once the PDF is open)
+    pdftk 1.pdf output 1.128.pdf owner_pw foo user_pw baz allow printing
 ```
 
 ### 常用软件
