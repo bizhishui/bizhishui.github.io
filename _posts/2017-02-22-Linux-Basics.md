@@ -100,15 +100,24 @@ The difference between *;* (semicolon) or *+* (plus sign) is how the arguments a
 - using *;* will execute multiple commands (separately for each argument)
 
 ```
-    find /etc/rc* -exec echo Arg: {} ';'
+    find /etc/rc* -exec echo Arg: {} \;
     Arg: /etc/rc.common
     Arg: /etc/rc.common~previous
     Arg: /etc/rc.local
     Arg: /etc/rc.netboot
 ```
 > All following arguments to find are taken to be arguments to the command.
->
 > The string {} is replaced by the current file name being processed.
+
+- using *+* will **execute the least possible commands** (as the arguments are combined together). It's very similar to how *xargs* command works, so it will use as many 
+  arguments per command as possible to avoid exceeding the maximum limit of arguments per line.
+
+```
+    find /etc/rc* -exec echo Arg: {} \+
+    Arg: /etc/rc.common /etc/rc.common~previous /etc/rc.local /etc/rc.netboot
+```
+> The command line is built by appending each selected file name at the end.
+> Only one instance of {} is allowed within the command.
 
 ### 常用软件
 
