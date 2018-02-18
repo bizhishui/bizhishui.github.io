@@ -93,6 +93,23 @@ tags:
     pdftk 1.pdf output 1.128.pdf owner_pw foo user_pw baz allow printing
 ```
 
+##### The meaning of {} + in find's -exec command
+{:.no_toc}
+Using *;* (semicolon) or *+* (plus sign) is mandatory in order to terminate the shell commands invoked by *-exec/execdir*.
+The difference between *;* (semicolon) or *+* (plus sign) is how the arguments are passed into find's *-exec/-execdir* parameter. For example:
+- using *;* will execute multiple commands (separately for each argument)
+
+```
+    find /etc/rc* -exec echo Arg: {} ';'
+    Arg: /etc/rc.common
+    Arg: /etc/rc.common~previous
+    Arg: /etc/rc.local
+    Arg: /etc/rc.netboot
+```
+> All following arguments to find are taken to be arguments to the command.
+>
+> The string {} is replaced by the current file name being processed.
+
 ### 常用软件
 
 1. 图片编辑: Gimp, TikZ (Latex)
