@@ -31,6 +31,7 @@ layout: page
 
 
 #### Blogs
+- [Jerry Wu](http://imcode.info/): Linux, Python, 爬虫
 - [PChou](http://www.pchou.info/index.html): Github page, Html5
 - [Beiyuu](http://beiyuu.com/why-blog): 我为什么写博客
 - [Steve losh](http://stevelosh.com/): math and game programming
