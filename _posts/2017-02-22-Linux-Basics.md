@@ -126,6 +126,7 @@ The difference between *;* (semicolon) or *+* (plus sign) is how the arguments a
 3. 视频播放: totem, mplayer
 4. 截图: scrot [-s]
 5. 屏幕视频录制: SimpleScreenRecorder
+6. 启动盘制作: etcher
 
 ### Linux系统的在线求助man page与info page[>](http://cn.linux.vbird.org/linux_basic/0160startlinux.php#manual)
 #### man page
