@@ -111,14 +111,26 @@ Each Python version is installed into its own directory under *$PYENV_ROOT/versi
     pyenv versions             #List all installed versions
     pyenv global 3.5.5         #switch to version 3.5.5
     python --version           #check
-    #Set pyenv to load our python versions
-    #Order matters (system first, then our custom versions)
+
+    # Load python versions IN THIS ORDER
     pyenv global system 2.7.12 3.5.4
 ```
 The global python version setting is stored in the file *$(PYENV_ROOT)/version*.
 
 #### Switching Locally
 {:.no_toc}
+One can also switch the python version you want to use locally (per project) by using a *.python-version* file at the root of your project.
+When you enter this directory, *pyenv* will load the python version’s specified in your *.python-version*.
+```
+    cd /path/to/your/project
+    # Show the current version
+    pyenv which python
+    # Show current python version
+    python --version
+
+    #set local python version
+    pyenv local 3.5.5
+```
 
 
 ### Uninstalling pyenv
