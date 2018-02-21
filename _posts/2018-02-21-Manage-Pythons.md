@@ -42,3 +42,44 @@ Once pyenv has determined which version of Python your application has specified
 Each Python version is installed into its own directory under *$PYENV_ROOT/versions*.
 
 ### Installation
+#### Ubuntu
+{:.no_toc}
+```
+    #Check out pyenv where you want it installed (PYENV_ROOT=$HOME/.pyenv)
+    git clone https://github.com/pyenv/pyenv.git ~/.pyenv
+
+    #Define environment variable PYENV_ROOT to point to the path where pyenv repo is cloned and add $PYENV_ROOT/bin to your $PATH for access to the pyenv command-line utility
+    echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.bashrc
+    echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.bashrc
+
+    # Add pyenv init to your shell to enable shims and autocompletion
+    # Make sure eval "$(pyenv init -)" is placed toward the end of the shell configuration file since it manipulates PATH during the initialization.
+    echo -e 'if command -v pyenv 1>/dev/null 2>&1; then\n  eval "$(pyenv init -)"\nfi' >> ~/.bashrc
+
+    #Restart your shell so the path changes take effect
+    exec "$SHELL"
+
+    #Install Python versions
+    pyenv install --list       #list all available Python
+    pyenv install 3.5.5        #install python3.5.5
+    pyenv versions             #list all installed versions
+```
+
+##### Upgrading
+{:.no_toc}
+```
+    cd $(PYENV_ROOT)
+    git pull
+```
+
+#### Mac
+
+### Switching Versions
+
+
+### Uninstalling pyenv
+To **disable** *pyenv* managing your Python versions, simply remove the *pyenv init* line from your shell startup configuration. This will remove *pyenv shims* directory from *PATH*, 
+and future invocations like python will execute the *system* Python version, as before *pyenv*.
+
+To completely **uninstall** *pyenv*, perform step above and then remove its root directory (*rm -rf $(PYENV_ROOT)*). This will delete all Python versions that were installed under *$(pyenv root)/versions/* directory.
+Or use *brew uninstall pyenv* on Mac.
