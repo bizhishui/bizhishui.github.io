@@ -48,12 +48,14 @@ Each Python version is installed into its own directory under *$PYENV_ROOT/versi
     #Check out pyenv where you want it installed (PYENV_ROOT=$HOME/.pyenv)
     git clone https://github.com/pyenv/pyenv.git ~/.pyenv
 
-    #Define environment variable PYENV_ROOT to point to the path where pyenv repo is cloned and add $PYENV_ROOT/bin to your $PATH for access to the pyenv command-line utility
+    #Define environment variable PYENV_ROOT to point to the path where pyenv repo is cloned 
+    #and add $PYENV_ROOT/bin to your $PATH for access to the pyenv command-line utility
     echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.bashrc
     echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.bashrc
 
     # Add pyenv init to your shell to enable shims and autocompletion
-    # Make sure eval "$(pyenv init -)" is placed toward the end of the shell configuration file since it manipulates PATH during the initialization.
+    # Make sure eval "$(pyenv init -)" is placed toward the end of the shell configuration file
+    # since it manipulates PATH during the initialization.
     echo -e 'if command -v pyenv 1>/dev/null 2>&1; then\n  eval "$(pyenv init -)"\nfi' >> ~/.bashrc
 
     #Restart your shell so the path changes take effect
@@ -73,6 +75,7 @@ Each Python version is installed into its own directory under *$PYENV_ROOT/versi
 ```
 
 #### Mac
+{:.no_toc}
 
 ### Switching Versions
 
@@ -81,5 +84,5 @@ Each Python version is installed into its own directory under *$PYENV_ROOT/versi
 To **disable** *pyenv* managing your Python versions, simply remove the *pyenv init* line from your shell startup configuration. This will remove *pyenv shims* directory from *PATH*, 
 and future invocations like python will execute the *system* Python version, as before *pyenv*.
 
-To completely **uninstall** *pyenv*, perform step above and then remove its root directory (*rm -rf $(PYENV_ROOT)*). This will delete all Python versions that were installed under *$(pyenv root)/versions/* directory.
+To completely **uninstall** *pyenv*, perform step above and then remove its root directory (*rm -rf $(PYENV_ROOT)*). This will delete all Python versions that were installed under *$(PYENV_ROOT)/versions/* directory.
 Or use *brew uninstall pyenv* on Mac.
