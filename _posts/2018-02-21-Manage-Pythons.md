@@ -65,6 +65,8 @@ Each Python version is installed into its own directory under *$PYENV_ROOT/versi
     pyenv install --list       #list all available Python
     pyenv install 3.5.5        #install python3.5.5
     pyenv versions             #list all installed versions
+    which python               #find the current location of the python interpreter
+    pyenv which python         #show the actual location of the python interpreter it’s using
 ```
 
 ##### Upgrading
@@ -78,6 +80,21 @@ Each Python version is installed into its own directory under *$PYENV_ROOT/versi
 {:.no_toc}
 
 ### Switching Versions
+#### Switching Globally
+{:.no_toc}
+```
+    pyenv global               #List the current global python version
+    pyenv versions             #List all installed versions
+    pyenv global 3.5.5         #switch to version 3.5.5
+    python --version           #check
+    #Set pyenv to load our python versions
+    #Order matters (system first, then our custom versions)
+    pyenv global system 2.7.12 3.5.4
+```
+The global python version setting is stored in the file *$(PYENV_ROOT)/version*.
+
+#### Switching Locally
+{:.no_toc}
 
 
 ### Uninstalling pyenv
