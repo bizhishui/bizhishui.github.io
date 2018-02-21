@@ -67,6 +67,8 @@ Each Python version is installed into its own directory under *$PYENV_ROOT/versi
     pyenv versions             #list all installed versions
     which python               #find the current location of the python interpreter
     pyenv which python         #show the actual location of the python interpreter it’s using
+    #Uninstall
+    pyenv uninstall 3.5.5
 ```
 
 ##### Upgrading
@@ -96,6 +98,8 @@ Each Python version is installed into its own directory under *$PYENV_ROOT/versi
     pyenv install -l
     # Install Python
     pyenv install version_number
+    # Uninstall
+    pyenv uninstall version_number
 
     # List all versions installed
     pyenv versions
@@ -104,6 +108,12 @@ Each Python version is installed into its own directory under *$PYENV_ROOT/versi
 ```
 
 ### Switching Versions
+```
+    #Displays the full path of the executable which will be invoked when a command is run
+    pyenv which pip
+    #Lists all Python versions that have the given command installed
+    pyenv whence pip
+```
 #### Switching Globally
 {:.no_toc}
 ```
@@ -130,8 +140,18 @@ When you enter this directory, *pyenv* will load the python version’s specifie
 
     #set local python version
     pyenv local 3.5.5
+    #unset local version (delete .python-version file from the current directory)
+    pyenv local --unset
 ```
 
+#### Switching for Current Shell
+{:.no_toc}
+```
+    #set current shell session with python 3.4.3
+    pyenv shell 3.4.3
+    #unset
+    pyenv shell --unset
+```
 
 ### Uninstalling pyenv
 To **disable** *pyenv* managing your Python versions, simply remove the *pyenv init* line from your shell startup configuration. This will remove *pyenv shims* directory from *PATH*, 
