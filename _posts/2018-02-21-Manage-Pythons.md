@@ -2,7 +2,7 @@
 title: Manage Multiple Python Versions with pyenv on Ubuntu and Mac
 layout: post
 guid: urn:uuid:2758ad2f-ac7b-4702-bc50-224d8c93a2c1
-summary: Use pyenv to install and manage multiple python versions on Ubuntu and Mac.
+summary: Use pyenv to install, manage and switch between multiple python versions on Ubuntu and Mac.
 categories:
   - notes
 tags:
@@ -78,6 +78,30 @@ Each Python version is installed into its own directory under *$PYENV_ROOT/versi
 
 #### Mac
 {:.no_toc}
+```
+    # Install pyenv
+    brew update
+    brew install pyenv
+
+    # View more information
+    brew info pyenv
+    
+    # Add to the end of .bash_profile
+    echo -e 'if which pyenv 1>/dev/null 2>&1; then\n  eval "$(pyenv init -)"\nfi' >> ~/.bash_profile
+
+    # Restart your shell
+    exec $SHELL
+
+    # List all available versions
+    pyenv install -l
+    # Install Python
+    pyenv install version_number
+
+    # List all versions installed
+    pyenv versions
+    # List current python
+    pyenv which python
+```
 
 ### Switching Versions
 #### Switching Globally
