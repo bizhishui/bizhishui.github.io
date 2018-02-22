@@ -3,6 +3,7 @@ title: Manage Multiple Python Versions with pyenv on Ubuntu and Mac
 layout: post
 guid: urn:uuid:2758ad2f-ac7b-4702-bc50-224d8c93a2c1
 summary: Use pyenv to install, manage and switch between multiple python versions on Ubuntu and Mac.
+update_date: 2018-02-22
 categories:
   - notes
 tags:
@@ -159,3 +160,20 @@ and future invocations like python will execute the *system* Python version, as 
 
 To completely **uninstall** *pyenv*, perform step above and then remove its root directory (*rm -rf $(PYENV_ROOT)*). This will delete all Python versions that were installed under *$(PYENV_ROOT)/versions/* directory.
 Or use *brew uninstall pyenv* on Mac.
+
+### Problems
+#### Installing Python Modules
+{:.no_toc}
+On Mac, when a specified version has choosen (pyenv global), one can install packages directly with pip
+```
+    pyenv versions
+    pyenv version
+    python -V
+    pip -V
+    pip install numpy scipy
+```
+
+But on Ubuntu, it will not work, one need
+```
+    python -m pip install numpy scipy
+```
