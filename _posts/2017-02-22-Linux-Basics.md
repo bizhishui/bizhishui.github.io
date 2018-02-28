@@ -121,7 +121,7 @@ The difference between *;* (semicolon) or *+* (plus sign) is how the arguments a
 
 ### 常用软件
 
-1. 图片编辑: Gimp, TikZ (Latex), (ImageMagick)[https://www.imagemagick.org/script/index.php]
+1. 图片编辑: Gimp, TikZ (Latex), [ImageMagick](https://www.imagemagick.org/script/index.php)
 2. 简图制作: Inkscape
 3. 视频播放: totem, mplayer
 4. 截图: scrot [-s]
