@@ -127,6 +127,7 @@ The difference between *;* (semicolon) or *+* (plus sign) is how the arguments a
 4. 截图: scrot [-s]
 5. 屏幕视频录制: SimpleScreenRecorder
 6. 启动盘制作: etcher
+7. 图片中提取数据：WebPlotDigitizer
 
 ### Linux系统的在线求助man page与info page[>](http://cn.linux.vbird.org/linux_basic/0160startlinux.php#manual)
 #### man page
