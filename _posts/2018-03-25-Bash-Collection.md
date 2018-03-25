@@ -52,6 +52,19 @@ The basic object of *sed* is the *lines*, it takes one single line and process o
 ```
 
 ### awk
+*awk* ia an abbreviation of Aho, Weinberger and Kernighan (Brian Kernighan), the authors of the language.
+
+*awk* is a utility/language designed for data extraction. Just as sed, awk reads one line at a time, performs some action depending on the condition you 
+give it and outputs the result. One of the most simple and popular uses of awk is selecting a column from a text file or other command's output. 
+
+```
+    dpkg -l | awk ' {print $2} ' > installed            # get all installed software
+    dpkg -l | awk ' /'vim'/ {print $2} '                # all installed software related to vim
+```
+The action to be performed by *awk* is enclosed in braces, and the whole command is quoted. But the syntax is $$awk ' condition { action }'  } '$$.
+
+- Basic Usages[>](https://linuxconfig.org/learning-linux-commands-awk)
+
 - Working with Gnuplot, used to plot lines satisfied prescribed conditions
 ```
     # multiple filter conditions can be insert into the if condition
