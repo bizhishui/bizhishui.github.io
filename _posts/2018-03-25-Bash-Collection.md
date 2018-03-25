@@ -11,7 +11,7 @@ tags:
 ---
 
 
-#$$ sed
+### sed
 Working with Gnuplot, used to plot every n column
 ```
     # plot the tenth column with the first as x-axis, from the 0 row and
