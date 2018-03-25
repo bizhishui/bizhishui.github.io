@@ -20,6 +20,7 @@ The basic object of *sed* is the *lines*, it takes one single line and process o
 ```
     # sed use stdout by default, use redirect to make change permanent
     sed 's/Nick/John/g' report.txt > report_new.txt     # replace every occurrence of Nick with John
+    sed 's/[Nn]ick/John/g' report.txt
     sed 's/^/    /' file.txt >file_new.txt              # add 4 spaces to the left of a text for pretty printing
     sed -n 12,18p file.txt                              # show only lines 12 to 18
     sed 12,18d file.txt                                 # show all lines except for lines from 12 to 18
@@ -35,6 +36,12 @@ The basic object of *sed* is the *lines*, it takes one single line and process o
     sed 's/[ ^t]*$//' file.txt                          # delete all spaces at the end of every line of file.txt
     sed 's/^[ ^t]*//;s/[ ^]*$//' file.txt               # delete all spaces in front and at the end of every line
     sed '/baz/s/foo/bar/g' file.txt                     # only if line contains baz, substitute foo with bar
+    sed '1~3d' file.txt                                 # delete every third line, starting with the first
+    sed -n '2~5p' file.txt                              # print every 5th line starting with the second
+    sed 's/^[^,]*,/9999,/' file.csv                     # change first field to 9999 in a CSV file
+    sed -r "s/\<(reg|exp)[a-z]+/\U&/g"                  # convert any word starting with reg or exp to uppercase
+    sed '1,20 s/Johnson/White/g' file.txt               # do replacement on lines between 1 and 20
+    sed '1,20 !s/Johnson/White/g' file.txt              # the reverse of above
 ```
 - Working with Gnuplot, used to plot every n column
 ```
