@@ -61,6 +61,7 @@ And add color for **grep** command:
 ```
     brew uninstall gnuplot; brew install gnuplot --with-qt5   ##OR
     brew reinstall gnuplot --with-qt5
+    brew reinstall gnuplot --with-aquaterm --with-qt --with-x11
 ```
 
 - Mac自带截屏快捷键
