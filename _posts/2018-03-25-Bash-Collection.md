@@ -12,6 +12,12 @@ tags:
 
 
 ### sed
+sed takes the input text, does the specified operations on every line (unless otherwise specified) and prints the modified text. The specified operations can be append, insert, delete or substitute. 
+- Basic usages
+```
+    # sed use stdout by default, use redirect to make change permanent
+    sed 's/Nick/John/g' report.txt > report_new.txt
+```
 - Working with Gnuplot, used to plot every n column
 ```
     # plot the tenth column with the first as x-axis, from the 0 row and
