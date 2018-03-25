@@ -64,7 +64,19 @@ give it and outputs the result. One of the most simple and popular uses of awk i
 The action to be performed by *awk* is enclosed in braces, and the whole command is quoted. But the syntax is $$awk ' condition { action }'  } '$$.
 
 - Basic Usages[>](https://linuxconfig.org/learning-linux-commands-awk)
-
+```
+    awk ' {print $1,$3} '                               # print only first and thrid columns
+    awk ' /'pattern'/ {print $2} '                      # print only elements from column 2 that match pattern using stdin
+    awk -f script.awk inputfile                         # uses -f to get its' instructions from a file
+    awk ' program ' inputfile                           # execute program using data from inputfile
+    awk "BEGIN { print \"Hello, world!!\" }"            # classic "Hello, world" in awk
+    awk -F "" 'program' files                           # define the FS (field separator) as null, as opposed to white space, the default
+    awk -F "regex" 'program' files                      # FS can also be a regular expression
+    awk -F: '{ print $1 }' /etc/passwd | sort           # print sorted list of login names
+    awk 'END { print NR }' inputfile                    # print number of lines in a file, as NR stands for Number of Rows
+    ls -l | awk '$6 == "Nov" { sum += $5 }              # prints the total number of bytes of files that were last modified in November
+    END { print sum }'
+```
 - Working with Gnuplot, used to plot lines satisfied prescribed conditions
 ```
     # multiple filter conditions can be insert into the if condition
