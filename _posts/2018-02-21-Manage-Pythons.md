@@ -177,3 +177,35 @@ But on Ubuntu, it will not work, one need
 ```
     python -m pip install numpy scipy
 ```
+
+#### Module ImportError
+{:.no_toc}
+When *ImportError* or *ModuleNotFoundError* occurs, it usually means the corresponding module has not been (properly) installed. While with *pyenv* manage your
+pythons, one need make sure the **module (libray) is installed before your python**.
+
+Given as an example, with python 3.6.4 installed and set to global with *pyenv* on Ubuntu 16.04, 
+```
+    $python
+    Python 3.6.4 (default, Apr 12 2018, 16:07:53) 
+    [GCC 6.4.0] on linux
+    Type "help", "copyright", "credits" or "license" for more information.
+    >>> import matplotlib.pyplot as plt
+    ......
+    import _tkinter # If this fails your Python may not be configured for Tk
+    ModuleNotFoundError: No module named '_tkinter'
+```
+
+Unlike other normal cases, one can install *tk_dev* to solve this error with the following command
+```
+    sudo apt-get install tk-dev
+```
+
+To [fix](http://gangmax.me/blog/2017/04/13/fix-no-module-named-tkinter-issue/) this problem, we need first install *tk-dev* and then re-install your python
+```
+    sudo apt-get install tk-dev
+    pip freeze > requirements.txt
+    pyenv uninstall 3.6.4
+    pyenv install 3.6.4
+    pyenv global 3.6.4
+    pip install -r requirements.txt
+```
