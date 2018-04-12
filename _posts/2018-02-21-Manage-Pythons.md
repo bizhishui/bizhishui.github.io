@@ -175,6 +175,7 @@ On Mac, when a specified version has choosen (pyenv global), one can install pac
 
 But on Ubuntu, it will not work, one need
 ```
+    #pip is not in the PATH
     python -m pip install numpy scipy
 ```
 
