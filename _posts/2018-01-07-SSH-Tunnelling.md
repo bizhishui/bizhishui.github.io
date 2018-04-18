@@ -45,4 +45,20 @@ TCP应用均能够从中得益，避免了用户名，密码以及隐私信息�
 
 只需在浏览器或者其他应用程序上设置SOCKS代理(设置v4的SOCKS就可以了，v5的SOCKS增加了鉴权功能)，代理指向127.0.0.1，端口7001即可，这样免费的翻墙就做好了。
 
-### 通过端口连接访问服务器(补充)
+### 通过端口连接访问服务器(补充)[>](http://whoochee.blogspot.fr/2012/07/scp-via-ssh-tunnel.html)
+假设我们想从远程机器R拷贝文件bar，但是必须通过gateway machine G访问，此时必须用ssh端口转发拷贝至本地机器。
+First we set the forwarding port, you could pick any valid number, instead of 1234 here:
+```
+    ssh -L 1234:R_address:22  G_username@G_address
+    ssh -L 1234:scylla.etu.ec-m.fr:22  jlyu@sas1.ec-m.fr
+```
+Secondly, check our localhost address to find the local host address:
+```
+    cat /etc/hosts
+    # The output should have something like:
+    127.0.0.1       localhosts
+```
+Lastly, to scp file, we use the above port ON localhost (not the remote machine R) and the user name on remote machine R:
+```
+    scp -P 1234 R_username@127.0.0.1:/path/bar ./
+```
