@@ -62,3 +62,11 @@ Lastly, to scp file, we use the above port ON localhost (not the remote machine 
 ```
     scp -P 1234 R_username@127.0.0.1:/path/bar ./
 ```
+
+#### Using rsync[>](https://stackoverflow.com/questions/16654751/rsync-through-ssh-tunnel)
+```
+    #first connect to the remote server TO open a port
+    ssh -L 1234:scylla.etu.ec-m.fr:22  jlyu@sas1.ec-m.fr
+    #and then sync your files
+    rsync -ravh -e "ssh -p 1234" jlyu@127.0.0.1:/remote/path2files /local/path2saveFiles/ 
+```
