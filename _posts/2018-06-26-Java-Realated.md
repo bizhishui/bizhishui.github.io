@@ -27,3 +27,15 @@ Application ClassLoader to locate and load compile Java bytecodes stored in the 
 
 
 ### Build and run eclipse java projects from the command line
+A elispse project has a structure as follows:
+[![codeTree](/media/files/2018/06/26/codeTree.png)](https://github.com/bizhishui/bizhishui.github.io/blob/master/ "code tree")
+
+the java codes are locate in src which contains many sub-directories. Here are some commands to building and runing an application on command line
+```
+    #clean all old class
+    find ./bin/ -name "*.class" -type f -delete
+    #compile a .java file and put it in bin 
+    javac -d bin -cp "./src/:/the/path/to/your/external/jars/*" src/test/A.java
+    #runing A on cluster
+    java -Xss512m -Xms1G -Xmx16G -Djava.library.path="/full/path/to/jars/" -cp "./bin/:/full/path/to/jars/*" test.A -r ../inputFile.txt
+```
