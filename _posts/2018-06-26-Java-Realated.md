@@ -45,3 +45,18 @@ the java codes are locate in src which contains many sub-directories. Here are s
 ```
 
 ### Use [Intel® MKL](https://software.intel.com/en-us/articles/using-intel-mkl-in-math-intensive-java-applications-on-intel-xeon-phi) with Java
+The intel post gives a detail description on how to use Intel MKL with Java. Here, the steps are restated with my project,
+
+#### 1. Create a java file with lapack dgetrf description (LAPACK.java)
+Compile the LAPACK.java (locates in ./src/externalLibraries/) using the java compiler as below:
+```
+    #at the root directory of the project (same with the following commands, unless otherwise stated)
+    javac -encoding UTF-8 -d bin -cp "./src/" src/externalLibraries/LAPACK.java
+```
+
+#### 2. Generate headers files from the java class file
+The header should be used in C file in the next step
+```
+    javah -d ./src/externalLibraries/ -cp ./bin/ externalLibraries.LAPACK
+```
+This will produce externalLibraries_LAPACK.h under the directory ./src/externalLibraries/ .
