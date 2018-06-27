@@ -36,6 +36,10 @@ the java codes are locate in src which contains many sub-directories. Here are s
     find ./bin/ -name "*.class" -type f -delete
     #compile a .java file and put it in bin 
     javac -d bin -cp "./src/:/the/path/to/your/external/jars/*" src/test/A.java
+    #on some plateforme, you may need to specify the encoding
+    javac -encoding UTF-8 -d bin -cp "./src/:/the/path/to/your/external/jars/*" src/test/A.java
     #runing A on cluster
     java -Xss512m -Xms1G -Xmx16G -Djava.library.path="/full/path/to/jars/" -cp "./bin/:/full/path/to/jars/*" test.A -r ../inputFile.txt
+    #or run outside the source directory
+    java -Xss512m -Xms1G -Xmx16G -Djava.library.path="/full/path/to/jars/" -cp "./full/path/to/project/root/directory/bin/:/home/jlv/Soft/CellInTube/SoftJohn_lib/*" test.A -r ./inputFile.txt
 ```
