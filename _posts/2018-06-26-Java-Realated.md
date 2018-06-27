@@ -72,3 +72,4 @@ put it in the same directory as the header file.
     icc -shared -fPIC -o ./liblapack.so LAPACK.c -I./ -I$JAVA_HOME/include/ -I$JAVA_HOME/include/linux/ -I$MKLROOT/include/ -lmkl_intel_lp64 -lmkl_core -lmkl_intel_thread -liomp5 -lmkl_def -lc -ldl -qopenmp -lpthread
 ```
 *JAVA_HOME* is the directory where you *JDK* is installed, this command will need *jni.h* and *jni_md.h*. *MKLROOT* is the install directory of intel's MKL.
+A dynamic library *liblapck.so* is produeced, and can be linded by the Java code.
