@@ -43,3 +43,5 @@ the java codes are locate in src which contains many sub-directories. Here are s
     #or run outside the source directory
     java -Xss512m -Xms1G -Xmx16G -Djava.library.path="/full/path/to/jars/" -cp "./full/path/to/project/root/directory/bin/:/home/jlv/Soft/CellInTube/SoftJohn_lib/*" test.A -r ./inputFile.txt
 ```
+
+### Use [Intel® MKL](https://software.intel.com/en-us/articles/using-intel-mkl-in-math-intensive-java-applications-on-intel-xeon-phi) with Java
