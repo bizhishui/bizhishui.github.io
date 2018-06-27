@@ -45,13 +45,13 @@ the java codes are locate in src which contains many sub-directories. Here are s
 ```
 
 ### Use [Intel® MKL](https://software.intel.com/en-us/articles/using-intel-mkl-in-math-intensive-java-applications-on-intel-xeon-phi) with Java
-The intel post gives a detail description on how to use Intel MKL with Java. Here, the steps are restated with my project,
+The intel post gives a detail description on how to use *Intel MKL* with Java. Here, the steps are restated with my project,
 
 #### 1. Create a java file with lapack dgetrf description (LAPACK.java)
-Compile the LAPACK.java (locates in ./src/externalLibraries/) using the java compiler as below:
+Compile the LAPACK.java (locates in *./src/externalLibraries/*) using the java compiler as below:
 ```
     #at the root directory of the project (same with the following commands, unless otherwise stated)
-    javac -encoding UTF-8 -d bin -cp "./src/" src/externalLibraries/LAPACK.java
+    javac -encoding UTF-8 -d bin src/externalLibraries/LAPACK.java
 ```
 
 #### 2. Generate headers files from the java class file
@@ -59,4 +59,16 @@ The header should be used in C file in the next step
 ```
     javah -d ./src/externalLibraries/ -cp ./bin/ externalLibraries.LAPACK
 ```
-This will produce externalLibraries_LAPACK.h under the directory ./src/externalLibraries/ .
+This will produce *externalLibraries_LAPACK.h* under the directory *./src/externalLibraries/* .
+
+#### 3. Create the C file LAPACK.c
+Use definition of *Java_externalLibraries_LAPACK_dgetrf* in header *externalLibraries_LAPACK.h* that was generated in step 2 to write file *LAPACK.c*, and
+put it in the same directory as the header file.
+**Mkae sure the function name in LAPACK.c is the same as that in the header file externalLibraries_LAPACK.h** .
+
+#### 4. Compiler the C file to generate a dynamic library
+```
+    #this command should run at the directory locates the C and header file
+    icc -shared -fPIC -o ./liblapack.so LAPACK.c -I./ -I$JAVA_HOME/include/ -I$JAVA_HOME/include/linux/ -I$MKLROOT/include/ -lmkl_intel_lp64 -lmkl_core -lmkl_intel_thread -liomp5 -lmkl_def -lc -ldl -qopenmp -lpthread
+```
+*JAVA_HOME* is the directory where you *JDK* is installed, this command will need *jni.h* and *jni_md.h*. *MKLROOT* is the install directory of intel's MKL.
