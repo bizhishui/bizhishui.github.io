@@ -9,7 +9,7 @@ a
 
 who involved in
 
-> [GitHub](https://github.com/bizhishui)
+> [GitHub](https://github.com/bizhishui) and [码云](https://gitee.com/jmaxime)
 
 mail
 
