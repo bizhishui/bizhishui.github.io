@@ -123,11 +123,12 @@ The difference between *;* (semicolon) or *+* (plus sign) is how the arguments a
 
 1. 图片编辑: Gimp, TikZ (Latex), [ImageMagick](https://www.imagemagick.org/script/index.php)
 2. 简图制作: Inkscape
-3. 视频播放: totem, mplayer
-4. 截图: scrot [-s]
-5. 屏幕视频录制: SimpleScreenRecorder
-6. 启动盘制作: etcher
-7. 图片中提取数据：WebPlotDigitizer
+3. 音乐播放: cmus
+4. 视频播放: totem, mplayer
+5. 截图: scrot [-s]
+6. 屏幕视频录制: SimpleScreenRecorder
+7. 启动盘制作: etcher
+8. 图片中提取数据：WebPlotDigitizer
 
 ### Linux系统的在线求助man page与info page[>](http://cn.linux.vbird.org/linux_basic/0160startlinux.php#manual)
 #### man page
