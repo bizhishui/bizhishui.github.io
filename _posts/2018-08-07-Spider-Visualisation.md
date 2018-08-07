@@ -18,7 +18,7 @@ capable for all web-scraping job. Here, I note the basic steps in scraping with 
 on crawled data with [pyecharts](http://pyecharts.org/#/).
 
 
-### Scraping with looter
+### Basic scraping steps
 The basic steps in scraping are: first send a request, and followed by parsing the response and ended by data storage.
 
 #### Make a Requests
