@@ -31,6 +31,7 @@ One can send a request in using the package *requests*
 ```
 
 While with *looter* one can
+
 ```
     looter shell <your url>
     >>> import looter as lt
@@ -40,3 +41,35 @@ While with *looter* one can
 ```
 
 #### Parse a Response
+To parse a ElementTree, one can use *cssselect* and *xpath*, here I'll use cssselect. 
+For the response requested directly by requests.get, we first convert the content of the response explicitly with [lxml.etree](https://lxml.de/tutorial.html),
+while for *looter*, a tree object has already been returned by *fetch*.
+
+```
+    # with looter, we don't need import it explicitly, as it has already importted within it.
+    >>> from lxml import etree
+    >>> tree = etree.HTML(r.text)
+
+    # select the interesting part of tree with CSS tag
+    >>> items = tree.cssselect('td input')  # select the input class inside table td, td and input are html/css tag
+    >>> items = tree.cssselect('.question-summary') #another example for stackoverflow
+    # cssselect usually return a list of Element
+    >>> items
+    [<Element div at 0x1037f89c8>, <Element div at 0x1037f8a08>, ..., <Element div at 0x103954ac8>]
+
+    >>> item = items[0]
+    >>> item
+    <Element div at 0x1037f89c8>
+    # item may contains a dict
+    >>> item.attrib  # Elements carry attributes as a dict
+    {'class': 'question-summary', 'id': 'question-summary-231767'}
+    >>> subitem = item.cssselect('a.question-hyperlink')
+    >>> len(subitem)  # a list
+    1
+    >>> subitem[0].attrib
+    {'href': '/questions/231767/what-does-the-yield-keyword-do', 'class': 'question-hyperlink'}
+    >>> subitem[0].text
+    'What does the “yield” keyword do?'
+```
+
+#### Save wanted data
