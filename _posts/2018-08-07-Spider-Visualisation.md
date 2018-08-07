@@ -20,3 +20,23 @@ on crawled data with [pyecharts](http://pyecharts.org/#/).
 
 ### Scraping with looter
 The basic steps in scraping are: first send a request, and followed by parsing the response and ended by data storage.
+
+#### Make a Requests
+One can send a request in using the package *requests*
+```
+    >>> import requests
+    >>> r = requests.get('https://api.github.com/events')     # return a Response object r
+    >>> r.text  # return the content of the response
+    >>> r.status_code    # check the response status
+```
+
+While with *looter* one can
+```
+    looter shell <your url>
+    >>> import looter as lt
+    # in looter, has from lxml import etree
+    # lxml is used for processing XML and HTML, Elements are list and carry attributes as a dict
+    >>> tree = lt.fetch(url)  # return etree.HTML(r.text), the ElementTree of the response
+```
+
+#### Parse a Response
