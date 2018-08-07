@@ -154,3 +154,35 @@ Here is a example within *looter* (with small modifications, write data to json,
 
 ### Data Visualisation
 Here I just show one possibility, using [pyecharts](http://pyecharts.org/#/zh-cn/charts?id=wordcloud%EF%BC%88%E8%AF%8D%E4%BA%91%E5%9B%BE%EF%BC%89).
+To use pyecharts, it seems we need to convert the crawled data in two lists, one stored the data and the other store its frequency.
+Here is a example
+
+```
+    import json
+    from pprint import pprint
+    from pyecharts import WordCloud
+    
+    tag = []
+    with open('stackoverflow.json') as json_file:
+      data = json.load(json_file)
+      for tgs in data:
+        for t in tgs['tags']:
+          tag.append(t)
+    
+    tagNm = []
+    tagNb = []
+    
+    for t in tag:
+      if t in tagNm:
+        tagNb[tagNm.index(t)] = tagNb[tagNm.index(t)]+1
+      else:
+        tagNm.append(t)
+        tagNb.append(1)
+    
+    wordcloud = WordCloud(width=1300, height=620)
+    wordcloud.add("", tagNm, tagNb, word_size_range=[20, 100])
+    wordcloud.render()
+```
+and its results
+
+[![pyecharts](/media/files/2018/08/07/echarts.png)](https://github.com/bizhishui/bizhishui.github.io/blob/master/ "pyecharts")
