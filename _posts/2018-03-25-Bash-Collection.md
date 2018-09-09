@@ -42,6 +42,10 @@ The basic object of *sed* is the *lines*, it takes one single line and process o
     sed -r "s/\<(reg|exp)[a-z]+/\U&/g"                  # convert any word starting with reg or exp to uppercase
     sed '1,20 s/Johnson/White/g' file.txt               # do replacement on lines between 1 and 20
     sed '1,20 !s/Johnson/White/g' file.txt              # the reverse of above
+    #Replace a string in multiple files 
+    sed -i 's/foo/bar/g' *.dat  #subsititue all the occurence of foo with bar in all the lines of all files with postfix .dat
+    #Recursive, regular files in this and all subdirectories
+    find . -type f -name "*baz*" -exec sed -i 's/foo/bar/g' {} +
 ```
 - Working with Gnuplot, used to plot every n column
 ```
@@ -83,4 +87,27 @@ The action to be performed by *awk* is enclosed in braces, and the whole command
     # and put the target columns after the print
     plot 'Geometricparameters.txt' u ($1/10.0):10
     plot "< awk '{if ($1>2.0 && $10>0.153) print ($1/10.0), $10 }' ./GeometricParameters.txt "
+```
+
+
+### awk
+```
+    #Recursive, regular files in this and all subdirectories
+    find . -type f -name "*baz*" -exec sed -i 's/foo/bar/g' {} +
+    #chmod recursively all the directories or files
+    find /path/to/base/dir -type d -exec chmod 755 {} \;    #To recursively give directories read&execute privileges
+    find /path/to/base/dir -type f -exec chmod 644 {} \;    #To recursively give files read privileges
+    #delete recursively
+    find . -name "*.ser" -type f              # find file end with .ser
+    find . -name "*.ser" -type f -delete      # delete recursively files end with .ser
+    find . -name "wall" -type d -exec rm -r "{}" \;    # delete recursively folders with name wall
+```
+
+
+### rsync
+```
+    #copy files except certain extentions
+    rsync -urav --include='*.vtk' --exclude='*.ser' sourceDir targetDir       #local copy, -r recursive, -a archive (mostly all files), -v verbose, -u update (only new file)
+    rsync -urav --delete --include='*.vtk' --exclude='*.ser' sourceDir targetDir       #--delete, clear extra files in targetDir
+    rsync -uravh -e ssh --include='*.vtk' --include='*.txt' --exclude='*.ser' server:/Full/Sourcedir targetdir   #remote copy with ssh, -e specify ssh, -h human readable unit
 ```
