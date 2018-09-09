@@ -84,5 +84,8 @@ With awk, we can also select line with *if*, like
 
     #gnuplot plot data from two files: in one x coordinate, in other y
     plot "< join TubeTotalForce.txt GeometricParameters.txt"  using 14:4
+
+    #plot directly on remote server
+    set terminal dumb
 ```
 
