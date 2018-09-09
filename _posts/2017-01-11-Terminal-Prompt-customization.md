@@ -3,7 +3,7 @@ title: Terminal Prompt Customization
 layout: post
 guid: urn:uuid:7c94f7a4-7129-4915-83dd-b6e56c42f2c0
 categories:
-  - linux
+  - unix
 tags:
   - Linux
   - Bash

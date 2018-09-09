@@ -15,6 +15,11 @@ tags:
 
 ---
 
+### WebPlotDigitizer
+[WebPlotDigitizer](https://automeris.io/WebPlotDigitizer/)  was developed to be an easy to use, free of charge and opensource program that can work with a variety of plot types and images. 
+This program is developed using HTML5 which allows it to run within a web browser and requires no installation on to the user's hard drive.
+
+
 ### DataThief
 [DataThief III](http://datathief.org/) is writen in Java. This means, that apart from the "excutable" called `Datathief.jar`, 
 one will has to have the Java Virtual Machine. To use it, the basic steps are:
@@ -24,10 +29,6 @@ one will has to have the Java Virtual Machine. To use it, the basic steps are:
 3.  Once you have defined the axes, scattered data or full curve can be obtained from `Point mode` or `Trace mode`. To extract a curve, one also need define the `start indicator`, `end indicator` and `color indicator`.
 
 One defect of DataThief is the extraction of a line with `marker`. In this case, if the `output distance` is too small, the matched curved will go along the edge of the marker (big error if the marker is not too small).
-
-### WebPlotDigitizer
-[WebPlotDigitizer](http://arohatgi.info/WebPlotDigitizer/)  was developed to be an easy to use, free of charge and opensource program that can work with a variety of plot types and images. 
-This program is developed using HTML5 which allows it to run within a web browser and requires no installation on to the user's hard drive.
 
 
 ### Engauge Digitizer

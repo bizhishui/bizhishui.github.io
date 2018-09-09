@@ -60,6 +60,12 @@ We can substract these rows and print it in a file by column with the following 
 
 We can then edit the output result file with *Vim* in *visual mode* to move the sixth row's result at the right of second row.
 
+With awk, we can also select line with *if*, like
+
+```
+    plot "< awk '{if ($1==1.0) print ($2),($3)}' ./Rc_fit.dat " title 'Ca=1.0' w lp lt 1 dt 3 pt 6 lw 2
+```
+
 ### Basic Usages
 
 ```

@@ -3,9 +3,8 @@ title: CentOS7 Install & Configure
 layout: post
 guid: urn:uuid:a3cb476c-cd15-47f2-86e4-814a299a95fe
 categories:
-  - linux
+  - unix
 tags:
-  - Linux
   - CentOS
 ---
 

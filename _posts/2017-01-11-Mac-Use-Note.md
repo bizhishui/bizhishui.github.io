@@ -3,7 +3,7 @@ title: Mac Use Note
 layout: post
 guid: urn:uuid:32d75c37-a7bf-4d2e-b5d6-01cff554e7c8
 categories:
-  - notes
+  - unix
 tags:
   - Mac
 ---

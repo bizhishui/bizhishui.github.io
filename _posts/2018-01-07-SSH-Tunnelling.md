@@ -5,7 +5,7 @@ guid: urn:uuid:9a7d982b-bd5e-47a0-8883-5596cf148e86
 summary: SSH会自动加密和解密所有SSH客户端与服务端之间的网络数据。其实，SSH还同时提供了一个非常有用的功能，这就是端口转发。它能够将其他TCP端口的网络数据通过SSH链接来转发，并且自动提供了相应的加密及解密服务，这一过程有时也被叫做“隧道”（tunneling）。
 update_date: 2018-04-18
 categories:
-  - linux
+  - unix
 tags:
   - SSH
   - Tunneling

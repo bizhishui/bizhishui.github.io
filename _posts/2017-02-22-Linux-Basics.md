@@ -4,7 +4,7 @@ layout: post
 update_date: 2018-02-06
 guid: urn:uuid:293c4c6d-38bd-4aca-b0a7-8a6091f04c63
 categories:
-  - linux
+  - unix
 tags:
   - Linux
 ---
@@ -12,7 +12,7 @@ tags:
 
 ---
 
-> This post notes some basic but very useful points for Linux. Adapted mainly from [鸟哥的Linux私房菜](http://cn.linux.vbird.org/).
+> This post notes some basic but very useful points for Linux. Adapted partially from [鸟哥的Linux私房菜](http://cn.linux.vbird.org/).
 
 ---
 
@@ -122,9 +122,9 @@ The difference between *;* (semicolon) or *+* (plus sign) is how the arguments a
 ### 常用软件
 
 1. 图片编辑: Gimp, TikZ (Latex), [ImageMagick](https://www.imagemagick.org/script/index.php)
-2. 简图制作: Inkscape
+2. 简图制作: Inkscape, Latex Tikz
 3. 音乐播放: cmus
-4. 视频播放: totem, mplayer
+4. 视频播放: totem, mplayer, [mpv](https://mpv.io/)
 5. 截图: scrot [-s]
 6. 屏幕视频录制: SimpleScreenRecorder
 7. 启动盘制作: etcher

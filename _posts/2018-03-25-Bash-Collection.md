@@ -4,7 +4,7 @@ layout: post
 guid: urn:uuid:3d34f473-8323-448e-8cf1-2defa535c67d
 summary: This post is used to note some efficient linux commands in my work.
 categories:
-  - linux
+  - unix
 tags:
   - Linux
   - Bash

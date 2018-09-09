@@ -3,7 +3,7 @@ title: Install Security Updates Automatically
 layout: post
 guid: urn:uuid:d5af165d-3445-4a80-9dd5-23305dfe77cf
 categories:
-  - linux
+  - unix
 tags:
   - Linux
   - Soft updates

@@ -3,7 +3,7 @@ title: 磁盘分区及硬盘挂载
 layout: post
 guid: urn:uuid:ab464ace-a924-40e7-8ec1-82c4a94c763f
 categories:
-  - linux
+  - unix
 tags:
   - Linux
   - Partition
