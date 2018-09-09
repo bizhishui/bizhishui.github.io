@@ -6,10 +6,10 @@ summary: Scraper web using looter and data visualisation.
 categories:
   - python
 tags:
-  - looter
-  - scraper
-  - pyecharts
-  - wordcloud
+  - Looter
+  - Scraper
+  - Pyecharts
+  - Wordcloud
 ---
 
 There are plenty of articles in [zhihu](https://www.zhihu.com/search?type=content&q=%E7%88%AC%E8%99%AB), wechat official accounts and github on 

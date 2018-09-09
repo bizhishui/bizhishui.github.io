@@ -8,7 +8,7 @@ categories:
   - python
 tags:
   - Python
-  - pyenv
+  - Pyenv
   - Ubuntu
   - Mac
 ---
