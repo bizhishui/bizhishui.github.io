@@ -3,7 +3,7 @@ title: 中文支持
 layout: post
 guid: urn:uuid:827eea18-5fd1-4e34-8d6d-de4ac8cc5b85
 categories:
-  - linux
+  - unix
 tags:
   - Chinese
   - Linux

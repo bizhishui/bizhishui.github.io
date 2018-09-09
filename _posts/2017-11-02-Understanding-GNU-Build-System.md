@@ -3,7 +3,7 @@ title: Understanding the GNU Build System
 layout: post
 guid: urn:uuid:55ba0361-accd-4b8c-8a46-a33d0211261b
 categories:
-  - linux
+  - unix
 tags:
   - Linux
   - Make
