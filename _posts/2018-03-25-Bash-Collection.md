@@ -90,7 +90,7 @@ The action to be performed by *awk* is enclosed in braces, and the whole command
 ```
 
 
-### awk
+### find
 ```
     #Recursive, regular files in this and all subdirectories
     find . -type f -name "*baz*" -exec sed -i 's/foo/bar/g' {} +
