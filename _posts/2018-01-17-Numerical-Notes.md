@@ -5,7 +5,7 @@ guid: urn:uuid:caf8c5cf-2336-4181-b218-27a1e5776d58
 summary: This post will be appended by basic numerical simulation knowledges from artiles or internet.
 update_date: 2018-02-09
 categories:
-  - notes
+  - mecaFluid
 tags:
   - Numerical
 ---

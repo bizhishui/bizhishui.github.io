@@ -3,7 +3,7 @@ title: 边界积分方法求解Stokes流动
 layout: post
 guid: urn:uuid:672ad6da-1db6-4e26-bede-d47d956b0657
 categories:
-  - thèse
+  - mecaFluid
 tags:
   - BIM
   - Stokes
