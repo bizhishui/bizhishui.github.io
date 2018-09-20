@@ -20,7 +20,7 @@ tags:
 由于个人水平有限，本文安装的是CentOS 7 的桌面版。
 
 #### 准备安装盘   
-1. 下载[CentOS 7 Everything ISO](https://github.com/bizhishui/bizhishui.github.io)，大小约为8G，故应至少准备一个16G U盘。
+1. 下载[CentOS 7 Everything ISO](https://www.centos.org/download/)，大小约为8G，故应至少准备一个16G U盘。
 2. 使用[dd刻录U盘启动盘](https://wiki.centos.org/HowTos/InstallFromUSBkey)，Linux下命令为:   
 
 ```
@@ -177,7 +177,7 @@ CentOS 由于很追求稳定性，所以官方源中自带的软件不多，因�
 2. Gnuplot
 
 #### Editors
-1. Vim [configure](https://bizhishui.github.io/2017/01/11/Vim.html)
+1. Vim [configure](https://bizhishui.github.io/Vim.html)
 2. Markdown+[Atom](https://atom.io/)
 
 #### 日常软件

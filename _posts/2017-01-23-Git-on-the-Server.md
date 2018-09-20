@@ -58,6 +58,7 @@ But, it may still be an empty repository, *commit* and *push* from your local di
 ```
     git remote add origin user@git.example.com:/srv/git/my_project.git  #set new remote repository URL
     git remote -v    #verifies the new remote URL
+    git remote --help  # for more help
     git push origin master    #pushes the changes in your local repository up to the remote repository you specified as origin 
 ```
 
