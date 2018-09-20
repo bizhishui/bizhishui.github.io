@@ -17,6 +17,7 @@ layout: page
 
 
 #### Peoples
+- [Howard A. Stone](https://stonelab.princeton.edu/): complex fluid
 - [王志坚](http://zjwang.com/)
 - [C. Pozrikidis](http://dehesa.freeshell.org/): 边界积分方法
 - [Eric Lauga](http://www.damtp.cam.ac.uk/user/lauga/index.html): bio-swimmer
