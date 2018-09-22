@@ -17,6 +17,7 @@ Reading notes on a very good review on [Low-Reynolds-Number Flows](http://pubs.r
 ### 1. Typical results for low-reynolds-number flows
 
 1. A sphere of radius $$a$$ that translates at a speed $$V$$ far from any walls and in a large bath of fluid experiences a drag force of magnitude
+
 $$
 \begin{equation}
 F_D=6\pi\mu a V.
