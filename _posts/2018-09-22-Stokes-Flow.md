@@ -79,7 +79,7 @@ $$
 
 where $$\nu=\mu/\rho$$ is the kinematic viscosity which has the dimension of diffusion coefficient $$D$$.
 It is useful in fluid mechanics to think about vorticity, or local rotation of fluid elements, as a flow property that diffuses.
-A low-Reynolds-number flow, with $$Re<ll 1$$, then corresponds to a motion where the viscous effects or the vorticity diffuses much faster
+A low-Reynolds-number flow, with $$Re\ll 1$$, then corresponds to a motion where the viscous effects or the vorticity diffuses much faster
 than a particle or moving boundary can change its position. The fluid rapidly, or instantaneously in the ideal limit, establishes a velocity
 distribution for a given translation speed and geometry of the boundaries.
 
