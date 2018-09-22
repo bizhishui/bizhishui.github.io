@@ -25,7 +25,7 @@ F_D=6\pi\mu a V.
 $$
 
 This result is known as the Stokes drag, corresponds to the product of the surface area $$4\pi a^2$$ and a typical shear stress $$\mu V/a$$.
-Unlike $${\color{blue}{high Reynolds numer flow}}$$ limit, where the drag force varies approximately with the square of the particle radius and 
+Unlike $${\color{blue}{high\ Reynolds\ numer\ flow}}$$ limit, where the drag force varies approximately with the square of the particle radius and 
 square of the speed.
 
 2. Because of gravity, a sphere of radius $$a$$ and density $$\rho_s$$ sediments in a viscous fluid of density $$\rho$$ with a net force 
