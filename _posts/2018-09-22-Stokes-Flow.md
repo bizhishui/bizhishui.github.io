@@ -9,4 +9,7 @@ tags:
   - Stokes flow
 ---
 
-Reading notes on a very good review on [Low-Reynolds-Number Flows](http://pubs.rsc.org/en/Content/Chapter/9781782628491-00025/978-1-78262-849-1) from physical view.
+Reading notes on a very good review on [Low-Reynolds-Number Flows](http://pubs.rsc.org/en/Content/Chapter/9781782628491-00025/978-1-78262-849-1) from physical view by H. A. Stone and C. Dupart.
+
+
+### 1. Typical results for low-reynolds-number flows
