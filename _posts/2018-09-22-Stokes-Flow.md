@@ -51,7 +51,18 @@ $$
 which is known as Stokes-Einstein equation. One use this result in physical chemistry is to measure the diffusion coefficient of a small particle and 
 to identify an effective (or hydrodynamic) radius for the particle.
 
-(4).
+(4). A circular disk of radius $$a$$ translating at a speed $$V$$ edgewise parallel to a nearby plane, with separation distance $$h\ll a$$, experiences
+a drag force that is approximately given by the product of the surface area of the disk $$\pi a^2$$ and the shear stress $$\mu V/h$$, i.e. $$F_d\approx \pi a^2\mu V/h$$.
+Clearly, halving the separation distance doubles the drag.
+
+(5). A long slender rod of radius $$a$$  and length $$l$$, with $$l\gg a$$, when translating at speed $$V$$ experiences a drag force $$F$$ is approximately
+proportional to its length, and
+
+$$
+\begin{equation}
+F_\perp \approx\frac{8\pi\mu l V}{\mathrm{ln}(2l/a)} \approx 2F_\parallel .
+\end{equation}
+$$
 
 
 <a name="EinseinRelation">1</a>: (From class note of Mélange, E. Villemaux) Einstein view: particles concentration $$c(z)$$ at equilibrium $$c(z)=exp(-\frac{E}{k_BT})$$, where $$E=Fz$$ is the energy of a particle, 
