@@ -44,7 +44,7 @@ As derived by Einstein in 1905<sup>[1](#EinsteinRelation)</sup>, a sphere of rad
 
 $$
 \begin{equation}
-D=\frac{k_BT}{6\pi\mu a},
+D\equiv \frac{[L^2]}{[T]}=\frac{k_BT}{6\pi\mu a},
 \end{equation}
 $$
 
