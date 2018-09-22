@@ -43,5 +43,6 @@ i.e. $${\color{blue}{V\propto a^2}}$$.
 As derived by Einstein in 1905<sup>[1](#EinsteinRelation)</sup>
 
 
-<a name="EinseinRelation">1</a>: Einstein view: particles concentration $$c(z)$$ at equilibrium $$c(z)=exp(-\frac{E}{k_BT})$$, where $$E=Fz$$ is the energy of a particle, 
+<a name="EinseinRelation">1</a>: (From class note of Mélange, E. Villemaux) Einstein view: particles concentration $$c(z)$$ at equilibrium $$c(z)=exp(-\frac{E}{k_BT})$$, where $$E=Fz$$ is the energy of a particle, 
 $$F=6\pi\mu a V$$ is the drag force. On the other hand, equilibrium means zero flux $$j=0=-Vc-D\frac{\partial c}{\partial z}$$, thus $$c(z)=exp(-\frac{V}{D}z)$$.
+Identification by terms, we have $$D=\frac{k_BT}{6\pi\mu a}$$. Another view, the mean quadratic difference of Brownian motion position  $$<x^2>=2\frac{\epsilon}{\tau^2}t$$
