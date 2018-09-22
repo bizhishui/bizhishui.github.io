@@ -40,3 +40,8 @@ $$
 i.e. $${\color{blue}{V\propto a^2}}$$.
 
 (3). Brownian motion refers to mouvements of suspended objects due to thermal bombardment by the molecules of the fluid, with a thermal energy of $$\kappa_B T$$.
+As derived by Einstein in 1905<sup>[1](#EinsteinRelation)</sup>
+
+
+<a name="EinseinRelation">1</a>: Einstein view: particles concentration $$c(z)$$ at equilibrium $$c(z)=exp(-\frac{E}{k_BT})$$, where $$E=Fz$$ is the energy of a particle, 
+$$F=6\pi\mu a V$$ is the drag force. On the other hand, equilibrium means zero flux $$j=0=-Vc-D\frac{\partial c}{\partial z}$$, thus $$c(z)=exp(-\frac{V}{D}z)$$.
