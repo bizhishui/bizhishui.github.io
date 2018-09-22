@@ -23,3 +23,5 @@ $$
 F_D=6\pi\mu a V.
 \end{equation}
 $$
+
+This result is known as the Stokes drag, corresponds to the product of the surface area $$4\pi a^2$$ and a typical shear stress $\mu V/a$.
