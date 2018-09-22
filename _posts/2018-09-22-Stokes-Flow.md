@@ -24,4 +24,6 @@ F_D=6\pi\mu a V.
 \end{equation}
 $$
 
-This result is known as the Stokes drag, corresponds to the product of the surface area $$4\pi a^2$$ and a typical shear stress $\mu V/a$.
+This result is known as the Stokes drag, corresponds to the product of the surface area $$4\pi a^2$$ and a typical shear stress $$\mu V/a$$.
+Unlike $${\color{blue}{high-Reynolds-numer-flow}}$$ limit, where the drag force varies approximately with the square of the particle radius and 
+square of the speed.
