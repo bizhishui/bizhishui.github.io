@@ -40,10 +40,22 @@ $$
 i.e. $${\color{blue}{V\propto a^2}}$$.
 
 (3). Brownian motion refers to mouvements of suspended objects due to thermal bombardment by the molecules of the fluid, with a thermal energy of $$\kappa_B T$$.
-As derived by Einstein in 1905<sup>[1](#EinsteinRelation)</sup>
+As derived by Einstein in 1905<sup>[1](#EinsteinRelation)</sup>, a sphere of radius $$a$$ undergoing Brownian motion is characterized by a diffusion coefficient
+
+$$
+\begin{equation}
+D=\frac{k_BT}{6\pi\mu a},
+\end{equation}
+$$
+
+which is known as Stokes-Einstein equation. One use this result in physical chemistry is to measure the diffusion coefficient of a small particle and 
+to identify an effective (or hydrodynamic) radius for the particle.
+
+(4).
 
 
 <a name="EinseinRelation">1</a>: (From class note of Mélange, E. Villemaux) Einstein view: particles concentration $$c(z)$$ at equilibrium $$c(z)=exp(-\frac{E}{k_BT})$$, where $$E=Fz$$ is the energy of a particle, 
 $$F=6\pi\mu a V$$ is the drag force. On the other hand, equilibrium means zero flux $$j=0=-Vc-D\frac{\partial c}{\partial z}$$, thus $$c(z)=exp(-\frac{V}{D}z)$$.
 Identification by terms, we have $$D=\frac{k_BT}{6\pi\mu a}$$. Another view, the mean quadratic difference of Brownian motion position  $$<x^2>=2\frac{\epsilon}{\tau^2}t=2Dt^3$$ for $$t\gg\tau$$, 
 where $$\tau$$ is the characteristic time of diffusion, $$<f(t_1)f(t_2)>=\epsilon\delta (t_1-t_2)$$, $$f$$ is the stochastic force. Thus $$<v^2>=2Dt$$.
+With $$k_BT=\frac{1}{2}m<v^2>$$, $$Ft=mV$$ and $$F=6\pi\mu a V$$, we obtain the same formule.
