@@ -64,6 +64,20 @@ F_\perp \approx\frac{8\pi\mu l V}{\mathrm{ln}(2l/a)} \approx 2F_\parallel .
 \end{equation}
 $$
 
+### 2. Equations of Motion
+#### The Reynolds Number
+
+$$
+\begin{equation}
+\begin{split}
+Re &= \frac{\mathrm{inertial terms}}{\mathrm{viscous terms}}=\frac{\rho V^2/a}{\mu V/a^2} \\
+&= \frac{\mathrm{time for vorticity to diffusion distance }a}{\mathrm{time to translate distance }a}=\frac{a^2/\nu}{a/V} \\
+&= \frac{\rho V a}{\mu}
+\end{split},
+\end{equation}
+$$
+
+where $$\nu=\mu/\rho$$ is the kinematic viscosity which has the dimension of diffusion coefficient $$D$$.
 
 <a name="EinseinRelation">1</a>: (From class note of Mélange, E. Villemaux) Einstein view: particles concentration $$c(z)$$ at equilibrium $$c(z)=exp(-\frac{E}{k_BT})$$, where $$E=Fz$$ is the energy of a particle, 
 $$F=6\pi\mu a V$$ is the drag force. On the other hand, equilibrium means zero flux $$j=0=-Vc-D\frac{\partial c}{\partial z}$$, thus $$c(z)=exp(-\frac{V}{D}z)$$.
