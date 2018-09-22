@@ -70,14 +70,27 @@ $$
 $$
 \begin{equation}
 \begin{split}
-Re &= \frac{\mathrm{inertial terms}}{\mathrm{viscous terms}}=\frac{\rho V^2/a}{\mu V/a^2} \\
-&= \frac{\mathrm{time for vorticity to diffusion distance }a}{\mathrm{time to translate distance }a}=\frac{a^2/\nu}{a/V} \\
+Re &= \frac{\mathrm{inertial\ terms}}{\mathrm{viscous\ terms}}=\frac{\rho V^2/a}{\mu V/a^2} \\
+&= \frac{\mathrm{time\ for\ vorticity\ to\ diffusion\ distance\ }a}{\mathrm{time\ to\ translate\ distance\ }a}=\frac{a^2/\nu}{a/V} \\
 &= \frac{\rho V a}{\mu}
 \end{split},
 \end{equation}
 $$
 
 where $$\nu=\mu/\rho$$ is the kinematic viscosity which has the dimension of diffusion coefficient $$D$$.
+It is useful in fluid mechanics to think about vorticity, or local rotation of fluid elements, as a flow property that diffuses.
+A low-Reynolds-number flow, with $$Re<ll 1$$, then corresponds to a motion where the viscous effects or the vorticity diffuses much faster
+than a particle or moving boundary can change its position. The fluid rapidly, or instantaneously in the ideal limit, establishes a velocity
+distribution for a given translation speed and geometry of the boundaries.
+
+#### Stokes Equations
+In the [Stokes equations limit](https://bizhishui.github.io/BIM-Stokes), there can still be considerable complexity owing to the
+presence of (i) suspended particles, whose distribution affects the flow,
+which in turn influences the particle distribution, and (ii) elastic boundaries,
+whose shape depends on the flow, which in turn influences the boundary shape.
+
+
+
 
 <a name="EinseinRelation">1</a>: (From class note of Mélange, E. Villemaux) Einstein view: particles concentration $$c(z)$$ at equilibrium $$c(z)=exp(-\frac{E}{k_BT})$$, where $$E=Fz$$ is the energy of a particle, 
 $$F=6\pi\mu a V$$ is the drag force. On the other hand, equilibrium means zero flux $$j=0=-Vc-D\frac{\partial c}{\partial z}$$, thus $$c(z)=exp(-\frac{V}{D}z)$$.
