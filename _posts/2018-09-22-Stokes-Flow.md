@@ -89,7 +89,35 @@ presence of (i) suspended particles, whose distribution affects the flow,
 which in turn influences the particle distribution, and (ii) elastic boundaries,
 whose shape depends on the flow, which in turn influences the boundary shape.
 
+Much is known about the structure of the solutions of Laplace’s equation.
+Because the structure of the Stokes equations, the mathematical features related to the Laplace equation
+figure prominently when solving low-Reynolds-number flow problems.
 
+
+### 3. Elementary Flows
+#### Channel Flows
+In many channel flows, the distance along the flow direction $$l$$ is very
+different from the typical distance $$l_\perp$$ transverse to the flow direction, with $$l_\perp\ll l$$.
+The Stokes equations indicate a balance between viscous stresses $$\mu v_c/l^2_\perp$$, where $$v_c$$ is a typical speed, and the 
+pressure gradient, $$\Delta p/l$$, where $$l$$ is the distance along the flow over which the pressure drop $$\Delta p$$ occurs. Therefore,
+
+$$
+\begin{equation}
+v_c\approx\frac{l^2_\perp}{\mu}\frac{\Delta p}{l}.
+\end{equation}
+$$
+
+The corresponding flow rate in the channel is $$Q\approx v_c\times$$ (cross-sectional area). Thus, for a circular pipe of radius $$a=l_\perp$$,
+the pressure-drop-versus-flow-rate relation is (where we have introduced a constant $$\pi/8$$ that results from a detailed calculation)
+
+$$
+\begin{equation}
+Q=\frac{\pi a^4}{8\mu}\frac{\Delta p}{l},
+\end{equation}
+$$
+which is known as the Poiseuille formula.
+
+### 4. Kinematic Reversibility
 
 
 <a name="EinseinRelation">1</a>: (From class note of Mélange, E. Villemaux) Einstein view: particles concentration $$c(z)$$ at equilibrium $$c(z)=exp(-\frac{E}{k_BT})$$, where $$E=Fz$$ is the energy of a particle, 
