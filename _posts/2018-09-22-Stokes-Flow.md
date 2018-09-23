@@ -115,6 +115,7 @@ $$
 Q=\frac{\pi a^4}{8\mu}\frac{\Delta p}{l},
 \end{equation}
 $$
+
 which is known as the Poiseuille formula.
 
 ### 4. Kinematic Reversibility
