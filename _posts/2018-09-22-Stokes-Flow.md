@@ -138,6 +138,27 @@ flow field is exactly reversed when the boundary forcing is reversed, and conseq
 direction along the streamlines changes. We refer to this reversal of the flow field as “kinematic reversibility” to respect the thermodynamic fact
 that viscous flows always dissipate energy and so are thermodynamically irreversible.
 
+#### Examples of Kinematic Reversibility
+1. When a single sphere is subject to a force parallel to a vertical plane wall, the sphere translates parallel to the wall and rotates as if rolling
+down the wall: the force and the velocity are collinear and there is no component of velocity perpendicular to the wall, 
+and the sphere maintains a constant separation distance from the wall.
+Suppose that you thought that there would also be a motion of the sphere perpendicular to, and away from, the wall. If you exactly reversed the
+driving force parallel to the wall, the velocity of the sphere would reverse. Hence, you would then have the sphere translating upwards
+parallel to the wall but the transverse component would be towards the wall, i.e. the velocities change sign when the applied force changes sign.
+
+2. When two identical spheres, i.e. with the same radius and the same density, sediment in a viscous fluid at a speed such that the Reynolds
+number is small, their separation distance does not change. As a consequence of hydrodynamic interactions, the spheres may rotate as they sediment and their
+direction of fall may be at an angle to the vertical, but they have no component of relative velocity.
+
+3. In a low-Reynolds-number pressure-driven flow of neutrally buoyant spheres of radius $$a_s$$ in a straight tube of radius $$a\gg a_s$$,
+deformation away from a spherical shape can lead to drift in the direction normal to the wall.
+It is important to  determine the typical speed $$U_\perp$$ of migration across the streamlines.
+
+
+Perhaps not surprisingly, many physical features can destroy kinematic reversibility, for example elasticity of the boundaries , viscoelasticity of the fluid, 
+surface tension acting at an interface, deformation of suspended particles, and finite inertia (Reynolds number) of the flow.
+
+
 
 <a name="EinseinRelation">1</a>: (From class note of Mélange, E. Villemaux) Einstein view: particles concentration $$c(z)$$ at equilibrium $$c(z)=exp(-\frac{E}{k_BT})$$, where $$E=Fz$$ is the energy of a particle, 
 $$F=6\pi\mu a V$$ is the drag force. On the other hand, equilibrium means zero flux $$j=0=-Vc-D\frac{\partial c}{\partial z}$$, thus $$c(z)=exp(-\frac{V}{D}z)$$.
