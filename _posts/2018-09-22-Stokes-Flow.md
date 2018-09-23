@@ -119,6 +119,24 @@ $$
 which is known as the Poiseuille formula.
 
 ### 4. Kinematic Reversibility
+There is a feature of Stokes flows that surprises many people when it is first encountered. Stokes flows in or around boundaries of fixed shape have the
+property that the flow looks the same, i.e. that the streamline pattern is identical, when the driving force is reversed.
+
+#### Mathematical Reasons for Kinematic Reversibility
+The stress is related linearly to the velocity and pressure fields, i.e. $$\sigma=-p\mathbf{I}+\mu\left(\nabla\mathbf{u}+(\nabla\mathbf{u})^T\right)$$.
+Now, consider causing a flow by applying steady forces at the boundaries; for example, on some surfaces $$S$$ we apply known stresses $$\tau (r)$$, where $$r$$ is the position vector:
+
+$$
+\begin{equation}
+\mathbf{n}\cdotp\sigma=\tau(\mathbf{r})\quad \mathrm{for}\quad r\in S.
+\end{equation}
+$$
+
+Next, we consider changing the sign of these surface stresses, i.e. $$\tau\rightarrow -\tau$$. Thus, we change the sign for $$\sigma$$, which for a Newtonian 
+fluid means that we reverse the signs of $$\mathbf{u}$$ and $$p$$. These facts imply that the
+flow field is exactly reversed when the boundary forcing is reversed, and consequently the streamlines are identical in the two cases: only the flow
+direction along the streamlines changes. We refer to this reversal of the flow field as “kinematic reversibility” to respect the thermodynamic fact
+that viscous flows always dissipate energy and so are thermodynamically irreversible.
 
 
 <a name="EinseinRelation">1</a>: (From class note of Mélange, E. Villemaux) Einstein view: particles concentration $$c(z)$$ at equilibrium $$c(z)=exp(-\frac{E}{k_BT})$$, where $$E=Fz$$ is the energy of a particle, 
