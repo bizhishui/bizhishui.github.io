@@ -158,7 +158,7 @@ surface tension acting at an interface, deformation of suspended particles, and 
 
 
 
-<a name="EinseinRelation">1</a>: (From class note of Mélange, E. Villemaux) Einstein view: particles concentration $$c(z)$$ at equilibrium $$c(z)=exp(-\frac{E}{k_BT})$$, where $$E=Fz$$ is the energy of a particle, 
+<a name="EinseinRelation">1</a>: (From class note of [Mélange](https://drive.google.com/open?id=1JnIls8ZauaneTn7DQLovzI6G009zHPiM), E. Villemaux) Einstein view: particles concentration $$c(z)$$ at equilibrium $$c(z)=exp(-\frac{E}{k_BT})$$, where $$E=Fz$$ is the energy of a particle, 
 $$F=6\pi\mu a V$$ is the drag force. On the other hand, equilibrium means zero flux $$j=0=-Vc-D\frac{\partial c}{\partial z}$$, thus $$c(z)=exp(-\frac{V}{D}z)$$.
 Identification by terms, we have $$D=\frac{k_BT}{6\pi\mu a}$$. Another view, the mean quadratic difference of Brownian motion position  $$<x^2>=2\frac{\epsilon}{1/\tau^2}t=2Dt$$ for $$t\gg\tau$$, 
 where $$\tau$$ is the characteristic time of diffusion, $$<f(t_1)f(t_2)>=\epsilon\delta (t_1-t_2)$$, $$f$$ is the stochastic force. Thus $$<v^2>=2D/t$$.
