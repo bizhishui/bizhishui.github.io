@@ -30,7 +30,7 @@ layout: page
 
 
 #### Interesting Sites
-- [Polygons and meshes](http://paulbourke.net/geometry/polygonmesh/)
+- [Geometry, Surfaces, Curves, Polyhedra](http://paulbourke.net/geometry/)
 - [鳥哥的 Linux 私房菜](http://linux.vbird.org/home.php)
 - [古诗文网](http://www.gushiwen.org/)
 - [比特之理](http://www.kylen314.com/)
