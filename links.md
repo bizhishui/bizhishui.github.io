@@ -29,12 +29,16 @@ layout: page
 - [	Dmitry A. Fedosov](http://iffwww.iff.kfa-juelich.de/~fedosov/D_Fedosov.html)
 
 
+### Codes
+- [Andreas Kloeckner](https://mathema.tician.de/): well-structured code (DG) and software infrastructure for scientific computing
+
+
 #### Interesting Sites
 - [Geometry, Surfaces, Curves, Polyhedra](http://paulbourke.net/geometry/)
 - [鳥哥的 Linux 私房菜](http://linux.vbird.org/home.php)
 - [古诗文网](http://www.gushiwen.org/)
 - [比特之理](http://www.kylen314.com/)
-- [考据癖](http://localhost-8080.com/) & [matrix67](http://www.matrix67.com/): 极客伉俪
+- [考据癖](http://localhost-8080.com/) & [matrix67](http://www.matrix67.com/)
 - [UbuntuHandbook](http://ubuntuhandbook.org/): Ubuntu各种使用心得
 - [宇宙的心弦](https://www.physixfan.com/)
 
