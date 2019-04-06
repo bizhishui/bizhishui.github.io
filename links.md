@@ -3,12 +3,7 @@ title: links
 layout: page
 ---
 
-#### Univ. & Institutes
-- [北航](http://www.buaa.edu.cn/)
-- [Centrale Marseille](https://www.centrale-marseille.fr/)
-
-
-#### Labs
+#### Institute & sLabs
 - [M2P2](http://www.m2p2.fr/)
 - [The II. Institute for Theoretical Physics](https://www.itp2.uni-stuttgart.de/index.html)
 - [LiPhy](https://www-liphy.ujf-grenoble.fr/-dyfcom-?lang=fr)
@@ -40,6 +35,8 @@ layout: page
 - [Dominic Walliman](http://dominicwalliman.com/): 科学文化传播(science writer and physicist)
 - [阮一峰的网络日志](http://www.ruanyifeng.com/home.html)
 - [当然我在扯淡](http://www.yinwang.org/)
+- [coolshell](https://coolshell.cn/)
+- [Beyond the Void](https://www.byvoid.com/)
 
 
 #### Others
