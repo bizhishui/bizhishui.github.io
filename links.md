@@ -33,21 +33,18 @@ layout: page
 - [Andreas Kloeckner](https://mathema.tician.de/): well-structured code (DG) and software infrastructure for scientific computing
 
 
-#### Interesting Sites
-- [Geometry, Surfaces, Curves, Polyhedra](http://paulbourke.net/geometry/)
-- [鳥哥的 Linux 私房菜](http://linux.vbird.org/home.php)
-- [古诗文网](http://www.gushiwen.org/)
-- [比特之理](http://www.kylen314.com/)
-- [考据癖](http://localhost-8080.com/) & [matrix67](http://www.matrix67.com/)
-- [UbuntuHandbook](http://ubuntuhandbook.org/): Ubuntu各种使用心得
-- [宇宙的心弦](https://www.physixfan.com/)
-
-
 #### Blogs
 - [谢益辉](http://yihui.name/): 个人博客, R
-- [PChou](http://www.pchou.info/index.html): Github page, Html5
-- [Beiyuu](http://beiyuu.com/why-blog): 我为什么写博客
+- [考据癖](http://localhost-8080.com/) & [matrix67](http://www.matrix67.com/)
 - [Steve losh](http://stevelosh.com/): math and game programming
 - [Dominic Walliman](http://dominicwalliman.com/): 科学文化传播(science writer and physicist)
 - [阮一峰的网络日志](http://www.ruanyifeng.com/home.html)
 - [当然我在扯淡](http://www.yinwang.org/)
+
+
+#### Others
+- [鳥哥的 Linux 私房菜](http://linux.vbird.org/)
+- [古诗文网](http://www.gushiwen.org/)
+- [比特之理](http://www.kylen314.com/)
+- [UbuntuHandbook](http://ubuntuhandbook.org/): Ubuntu各种使用心得
+- [宇宙的心弦](https://www.physixfan.com/)
