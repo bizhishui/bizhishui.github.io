@@ -47,7 +47,7 @@ layout: default
     ></span>
     <script type="text/javascript">
       var l = document.createElement('script'); l.type = 'text/javascript'; l.async = true;
-      l.src = '//www.like-btn.com/javascript/widget.js';
+      l.src = 'https://bizhishui.github.io//javascript/widget.js';
       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(l);
     </script>
     <!-- END this would not work on any other domain -->
