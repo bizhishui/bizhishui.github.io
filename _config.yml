@@ -20,6 +20,9 @@ disqus_shortname: 'bizhishui'
 #    wechat: true
 
 navigations:
+  - title: About
+    class: fa fa-user
+    href: /about.html
   - title: Archive
     class: fa fa-list-ul
     href: /archive.html
@@ -32,9 +35,6 @@ navigations:
   - title: Links
     class: fa fa-external-link
     href: /links.html
-  - title: About
-    class: fa fa-user
-    href: /about.html
   - title: Subscribe
     class: fa fa-rss
     href: /atom.xml
