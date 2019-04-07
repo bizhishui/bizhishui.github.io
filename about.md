@@ -9,14 +9,10 @@ a
 
 who involved in 
 
-> [github](https://github.com/bizhishui)
+> [GitHub](https://github.com/bizhishui) and [码云](https://gitee.com/jmaxime)
 
 mail 
 
-> echo qwertwnxhpkwetxvobw \| tr qvewrtonbxhpk j.amxiceolv@g
-
-or follow 
-
-> [@o_lll](https://twitter.com/#!/o_lll)
+> echo qwertwnxhpkwetxvobw \| tr rvkwetxbhnpqo x.gmailove@jc
 
 to reach me
