@@ -1,11 +1,11 @@
 ---
-title: about
+title: About
 layout: page
 ---
 
 a
 
-> Minimalist | Appleist | Unixer | Coder
+> PhD student in Fluid Mechanics
 
 who involved in 
 
