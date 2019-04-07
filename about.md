@@ -4,29 +4,25 @@ layout: page
 ---
 
 
-# 吕金明
+# ->吕金明!<-
 
-### 联系方式
+### ->联系方式!<-
 
-Email：jmaximelv@gmail.com；主页：<https://bizhishui.github.io/>；现居住于美国内布拉斯加州麋鹿角郊区
+Email：jmaximelv@gmail.com；主页：<https://bizhishui.github.io>；在读博士
 
-### 研究兴趣
+### ->研究兴趣!<-
 
 数据可视化，统计图形，交互式图形；统计计算；动态报告，可重复性研究
 
-### 教育背景
+### ->教育背景!<-
 
-- 2009.09 ~ 2013.12 爱荷华州立大学统计系，统计学博士
-- 2006.09 ~ 2009.07 中国人民大学统计学院，经济学硕士
-- 2002.09 ~ 2006.07 中国人民大学统计学院，经济学学士
+- 2016.02 ~ 2019.?? 马赛中央理工
+- 2013.09 ~ 2016.01 北京航空航天大学，中法工程师学院
+- 2009.09 ~ 2013.07 北京航空航天大学，中法工程师学院
 
-### 获得奖励
+### ->获得奖励!<-
 
 - 2012.09 [George W. Snedecor](http://stat.iastate.edu/graduate-financial-support) 奖（杰出博士生），爱荷华州立大学统计系
-- 2012.01 Honorable Mention 奖，R 在商业中的应用[竞赛](http://bit.ly/wx4bFb)
-- 2011.08 [Vince Sposito](http://stat.iastate.edu/graduate-financial-support) 统计计算奖，爱荷华州立大学统计系
-- 2009.04 美国统计学会 [John Chambers 软件奖](http://stat-computing.org/awards/jmc/winners.html)
-- 2007.01 中国人民大学学生媒体先进工作者三等奖
 
 <!--
 - 2008.06 中国人民大学2008届院级优秀毕业生
@@ -59,17 +55,11 @@ Email：jmaximelv@gmail.com；主页：<https://bizhishui.github.io/>；现居�
 
 ##### 建设网站
 
-- 统计学讨论与研究网站“统计之都”：<https://cosx.org>
-- R Views 博客技术支持：<http://rviews.rstudio.com>
 - 中国人民大学统计学院网站：<http://stat.ruc.edu.cn>
-- 教育部重点研究基地，应用统计科学研究中心：<http://www.applstats.org>
-- 中国人民大学风险管理与精算研究中心、中国人民大学数据挖掘中心等
-- 远大前程协会（中国人民大学学生社团）
 
 ##### 网站工作室
 
 - 中国人民大学英文网站工作室（2006 年 6 月至 2007 年 9 月）
-- 中国人民大学统计学院网站俱乐部（创办者；2006 年 7 月 2009 年 7 月）
 
 #### 组织会议
 
@@ -80,33 +70,17 @@ Email：jmaximelv@gmail.com；主页：<https://bizhishui.github.io/>；现居�
 协助组织过如下会议：
 
 - [第三届中国R语言会议（北京）](https://cosx.org/chinar/chinar-2010/)，2010 年 6 月 14 日 ~ 15 日
-- [第二届中国R语言会议（北京）](https://cosx.org/chinar/chinar-2009/)，2009 年 12 月 5 日 ~ 6 日
-- [第二届“创新推动经济发展的微观实证”国际学术研讨会](http://stat.ruc.edu.cn/cn/54222.html)，2008 年 4 月 21 日 ~ 23 日
-- [第 2 届“计量模型与中国·澳大利亚自由贸易区发展国际研讨会”](http://www.applstats.org/news/detail.asp?id=21)，2006 年 4 月 18 日 ~ 19 日
-- [第 15 届投入产出国际会议](http://www.applstats.org/io/index.htm)，2005 年 6 月 27 日 ~ 7 月 1 日
-- [2006年数据挖掘与商业智能研讨会](http://stat.ruc.edu.cn/cn/21777.html)，2006 年 4 月 2 日
-- [2006 年统计学国际论坛](http://stat.ruc.edu.cn/cn/notice/21904.html)，2006 年 6 月 10 日 ~ 11 日
 
 #### 统计咨询
 
 经常在“统计之都”上回答各种统计相关问题；偶尔提供邮件咨询和帮助，一些个人原则如下：
 
 - 模型黑名单（我绝对不用的模型）：结构方程模型、层次分析法、灰色模型。
-- 模型灰名单（我尽量避免的模型）：因子分析、[任何与分布有关的假设检验](/cn/2009/02/test-statistical-distributions/)。
 - 我的数据观：尽量避免分析调查数据，绝对不做小样本的调查数据；我对自然科学数据的分析兴趣远高于社会科学数据。
-- 软件黑名单：AMOS（结构方程模型软件之一）
 
 #### 其它工作
 
 2004 年 9 月至今
-
-##### 任职情况
-
-- 美国统计学会统计图形部门会议主席（2015 - 2016）
-- 美国统计学会数据共享及可重复研究委员会成员（2013）
-- 泛华统计协会[Bulletin](http://icsa.org/bulletin/)专栏编辑（2012 - 2013）
-- 应用统计科学研究中心科研秘书，主管中心网站工作以及负责部分日常事务（2004 年 4 月至 2009 年 7 月）
-- 历任远大前程协会网络部部长、副主席（2005 年 4 月至 2006 年 7 月）
 
 ##### 参与项目
 
@@ -144,11 +118,6 @@ Email：jmaximelv@gmail.com；主页：<https://bizhishui.github.io/>；现居�
 
 ### 发表成果
 
-#### 书籍
-
-1. Yihui Xie, J. J. Allaire, Garrett Grolemund (2018). [_R Markdown: The Definitive Guide_](https://bookdown.org/yihui/rmarkdown). Chapman & Hall/[CRC](https://www.crcpress.com/p/book/9781138359338). ISBN 9781138359338.
-1. Yihui Xie, Amber Thomas, Alison Presmanes Hill (2017). [_blogdown: Creating Websites with R Markdown_](https://bookdown.org/yihui/blogdown). [Chapman & Hall/CRC](https://www.crcpress.com/p/book/9780815363729). ISBN 9780815363729.
-
 #### 中文论文
 
 1. 谢益辉，2008，统计图形在数据分析中的应用，统计学评论，张波主编，中国财政经济出版社
@@ -167,4 +136,3 @@ Email：jmaximelv@gmail.com；主页：<https://bizhishui.github.io/>；现居�
 #### 网络文章
 
 统计之都文章参见[这里](https://cosx.org/author/yihui/)。
-
