@@ -1,9 +1,9 @@
 ---
-title: YouTube-DL
+title: Fetch online video
 layout: post
 guid: urn:uuid:fc2af222-3816-42ec-b7a2-43062d79b747
 summary: Youtube-dl is a command-line opensource tool for downloading videos from youtube.com or other video sites.
-update_date: 2018-01-19
+update_date: 2019-04-30
 categories:
   - notes
 tags:
@@ -12,6 +12,7 @@ tags:
   - Ffmpeg
 ---
 
+### Youtube-dl
 
 Youtube-dl is a command-line opensource tool for downloading videos from youtube.com or other video sites. The presentation
 and installation guides can be founded on github [rg3/youtube-dl](https://github.com/rg3/youtube-dl/blob/master/README.md#readme).
@@ -77,3 +78,21 @@ Here, some useful commands are summarised.
     #download only mp3 audio
     youtube-dl --no-playlist -x --audio-format mp3 -a youtube_list.txt
 ```
+
+### blob url video
+Some HTML5 videos whose URL is not a simple mp4 file, but its URL is [blob type](https://stackoverflow.com/questions/42901942/how-do-we-download-a-blob-url-video) for example
+
+```
+    <video class="dplayer-video dplayer-video-current" webkit-playsinline="" playsinline="" preload="metadata" 
+    src="blob:https://example.com/90fe7f52-fe94-4953-8dce-ccaf4a775c6a">
+    </video>
+```
+
+Here are the basic steps to get the video from such an HTML5 page,
+
+1. Open the browser Dev Tools (*Ctrl-Shift-I* for Chromium) on the page with the video you are interested in;
+2. Go to *Network* tab and reload the page (F5)
+3. Search through the names of requests and find the request with *.m3u8* extension. There may be many of them, but most likely the first you find is the one you are looking for. It may have any name, e.g. *index.m3u8*.
+4. Open the request and under *Headers* subsection you will see request's full URL in *Request URL* field. Copy it. 
+5. Download with youtube-dl or directly with [ffmpeg](https://superuser.com/questions/1260846/downloading-m3u8-videos), such as *ffmpeg -protocol_whitelist file,http,https,tcp,tls,crypto -i "https://example.com/20190331/804_834b755f/1000k/hls/index.m3u8" -c copy ./example.mp4*
+
