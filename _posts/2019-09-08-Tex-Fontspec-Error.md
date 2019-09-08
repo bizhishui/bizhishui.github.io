@@ -25,3 +25,6 @@ Both *luatex* and *xetex* are UTF-8 engines for processing *tex* documents. This
 
 In contrast, *luatex* has bigger aims. The idea is to add a scripting language (*Lua*) to *tex* and to open up the internals of TeX to this language. The result is that a lot is possible, but it has to be programmed in. There is growing *latex* support for *luatex*: fontspec v2 supports it, and new packages are being written to use more of the new features.
 
+### [Why LuaTex?](https://tex.stackexchange.com/questions/126206/why-choose-lualatex-over-xelatex)
+
+*lua(la)tex* has been chosen as the official successor of *pdf(la)tex*, so you can expect more development effort to go towards it now and in the future. *lua(la)tex* doesn't rely on system-specific libraries, so in theory, you're less prone to encounter platform-specific issues or differences in output. Another advantage of *luatex* over *xetex* is that *luatex* uses the PDF engine of *pdftex*, while *xetex* uses its own one. One consequence of this is, that all features of the PGF graphics package (on which TikZ builds) should be available also under *luatex*, while some features are definitely not available under *xetex*.
