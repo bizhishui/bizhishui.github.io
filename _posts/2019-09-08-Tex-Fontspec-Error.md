@@ -40,3 +40,15 @@ For those using LaTex, to produce a document with LuaLaTex, you need to know the
 - Don't use any package that changes the fonts, but use *fontspec*'s commands instead.
 
 So, you only need to get familiar with *fontspec*, which is easy: select the main (serif) font with *\setmainfont*, the sans serif font with *\setsansfont* and the mono-spaced (typewriter) font with *\setmonofont*.
+
+
+### fontspec
+
+In both *luatex* and *xetex*, fonts can be selected either by ‘font name’ or by ‘file name'.
+
+#### By font name
+
+In *luatex*, fonts found in the TEXMF tree can also be loaded by name. The simplest example might be something like
+```
+    \setmainfont{EB Garamond}[ ... ]
+```
