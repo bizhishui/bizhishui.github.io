@@ -52,3 +52,18 @@ In *luatex*, fonts found in the TEXMF tree can also be loaded by name. The simpl
 ```
     \setmainfont{EB Garamond}[ ... ]
 ```
+
+To check if a font is installed,
+```
+    fc-list | grep -i 'Garamond'
+```
+
+and show *tex* filename database
+```
+    updmap-sys --listmaps | grep -i 'EBGaramond'
+```
+
+If the font is not installed, it should be installed first.
+
+
+#### By file name
