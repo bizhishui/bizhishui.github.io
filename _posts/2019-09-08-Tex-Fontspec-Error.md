@@ -42,7 +42,7 @@ For those using LaTex, to produce a document with LuaLaTex, you need to know the
 So, you only need to get familiar with *fontspec*, which is easy: select the main (serif) font with *\setmainfont*, the sans serif font with *\setsansfont* and the mono-spaced (typewriter) font with *\setmonofont*.
 
 
-### fontspec
+### [fontspec](https://ctan.org/pkg/fontspec?lang=en)
 
 In both *luatex* and *xetex*, fonts can be selected either by ‘font name’ or by ‘file name'.
 
@@ -107,3 +107,13 @@ Once all the above seems to have gone ok, to test if the new font is properly re
 
 
 #### By file name
+Here is an example of fonts selected by filename,
+```
+    \setmonofont{InconsolataN}[
+    Path    = \string~/Public/fonts/inconsolata/ ,
+    Extension = .otf ,
+    UprightFont = *-Regular ,
+    BoldFont  = *-bold
+    ]
+
+```
