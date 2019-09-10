@@ -63,7 +63,15 @@ and show *tex* filename database
     updmap-sys --listmaps | grep -i 'EBGaramond'
 ```
 
-If the font is not installed, it should be installed first.
+If the font is not installed, the following [procedures](https://www.tug.org/fonts/fontinstall.html) may be helpful.
+
+1. Destination texmf-local: your local TeX tree
+The new font file must reside in a directory that is part of the *tex* hierarchy. The best choice is your “local texmf” tree, which can be determined as follows:
+```
+    kpsewhich --var-value TEXMFLOCAL       # default out on Unix /usr/local/texlive/texmf-local
+```
+
+2. The TeX Directory Structure: unpacking your archive
 
 
 #### By file name
