@@ -103,9 +103,7 @@ Once all the above seems to have gone ok, to test if the new font is properly re
     *\table
     *\bye
 ```
-It is imperative to enter the exact name of a *.tfm* file that was installed, not a system font name or a PostScript font name or anything else. The only thing TeX will recognize is the *.tfm* filename. Furthermore, leave off the *.tfm* extension.
-
-
+~~It is imperative to enter the exact name of a *.tfm* file that was installed, not a system font name or a PostScript font name or anything else. The only thing TeX will recognize is the *.tfm* filename. Furthermore, leave off the *.tfm* extension.~~
 
 
 #### By file name
