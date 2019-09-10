@@ -66,17 +66,50 @@ and show *tex* filename database
 If the font is not installed, the following [procedures](https://www.tug.org/fonts/fontinstall.html) may be helpful.
 
 1. Destination texmf-local: your local TeX tree
+
 The new font file must reside in a directory that is part of the *tex* hierarchy. The best choice is your “local texmf” tree, which can be determined as follows:
 ```
     kpsewhich --var-value TEXMFLOCAL       # default out on Unix /usr/local/texlive/texmf-local
 ```
 
 2. The TeX Directory Structure: unpacking your archive
+
 Navigate to the [CTAN fonts directory](https://ctan.org/tex-archive/fonts?lang=en), choose the desired font and download it as a [TDS archive](https://www.tug.org/tds/) (if possible).
 If this is the case, you can simply unpack it at the top level of your chosen tree. You can check by inspecting your archive, if it has subdirectories such as *fonts/* and *tex/*, it's most likely arranged according to the TDS.
 ```
     unzip yourfile.zip -d /usr/local/texlive/texmf-local  # unpacking into subdirectories of installing tree
 ```
+
+3. The TeX filename database
+
+After getting your new files into their proper location, you must update the so-called “TeX filename database”.
+```
+    sudo -H mktexlsr      # MacTex, -H sets HOME for the sudo environment
+    mktexlsr              # TexLive
+```
+
+4. Font map files: telling TeX about the new font
+
+After recording the new files, the last (and most complicated) step is to update various so-called “map” files with the information about your new font.
+The commands below assume your new font comes with a map file.
+```
+    sudo -H updmap-sys --force --enable Map=newfont.map    # MacTex
+    updmap-sys --force --enable Map=newfont.map            # TexLive
+```
+
+5. Testing and debugging
+
+Once all the above seems to have gone ok, to test if the new font is properly recognized, you can use the standard testfont.tex file, like this
+```
+    $ pdftex testfont
+    ...
+    Name of the font to test = tfmname
+    ...
+    *\table
+    *\bye
+```
+It is imperative to enter the exact name of a *.tfm* file that was installed, not a system font name or a PostScript font name or anything else. The only thing TeX will recognize is the *.tfm* filename. Furthermore, leave off the *.tfm* extension.
+
 
 
 
