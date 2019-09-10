@@ -72,6 +72,12 @@ The new font file must reside in a directory that is part of the *tex* hierarchy
 ```
 
 2. The TeX Directory Structure: unpacking your archive
+Navigate to the [CTAN fonts directory](https://ctan.org/tex-archive/fonts?lang=en), choose the desired font and download it as a [TDS archive](https://www.tug.org/tds/) (if possible).
+If this is the case, you can simply unpack it at the top level of your chosen tree. You can check by inspecting your archive, if it has subdirectories such as *fonts/* and *tex/*, it's most likely arranged according to the TDS.
+```
+    unzip yourfile.zip -d /usr/local/texlive/texmf-local  # unpacking into subdirectories of installing tree
+```
+
 
 
 #### By file name
