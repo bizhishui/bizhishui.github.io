@@ -97,6 +97,7 @@ The action to be performed by *awk* is enclosed in braces, and the whole command
     #chmod recursively all the directories or files
     find /path/to/base/dir -type d -exec chmod 755 {} \;    #To recursively give directories read&execute privileges
     find /path/to/base/dir -type f -exec chmod 644 {} \;    #To recursively give files read privileges
+    find . -name 'RUN.*.err' -type f -exec grep -H 'skylake' {} \;  # look skylake in all files RUN.*.err
     #delete recursively
     find . -name "*.ser" -type f              # find file end with .ser
     find . -name "*.ser" -type f -delete      # delete recursively files end with .ser
