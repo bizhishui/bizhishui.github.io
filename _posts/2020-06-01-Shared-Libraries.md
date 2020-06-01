@@ -71,7 +71,7 @@ There isn't really a conflict between these two documents; the GNU standards rec
 
 ```
     # 没有当前路径
-    1. 编译目标代码时指定的动态库搜索路径; # -LDIRNAME
+    1. 编译目标代码时指定的动态库搜索路径; # -LdirName
     2. 环境变量LD_LIBRARY_PATH指定的动态库搜索路径;
     3. 配置文件/etc/ld.so.conf中指定的动态库搜索路径;
     # 只需在在该文件中追加一行库所在的完整路径如"/root/test/conf/lib"即可,然后ldconfig是修改生效。(实际上是根据缓存文件/etc/ld.so.cache来确定路径)
@@ -93,6 +93,17 @@ ldconfig通常在系统启动时运行，而当用户安装了一个新的动态
     3. 如果想在这两个目录以外放lib，但是又不想在/etc/ld.so.conf中加东西（或者是没有权限加东西）。那也可以，就是export一个全局变 量LD_LIBRARY_PATH，然后运行程序的时候就会去这个目录中找library。一般来讲这只是一种临时的解决方案，在没有权限或临时需要的时候使用
     4. ldconfig做的这些东西都与运行程序时有关，跟编译时一点关系都没有。编译的时候还是该加-L就得加，不要混淆了
     5. 总之，就是不管做了什么关于library的变动后，最好都ldconfig一下，不然会出现一些意想不到的结果。不会花太多的时间，但是会省很多的事
+```
+
+ldconfig命令行用法如下
+```
+    ldconfig [-v|--verbose] [-n] [-N] [-X] [-f CONF] [-C CACHE] [-rROOT] [-l] [-p|--print-cache] [-c FORMAT] [--format=FORMAT] [-V] [-?|--help|--usage] path...
+    1. -v或--verbose: ldconfig将显示正在扫描的目录及搜索到的动态链接库,还有它所创建的链接的名字
+    2. -n: ldconfig仅扫描命令行指定的目录,不扫描默认目录(/lib,/usr/lib),也不扫描配置文件/etc/ld.so.conf所列的目录
+    3. -N: ldconfig不重建缓存文件(/etc/ld.so.cache).若未用-X选项,ldconfig照常更新文件的连接
+    4. -X: ldconfig不更新文件的连接.若未用-N选项,则缓存文件正常更新
+    5. -f CONF: 指定动态链接库的配置文件为CONF,系统默认为/etc/ld.so.conf
+    6. -C CACHE: 指定生成的缓存文件为CACHE,系统默认的是/etc/ld.so.cache,此文件存放已排好序的可共享的动态链接库的列表
 ```
 
 #### 相关环境变量
