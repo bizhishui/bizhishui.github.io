@@ -24,7 +24,13 @@ tags:
 A *program library* is simply a file containing compiled code (and data) that is to be incorporated later into a program; program libraries allow programs to be more modular, 
 faster to recompile, and easier to update. Program libraries can be roughly divided into two types: static libraries and shared libraries.
 
-Static libraries are simply a collection of ordinary object files, and they are installed into a program executable before the program can be run; while shared libraries are loaded at program start-up and shared between programs.
+Static libraries (.a) are simply a collection of ordinary object files, and they are installed into a program executable before the program can be run; while shared libraries (*.so) are loaded at program start-up and shared between programs.
+为了在同一系统中使用不同版本的库，可以在动态库文件名后加上版本号为后缀，但由于程序连接默认以.so为文件后缀名。所以为了使用这些库，通常使用建立符号连接的方式。
+
+静态链接库：当要使用时，连接器会找出程序所需的函数，然后将它们拷贝到执行文件，由于这种拷贝是完整的，所以一旦连接成功，静态程序库也就不再需要了。
+动态库而言：某个程序在运行中要调用某个动态链接库函数的时候，操作系统首先会查看所有正在运行的程序，看在内存里是否已有此库函数的拷贝了。如果有，则让其共享那一个拷贝;只有没有才链接载入。
+在程序运行的时候，被调用的动态链接库函数被安置在内存的某个地方，所有调用它的程序将指向这个代码段。因此，这些代码必须使用相对地址，而不是绝对地址。在编译的时候，我们需要告诉编译器，这些对象文件是用来做动态链接库的，
+所以要用地址不无关代码(Position Independent Code (PIC))。注意：linux下进行连接的默认操作是首先连接动态库，也就是说，如果同时存在静态和动态库，不特别指定的话，将与动态库相连接。
 
 
 ### [Shared Libraries](http://tldp.org/HOWTO/Program-Library-HOWTO/shared-libraries.html)
