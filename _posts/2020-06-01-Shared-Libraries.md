@@ -62,3 +62,20 @@ There isn't really a conflict between these two documents; the GNU standards rec
 
 ### [How Libraries are Used](https://www.cnblogs.com/sddai/p/10397510.html)
 
+在Linux下面，共享库的寻找和加载是由*/lib/ld.so* (Ubuntu下*/lib/x86_64-linux-gnu/ld-2.27.so*, Redhat下*/lib64/ld-2.17.so*)实现的。 *ld.so*在标准路经(*/lib*, */usr/lib*)中寻找应用程序用到的共享库。
+但是，如果需要用到的共享库在非标准路经，*ld.so*怎么找到它呢？目前，Linux通用的做法是将非标准路经加入*/etc/ld.so.conf*，然后运行*ldconfig* 生成*/etc/ld.so.cache*。*ld.so*加载共享库的时候，会从*ld.so.cache*查找。
+传统上，Linux的先辈Unix还有一个环境变量：LD\_LIBRARY\_PATH来处理非标准路经的共享库。*ld.so*加载共享库的时候，也会查找这个变量所设置的路经。但是，有不少声音主张要避免使用LD\_LIBRARY\_PATH变量，尤其是作为全局变量.
+
+#### 动态库的搜索路径搜索的先后顺序
+{:.no_toc}
+
+```
+    # 没有当前路径
+    1. 编译目标代码时指定的动态库搜索路径; # -LDIRNAME
+    2. 环境变量LD_LIBRARY_PATH指定的动态库搜索路径;
+    3. 配置文件/etc/ld.so.conf中指定的动态库搜索路径;
+    # 只需在在该文件中追加一行库所在的完整路径如"/root/test/conf/lib"即可,然后ldconfig是修改生效。(实际上是根据缓存文件/etc/ld.so.cache来确定路径)
+    4. 默认的动态库搜索路径/lib; (64位机器为/lib64)
+    5. 默认的动态库搜索路径/usr/lib。(64位机器为/usr/lib64)
+    # /lib 和/usr/lib 都没放到/etc/ld.so.conf 文件中，但是在/etc/ld.so.cache 的缓存中有它们。它们是默认的共享库的搜索路径，其路径下的共享库的变动即时生效，不用执行ldconfig。就算缓存ldconfig -p 中没有，新加入的动态库也可以执行。
+```
