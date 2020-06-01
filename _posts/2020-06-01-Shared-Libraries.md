@@ -82,7 +82,7 @@ There isn't really a conflict between these two documents; the GNU standards rec
     # /lib64/ld-linux-x86-64.so.2 (0x000015382cb31000)
 ```
 
-通常，动态链接的程序比其静态链接的等价程序小得多。不过，静态链接的程序可以在某些低级维护任务中发挥作用。例如，sln是修改位于/lib中的不同库符号链接的极佳工具。但通常您会发现几乎所有Linux系统上的可执行程序都是某种动态链接的变体。
+通常，动态链接的程序比其静态链接的等价程序小得多。不过，静态链接的程序可以在某些低级维护任务中发挥作用。例如，sln是修改位于/lib中的不同库符号链接的极佳工具。但通常几乎所有Linux系统上的可执行程序都是某种动态链接的变体。
 
 
 ### [How Libraries are Used](https://www.cnblogs.com/sddai/p/10397510.html)
@@ -129,6 +129,7 @@ ldconfig命令行用法如下
     4. -X: ldconfig不更新文件的连接.若未用-N选项,则缓存文件正常更新
     5. -f CONF: 指定动态链接库的配置文件为CONF,系统默认为/etc/ld.so.conf
     6. -C CACHE: 指定生成的缓存文件为CACHE,系统默认的是/etc/ld.so.cache,此文件存放已排好序的可共享的动态链接库的列表
+    7. -p或--print-cache: 指示ldconfig打印出当前缓存文件所保存的所有共享库的名字
 ```
 
 #### 相关环境变量
