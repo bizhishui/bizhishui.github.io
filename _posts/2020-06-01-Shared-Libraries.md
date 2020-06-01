@@ -135,6 +135,17 @@ ldconfig命令行用法如下
 #### [关于](https://prefetch.net/articles/linkers.badldlibrary.html)[LD_LIBRARY_PATH](http://xahlee.info/UnixResource_dir/_/ldpath.html)
 {:.no_toc}
 
+There were a couple good reasons why it was invented:
+
+- To test out new library routines against an already compiled binary (for either backward compatibility or for new feature testing)
+- To have a short term way out in case you wanted to move a set of shared libraries to another location
+
+##### [The bad old days before separate run-time vs link-time paths](http://xahlee.info/UnixResource_dir/_/ldpath.html)
+{:.no_toc}
+
+Nowadays you specify the *run-time path* for an executable at link stage with the **-R** (or sometimes **-rpath**) flag to *ld*. There's also **LD_RUN_PATH** which is an environment variable which acts to *ld* just like specifying **-R**.
+Before all this you had only **-L**, which applied not only during compile-time, but during run time as well. There was no way to say “use this directory during compile time” but “use this other directory at run time”.
+
 
 #### 相关环境变量
 {:.no_toc}
