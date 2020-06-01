@@ -32,3 +32,6 @@ To solve this error, run
 ```
 
 Refer [this](https://superuser.com/questions/712493/what-would-cause-strange-characters-to-appear-in-terminal-%C3%89) for more details.
+
+> Your terminal emulator is capable of multiple character sets, and it's often the case when one accidentally dumps a binary to the terminal 
+> that somewhere in the binary is the character sequence that switches the terminal between output character sets.
