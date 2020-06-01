@@ -32,6 +32,10 @@ Static libraries (.a) are simply a collection of ordinary object files, and they
 在程序运行的时候，被调用的动态链接库函数被安置在内存的某个地方，所有调用它的程序将指向这个代码段。因此，这些代码必须使用相对地址，而不是绝对地址。在编译的时候，我们需要告诉编译器，这些对象文件是用来做动态链接库的，
 所以要用地址不无关代码(Position Independent Code (PIC))。注意：linux下进行连接的默认操作是首先连接动态库，也就是说，如果同时存在静态和动态库，不特别指定的话，将与动态库相连接。
 
+编译时默认搜索库文件的路径是: 
+就a.out而言，以-lfoo 参数来连结，会驱使ld去寻找libfoo.so (shared stubs)；如果没有成功，就会换成寻找libfoo.a (static)。
+就ELF而言，先找libfoo.so ， 然后是libfoo.a。libfoo.so通常是一个连结符号，连结至libfoo.so.x 。
+ld可能不会自动加载libfoo.so.x，需要使用libfoo.so的链接来指定。
 
 ### [Shared Libraries](http://tldp.org/HOWTO/Program-Library-HOWTO/shared-libraries.html)
 
@@ -72,7 +76,7 @@ There isn't really a conflict between these two documents; the GNU standards rec
 但是，如果需要用到的共享库在非标准路经，*ld.so*怎么找到它呢？目前，Linux通用的做法是将非标准路经加入*/etc/ld.so.conf*，然后运行*ldconfig* 生成*/etc/ld.so.cache*。*ld.so*加载共享库的时候，会从*ld.so.cache*查找。
 传统上，Linux的先辈Unix还有一个环境变量：LD\_LIBRARY\_PATH来处理非标准路经的共享库。*ld.so*加载共享库的时候，也会查找这个变量所设置的路经。但是，有不少声音主张要避免使用LD\_LIBRARY\_PATH变量，尤其是作为全局变量.
 
-#### 动态库的搜索路径搜索的先后顺序
+#### [动态库的搜索路径搜索的先后顺序](http://fqyyang.blog.163.com/blog/static/485429642010976293433/)
 {:.no_toc}
 
 ```
