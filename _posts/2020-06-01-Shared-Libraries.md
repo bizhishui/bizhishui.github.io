@@ -70,6 +70,21 @@ According to the FHS, most libraries should be installed in */usr/lib*, but libr
 
 There isn't really a conflict between these two documents; the GNU standards recommend the default for developers of source code, while the FHS recommends the default for distributors (who selectively override the source code defaults, usually via the system's package management system).
 
+#### [动态链接相关性](http://fqyyang.blog.163.com/blog/static/485429642010976293433/)
+{:.no_toc}
+
+要查看ln(/bin/ln)依赖的所有共享库的列表，可以使用ldd (List Dynamic Dependencies)命令
+
+```
+    ldd /bin/ln
+    # linux-vdso.so.1 (0x00007ffde5bb8000)
+    # libc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x000015382c52f000)
+    # /lib64/ld-linux-x86-64.so.2 (0x000015382cb31000)
+```
+
+通常，动态链接的程序比其静态链接的等价程序小得多。不过，静态链接的程序可以在某些低级维护任务中发挥作用。例如，sln是修改位于/lib中的不同库符号链接的极佳工具。但通常您会发现几乎所有Linux系统上的可执行程序都是某种动态链接的变体。
+
+
 ### [How Libraries are Used](https://www.cnblogs.com/sddai/p/10397510.html)
 
 在Linux下面，共享库的寻找和加载是由*/lib/ld.so* (Ubuntu下*/lib/x86_64-linux-gnu/ld-2.27.so*, Redhat下*/lib64/ld-2.17.so*)实现的。 *ld.so*在标准路经(*/lib*, */usr/lib*)中寻找应用程序用到的共享库。
