@@ -33,7 +33,7 @@ Static libraries (.a) are simply a collection of ordinary object files, and they
 所以要用地址不无关代码(Position Independent Code (PIC))。注意：linux下进行连接的默认操作是首先连接动态库，也就是说，如果同时存在静态和动态库，不特别指定的话，将与动态库相连接。
 
 编译时默认搜索库文件的路径是: 
-就a.out而言，以-lfoo 参数来连结，会驱使ld去寻找libfoo.so (shared stubs)；如果没有成功，就会换成寻找libfoo.a (static)。
+就a.exe而言，以-lfoo 参数来连结，会驱使ld去寻找libfoo.so (shared stubs)；如果没有成功，就会换成寻找libfoo.a (static)。
 就ELF而言，先找libfoo.so ， 然后是libfoo.a。libfoo.so通常是一个连结符号，连结至libfoo.so.x 。
 ld可能不会自动加载libfoo.so.x，需要使用libfoo.so的链接来指定。
 
@@ -131,6 +131,10 @@ ldconfig命令行用法如下
     6. -C CACHE: 指定生成的缓存文件为CACHE,系统默认的是/etc/ld.so.cache,此文件存放已排好序的可共享的动态链接库的列表
     7. -p或--print-cache: 指示ldconfig打印出当前缓存文件所保存的所有共享库的名字
 ```
+
+#### [关于](https://prefetch.net/articles/linkers.badldlibrary.html)[LD_LIBRARY_PATH](http://xahlee.info/UnixResource_dir/_/ldpath.html)
+{:.no_toc}
+
 
 #### 相关环境变量
 {:.no_toc}
