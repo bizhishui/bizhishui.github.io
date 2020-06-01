@@ -22,7 +22,7 @@ while it actually prompts as
 
 ```
     # accidental one
-    jinming§jinming:ì$
+    user§host:ì$
 ```
 
 To solve this error, run
