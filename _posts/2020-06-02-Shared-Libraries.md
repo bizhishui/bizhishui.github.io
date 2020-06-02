@@ -298,10 +298,45 @@ If you use this option when building the library client program, you don't need 
 #### [Installing a shared library](http://tldp.org/HOWTO/Program-Library-HOWTO/shared-libraries.html#AEN115)
 {:.no_toc}
 
-Once you've created a shared library, you'll want to install it. The simple approach is simply to copy the library into one of the standard directories (e.g., */usr/lib*) and run *ldconfig*.
+##### In standard directories
+{:.no_toc}
+
+Once you've created a shared library, you'll want to install it. The simple approach is simply to copy the library into one of the **standard directories** (e.g., */usr/local/lib*) and run *ldconfig*.
 
 ```
     # ldconfig -n directory_with_shared_libraries
     ldconfig -n /usr/local/lib
 ```
 
+And finally, you can use the shared libraries with -l and -L options.
+
+##### Not in standard directories
+{:.no_toc}
+
+If you **can't or don't want to install a library in a standard place** (e.g., you don't have the right to modify /usr/local/lib), then you'll need to change your approach. 
+In that case, you'll need to install it somewhere, and then give your program enough information so the program can find the library.
+There are several ways to do that:
+
+- Use gcc's -L flag in simple cases
+- Use the *rpath* approach, particularly if you only have a specific program to use the library being placed in a *non-standard* place
+- Use environment variables to control things, in particular, you can set LD_LIBRARY_PATH
+
+If you want to override just a few selected functions, you can do this by creating an *overriding object* file and setting LD_PRELOAD; the functions in this object file will override just those functions (leaving others as they were).
+
+
+##### Multiple versions case
+{:.no_toc}
+
+Usually you can update libraries without concern; if there was an API change, the library creator is supposed to change the soname. That way, multiple libraries can be on a single system, 
+and the right one is selected for each program. However, if a program breaks on an update to a library that kept the same soname, you can force it to use the older library version by copying the old library back somewhere, 
+renaming the program (say to the old name plus ".orig"), and then create a small "wrapper" script that resets the library to use and calls the real (renamed) program. You could place the old library in its own special area, 
+if you like, though the numbering conventions do permit multiple versions to live in the same directory. The wrapper script could look something like this
+
+```
+    #!/bin/sh
+    export LD_LIBRARY_PATH=/usr/local/my_lib:$LD_LIBRARY_PATH
+    exec /usr/bin/my_program.orig $*
+```
+
+Please don't depend on this when you write your own programs; try to make sure that your libraries are either backwards-compatible or that you've incremented the version number in the soname every time you make an incompatible change. 
+This is just an "emergency" approach to deal with worst-case problems.
