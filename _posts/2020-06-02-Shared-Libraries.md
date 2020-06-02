@@ -87,7 +87,7 @@ There isn't really a conflict between these two documents; the GNU standards rec
 Beware: do not run ldd on a program you don't trust. As is clearly stated in the ldd(1) manual, ldd works by (in certain cases) by setting a special environment variable (for ELF objects, 
 LD_TRACE_LOADED_OBJECTS) and then executing the program. It may be possible for an untrusted program to force the ldd user to run arbitrary code (instead of simply showing the ldd information). 
 So, for safety's sake, don't use ldd on programs you don't trust to execute.
-One can use **nm** to list symbols from object files.
+One can use **nm** or **readelf** to list symbols from object files.
 
 ### [How Libraries are Used](https://www.cnblogs.com/sddai/p/10397510.html)
 
