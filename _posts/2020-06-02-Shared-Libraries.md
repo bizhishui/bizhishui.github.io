@@ -70,7 +70,7 @@ According to the FHS, most libraries should be installed in */usr/lib*, but libr
 
 There isn't really a conflict between these two documents; the GNU standards recommend the default for developers of source code, while the FHS recommends the default for distributors (who selectively override the source code defaults, usually via the system's package management system).
 
-#### [动态链接相关性](http://fqyyang.blog.163.com/blog/static/485429642010976293433/)
+#### [动态链接相关性](http://fqyyang.blog.163.com/blog/static/485429642010976293433/) ldd
 {:.no_toc}
 
 要查看ln(/bin/ln)依赖的所有共享库的列表，可以使用ldd (List Dynamic Dependencies)命令
