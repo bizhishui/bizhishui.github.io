@@ -157,11 +157,11 @@ The *rpath* of an executable or shared library is an optional entry in the *.dyn
 假设我们有一个共享库libarith.so，提供了常见的算术运算，它由arith.h与arith.c两个文件编译生成。内容如下：
 
 ```
-    # arith.h
+    # file arith.h
     #pragma once
     int add(int a, int b);
 
-    # arith.c
+    # file arith.c
     #include "arith.h"
     int add(int a, int b)
     {
@@ -175,6 +175,37 @@ The *rpath* of an executable or shared library is an optional entry in the *.dyn
     gcc -fPIC -shared arith.c -o libarith.so
 ```
 
+测试文件main.c需要调用前面生成的共享库，内容如下
+
+```
+    # file main.c
+    #include "arith.h"
+    #include <stdio.h>
+    int main()
+    {
+      add(1, 2);
+    }
+```
+
+若不指定rpath直接编译main.c
+
+```
+    gcc -L. -larith main.c -o main
+    # /tmp/ccVQtyfI.o: In function `main':
+    # main.c:(.text+0xf): undefined reference to `add'
+    # collect2: error: ld returned 1 exit status
+    # gcc options error, see https://blog.csdn.net/aiwoziji13/article/details/7330333 for details
+
+    gcc -o main main.c -L. -larith
+    ./main: error while loading shared libraries: libarith.so: cannot open shared object file: No such file or directory
+```
+
+报错提示找不到libarith.so文件。该文件在我们当前目录下，但是当前目录并不在运行时链接器的搜索路径中。一种解决办法是将当前路径添加到LD_LIBRARY_PATH中，但是该方法是一种全局配置，总是显得不那么干净。
+第二种方法是在链接的时候直接将搜索路径写到RPATH中，按如下方式重新编译：
+
+```
+    gcc  main.c -Wl,-rpath='.' -o main -L. -larith
+```
 
 
 #### 相关环境变量
