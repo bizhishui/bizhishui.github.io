@@ -105,8 +105,7 @@ There isn't really a conflict between these two documents; the GNU standards rec
     # /lib 和/usr/lib 都没放到/etc/ld.so.conf 文件中，但是在/etc/ld.so.cache 的缓存中有它们。它们是默认的共享库的搜索路径，其路径下的共享库的变动即时生效，不用执行ldconfig。就算缓存ldconfig -p 中没有，新加入的动态库也可以执行。
 ```
 
-#### [关于ldconfig](http://kevin.9511.net/archives/177.html)
-{:.no_toc}
+### [关于ldconfig](http://kevin.9511.net/archives/177.html)
 
 ldconfig是一个动态链接库管理命令。其目的是为了让动态链接库为系统所共享。 ldconfig命令的用途主要是在默认搜寻目录(/lib和/usr/lib)以及动态库配置文件/etc/ld.so.conf内所列的目录下，
 搜索出可共享的动态链接库(格式如lib*.so*)，进而创建出动态装入程序(ld.so)所需的连接和缓存文件。 缓存文件默认为/etc/ld.so.cache, 此文件保存已排好序的动态链接库名字列表。 
@@ -132,27 +131,25 @@ ldconfig命令行用法如下
     7. -p或--print-cache: 指示ldconfig打印出当前缓存文件所保存的所有共享库的名字
 ```
 
-#### [关于](https://prefetch.net/articles/linkers.badldlibrary.html)[LD_LIBRARY_PATH](http://xahlee.info/UnixResource_dir/_/ldpath.html)
-{:.no_toc}
+### [关于](https://prefetch.net/articles/linkers.badldlibrary.html)[LD_LIBRARY_PATH](http://xahlee.info/UnixResource_dir/_/ldpath.html)
 
 There were a couple good reasons why it was invented:
 
 - To test out new library routines against an already compiled binary (for either backward compatibility or for new feature testing)
 - To have a short term way out in case you wanted to move a set of shared libraries to another location
 
-##### [The bad old days before separate run-time vs link-time paths](http://xahlee.info/UnixResource_dir/_/ldpath.html)
+#### [The bad old days before separate run-time vs link-time paths](http://xahlee.info/UnixResource_dir/_/ldpath.html)
 {:.no_toc}
 
 Nowadays you specify the *run-time path* for an executable at link stage with the **-R** (or sometimes **-rpath**) flag to *ld*. There's also **LD_RUN_PATH** which is an environment variable which acts to *ld* just like specifying **-R**.
 Before all this you had only **-L**, which applied not only during compile-time, but during run time as well. There was no way to say “use this directory during compile time” but “use this other directory at run time”.
 
-##### [More on rpath](https://en.wikipedia.org/wiki/Rpath)
+#### [More on rpath](https://en.wikipedia.org/wiki/Rpath)
 {:.no_toc}
 
 **rpath** designates the run-time search path hard-coded in an executable file or library.
 Specifically, it encodes a path to shared libraries into the header of an executable (or another shared library). This RPATH header value may either override or supplement the system default dynamic linking search paths.
 The *rpath* of an executable or shared library is an optional entry in the *.dynamic* section of the ELF executable or shared libraries, with the type DT_RPATH, called the DT_RPATH attribute.
-
 
 
 #### 相关环境变量
