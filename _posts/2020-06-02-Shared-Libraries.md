@@ -222,6 +222,17 @@ The *rpath* of an executable or shared library is an optional entry in the *.dyn
 ```
 
 上面的解决办法还有一些小问题，RPATH指定的路径是相当于当前目录的，而不是相对于可执行文件所在的目录，那么当换一个目录再执行上面的程序，就会又报找不到共享库。解决这个问题的办法就是使用\$ORIGIN变量，
+在运行的时候，链接器会将该变量的值用可执行文件或动态库所在的目录来替换，这样我们就又能相对于可执行文件来指定RPATH了。
+
+```
+    cp main ~/tmp
+    cd ~/tmp
+    ./main
+    ./main: error while loading shared libraries: libarith.so: cannot open shared object file: No such file or directory
+
+    cd -
+    gcc  main.c -Wl,-rpath='$ORIGIN/' -o main -L. -larith
+```
 
 
 #### 相关环境变量
