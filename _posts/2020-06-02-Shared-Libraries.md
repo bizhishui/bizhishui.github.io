@@ -295,7 +295,7 @@ During development, there's the potential problem of modifying a library that's 
 you're testing against it. One link option you might use is ld's *rpath* option, which specifies the runtime library search path of that particular program being compiled. From gcc, you can invoke the rpath option by specifying it this way:
 
 ```
-    -Wl,-rpath,$(DEFAULT_LIB_INSTALL_PATH)
+    -Wl,-rpath,\$(DEFAULT_LIB_INSTALL_PATH)
 ```
 If you use this option when building the library client program, you don't need to bother with LD_LIBRARY_PATH other than to ensure it's not conflicting, or using other techniques to hide the library.
 
@@ -344,3 +344,7 @@ if you like, though the numbering conventions do permit multiple versions to liv
 
 Please don't depend on this when you write your own programs; try to make sure that your libraries are either backwards-compatible or that you've incremented the version number in the soname every time you make an incompatible change. 
 This is just an "emergency" approach to deal with worst-case problems.
+
+#### [Using a shared library](http://www.yolinux.com/TUTORIALS/LibraryArchives-StaticAndDynamic.html)
+{:.no_toc}
+
