@@ -136,7 +136,7 @@ ldconfig命令行用法如下
     7. -p或--print-cache: 指示ldconfig打印出当前缓存文件所保存的所有共享库的名字
 ```
 
-### [关于](https://prefetch.net/articles/linkers.badldlibrary.html)[LD_LIBRARY_PATH](http://xahlee.info/UnixResource_dir/_/ldpath.html)
+### [关于](https://prefetch.net/articles/linkers.badldlibrary.html)[LD_LIBRARY_PATH](http://xahlee.info/UnixResource_dir/_/ldpath.html) and rpath
 
 There were a couple good reasons why it was invented:
 
