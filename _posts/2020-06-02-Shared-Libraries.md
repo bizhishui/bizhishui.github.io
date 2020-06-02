@@ -124,6 +124,7 @@ ldconfig命令行用法如下
     ldconfig [-v|--verbose] [-n] [-N] [-X] [-f CONF] [-C CACHE] [-rROOT] [-l] [-p|--print-cache] [-c FORMAT] [--format=FORMAT] [-V] [-?|--help|--usage] path...
     1. -v或--verbose: ldconfig将显示正在扫描的目录及搜索到的动态链接库,还有它所创建的链接的名字
     2. -n: ldconfig仅扫描命令行指定的目录,不扫描默认目录(/lib,/usr/lib),也不扫描配置文件/etc/ld.so.conf所列的目录
+    # ldconfig -n /path/to/your/shared/libraries      # install your shared library
     3. -N: ldconfig不重建缓存文件(/etc/ld.so.cache).若未用-X选项,ldconfig照常更新文件的连接
     4. -X: ldconfig不更新文件的连接.若未用-N选项,则缓存文件正常更新
     5. -f CONF: 指定动态链接库的配置文件为CONF,系统默认为/etc/ld.so.conf
