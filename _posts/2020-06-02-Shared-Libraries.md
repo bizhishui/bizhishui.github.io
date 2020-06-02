@@ -84,6 +84,10 @@ There isn't really a conflict between these two documents; the GNU standards rec
 
 通常，动态链接的程序比其静态链接的等价程序小得多。不过，静态链接的程序可以在某些低级维护任务中发挥作用。例如，sln是修改位于/lib中的不同库符号链接的极佳工具。但通常几乎所有Linux系统上的可执行程序都是某种动态链接的变体。
 
+Beware: do not run ldd on a program you don't trust. As is clearly stated in the ldd(1) manual, ldd works by (in certain cases) by setting a special environment variable (for ELF objects, 
+LD_TRACE_LOADED_OBJECTS) and then executing the program. It may be possible for an untrusted program to force the ldd user to run arbitrary code (instead of simply showing the ldd information). 
+So, for safety's sake, don't use ldd on programs you don't trust to execute.
+One can use **nm** to list symbols from object files.
 
 ### [How Libraries are Used](https://www.cnblogs.com/sddai/p/10397510.html)
 
