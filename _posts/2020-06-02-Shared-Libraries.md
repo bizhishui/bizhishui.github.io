@@ -146,6 +146,14 @@ There were a couple good reasons why it was invented:
 Nowadays you specify the *run-time path* for an executable at link stage with the **-R** (or sometimes **-rpath**) flag to *ld*. There's also **LD_RUN_PATH** which is an environment variable which acts to *ld* just like specifying **-R**.
 Before all this you had only **-L**, which applied not only during compile-time, but during run time as well. There was no way to say “use this directory during compile time” but “use this other directory at run time”.
 
+##### [More on rpath](https://en.wikipedia.org/wiki/Rpath)
+{:.no_toc}
+
+**rpath** designates the run-time search path hard-coded in an executable file or library.
+Specifically, it encodes a path to shared libraries into the header of an executable (or another shared library). This RPATH header value may either override or supplement the system default dynamic linking search paths.
+The *rpath* of an executable or shared library is an optional entry in the *.dynamic* section of the ELF executable or shared libraries, with the type DT_RPATH, called the DT_RPATH attribute.
+
+
 
 #### 相关环境变量
 {:.no_toc}
