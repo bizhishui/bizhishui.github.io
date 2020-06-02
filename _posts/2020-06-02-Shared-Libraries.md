@@ -183,7 +183,7 @@ The *rpath* of an executable or shared library is an optional entry in the *.dyn
     #include <stdio.h>
     int main()
     {
-      add(1, 2);
+      printf("Sum = %d.\n", add(1,2));
     }
 ```
 
@@ -197,7 +197,10 @@ The *rpath* of an executable or shared library is an optional entry in the *.dyn
     # gcc options error, see https://blog.csdn.net/aiwoziji13/article/details/7330333 for details
 
     gcc -o main main.c -L. -larith
+    ./main
     ./main: error while loading shared libraries: libarith.so: cannot open shared object file: No such file or directory
+    ldd main 
+    libarith.so => not found
 ```
 
 报错提示找不到libarith.so文件。该文件在我们当前目录下，但是当前目录并不在运行时链接器的搜索路径中。一种解决办法是将当前路径添加到LD_LIBRARY_PATH中，但是该方法是一种全局配置，总是显得不那么干净。
@@ -205,7 +208,20 @@ The *rpath* of an executable or shared library is an optional entry in the *.dyn
 
 ```
     gcc  main.c -Wl,-rpath='.' -o main -L. -larith
+    ./main
+    Sum = 3.
+    ldd main 
+    libarith.so => ./libarith.so (0x000015387f0d6000)
 ```
+
+-rpath是链接器选项，并不是gcc的编译选项，所以上面通过-Wl,告知编译器将此选项传给下一阶段的链接器。重新编译后，采用readelf命令查看main文件的dynamic节，发现多了一个RPATH字段，且值就是我们前面设置的路径。
+
+```
+    readelf -d main| grep PATH
+    0x000000000000001d (RUNPATH)            Library runpath: [.]
+```
+
+上面的解决办法还有一些小问题，RPATH指定的路径是相当于当前目录的，而不是相对于可执行文件所在的目录，那么当换一个目录再执行上面的程序，就会又报找不到共享库。解决这个问题的办法就是使用\$ORIGIN变量，
 
 
 #### 相关环境变量
