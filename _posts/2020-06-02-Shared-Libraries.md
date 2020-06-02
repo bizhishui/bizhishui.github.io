@@ -96,7 +96,7 @@ There isn't really a conflict between these two documents; the GNU standards rec
 
 ```
     # 没有当前路径
-    1. 编译目标代码时指定的动态库搜索路径; # -LdirName
+    1. 编译目标代码时指定的动态库搜索路径; # -LdirName or -Wl,-rpath='$ORIGIN/'
     2. 环境变量LD_LIBRARY_PATH指定的动态库搜索路径;
     3. 配置文件/etc/ld.so.conf中指定的动态库搜索路径;
     # 只需在在该文件中追加一行库所在的完整路径如"/root/test/conf/lib"即可,然后ldconfig是修改生效。(实际上是根据缓存文件/etc/ld.so.cache来确定路径)
@@ -150,6 +150,31 @@ Before all this you had only **-L**, which applied not only during compile-time,
 **rpath** designates the run-time search path hard-coded in an executable file or library.
 Specifically, it encodes a path to shared libraries into the header of an executable (or another shared library). This RPATH header value may either override or supplement the system default dynamic linking search paths.
 The *rpath* of an executable or shared library is an optional entry in the *.dynamic* section of the ELF executable or shared libraries, with the type DT_RPATH, called the DT_RPATH attribute.
+
+#### [Example using rpath](http://shibing.github.io/2016/08/20/%E5%8A%A8%E6%80%81%E9%93%BE%E6%8E%A5%E4%B8%8Erpath/)
+{:.no_toc}
+
+假设我们有一个共享库libarith.so，提供了常见的算术运算，它由arith.h与arith.c两个文件编译生成。内容如下：
+
+```
+    # arith.h
+    #pragma once
+    int add(int a, int b);
+
+    # arith.c
+    #include "arith.h"
+    int add(int a, int b)
+    {
+      return a + b;
+    }
+```
+
+生成so文件
+
+```
+    gcc -fPIC -shared arith.c -o libarith.so
+```
+
 
 
 #### 相关环境变量
