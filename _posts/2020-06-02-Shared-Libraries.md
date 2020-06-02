@@ -295,7 +295,7 @@ During development, there's the potential problem of modifying a library that's 
 you're testing against it. One link option you might use is ld's *rpath* option, which specifies the runtime library search path of that particular program being compiled. From gcc, you can invoke the rpath option by specifying it this way:
 
 ```
-    -Wl,-rpath,\$(DEFAULT_LIB_INSTALL_PATH)
+    -Wl,-rpath,$(DEFAULT_LIB_INSTALL_PATH)
 ```
 If you use this option when building the library client program, you don't need to bother with LD_LIBRARY_PATH other than to ensure it's not conflicting, or using other techniques to hide the library.
 
@@ -348,3 +348,14 @@ This is just an "emergency" approach to deal with worst-case problems.
 #### [Using a shared library](http://www.yolinux.com/TUTORIALS/LibraryArchives-StaticAndDynamic.html)
 {:.no_toc}
 
+The link to /usr/local/lib/libctest.so allows the naming convention for the compile flag -lctest to work, while the link to /usr/local/lib/libctest.so.1 allows the run time binding to work.
+
+Compile main program and link with shared object library:
+
+```
+    # gcc -Wall -I/path/to/include-files -L/path/to/libraries prog.c -lctest -o prog
+    gcc -Wall -L/opt/lib prog.c -lctest -o prog
+```
+
+Where the name of the library is libctest.so. (This is why you must create the symbolic links or you will get the error "ld: cannot find -lctest".)
+The libraries will NOT be included in the executable but will be dynamically linked during run-time execution.
