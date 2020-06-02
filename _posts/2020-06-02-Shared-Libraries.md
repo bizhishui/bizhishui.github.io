@@ -244,17 +244,44 @@ The *rpath* of an executable or shared library is an optional entry in the *.dyn
 - LD_ DEBUG 这个环境变量比较好玩，有时使用它，可以帮助你查找出一些共享库的疑难杂症（比如同名函数引起的问题）。同时，利用它，你也可以学到一些共享库加载过程的知识
 
 
-### Creating a Shared Library
+### [Creating a Shared Library](http://www.yolinux.com/TUTORIALS/LibraryArchives-StaticAndDynamic.html)
+
+Generate a shared object is a two step process:
+
+1. Create object code
+2. Create library
+3. Optional: create default version using a symbolic link
+
+Here is a library creation example
 
 ```
-    # create the object files that will go into the shared library
-    # gcc -fPIC        # -fPIC enable position independent code generation
-    gcc -fPIC -g -c -Wall a.c          # -Wall: include warnings
-    gcc -fPIC -g -c -Wall b.c
+    # create object code
+    gcc -Wall -fPIC -c *.c
 
+    # create library libctest.so.1.0
     # gcc -shared -Wl,-soname,your_soname -o library_name file_list library_list
-    # -Wl,options: Pass options to linker, the name passed with the "-o" option is passed to gcc
-    gcc -shared -Wl,-soname,libmystuff.so.1 -o libmystuff.so.1.0.1 a.o b.o -lc       # -shared: produce a shared object
+    gcc -shared -Wl,-soname,libctest.so.1 -o libctest.so.1.0   *.o -lc
+
+    # create default version using a symbolic link
+    mv libctest.so.1.0 /opt/lib
+    ln -sf /opt/lib/libctest.so.1.0 /opt/lib/libctest.so.1
+    ln -sf /opt/lib/libctest.so.1.0 /opt/lib/libctest.so
+    # or with cascading link
+    ln -sf /opt/lib/libctest.so.1.0 /opt/lib/libctest.so.1
+    ln -sf /opt/lib/libctest.so.1   /opt/lib/libctest.so
+```
+
+Compiler options:
+
+```
+    -c: generates object files
+    -o: output of operation
+    -g: includes debugging information
+    -Wall: generate warnings
+    -fPIC: enable position independent code generation
+    -shared: produce a shared object
+    -Wl,options: Pass options to linker, the name passed with the "-o" option is passed to gcc
+    # In the above example the options to be passed on to the linker are: "-soname libctest.so.1"
 ```
 
 During development, there's the potential problem of modifying a library that's also used by many other programs -- and you don't want the other programs to use the *developmental* library, only a particular application that 
