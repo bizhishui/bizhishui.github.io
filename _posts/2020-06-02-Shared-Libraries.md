@@ -241,3 +241,30 @@ The *rpath* of an executable or shared library is an optional entry in the *.dyn
 - LD_LIBRARY_PATH 这个环境变量是大家最为熟悉的，它告诉loader：在哪些目录中可以找到共享库。可以设置多个搜索目录，这些目录之间用冒号分隔开。在linux下，还提供了另外一种方式来完成同样的功能，你可以把这些目录加到/etc/ld.so.conf中，或则在/etc/ld.so.conf.d里创建一个文件，把目录加到这个文件里。当然，这是系统范围内全局有效的，而环境变量只对当前shell有效。按照惯例，除非你用上述方式指明，loader是不会在当前目录下去找共享库的，正如shell不会在当前目前找可执行文件一样。
 - LD_PRELOAD 这个环境变量对于程序员来说，也是特别有用的。它告诉loader：在解析函数地址时，优先使用LD_PRELOAD里指定的共享库中的函数。这为调试提供了方便，比如，对于C/C++程序来说，内存错误最难解决了。常见的做法就是重载malloc系列函数，但那样做要求重新编译程序，比较麻烦。使用LD_PRELOAD机制，就不用重新编译了，把包装函数库编译成共享库，并在LD_PRELOAD加入该共享库的名称，这些包装函数就会自动被调用了。在linux下，还提供了另外一种方式来完成同样的功能，你可以把要优先加载的共享库的文件名写在/etc/ld.so.preload里。当然，这是系统范围内全局有效的，而环境变量只对当前shell有效
 - LD_ DEBUG 这个环境变量比较好玩，有时使用它，可以帮助你查找出一些共享库的疑难杂症（比如同名函数引起的问题）。同时，利用它，你也可以学到一些共享库加载过程的知识
+
+
+### Creating a Shared Library
+
+```
+    # create the object files that will go into the shared library
+    # gcc -fPIC        # -fPIC enable position independent code generation
+    gcc -fPIC -g -c -Wall a.c          # -Wall: include warnings
+    gcc -fPIC -g -c -Wall b.c
+
+    # gcc -shared -Wl,-soname,your_soname -o library_name file_list library_list
+    # -Wl,options: Pass options to linker, the name passed with the "-o" option is passed to gcc
+    gcc -shared -Wl,-soname,libmystuff.so.1 -o libmystuff.so.1.0.1 a.o b.o -lc       # -shared: produce a shared object
+```
+
+During development, there's the potential problem of modifying a library that's also used by many other programs -- and you don't want the other programs to use the *developmental* library, only a particular application that 
+you're testing against it. One link option you might use is ld's *rpath* option, which specifies the runtime library search path of that particular program being compiled. From gcc, you can invoke the rpath option by specifying it this way:
+
+```
+    -Wl,-rpath,$(DEFAULT_LIB_INSTALL_PATH)
+```
+If you use this option when building the library client program, you don't need to bother with LD_LIBRARY_PATH other than to ensure it's not conflicting, or using other techniques to hide the library.
+
+### Installing and Using a Shared Library
+
+Once you've created a shared library, you'll want to install it. The simple approach is simply to copy the library into one of the standard directories (e.g., */usr/lib*) and run *ldconfig(8)*.
+
