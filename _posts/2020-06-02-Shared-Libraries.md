@@ -244,7 +244,10 @@ The *rpath* of an executable or shared library is an optional entry in the *.dyn
 - LD_ DEBUG 这个环境变量比较好玩，有时使用它，可以帮助你查找出一些共享库的疑难杂症（比如同名函数引起的问题）。同时，利用它，你也可以学到一些共享库加载过程的知识
 
 
-### [Creating a Shared Library](http://www.yolinux.com/TUTORIALS/LibraryArchives-StaticAndDynamic.html)
+### [Creating, Installing](http://www.yolinux.com/TUTORIALS/LibraryArchives-StaticAndDynamic.html) [and Using a Shared Library](http://tldp.org/HOWTO/Program-Library-HOWTO/shared-libraries.html#AEN115)
+
+#### Creating a shared library
+{:.no_toc}
 
 Generate a shared object is a two step process:
 
@@ -263,12 +266,12 @@ Here is a library creation example
     gcc -shared -Wl,-soname,libctest.so.1 -o libctest.so.1.0   *.o -lc
 
     # create default version using a symbolic link
-    mv libctest.so.1.0 /opt/lib
-    ln -sf /opt/lib/libctest.so.1.0 /opt/lib/libctest.so.1
-    ln -sf /opt/lib/libctest.so.1.0 /opt/lib/libctest.so
+    mv libctest.so.1.0 /usr/local/lib
+    ln -sf /usr/local/lib/libctest.so.1.0 /usr/local/lib/libctest.so.1
+    ln -sf /usr/local/lib/libctest.so.1.0 /usr/local/lib/libctest.so
     # or with cascading link
-    ln -sf /opt/lib/libctest.so.1.0 /opt/lib/libctest.so.1
-    ln -sf /opt/lib/libctest.so.1   /opt/lib/libctest.so
+    ln -sf /usr/local/lib/libctest.so.1.0 /usr/local/lib/libctest.so.1
+    ln -sf /usr/local/lib/libctest.so.1   /usr/local/lib/libctest.so
 ```
 
 Compiler options:
@@ -292,7 +295,13 @@ you're testing against it. One link option you might use is ld's *rpath* option,
 ```
 If you use this option when building the library client program, you don't need to bother with LD_LIBRARY_PATH other than to ensure it's not conflicting, or using other techniques to hide the library.
 
-### Installing and Using a Shared Library
+#### [Installing a shared library](http://tldp.org/HOWTO/Program-Library-HOWTO/shared-libraries.html#AEN115)
+{:.no_toc}
 
-Once you've created a shared library, you'll want to install it. The simple approach is simply to copy the library into one of the standard directories (e.g., */usr/lib*) and run *ldconfig(8)*.
+Once you've created a shared library, you'll want to install it. The simple approach is simply to copy the library into one of the standard directories (e.g., */usr/lib*) and run *ldconfig*.
+
+```
+    # ldconfig -n directory_with_shared_libraries
+    ldconfig -n /usr/local/lib
+```
 
