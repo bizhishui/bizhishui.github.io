@@ -230,6 +230,7 @@ The *rpath* of an executable or shared library is an optional entry in the *.dyn
 在运行的时候，链接器会将该变量的值用可执行文件或动态库所在的目录来替换，这样我们就又能相对于可执行文件来指定RPATH了。
 
 ```
+    # '$ORIGIN/' allows you to install the binary anywhere, so long as you move the binary and the libraries together
     gcc  main.c -Wl,-rpath='$ORIGIN/' -o main -L. -larith
 ```
 
@@ -344,6 +345,18 @@ if you like, though the numbering conventions do permit multiple versions to liv
 
 Please don't depend on this when you write your own programs; try to make sure that your libraries are either backwards-compatible or that you've incremented the version number in the soname every time you make an incompatible change. 
 This is just an "emergency" approach to deal with worst-case problems.
+
+[An special example](https://stackoverflow.com/questions/847179/multiple-glibc-libraries-on-a-single-host/851229#851229): it is very possible to have multiple versions of glibc on the same system.
+However, glibc consists of many pieces (200+ shared libraries) which all must match. One of the pieces is ld-linux.so.2, and it must match libc.so.6. Thus, the absolute path to ld-linux.so.2 can 
+be hard-coded into the executable at link time, and can not be easily changed after the link is done.
+
+```
+    g++ main.o -o myapp -Wl,--rpath=/path/to/newglibc -Wl,--dynamic-linker=/path/to/newglibc/ld-linux.so.2
+```
+
+The *--rpath* linker option will make the runtime loader search for libraries in /path/to/newglibc (so you wouldn't have to set LD_LIBRARY_PATH before running it), 
+and the *--dynamic-linker* option will "bake" path to correct ld-linux.so.2 into the application.
+Refer [Multiple glibc libraries on a single host](https://stackoverflow.com/questions/847179/multiple-glibc-libraries-on-a-single-host/851229#851229) for more details.
 
 #### [Using a shared library](http://www.yolinux.com/TUTORIALS/LibraryArchives-StaticAndDynamic.html)
 {:.no_toc}
