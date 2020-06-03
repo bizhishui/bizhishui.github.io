@@ -87,5 +87,8 @@ With awk, we can also select line with *if*, like
 
     #plot directly on remote server
     set terminal dumb
+
+    # set equal x and y size ratio
+    set size ratio -1
 ```
 
