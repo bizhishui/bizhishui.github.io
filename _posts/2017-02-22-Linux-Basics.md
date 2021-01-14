@@ -124,11 +124,21 @@ The difference between *;* (semicolon) or *+* (plus sign) is how the arguments a
 1. 图片编辑: Gimp, TikZ (Latex), [ImageMagick](https://www.imagemagick.org/script/index.php)
 2. 简图制作: Inkscape, Latex Tikz
 3. 音乐播放: cmus
-4. 视频播放: totem, mplayer, [mpv](https://mpv.io/)
+4. 视频播放: totem, mplayer, [mpv](https://mpv.io/), VCL, SMplayer
 5. 截图: scrot [-s]
 6. 屏幕视频录制: SimpleScreenRecorder
 7. 启动盘制作: etcher
 8. 图片中提取数据：WebPlotDigitizer
+9. 思维导图软件：FreeMind
+10. 所见即所得的网页编辑器：BlueGriffon
+11. 绘画软件：KRITA
+12. 3D动画设计：blender
+13. 视频编辑：Shotcut，支持多种视频格式，可裁剪合并视频，添加音乐和字幕，做简单特效等
+14. 音频编辑：Audacity，可以剪切拼接，并且可以把人声制作成类似机器人或者类似小铃铛等声音
+15. 作曲编曲：LMMS
+16. 文本编辑：vim, gedit, AkelPad、notepad++
+17. PDF,eBook阅读：Sumatra, 也支持XPS, DjVu, CHM, Comic Book (CBZ and CBR)
+
 
 ### Linux系统的在线求助man page与info page[>](http://cn.linux.vbird.org/linux_basic/0160startlinux.php#manual)
 #### man page
