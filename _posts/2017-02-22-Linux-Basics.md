@@ -131,7 +131,7 @@ The difference between *;* (semicolon) or *+* (plus sign) is how the arguments a
 8. 图片中提取数据：WebPlotDigitizer
 9. 思维导图软件：FreeMind
 10. 所见即所得的网页编辑器：BlueGriffon
-11. 绘画软件：KRITA
+11. 绘画软件：Krita
 12. 3D动画设计：blender
 13. 视频编辑：Shotcut，支持多种视频格式，可裁剪合并视频，添加音乐和字幕，做简单特效等
 14. 音频编辑：Audacity，可以剪切拼接，并且可以把人声制作成类似机器人或者类似小铃铛等声音
