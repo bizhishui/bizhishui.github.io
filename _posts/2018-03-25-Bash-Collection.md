@@ -54,6 +54,28 @@ The basic object of *sed* is the *lines*, it takes one single line and process o
     plot 'filNname' u 1:10
     plot "<(sed -n '0~np' fileName)" u 1:10
 ```
+- Working with Gnuplot, to automatically add new data for multiple plots
+```
+    #!/bin/bash
+    
+    # filename: sed4Gnuplot.sh
+    # find $2 in $1, if found
+    # duplicate it, and replace $2 with $3 in the new line
+    
+    #sed -i '/Bihar/p 
+    #    s/^Bihar/Beihai/' $1
+    
+    if [ $# != 3 ]; then 
+      echo "You should give me three parameters"
+      echo "#1 the file to be processed"
+      echo "#2 the original word to be replaced"
+      echo "#3 the new word"
+      exit 1
+    fi
+    
+    sed -i "/$2/p 
+    s/$2/$3/" $1
+```
 
 ### awk
 *awk* ia an abbreviation of Aho, Weinberger and Kernighan (Brian Kernighan), the authors of the language.
