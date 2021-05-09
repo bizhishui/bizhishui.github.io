@@ -3,7 +3,7 @@ title: Tex -- from fontspec error
 layout: post
 guid: urn:uuid:06d6fd38-1a0f-44aa-a04f-05118c5bfa60
 categories:
-  - note
+  - notes
 tags:
   - Tex
   - fontspec
