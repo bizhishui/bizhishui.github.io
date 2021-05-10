@@ -134,3 +134,9 @@ To embed to second video over the first one, you can do just
     ffmpeg -i video_name_cropped.mp4 -i trace.mp4 -filter_complex "overlay=700:700"  combined.mp4
 ```
 Now, you finish all steps, and have you final video.
+
+### Publish a shorter video
+Well, if you want to make your video online avaiable, you may want to make it shorter, here is it
+```
+    ffmpeg -i combined.mp4 -ss 00:00:20 -t 00:01:46 -async 1 my_video.mp4
+```
