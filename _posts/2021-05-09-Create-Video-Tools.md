@@ -40,3 +40,19 @@ Suppose the images obatined from last step are saved with name like *figure_####
 ```
     ffmpeg -framerate $1 -i ./figure_%05d.png -c:v libx264 -profile:v high444 -refs 16 -crf 0 ./video_name.mp4
 ```
+
+You may check your video size with 
+```
+    ffprobe -v error -select_streams v:0 -show_entries stream=width,height -of default=nw=1 ./video_name.mp4
+```
+and you may get some outputs like this
+```
+    width=2127
+    height=1195
+```
+
+If they size are not even, you may need crop it, otherwise you'll get error in following step when you want embedded one video in another.
+For this, you can just do
+```
+    ffmpeg -i ./video_name.mp4 -filter:v "crop=2126:1194:1:1" ./video_name_cropped.mp4
+```
