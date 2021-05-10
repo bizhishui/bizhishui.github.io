@@ -3,10 +3,11 @@ title: Create Video with FFmpeg
 layout: post
 guid: urn:uuid:aa3e1498-dd63-4a33-88c5-12260315272d
 categories:
-  - nodes
+  - notes
 tags:
   - video
   - FFmpeg
+  - Gnuplot
 ---
 
 
