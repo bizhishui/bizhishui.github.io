@@ -146,8 +146,5 @@ Well, if you want to make your video online avaiable, you may want to make it sh
 
 ---
 
-<video poster="/media/files/2021/05/09/poster.jpg" width="640" height="400" controls preload>
-    <source src="/media/files/2021/05/09/video.mp4" media="only screen and (min-device-width: 568px)"></source>
-    <source src="/media/files/2021/05/09/video.webm"></source>
-</video>
+<video poster="/media/files/2021/05/09/poster.jpg" src="/media/files/2021/05/09/my_video.mp4" width="640" height="400" controls preload></video>
 
