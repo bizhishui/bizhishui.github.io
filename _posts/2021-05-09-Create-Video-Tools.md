@@ -28,3 +28,15 @@ an time augmentation file (a file where each line summarizes the basic geometric
 2. FFmpeg: create video from generated images
 3. bash: formated data generation
 
+
+### Steps
+
+#### Use Paraview to get a time-series images for all vtk files
+In paraview, choose *Save Animation* and 'png' (for example) as the exported *Files of type*,
+paraview will automatically generate a series of images files.
+
+#### Make first video with ffmpeg
+Suppose the images obatined from last step are saved with name like *figure_#####.png*, then you can make a video with these images as 
+```
+    ffmpeg -framerate $1 -i ./figure_%05d.png -c:v libx264 -profile:v high444 -refs 16 -crf 0 ./video_name.mp4
+```
