@@ -29,7 +29,7 @@ an time augmentation file (a file where each line summarizes the basic geometric
 3. bash: formated data generation
 
 
-### Steps
+### Basic steps
 
 #### Use Paraview to get a time-series images for all vtk files
 In paraview, choose *Save Animation* and 'png' (for example) as the exported *Files of type*,
@@ -51,7 +51,7 @@ and you may get some outputs like this
     height=1195
 ```
 
-If they size are not even, you may need crop it, otherwise you'll get error in following step when you want embedded one video in another.
+If they size are not even, you may need crop it, otherwise you'll get error in following step when you want embed one video in another.
 For this, you can just do
 ```
     ffmpeg -i ./video_name.mp4 -filter:v "crop=2126:1194:1:1" ./video_name_cropped.mp4
@@ -110,9 +110,8 @@ First, we will use *gnuplot* to convert each trace_#####.txt to png images, with
 
 and a bash script to call it
 ```
-    # bash script, plotFig.sh
-
     #!/bin/bash
+    # bash script, plotFig.sh
 
     for s in $@; do
         echo $s
@@ -127,3 +126,11 @@ And this video can be made by
     ./plotfig.sh trace_*.txt
     ffmpeg -framerate 20 -i ./trace_%05d.png -c:v libx264 -profile:v high444 -refs 16 -crf 0 ./trace.mp4
 ```
+
+#### Embed one video over another
+To embed to second video over the first one, you can do just
+```
+    # https://superuser.com/questions/938458/how-to-put-a-video-in-a-corner-of-another-video
+    ffmpeg -i video_name_cropped.mp4 -i trace.mp4 -filter_complex "overlay=700:700"  combined.mp4
+```
+Now, you finish all steps, and have you final video.
