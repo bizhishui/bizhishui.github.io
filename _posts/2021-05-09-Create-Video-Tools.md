@@ -26,8 +26,9 @@ an time augmentation file (a file where each line summarizes the basic geometric
 #### Tools
 
 1. Paraview: import vtk files and export images
-2. FFmpeg: create video from generated images
-3. bash: formated data generation
+2. Gnuplot: create images from ASCII data
+3. FFmpeg: create video from generated images
+4. bash: formated data generation
 
 
 ### Basic steps
