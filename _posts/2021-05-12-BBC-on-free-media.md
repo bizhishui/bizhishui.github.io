@@ -10,8 +10,5 @@ tags:
 
 
 
-<iframe src="https://mega.nz/file/gQtVnQ5Q#RkdHHyvlAe8L7zi860h5OMxmrM3HrJRP8pCpOXQUjZQ/preview" ></iframe>
 
-  <!--aloow full screen add tag -->
-
-<iframe allowfullscreen="allowfullscreen" src="https://mega.nz/file/gQtVnQ5Q#RkdHHyvlAe8L7zi860h5OMxmrM3HrJRP8pCpOXQUjZQ/preview" ></iframe>
+<iframe allowfullscreen="allowfullscreen" src="https://drive.google.com/file/d/1NAWi5XRUiNzqDeZEAB7RtB-0YLdWCqI5/view?usp=sharing/preview" ></iframe>
