@@ -9,7 +9,7 @@ tags:
   - Western Media
 ---
 
-A good example shows how the western media use their double standard on a similar thing. 
+A good example shows how the western media uses their double standard on a similar thing. 
 They just fooled their people, show their inner envy, jealousy, and weakness.
 
 [![MAWeiming](/media/files/2021/05/12/CZ5B_reentry1.jpeg)](https://github.com/bizhishui/bizhishui.github.io/blob/master/ "Western media on CZ-5B's reentry")
