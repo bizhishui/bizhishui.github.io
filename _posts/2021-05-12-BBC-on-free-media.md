@@ -16,4 +16,4 @@ Not shown part
 <iframe allowfullscreen="allowfullscreen" src="https://drive.google.com/file/d/1_aDp1XkxlOC9szSz_GegiexhdHLxYrZq/preview" width="768" height="432"></iframe>
 
 Full videl can be found from Azerbaijan's presidentaz channel 
-<a href="https://www.youtube.com/watch?v=2PGglaryXjI&ab_channel=presidentaz"> here </a>
+<a href="https://www.youtube.com/watch?v=2PGglaryXjI&ab_channel=presidentaz"> here </a>, start at about 19 min.
