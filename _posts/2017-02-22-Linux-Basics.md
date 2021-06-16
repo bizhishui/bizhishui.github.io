@@ -91,6 +91,13 @@ tags:
     pdftk 1.pdf output 1.128.pdf owner_pw foo user_pw baz
     #Same as above, except printing is allowed (once the PDF is open)
     pdftk 1.pdf output 1.128.pdf owner_pw foo user_pw baz allow printing
+
+    # https://askubuntu.com/questions/952673/how-do-i-copy-a-file-larger-than-4gb-to-a-usb-flash-drive
+    # copy file larger than 4GB to a FAT32 driver without reformatting
+    # first split to smaller ones
+    split -b4294967295 /path/to/input.file /path/to/pen/drive/output.file.
+    # then merge them before accessing again
+    cat output.file.* > input.file
 ```
 
 ##### The meaning of {} + in find's -exec command
