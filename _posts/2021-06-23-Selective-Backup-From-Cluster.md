@@ -71,8 +71,18 @@ Run this script on _/scratch/jlv/test_, here is some of them I get
 
 ### Copy to a temporary directory
 Suppose the destination directory is _/scratch/jlv/tmp_for_bkup_serfiles_, before copying, 
-the leading string _/scratch/jlv/test/_ need be trimmed. This can be easy done with vim.
+the leading string _/scratch/jlv/test/_ must be trimmed. This can be easily done with vim.
 The local copy can then de done by
 ```
     rsync -uvhR `cat bkupSerList_20210623-152003.txt` /scratch/jlv/tmp_for_bkup_serfiles/
 ```
+
+
+### Backup to your own disk
+Suppose the local directory where you want to save your data is _/media/jlv/WD1/meso_Marseille/scratch/test_,
+the backup can be simply realized via another rsync command,
+```
+    rsync -ravh -e ssh jlv@login.mesocentre.univ-amu.fr:/scratch/jlv/tmp_for_bkup_serfiles/ .
+```
+
+And finally, not forget to delete the data on _/scratch/jlv/tmp_for_bkup_serfiles_.
