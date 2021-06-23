@@ -53,3 +53,26 @@ Here is the Python script to save all _.ser_ files you want to backup to a text 
 
 The only argument is an int value _n_ for on which frequency you want to save your .ser files, 
 i.e., you want save one file every _n_ files, the default value is 10.
+
+Run this script on _/scratch/jlv/test_, here is some of them I get 
+```
+    /scratch/jlv/test/RBC/CG/muS5d3/RBCVesPCG_20180609-235417_kappa_1.0_Shear_gamma_0.0_pN_40.0/013.9000000.ser
+    /scratch/jlv/test/RBC/CG/muS5d3/RBCVesPCG_20180609-235417_kappa_1.0_Shear_gamma_0.0_pN_40.0/000.0000000.ser
+    /scratch/jlv/test/RBC/CG/muS5d3/RBCVesPCG_20180609-235417_kappa_1.0_Shear_gamma_0.0_pN_40.0/000.5200000.ser
+    /scratch/jlv/test/RBC/CG/muS5d3/RBCVesPCG_20180609-235417_kappa_1.0_Shear_gamma_0.0_pN_40.0/001.0200000.ser
+    /scratch/jlv/test/RBC/CG/muS5d3/RBCVesPCG_20180609-235417_kappa_1.0_Shear_gamma_0.0_pN_40.0/001.5200000.ser
+    /scratch/jlv/test/RBC/CG/muS5d3/RBCVesPCG_20180609-235417_kappa_1.0_Shear_gamma_0.0_pN_40.0/002.0300000.ser
+    /scratch/jlv/test/RBC/CG/muS5d3/RBCVesPCG_20180609-235417_kappa_1.0_Shear_gamma_0.0_pN_40.0/002.6300000.ser
+    /scratch/jlv/test/RBC/CG/muS5d3/RBCVesPCG_20180609-235417_kappa_1.0_Shear_gamma_0.0_pN_40.0/003.2300000.ser
+    /scratch/jlv/test/RBC/CG/muS5d3/RBCVesPCG_20180609-235417_kappa_1.0_Shear_gamma_0.0_pN_40.0/003.8300000.ser
+    /scratch/jlv/test/RBC/CG/muS5d3/RBCVesPCG_20180609-235417_kappa_1.0_Shear_gamma_0.0_pN_40.0/004.4300000.ser
+```
+
+
+### Copy to a temporary directory
+Suppose the destination directory is _/scratch/jlv/tmp_for_bkup_serfiles_, before copying, 
+the leading string _/scratch/jlv/test/_ need be trimmed. This can be easy done with vim.
+The local copy can then de done by
+```
+    rsync -uvhR `cat bkupSerList_20210623-152003.txt` /scratch/jlv/tmp_for_bkup_serfiles/
+```
