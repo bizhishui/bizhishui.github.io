@@ -15,7 +15,7 @@ In most cases, you may not need these data any more, but it will be good to just
 This note shows a way to realize this purpose.
 
 ### Generate a list to be backed up
-Here is the Python script to 
+Here is the Python script to save all _.ser_ files you want to backup to a text file.
 ```
     #!/usr/bin/env python
     import os,sys 
@@ -50,3 +50,6 @@ Here is the Python script to
     
     of.close()
 ```
+
+The only argument is an int value _n_ for on which frequency you want to save your .ser files, 
+i.e., you want save one file every _n_ files, the default value is 10.
