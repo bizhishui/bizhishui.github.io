@@ -80,9 +80,9 @@ The local copy can then de done by
 
 ### Backup to your own disk
 Suppose the local directory where you want to save your data is _/media/jlv/WD1/meso_Marseille/scratch/test_,
-the backup can be simply realized via another rsync command,
+the backup can be simply realized via another rsync command, run under the destination directory
 ```
     rsync -ravh -e ssh jlv@login.mesocentre.univ-amu.fr:/scratch/jlv/tmp_for_bkup_serfiles/ .
 ```
 
-And finally, not forget to delete the data on _/scratch/jlv/tmp_for_bkup_serfiles_.
+And finally, don't forget to delete the data on _/scratch/jlv/tmp_for_bkup_serfiles_.
