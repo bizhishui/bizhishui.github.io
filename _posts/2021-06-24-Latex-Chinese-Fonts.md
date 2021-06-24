@@ -19,3 +19,20 @@ First you can check what fonts are available in your system with
     fc-list
     fc-list :lang=zh
 ```
+
+### Basic steps
+```
+    # copy fonts to ~/.fonts or /usr/share/fonts on linux
+    export DEST=~/.fonts
+    cd $DEST
+    cp /path/to/fonts/*.tt[c,f] .
+    # generate fonts.scale
+    mkfontscale
+    # generate fonts.dir
+    mkfontdir
+    # set up fonts cache
+    fc-cache -fsv
+
+    # to delete fonts, just rm the ttf or ttc files, and then re-run
+    fc-cache -fsv
+```
