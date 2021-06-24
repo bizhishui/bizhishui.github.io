@@ -20,7 +20,7 @@ First you can check what fonts are available in your system with
     fc-list :lang=zh
 ```
 
-### Basic steps
+#### Basic steps
 ```
     # copy fonts to ~/.fonts or /usr/share/fonts on linux
     export DEST=~/.fonts
