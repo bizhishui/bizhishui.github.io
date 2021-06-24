@@ -86,3 +86,12 @@ the backup can be simply realized via another rsync command, run under the desti
 ```
 
 And finally, don't forget to delete the data on _/scratch/jlv/tmp_for_bkup_serfiles_.
+
+### Notes
+When copying data with _rsync_ to an external driver formatted as _exFAT_, for example, one need to add 
+the option _--modify-window=1_ to avoid copying all files every time.
+```
+    # https://unix.stackexchange.com/questions/552349/rsync-over-ssh-copies-all-files-every-time
+    rsync --modify-window=1 -ravh -e ssh jlv@login.mesocentre.univ-amu.fr:/scratch/jlv/tmp_for_bkup_serfiles/ .
+```
+
