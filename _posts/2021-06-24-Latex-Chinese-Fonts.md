@@ -77,6 +77,11 @@ Place this file locally in your current tex folder, and it can be used simply as
     \usepackage{fontspec}
     \usepackage[slantfont, boldfont]{xeCJK}
     \usepackage{myCJKfonts}
+
+    % set english font
+    \setmainfont{Times New Roman}
+    % \setsansfont{Times New Roman}
+    % \setmonofont{Times New Roman}
     
     \title{Curriculum Vitae}
     \begin{document}
