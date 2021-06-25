@@ -8,7 +8,7 @@ markdown: kramdown
 author: "zhishui"
 atom-baseurl: "https://bizhishui.github.io/"
 #date_format: '%B %d, %Y'
-#disqus: "gopherwood"
+disqus: "gopherwood"
 disqus_shortname: 'bizhishui'
 
 # Post sharing icons
