@@ -125,11 +125,11 @@ layout: default
     <script type="text/javascript" src="http://v3.jiathis.com/code_mini/jia.js?uid=1900073" charset="utf-8"></script>
   </section>
 
+  {% include disqus.html %}
+
   <!-- BEGIN comment
-  END comment -->
  <section class="comment">
  {% if site.disqus_shortname %}
- {% endif %}
  <div id="disqus_thread"></div>
  <script type="text/javascript">
      var disqus_shortname  = '{{ site.disqus_shortname }}';
@@ -160,6 +160,8 @@ layout: default
  </script>
  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
  <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+ {% endif %}
  </section>
+  END comment -->
 
 </article>
