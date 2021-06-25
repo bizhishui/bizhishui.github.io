@@ -75,13 +75,7 @@ Place this file locally in your current tex folder, and it can be used simply as
     \usepackage[slantfont, boldfont]{xeCJK}
     \usepackage{myCJKfonts}
     
-    \addbibresource{own-bib.bib}
-    
-    \myname{Lyu}{Jinming}
-    \excludecomment{fullonly}
-    
     \title{Curriculum Vitae}
-    
     \begin{document}
     \makeheaders[c]
     
