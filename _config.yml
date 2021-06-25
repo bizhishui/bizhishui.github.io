@@ -12,12 +12,12 @@ atom-baseurl: "https://bizhishui.github.io/"
 disqus_shortname: 'bizhishui'
 
 # Post sharing icons
-#sharing:
-#    twitter: true
-#    linkedin: true
-#    facebook: true
-#    google_plus: true
-#    wechat: true
+sharing:
+    twitter: true
+    linkedin: true
+    facebook: true
+    google_plus: true
+    wechat: true
 
 navigations:
   - title: About
