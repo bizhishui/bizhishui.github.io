@@ -53,6 +53,9 @@ We can first create a _sty_ file to save all fonts related setting, here is an e
     %\setCJKsansfont{Ma Shan Zheng} 
     \setCJKmonofont{Noto Sans Mono CJK SC}                       %设置中文打字机(等宽)字体
     %\setCJKmonofont{Noto Sans Mono CJK SC} 
+
+    \setCJKfamilyfont{Ma Shan Zheng}{Ma Shan Zheng}
+    \newcommand{\makai}{\CJKfamily{Ma Shan Zheng}}
     
     % correct line break for chinese
     \XeTeXlinebreaklocale "zh"
@@ -81,6 +84,9 @@ Place this file locally in your current tex folder, and it can be used simply as
     
     \makerubric{employment_cn}
     \makerubric{education_cn}
+
+    正常中文字体！
+    {\makai 测试马楷！}
     
     \end{document}
 ```
