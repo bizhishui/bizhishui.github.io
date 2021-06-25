@@ -55,7 +55,7 @@ We can first create a _sty_ file to save all fonts related setting, here is an e
     %\setCJKmonofont{Noto Sans Mono CJK SC} 
 
     \setCJKfamilyfont{Ma Shan Zheng}{Ma Shan Zheng}
-    \newcommand{\makai}{\CJKfamily{Ma Shan Zheng}}
+    \newcommand*{\makai}{\CJKfamily{Ma Shan Zheng}}
     
     % correct line break for chinese
     \XeTeXlinebreaklocale "zh"
