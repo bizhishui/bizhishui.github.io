@@ -11,7 +11,7 @@ tags:
 ---
 
 > The purpose of this post is to note the methods of installing Chinese fonts on the Unix system and their use in Latex.
-> This post has mainly referred [xiaoquinNUDT's blog](https://blog.csdn.net/xiaoqu001/article/details/80981338).
+> This post has mainly referred [xiaoquinNUDT's blog](https://blog.csdn.net/xiaoqu001/article/details/80981338) and [Overleaf's online document](https://www.overleaf.com/learn/latex/Chinese).
 
 ### Install Chinese Fonts
 First you can check what fonts are available in your system with
