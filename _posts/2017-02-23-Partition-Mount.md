@@ -160,3 +160,18 @@ MBR这个仅有446 bytes的硬盘容量里面会放置最基本的启动管理�
     parted /dev/hdc mkpart logical ext3 19.2GB 19.7GB       #创建一个约为512MB容量的逻辑分割槽,19.2G是由上一指令得到的该硬盘最后分区的截止磁柱位置
     parted /dev/hdc rm 8         #删除8号分区，假设刚才新建分区编号(Number)为8
 ```
+
+### Mount a SSD disk
+```
+    // find the disk name
+    sudo lsblk
+    // format the new disk
+    sudo mkfs.ext4 /dev/nvme1n1
+    // mount the disk
+    sudo mkdir /data
+    sudo mount /dev/nvme1n1 /data
+    // add mount to fstab
+    // add followling line to /etc/fstab
+    UUID=XXXX-XXXX-XXXX-XXXX-XXXX     /archive ext4 errors=remount-ro 0 1
+    // use *sudo blkid* to find the UUID
+```
