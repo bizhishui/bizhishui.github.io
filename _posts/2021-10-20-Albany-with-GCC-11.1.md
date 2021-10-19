@@ -14,12 +14,12 @@ tags:
 
 &nbsp;
 
-The installation is done in my office computer
+The installation is done on my office computer
 ```
     cat /proc/cpuinfo
     Linux version 4.15.0-159-generic (buildd@lgw01-amd64-055) (gcc version 7.5.0 (Ubuntu 7.5.0-3ubuntu1~18.04)) #167-Ubuntu SMP Tue Sep 21 08:55:05 UTC 2021
 ```
-The current version of gcc is 7.5.0, the more updated version, 11.1.0, will be used.
+The current version of gcc is 7.5.0, here, the more updated version, 11.1.0, will be used.
 
 &nbsp;
 
