@@ -77,3 +77,17 @@ This post starts from a simple example, a project with only one single source fi
 
 &nbsp;
 
+#### Building multiple independent simple applications
+Only need change the CMakeLists.txt as follows
+```
+    set(kokkostpetra_targets tutorial_01 tutorial_02 tutorial_03 
+        tutorial_04 tutorial_05)
+    
+    # Build the APP and link to Trilinos
+    foreach(curr_target ${kokkostpetra_targets})
+      add_executable(${curr_target} ${CMAKE_CURRENT_SOURCE_DIR}/${curr_target}.cpp)
+      target_include_directories(${curr_target} PRIVATE
+        ${CMAKE_CURRENT_SOURCE_DIR} ${Trilinos_INCLUDE_DIRS} ${Trilinos_TPL_INCLUDE_DIRS})
+      target_link_libraries(${curr_target} ${Trilinos_LIBRARIES} ${Trilinos_TPL_LIBRARIES}) 
+    endforeach(curr_target)
+```
