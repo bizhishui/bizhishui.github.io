@@ -18,6 +18,9 @@ tags:
 This post starts from a simple example, a project with only one single source file.
 ```
     export PATH=/data/code/myLibs/gcc11/bin:/data/code/myLibs/ompi_gcc/bin:$PATH
+    echo $LD_LIBRARY_PATH
+    /data/code/myLibs/ompi_gcc/lib:/data/code/myLibs/Trilinos/lib:/data/code/myLibs/TPLs_Trilinos/lib:/data/code/myLibs/gcc11/lib64:/data/code/myLibs/ppkMHD/ppkMHD/lib:/data/code/myLibs/vtk/8_2/lib:/usr/local/lib:/data/code/myLibs/libmesh/dev_dbg/lib:/data/code/myLibs/petsc/dev_dbg/lib:/opt/finufft/lib:/opt/fftw_3_3_8/lib:/home/jinming/softs/boost_1_73_0/stage/lib:/data/code/softpp/install/lib:/opt/OpenMesh/lib:/opt/gismo/lib:/usr/local/lib:/usr/lib
+
     cd /to/your/source/dir
     mkdir build & cd build
     # my Trilinos was installed in /data/code/myLibs/Trilinos
