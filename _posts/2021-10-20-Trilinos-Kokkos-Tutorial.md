@@ -24,7 +24,8 @@ This post starts from a simple example, a project with only one single source fi
     cmake -D CMAKE_PREFIX_PATH=/data/code/myLibs/Trilinos ..
     make -j 8 
     
-    // here is an example from ${Trillons_SOURCE_DIR}/demos/simpleBuildAgainstTrilinos
+    # -------------------------------------------------------------------------------
+    # here is an example from ${Trillons_SOURCE_DIR}/demos/simpleBuildAgainstTrilinos
     cmake_minimum_required(VERSION 3.17.1)
     project(MyApp NONE)
     
