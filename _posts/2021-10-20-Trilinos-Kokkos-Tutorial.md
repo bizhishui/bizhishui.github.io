@@ -12,6 +12,8 @@ tags:
 
 > This post shows some simple examples of building against an installed Trilinos with CMake, mainly refer this [wiki](https://github.com/trilinos/Trilinos/blob/master/demos/simpleBuildAgainstTrilinos/README.md).
 
+&nbsp;
+
 ### Building a simple example
 This post starts from a simple example, a project with only one single source file.
 ```
@@ -71,3 +73,6 @@ This post starts from a simple example, a project with only one single source fi
       ${CMAKE_CURRENT_SOURCE_DIR} ${Trilinos_INCLUDE_DIRS} ${Trilinos_TPL_INCLUDE_DIRS})
     target_link_libraries(${PROJECT_NAME} ${Trilinos_LIBRARIES} ${Trilinos_TPL_LIBRARIES}) 
 ```
+
+&nbsp;
+
