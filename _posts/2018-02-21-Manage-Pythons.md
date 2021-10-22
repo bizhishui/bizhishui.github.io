@@ -61,7 +61,9 @@ Each Python version is installed into its own directory under *$PYENV_ROOT/versi
     # Add pyenv init to your shell to enable shims and autocompletion
     # Make sure eval "$(pyenv init -)" is placed toward the end of the shell configuration file
     # since it manipulates PATH during the initialization.
-    echo -e 'if command -v pyenv 1>/dev/null 2>&1; then\n  eval "$(pyenv init -)"\nfi' >> ~/.bashrc
+    # updated 2021/10/22
+    # https://stackoverflow.com/questions/33321312/cannot-switch-python-with-pyenv
+    echo -e 'if command -v pyenv 1>/dev/null 2>&1; then\n  eval "$(pyenv init --path)"\nfi' >> ~/.bashrc
 
     #Restart your shell so the path changes take effect
     exec "$SHELL"
@@ -94,7 +96,7 @@ Each Python version is installed into its own directory under *$PYENV_ROOT/versi
     brew info pyenv
     
     # Add to the end of .bash_profile
-    echo -e 'if which pyenv 1>/dev/null 2>&1; then\n  eval "$(pyenv init -)"\nfi' >> ~/.bash_profile
+    echo -e 'if which pyenv 1>/dev/null 2>&1; then\n  eval "$(pyenv init --path)"\nfi' >> ~/.bash_profile
 
     # Restart your shell
     exec $SHELL
