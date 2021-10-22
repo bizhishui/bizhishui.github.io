@@ -82,7 +82,7 @@ Notes: In this example
 #### Building parallel-netcdf
 ```
     cd pnetcdf-1.12.2
-    ./configure --prefix=/data/code/myLibs/TPLs_Trilinos ./configure --prefix=/data/code/myLibs/TPLs_Trilinos CC=/data/code/myLibs/ompi_gcc/bin/mpicc CXX=/data/code/myLibs/ompi_gcc/bin/mpicxx FC=/data/code/myLibs/ompi_gcc/bin/mpif90 \
+    ./configure --prefix=/data/code/myLibs/TPLs_Trilinos CC=/data/code/myLibs/ompi_gcc/bin/mpicc CXX=/data/code/myLibs/ompi_gcc/bin/mpicxx FC=/data/code/myLibs/ompi_gcc/bin/mpif90 \
     CXXFLAGS="-fPIC -O3 -march=native" CFLAGS="-fPIC -O3 -march=native" FFLAGS="-fPIC -O3 -march=native"
 ```
 
