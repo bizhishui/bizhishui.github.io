@@ -15,7 +15,9 @@ tags:
 ### Use vi mode 
 
 1 Search *enable* in Package Control (with SHIFT+CTRL+P)
+
 2 Select *Package Control: Enable Package*
+
 3 And then select *Vintage*
 
 Now, your sublime should already in vi mode.
