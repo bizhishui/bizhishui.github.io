@@ -14,9 +14,9 @@ tags:
 
 ### Use vi mode 
 
-- Search *enable* in Package Control (with SHIFT+CTRL+P)
-- Select *Package Control: Enable Package*
-- And then select *Vintage*
+1 Search *enable* in Package Control (with SHIFT+CTRL+P)
+2 Select *Package Control: Enable Package*
+3 And then select *Vintage*
 
 Now, your sublime should already in vi mode.
 To disbale, just search *disbale* and then *Vintage*.
