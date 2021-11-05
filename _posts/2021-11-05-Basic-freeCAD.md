@@ -22,3 +22,18 @@ Sketcher和Part的结合使用完全如之前课上学习CATIA的示例。
 &nbsp;
 
 ### Sketcher使用要点
+
+Sketcher(草图)工作台用于创建用于 PartDesign(零件设计)工作台、Arch (建筑)工作台和其他工作台的*二维几何图形*。 通常，二维绘图被视为大多数CAD模型的起点，因为二维草图可以“拉伸”以创建三维形状；
+进一步的二维草图可以用于在先前构建的三维形状的基础上创建其他特征，如开槽“Pocket”、隆起“ridges”或拉伸"extruded"。 草图绘制器与在(Part)零件工作台中定义的布尔操作一起构成了构建实体的构造实体几何方法的基础。
+
+#### Sketching Workflow
+A Sketch is always 2D. To create a solid, a 2D Sketch of **a single enclosed area** is created and then either Padded or Revolved to add the 3rd dimension, creating a 3D solid from the 2D Sketch.
+
+If a Sketch has segments that cross one another, or places where a Point is not directly on a segment, or places where there are gaps between endpoints of adjacent segments, Pad or Revolve won't create a solid. 
+Sometimes a Sketch which contains lines which cross one another will work for a simple operation such as Pad, but later operations such as Linear Pattern will fail. **It is best to avoid crossing lines**. 
+The exception to this rule is that it doesn't apply to Construction (blue) Geometry (Construction mode下生成的Construction Geometry只会用于辅助草图制作，并不会包含在最终草图内).
+
+Inside the enclosed area we can have smaller non-overlapping areas. These will become voids when the 3D solid is created.
+
+Once a Sketch is fully constrained, the Sketch features will turn green; Construction Geometry will remain blue. It is usually "finished" at this point and suitable for use in creating a 3D solid. 
+However, *once the Sketch dialog is closed it may be worthwhile going to Part Workbench and running Check geometry* to ensure there are no features in the Sketch which may cause later problems.
