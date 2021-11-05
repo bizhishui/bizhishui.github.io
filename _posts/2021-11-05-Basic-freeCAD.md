@@ -37,3 +37,10 @@ Inside the enclosed area we can have smaller non-overlapping areas. These will b
 
 Once a Sketch is fully constrained, the Sketch features will turn green; Construction Geometry will remain blue. It is usually "finished" at this point and suitable for use in creating a 3D solid. 
 However, *once the Sketch dialog is closed it may be worthwhile going to Part Workbench and running Check geometry* to ensure there are no features in the Sketch which may cause later problems.
+
+简单而言通常为:
+1. Creating construction geometry (optional), 在construction mode下作辅助设计草图，完成后需退出此模式
+2. Creating real geometry, 用于后续3D画图的草图几何必须是封闭的2D图形。
+3. Applying geometric constraints, 如垂直、平行、等长、相切约束等
+4. Applying datum constraints, 如长度，角度、半径等约束
+5. Obtaining a closed profile, 此时自由度为0，草图变为绿色
