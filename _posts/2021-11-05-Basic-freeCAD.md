@@ -38,9 +38,81 @@ Inside the enclosed area we can have smaller non-overlapping areas. These will b
 Once a Sketch is fully constrained, the Sketch features will turn green; Construction Geometry will remain blue. It is usually "finished" at this point and suitable for use in creating a 3D solid. 
 However, *once the Sketch dialog is closed it may be worthwhile going to Part Workbench and running Check geometry* to ensure there are no features in the Sketch which may cause later problems.
 
-简单而言通常为:
+[简单而言通常为](https://wiki.freecad.org/Basic_Sketcher_Tutorial):
 1. Creating construction geometry (optional), 在construction mode下作辅助设计草图，完成后需退出此模式
 2. Creating real geometry, 用于后续3D画图的草图几何必须是封闭的2D图形。
 3. Applying geometric constraints, 如垂直、平行、等长、相切约束等
 4. Applying datum constraints, 如长度，角度、半径等约束
 5. Obtaining a closed profile, 此时自由度为0，草图变为绿色
+
+&nbsp;
+
+### Work with Python script
+
+First see this python script (modified from online source)
+
+```
+    #!/usr/bin/env python
+    # coding=utf-8
+    
+    # Script to draw a periodic sine sketch in FreeCAD
+    import FreeCAD
+    import Draft
+    import math
+    
+    # 2 * pi * rad = 360°   ->  math.sin(rad)
+    
+    def sinus(x, a,p,ph):
+    	'''
+    	Returns the sinus with:
+    	a = amplitude in mm
+    	p = period in mm
+    	ph = phase in mm
+    	'''
+    
+    	return  a*math.sin(1/p * 2*math.pi* x + ph* 2*math.pi)
+    
+    # Draw the periodic sine function approximated as a B-spline in x-direction (can be turned and converted to sketch later)
+    a =0.2  # in mm
+    p =math.pi # in mm
+    ph = 0  # in mm
+    
+    l = 4*math.pi # in mm
+    x0 = -0.5*l  # start position in mm
+    height = 1.5
+    
+    pts = 1001
+    
+    v = []  # list to store the vectors
+    v2 = []  # list to store the vectors
+    
+    for vec in range(pts):
+    	x = x0 + vec * l /(pts-1)
+    	v.append(FreeCAD.Base.Vector(x, height+sinus(x, a,p,ph), 0))
+    	v2.append(FreeCAD.Base.Vector(x, height+sinus(x, a,p,ph)-0.01, 0))
+    
+    lp1 = App.Vector(v[0])
+    lp2 = App.Vector(v2[0])
+    lp3 = App.Vector(v[pts-1])
+    lp4 = App.Vector(v2[pts-1])
+    
+    doc = App.newDocument()
+    
+    sincurv = Draft.makeBSpline(v)
+    doc.recompute(None,True,True)
+    sincurv2 = Draft.makeBSpline(v2)
+    doc.recompute(None,True,True)
+    
+    line1 = Draft.make_line(lp1, lp2)
+    line2 = Draft.make_line(lp3, lp4)
+    doc.recompute()
+    
+    sketch_from_draft = Draft.make_sketch([sincurv, line1, sincurv2, line2], autoconstraints=False, delete=False, radiusPrecision=-1, tol=1e-3)
+    doc.recompute()
+```
+
+In freeCAD, first open the aboved script, and then press *Execute the macro in the editor*, next switch to the *Part Design*工作台.
+选择此前生成的Sketch, 然后点击*Create a new body*并选择相应的Base plane, 如此Sketch位于新生成的Body下。再次选择Sketch,点击*Revolve a selected sketch*即可生成3D旋转体，此处生成的三维曲面。
+经过后续加工，最终图片为
+
+[![deformedTube](/media/files/2021/11/05/deformedTube.jpg)](https://github.com/bizhishui/bizhishui.github.io/blob/master/ "deformedTube")
