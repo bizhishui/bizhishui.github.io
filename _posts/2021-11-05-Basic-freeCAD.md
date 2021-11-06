@@ -112,7 +112,7 @@ First see this python script (modified from online source)
 ```
 
 In freeCAD, first open the aboved script, and then press *Execute the macro in the editor*, next switch to the *Part Design*工作台.
-选择此前生成的Sketch, 然后点击*Create a new body*并选择相应的Base plane, 如此Sketch位于新生成的Body下。再次选择Sketch,点击*Revolve a selected sketch*即可生成3D旋转体，此处生成的三维曲面。
+选择此前生成的Sketch, 然后点击*Create a new body*并选择相应的Base plane, 如此Sketch位于新生成的Body下。再次选择Sketch,点击*Revolve a selected sketch*即可生成3D旋转体，此处生成的是三维曲面。
 经过后续加工，最终图片为
 
 [![deformedTube](/media/files/2021/11/05/deformedTube.jpg)](https://github.com/bizhishui/bizhishui.github.io/blob/master/ "deformedTube")
