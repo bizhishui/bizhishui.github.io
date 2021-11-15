@@ -136,7 +136,7 @@ Add the following file
     <?xml version='1.0'?>
     <!DOCTYPE fontconfig SYSTEM 'fonts.dtd'>
     <fontconfig>
-    <dir>/usr/share/texmf-dist/fonts/opentype</dir>
+    <dir>/usr/local/texlive/2018/texmf-dist/fonts/opentype/public</dir>
     </fontconfig>
 ```
 named *09-texlive.conf* in */etc/fonts/conf.d*. Of course *09* can be substituted by any number from *00* to *08*.
