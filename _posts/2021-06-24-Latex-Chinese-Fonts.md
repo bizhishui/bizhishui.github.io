@@ -13,6 +13,8 @@ tags:
 > The purpose of this post is to note the methods of installing Chinese fonts on the Unix system and their use in Latex.
 > This post has mainly referred [xiaoquinNUDT's blog](https://blog.csdn.net/xiaoqu001/article/details/80981338) and [Overleaf's online document](https://www.overleaf.com/learn/latex/Chinese).
 
+&nbsp;
+
 ### Install Chinese Fonts
 First you can check what fonts are available in your system with
 ```
@@ -42,6 +44,8 @@ can furter view details info of this font.
     # to delete fonts, just rm the ttf or ttc files, and then re-run
     fc-cache -fsv
 ```
+
+&nbsp;
 
 ### Using Chinese Fonts with xeCJK
 We can first create a _sty_ file to save all fonts related setting, here is an example
@@ -96,6 +100,7 @@ Place this file locally in your current tex folder, and it can be used simply as
     \end{document}
 ```
 
+&nbsp;
 
 ### 一种中文字体同时兼容Linux和Mac
 具体参见[此处](https://tex.stackexchange.com/questions/215564/what-chinese-fonts-can-i-rely-on-to-be-in-mac-and-linux)，MWE如下
