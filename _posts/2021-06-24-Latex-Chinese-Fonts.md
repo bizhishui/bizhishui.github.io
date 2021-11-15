@@ -95,3 +95,43 @@ Place this file locally in your current tex folder, and it can be used simply as
     
     \end{document}
 ```
+
+
+### 一种中文字体同时兼容Linux和Mac
+具体参见[此处](https://tex.stackexchange.com/questions/215564/what-chinese-fonts-can-i-rely-on-to-be-in-mac-and-linux)，MWE如下
+```
+    % !TEX program = XeLaTeX
+    % !TEX encoding = UTF-8
+    \documentclass[UTF8,nofonts]{ctexart}
+    \setCJKmainfont[BoldFont=FandolSong-Bold.otf,ItalicFont=FandolKai-Regular.otf]{FandolSong-Regular.otf}
+    \setCJKsansfont[BoldFont=FandolHei-Bold.otf]{FandolHei-Regular.otf}
+    \setCJKmonofont{FandolFang-Regular.otf}
+    
+    \begin{document}
+    
+    \begin{tabular}{|l|l|l|l|}
+    \hline
+     & \multicolumn{3}{c|}{Series/Shape} \\ \cline{2-4}
+    Family & \verb=\mdseries= & \verb=\bfseries= & \verb=\mdseries\itshape= \\ \hline
+    \verb=\rmfamily= & 宋体 & \textbf{粗宋体} & \textit{楷体} \\
+    \verb=\sffamily= & \textsf{黑体} & \textsf{\textbf{粗黑体}} & \\
+    \verb=\ttfamily= & \texttt{仿宋体} &&\\ \hline
+    \end{tabular}
+    
+    \end{document}
+```
+
+在Linux下(texlive 2018)，fandol字体位于*/usr/local/texlive/2018/texmf-dist/fonts/opentype/public/fandol*。
+
+#### fc-cache后，fc-list无法找到
+Linux下，fandol位于public文件家下，*fc-cache -fsv*后，fc-list无法查询到，[解决方法如下](https://tex.stackexchange.com/a/361601)
+
+Add the following file
+```
+    <?xml version='1.0'?>
+    <!DOCTYPE fontconfig SYSTEM 'fonts.dtd'>
+    <fontconfig>
+    <dir>/usr/share/texmf-dist/fonts/opentype</dir>
+    </fontconfig>
+```
+named *09-texlive.conf* in */etc/fonts/conf.d*. Of course *09* can be substituted by any number from *00* to *08*.
