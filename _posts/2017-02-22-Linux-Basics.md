@@ -1,7 +1,7 @@
 ---
 title: Linux Basics
 layout: post
-update_date: 2018-02-06
+update_date: 2021-11-16
 guid: urn:uuid:293c4c6d-38bd-4aca-b0a7-8a6091f04c63
 categories:
   - unix
@@ -145,6 +145,7 @@ The difference between *;* (semicolon) or *+* (plus sign) is how the arguments a
 15. 作曲编曲：LMMS
 16. 文本编辑：vim, gedit, AkelPad、notepad++
 17. PDF,eBook阅读：Sumatra, 也支持XPS, DjVu, CHM, Comic Book (CBZ and CBR)
+18. 下载整个网站：httrack (eg: httrack https://www.learncpp.com/)
 
 
 ### Linux系统的在线求助man page与info page[>](http://cn.linux.vbird.org/linux_basic/0160startlinux.php#manual)
