@@ -30,6 +30,7 @@ layout: page
 
 #### Blogs
 - [谢益辉](http://yihui.name/): 个人博客, R
+- [Elisa Tsai](https://etsai.site/)
 - [考据癖](http://localhost-8080.com/) & [matrix67](http://www.matrix67.com/)
 - [Steve losh](http://stevelosh.com/): math and game programming
 - [Dominic Walliman](http://dominicwalliman.com/): 科学文化传播(science writer and physicist)
