@@ -129,6 +129,12 @@ And this video can be made by
     ffmpeg -framerate 20 -i ./trace_%05d.png -c:v libx264 -profile:v high444 -refs 16 -crf 0 ./trace.mp4
 ```
 
+And if you want resize the video (for example, from size 800x470 to size of width 600 and with same aspect ratio), you can do
+```
+    ffmpeg -i ./trace.mp4 -filter:v scale=600:-1 -c:a copy ./trace_reduceSize.mp4
+```
+The -1 will tell ffmpeg to automatically choose the correct height in relation to the provided width to preserve the aspect ratio. -1 can also be used for width if you provide a given height.
+
 #### Embed one video over another
 To embed to second video over the first one, you can do just
 ```
