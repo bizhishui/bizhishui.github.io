@@ -3,6 +3,10 @@ title: links
 layout: page
 ---
 
+### EDA
+#### Circuit Simulation
+- [The Designer's Guide](https://designers-guide.org/index.html)
+
 #### Institute & sLabs
 - [M2P2](http://www.m2p2.fr/)
 - [The II. Institute for Theoretical Physics](https://www.itp2.uni-stuttgart.de/index.html)
