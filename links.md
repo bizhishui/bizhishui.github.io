@@ -3,8 +3,8 @@ title: links
 layout: page
 ---
 
-### EDA
-#### Circuit Simulation
+#### EDA
+##### Circuit Simulation
 - [The Designer's Guide](https://designers-guide.org/index.html)
 
 #### Institute & sLabs
